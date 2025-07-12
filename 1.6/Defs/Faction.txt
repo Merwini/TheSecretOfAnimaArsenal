@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<FactionDef ParentName="FactionBase" Abstract="True" Name="REP_WotRFactionBase">
+		
+	</FactionDef>
+
+	<FactionDef ParentName="REP_WotRFactionBase">
+		<defName></defName>
+	</FactionDef>
+
+	<FactionDef ParentName="REP_WotRFactionBase">
+
+	</FactionDef>
+
+	<FactionDef ParentName="REP_WotRFactionBase">
+
+	</FactionDef>
+</Defs>

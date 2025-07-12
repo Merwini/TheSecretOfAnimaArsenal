@@ -1,0 +1,62 @@
+Concept: An alternative to vanilla tech advancement, allowing the player to scale into the lategame while maintaining a tribal/medieval feel. Fueled by psychics instead of electricity.
+
+What do vanilla tech levels provide?
+	Industrial:
+		Improved weapons (4 or 5 levels)
+		Improved armor (1 level)
+		Automated defenses
+		Reduced work (electric buildings instead of fueled)
+		Improved medicine (medicine + hospital buildings)
+		Improved mobility (drop pods, tons of modded content)
+		Recreation (TV)
+		Climate control
+		Food preservation
+		Prosthetics
+		Resource location (ground scanner, long-range mineral scanner)
+		Genetics (with Biotech)
+		Workers/guards (with Biotech)
+	Spacer:
+		Improved weapons (1 level)
+		Improved armor (3 tiers)
+		Shields
+		Bionics
+		Space flight
+
+What content do popular medieval mods add, that I don't want to duplicate?
+	VFE: Medieval 2
+		Weapon and armor variety (medieval)
+		Potions/alchemy
+	Medieval Overhaul
+		Weapon and armor variety (medieval)
+		Jewelry
+		Food preservation
+
+Content ideas:
+
+	General theme: path of body / path of mind. Gear that scales with psychic sensitivity but lowers it, gear that increases psychic sensitivity but weakens the user
+		-the two paths finally merge into the path of soul, gear that scales on psy but also improves it
+
+	Low tier:
+	Armor with values that scale on psy, lower it
+	Apparel that increase psy, but have downsides
+
+	Mid tier:
+	Armor with shield that produces neural heat
+
+	High tier:
+	Advanced version that replenishes shield when neural heat increases
+
+	Weapons with damage that scales on psychic sensitivity
+		-Anima + Jade
+	Weapons that scale with psychic sensitivity and also have special abilities
+		-Eltex + Jade
+
+	Prosthetics
+		-Low tier: bionics that scale based on psychic sensitivty, but also lower it
+		-High tier: scale with no penalty
+
+	Factions
+		-Witches of the Mind
+			-
+		-Witches of the Body
+			-
