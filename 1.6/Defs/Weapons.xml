@@ -64,7 +64,7 @@
 		</recipeMaker>
 
 		<modExtensions>
-			<li Class="rep.witches.PsyWeaponExtension">
+			<li Class="nuff.witches.PsyWeaponExtension">
 				<damageScaling>1</damageScaling>
 				<entropyCost>10</entropyCost>
 			</li>

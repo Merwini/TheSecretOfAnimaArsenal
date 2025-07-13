@@ -8,7 +8,7 @@ using RimWorld;
 
 namespace nuff.witches
 {
-    class PsyWeaponExtension : DefModExtension
+    public class PsyWeaponExtension : DefModExtension
     {
         public float damageScaling = 1f;
 

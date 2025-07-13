@@ -17,10 +17,12 @@ namespace nuff.witches
         {
             Harmony harmony = new Harmony("nuff.witches");
 
+            // Psy-enhanced melee attacks
             var targetMethod = AccessTools.Method(typeof(Verb_MeleeAttackDamage), "DamageInfosToApply");
             var meleePostfix = AccessTools.Method(typeof(VanillaHarmonyPatches), "MeleeDamagePostfix");
-
             harmony.Patch(targetMethod, postfix: new HarmonyMethod(meleePostfix));
+
+            harmony.PatchAll();
         }
 
         public static void MeleeDamagePostfix(Verb_MeleeAttackDamage __instance, ref IEnumerable<DamageInfo> __result)
@@ -62,6 +64,31 @@ namespace nuff.witches
             attacker.psychicEntropy.TryAddEntropy(extension.entropyCost);
 
             __result = dinfoList;
+        }
+
+        [HarmonyPatch(typeof(StatWorker_MeleeAverageDPS), nameof(StatWorker_MeleeAverageDPS.GetValueUnfinalized))]
+        public static class StatWorker_MeleeAverageDPS_GetValueUnfinalized_Postfix
+        {
+            public static void Postfix(StatRequest req, bool applyPostProcess, ref float __result)
+            {
+                if (!req.HasThing || !(req.Thing?.ParentHolder is Pawn holder))
+                    return;
+
+                if (!(req.Thing is ThingWithComps weapon) || weapon.def == null)
+                    return;
+
+                PsyWeaponExtension extension = weapon.def.GetModExtension<PsyWeaponExtension>();
+                if (extension == null)
+                    return;
+
+                float sensitivity = holder.GetStatValue(StatDefOf.PsychicSensitivity);
+                float damageScalingFactor = (sensitivity - 1) * extension.damageScaling;
+
+                if (!extension.canScaleDown && damageScalingFactor < 0f)
+                    damageScalingFactor = 0f;
+
+                __result += __result * damageScalingFactor;
+            }
         }
     }
 }
