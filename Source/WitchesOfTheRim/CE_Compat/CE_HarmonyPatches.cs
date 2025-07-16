@@ -52,12 +52,12 @@ namespace nuff.witches
 
                     newCodes.Add(new CodeInstruction(OpCodes.Ldloc_S, 4)); // load min damage
                     newCodes.Add(new CodeInstruction(OpCodes.Ldarg_1)); // load optionalReq
-                    newCodes.Add(new CodeInstruction(OpCodes.Call, helperMethod)); // consume the damage and Thing to return a new damage
+                    newCodes.Add(new CodeInstruction(OpCodes.Call, helperMethod)); // consume the damage and optionalReq to return a new damage
                     newCodes.Add(new CodeInstruction(OpCodes.Stloc_S, 4)); // store the new damage
 
                     newCodes.Add(new CodeInstruction(OpCodes.Ldloc_S, 5)); // load max damage
                     newCodes.Add(new CodeInstruction(OpCodes.Ldarg_1)); // load optionalReq
-                    newCodes.Add(new CodeInstruction(OpCodes.Call, helperMethod)); // consume the damage and Thing to return a new damage
+                    newCodes.Add(new CodeInstruction(OpCodes.Call, helperMethod)); // consume the damage and optionalReq to return a new damage
                     newCodes.Add(new CodeInstruction(OpCodes.Stloc_S, 5)); // store the new damage
 
                     codes.InsertRange(endFinallyIndex, newCodes);
