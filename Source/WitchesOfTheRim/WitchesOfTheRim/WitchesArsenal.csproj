@@ -53,6 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HediffCompProperties_Evolving.cs" />
+    <Compile Include="HediffComp_Evolving.cs" />
     <Compile Include="Stats\StatPart_PsyScaling.cs" />
     <Compile Include="Stats\StatWorker_PsyMultiplier.cs" />
     <Compile Include="VanillaHarmonyPatches.cs" />

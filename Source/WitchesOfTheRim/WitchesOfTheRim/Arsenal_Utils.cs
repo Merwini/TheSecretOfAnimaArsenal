@@ -11,6 +11,7 @@ namespace nuff.witches.arsenal
 {
     class Arsenal_Utils
     {
+        //was used in previous implementation
         public static PsyScalingExtension GetPsyExtension(Verb_MeleeAttack verb)
         {
             return verb.EquipmentSource?.def.GetModExtension<PsyScalingExtension>()
