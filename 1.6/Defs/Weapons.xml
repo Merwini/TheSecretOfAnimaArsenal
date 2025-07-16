@@ -22,6 +22,7 @@
 		<statBases>
 			<WorkToMake>12000</WorkToMake>
 			<Mass>0.85</Mass>
+			<MeleePsyDamageMultiplier>1</MeleePsyDamageMultiplier>
 		</statBases>
 		<relicChance>2</relicChance>
 		<equippedAngleOffset>-65</equippedAngleOffset>
@@ -64,7 +65,7 @@
 		</recipeMaker>
 
 		<modExtensions>
-			<li Class="nuff.witches.PsyWeaponExtension">
+			<li Class="nuff.witches.arsenal.PsyWeaponExtension">
 				<damageScaling>1</damageScaling>
 				<entropyCost>10</entropyCost>
 			</li>

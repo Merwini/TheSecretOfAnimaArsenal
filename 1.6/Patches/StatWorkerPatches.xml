@@ -14,7 +14,7 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/StatDef[defName="MeleeWeapon_DamageMultiplier"]/parts</xpath>
 		<value>
-			<li Class="nuff.witches.StatPart_PsyWeaponDamage"/>
+			<li Class="nuff.witches.arsenal.StatPart_PsyWeaponDamage"/>
 		</value>
 	</Operation>
 </Patch>
