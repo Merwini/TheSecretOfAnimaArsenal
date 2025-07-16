@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.36128.20
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WitchesOfTheRim", "WitchesOfTheRim\WitchesOfTheRim.csproj", "{5547AC5A-7501-46D2-A465-C417B70AE95D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WitchesArsenal", "WitchesOfTheRim\WitchesArsenal.csproj", "{5547AC5A-7501-46D2-A465-C417B70AE95D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CE_Compat", "CE_Compat\CE_Compat.csproj", "{3D4C6633-6B61-4C5A-9599-5E53F000F714}"
 EndProject

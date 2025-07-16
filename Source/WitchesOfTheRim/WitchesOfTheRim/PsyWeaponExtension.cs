@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Verse;
 using RimWorld;
 
-namespace nuff.witches
+namespace nuff.witches.arsenal
 {
     public class PsyWeaponExtension : DefModExtension
     {
