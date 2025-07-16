@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<StatDef>
-		<defName>MeleePsyDamageMultiplier</defName>
+		<defName>WotR_PsyDamageMult</defName>
 		<label>psychic damage multiplier</label>
 		<description>Damage multiplier based on wielder's psychic sensitivity.</description>
 		<category>Weapon_Melee</category>
@@ -9,8 +9,23 @@
 		<forInformationOnly>true</forInformationOnly>
 		<defaultBaseValue>1.0</defaultBaseValue>
 		<minValue>0</minValue>
-		<workerClass>nuff.witches.arsenal.StatWorker_PsyWeaponMultiplier</workerClass>
-		<showIfUndefined>true</showIfUndefined>
+		<workerClass>nuff.witches.arsenal.StatWorker_PsyDamageMultiplier</workerClass>
+		<showIfUndefined>false</showIfUndefined>
 		<displayPriorityInCategory>999</displayPriorityInCategory>
 	</StatDef>
+
+	<StatDef>
+		<defName>WotR_PsyArmorMult</defName>
+		<label>psychic armor multiplier</label>
+		<description>Armor value multiplier based on wearer's psychic sensitivity.</description>
+		<category>Apparel</category>
+		<toStringStyle>PercentZero</toStringStyle>
+		<forInformationOnly>true</forInformationOnly>
+		<defaultBaseValue>1.0</defaultBaseValue>
+		<minValue>0</minValue>
+		<workerClass>nuff.witches.arsenal.StatWorker_PsyArmorMultiplier</workerClass>
+		<showIfUndefined>false</showIfUndefined>
+		<displayPriorityInCategory>999</displayPriorityInCategory>
+	</StatDef>
+
 </Defs>

@@ -22,7 +22,6 @@
 		<statBases>
 			<WorkToMake>12000</WorkToMake>
 			<Mass>0.85</Mass>
-			<MeleePsyDamageMultiplier>1</MeleePsyDamageMultiplier>
 		</statBases>
 		<relicChance>2</relicChance>
 		<equippedAngleOffset>-65</equippedAngleOffset>
@@ -65,11 +64,30 @@
 		</recipeMaker>
 
 		<modExtensions>
-			<li Class="nuff.witches.arsenal.PsyWeaponExtension">
-				<damageScaling>1</damageScaling>
+			<li Class="nuff.witches.arsenal.PsyScalingExtension">
+				<scalingMultiplier>1</scalingMultiplier>
 				<entropyCost>10</entropyCost>
 			</li>
 		</modExtensions>
 	</ThingDef>
-	
+
+
+	<ThingDef ParentName="ApparelArmorReconBase">
+		<defName>wotr_Apparel_ArmorRecon</defName>
+		<label>psy recon armor</label>
+		<description>A suit of light partially-powered armor, designed to permit quick movement. Lightweight plasteel-weave plates block attacks without compromising mobility, and neuro-memetic assistors in the lower body allow a human to wear the armor and still move easily.\n\nArmor like this is often used by imperial scout troops and glitterworld police forces.</description>
+		<apparel>
+			<tags>
+				<li>SpacerMilitary</li>
+			</tags>
+		</apparel>
+		<recipeMaker>
+			<displayPriority>115</displayPriority>
+		</recipeMaker>
+		<modExtensions>
+			<li Class="nuff.witches.arsenal.PsyScalingExtension">
+				<scalingMultiplier>1</scalingMultiplier>
+			</li>
+		</modExtensions>
+	</ThingDef>
 </Defs>

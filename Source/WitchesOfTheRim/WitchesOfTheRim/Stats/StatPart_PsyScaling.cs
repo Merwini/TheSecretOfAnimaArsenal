@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace nuff.witches.arsenal
 {
-    class StatPart_PsyWeaponDamage : StatPart
+    class StatPart_PsyScaling : StatPart
     {
         public override void TransformValue(StatRequest req, ref float val)
         {
@@ -17,31 +17,34 @@ namespace nuff.witches.arsenal
             if (thing == null)
                 return;
 
-            var extension = thing.def?.GetModExtension<PsyWeaponExtension>();
+            var extension = thing.def?.GetModExtension<PsyScalingExtension>();
             if (extension == null)
                 return;
 
-            // Get the user of the weapon
-            Pawn pawn = (thing.ParentHolder as Pawn_EquipmentTracker)?.pawn;
+            Pawn pawn = null;
+            if (thing.ParentHolder is Pawn_EquipmentTracker eq)
+                pawn = eq.pawn;
+            else if (thing.ParentHolder is Pawn_ApparelTracker ap)
+                pawn = ap.pawn; 
             if (pawn == null)
                 return;
 
             float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity);
 
-            val = Arsenal_Utils.GetPsyScaledValue(val, sensitivity, extension.damageScaling, extension.canScaleDown);
+            val = Arsenal_Utils.GetPsyScaledValue(val, sensitivity, extension.scalingMultiplier, extension.canScaleDown);
         }
 
         public override string ExplanationPart(StatRequest req)
         {
             Thing thing = req.Thing;
-            PsyWeaponExtension extension = thing?.def?.GetModExtension<PsyWeaponExtension>();
+            PsyScalingExtension extension = thing?.def?.GetModExtension<PsyScalingExtension>();
             Pawn pawn = (thing?.ParentHolder as Pawn_EquipmentTracker)?.pawn;
 
             if (thing == null || extension == null || pawn == null)
                 return null;
 
             float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity);
-            float multiplier = Arsenal_Utils.GetPsyScaledMultiplier(sensitivity, extension.damageScaling, extension.canScaleDown);
+            float multiplier = Arsenal_Utils.GetPsyScaledMultiplier(sensitivity, extension.scalingMultiplier, extension.canScaleDown);
 
             return "Psychic Sensitivity Scaling: x" + multiplier.ToStringPercent();
         }

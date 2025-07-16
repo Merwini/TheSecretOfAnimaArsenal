@@ -8,11 +8,9 @@ using RimWorld;
 
 namespace nuff.witches.arsenal
 {
-    public class PsyWeaponExtension : DefModExtension
+    public class PsyScalingExtension : DefModExtension
     {
-        public float damageScaling = 1f;
-
-        public float penetrationScaling = 0f;
+        public float scalingMultiplier = 1f;
 
         public bool canScaleDown = false;
 

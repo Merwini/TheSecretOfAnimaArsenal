@@ -53,11 +53,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StatPart_PsyWeaponDamage.cs" />
-    <Compile Include="StatWorker_PsyWeaponMultiplier.cs" />
+    <Compile Include="Stats\StatPart_PsyScaling.cs" />
+    <Compile Include="Stats\StatWorker_PsyMultiplier.cs" />
     <Compile Include="VanillaHarmonyPatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PsyWeaponExtension.cs" />
+    <Compile Include="PsyScalingExtension.cs" />
     <Compile Include="Arsenal_Utils.cs" />
   </ItemGroup>
   <ItemGroup>

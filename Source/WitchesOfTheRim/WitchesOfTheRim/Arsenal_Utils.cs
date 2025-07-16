@@ -11,10 +11,10 @@ namespace nuff.witches.arsenal
 {
     class Arsenal_Utils
     {
-        public static PsyWeaponExtension GetPsyExtension(Verb_MeleeAttack verb)
+        public static PsyScalingExtension GetPsyExtension(Verb_MeleeAttack verb)
         {
-            return verb.EquipmentSource?.def.GetModExtension<PsyWeaponExtension>()
-                ?? verb.HediffSource?.def.GetModExtension<PsyWeaponExtension>();
+            return verb.EquipmentSource?.def.GetModExtension<PsyScalingExtension>()
+                ?? verb.HediffSource?.def.GetModExtension<PsyScalingExtension>();
         }
 
         public static float GetPsyScaledValue(float baseValue, float sensitivity, float scaling, bool canScaleDown)
