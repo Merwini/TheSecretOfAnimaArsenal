@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Verse;
 using RimWorld;
 
-namespace nuff.witches.arsenal
+namespace nuff.tsoa.armory
 {
     class HediffComp_Evolving : HediffComp
     {

@@ -7,16 +7,16 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 
-namespace nuff.witches.arsenal
+namespace nuff.tsoa.armory
 {
-    class Arsenal_Utils
+    class Armory_Utils
     {
         //was used in previous implementation
-        public static PsyScalingExtension GetPsyExtension(Verb_MeleeAttack verb)
-        {
-            return verb.EquipmentSource?.def.GetModExtension<PsyScalingExtension>()
-                ?? verb.HediffSource?.def.GetModExtension<PsyScalingExtension>();
-        }
+        //public static PsyScalingExtension GetPsyExtension(Verb_MeleeAttack verb)
+        //{
+        //    return verb.EquipmentSource?.def.GetModExtension<PsyScalingExtension>()
+        //        ?? verb.HediffSource?.def.GetModExtension<PsyScalingExtension>();
+        //}
 
         public static float GetPsyScaledValue(float baseValue, float sensitivity, float scaling, bool canScaleDown)
         {

@@ -8,14 +8,14 @@
 //using UnityEngine;
 //using HarmonyLib;
 
-//namespace nuff.witches.arsenal
+//namespace nuff.tsoa.armory
 //{
 //    [StaticConstructorOnStartup]
 //    public class VanillaHarmonyPatches
 //    {
 //        static VanillaHarmonyPatches()
 //        {
-//            Harmony harmony = new Harmony("nuff.witches.arsenal");
+//            Harmony harmony = new Harmony("nuff.tsoa.armory");
 
 //            // Psy-enhanced melee attacks
 //            var targetMethod = AccessTools.Method(typeof(Verb_MeleeAttackDamage), "DamageInfosToApply");

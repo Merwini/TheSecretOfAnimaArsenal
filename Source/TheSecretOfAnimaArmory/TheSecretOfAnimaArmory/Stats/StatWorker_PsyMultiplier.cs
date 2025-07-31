@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Verse;
 using RimWorld;
 
-namespace nuff.witches.arsenal
+namespace nuff.tsoa.armory
 {
     class StatWorker_PsyMultiplier : StatWorker
     {
@@ -31,7 +31,7 @@ namespace nuff.witches.arsenal
                 return extension.scalingMultiplier;
 
             float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity);
-            return Arsenal_Utils.GetPsyScaledMultiplier(sensitivity, extension.scalingMultiplier, extension.canScaleDown);
+            return Armory_Utils.GetPsyScaledMultiplier(sensitivity, extension.scalingMultiplier, extension.canScaleDown);
         }
 
         public override string GetExplanationUnfinalized(StatRequest req, ToStringNumberSense numberSense)
@@ -47,7 +47,7 @@ namespace nuff.witches.arsenal
                 return "";
 
             float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity);
-            float scale = Arsenal_Utils.GetPsyScaledMultiplier(sensitivity, extension.scalingMultiplier, extension.canScaleDown);
+            float scale = Armory_Utils.GetPsyScaledMultiplier(sensitivity, extension.scalingMultiplier, extension.canScaleDown);
 
             return $"Psychic sensitivity: {sensitivity.ToString("0.##")}\n" +
                    $"Equipment Scaling factor: {extension.scalingMultiplier.ToString("0.##")}";

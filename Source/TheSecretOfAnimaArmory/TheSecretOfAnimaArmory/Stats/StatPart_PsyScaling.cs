@@ -7,7 +7,7 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 
-namespace nuff.witches.arsenal
+namespace nuff.tsoa.armory
 {
     class StatPart_PsyScaling : StatPart
     {
@@ -31,7 +31,7 @@ namespace nuff.witches.arsenal
 
             float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity);
 
-            val = Arsenal_Utils.GetPsyScaledValue(val, sensitivity, extension.scalingMultiplier, extension.canScaleDown);
+            val = Armory_Utils.GetPsyScaledValue(val, sensitivity, extension.scalingMultiplier, extension.canScaleDown);
         }
 
         public override string ExplanationPart(StatRequest req)
@@ -44,7 +44,7 @@ namespace nuff.witches.arsenal
                 return null;
 
             float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity);
-            float multiplier = Arsenal_Utils.GetPsyScaledMultiplier(sensitivity, extension.scalingMultiplier, extension.canScaleDown);
+            float multiplier = Armory_Utils.GetPsyScaledMultiplier(sensitivity, extension.scalingMultiplier, extension.canScaleDown);
 
             return "Psychic Sensitivity Scaling: x" + multiplier.ToStringPercent();
         }

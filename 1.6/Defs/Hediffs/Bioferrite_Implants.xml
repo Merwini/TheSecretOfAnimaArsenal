@@ -164,6 +164,7 @@
 
 	<!-- Bioferrite Rending Claws -->
 	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="WotR_BioferriteClawsBase">
+		<labelNoun>a set of bioferrite rending claws</labelNoun>
 		<descriptionHyperlinks>
 			<ThingDef>WotR_BioferriteRendingClaws</ThingDef>
 		</descriptionHyperlinks>
@@ -177,7 +178,6 @@
 	<HediffDef ParentName="WotR_BioferriteClawsBase">
 		<defName>WotR_BioferriteClawsOne</defName>
 		<label>bioferrite rending claws (inert)</label>
-		<labelNoun>a set of bioferrite rending claws</labelNoun>
 		<description>A set of inert bioferrite rending claws. The wielder's psychic connection is too weak to even move the fingers, leaving it as little more than a hand-shaped lump of metal.</description>
 		<comps>
 			<li Class="HediffCompProperties_VerbGiver">
@@ -209,7 +209,6 @@
 	<HediffDef ParentName="WotR_BioferriteClawsBase">
 		<defName>WotR_BioferriteClawsTwo</defName>
 		<label>bioferrite rending claws (dampened)</label>
-		<labelNoun>a set of bioferrite rending claws</labelNoun>
 		<description>A set of bioferrite rending claws. The wielder's weak psychic connection leaves them dull and clumsy.</description>
 		<comps>
 			<li Class="HediffCompProperties_VerbGiver">
@@ -243,7 +242,6 @@
 	<HediffDef ParentName="WotR_BioferriteClawsBase">
 		<defName>WotR_BioferriteClawsThree</defName>
 		<label>bioferrite rending claws</label>
-		<labelNoun>a set of bioferrite rending claws</labelNoun>
 		<description>A set of bioferrite rending claws. The wielder's psychic connection keeps the claws sharp and the fingers nimble.</description>
 		<comps>
 			<li Class="HediffCompProperties_VerbGiver">
@@ -278,7 +276,6 @@
 	<HediffDef ParentName="WotR_BioferriteClawsBase">
 		<defName>WotR_BioferriteClawsFour</defName>
 		<label>bioferrite rending claws (jagged)</label>
-		<labelNoun>a set of bioferrite rending claws</labelNoun>
 		<description>A set of bioferrite rending claws. The claws are responding to the wielder's psychic strength, becoming sharper and more jagged. This makes them more useful as a weapon, but less useful for work.</description>
 		<comps>
 			<li Class="HediffCompProperties_VerbGiver">
@@ -313,7 +310,6 @@
 	<HediffDef ParentName="WotR_BioferriteClawsBase">
 		<defName>WotR_BioferriteClawsFive</defName>
 		<label>bioferrite rending claws (wicked)</label>
-		<labelNoun>a set of bioferrite rending claws</labelNoun>
 		<description>A set of bioferrite rending claws. The claws are responding to the wielder's immense psychic strength, making them as sharp as a Monosword. Unfortunately, not very useful for work.</description>
 		<comps>
 			<li Class="HediffCompProperties_VerbGiver">
@@ -346,6 +342,179 @@
 	<ThingDef ParentName="BodyPartBionicBase">
 		<defName>WotR_BioferriteRendingClaws</defName>
 		<label>bioferrite rending claws</label>
+		<description>A clawed hand made of bioferrite. The psychically-reactive metal becomes sharper and more jagged as the wielder's psychic powers grow, becomes more effective as a weapon but less effective for work.</description>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(100,80,80)</color>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>WotR_InstallBioferriteClaws</RecipeDef>
+			<HediffDef>WotR_BioferriteClawsThree</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<statBases>
+			<Mass>5</Mass>
+		</statBases>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>WotR_InstallBioferriteClaws</defName>
+		<label>install bioferrite rending claws</label>
+		<description>Install bioferrite rending claws in place of a hand.</description>
+		<descriptionHyperlinks>
+			<ThingDef>WotR_BioferriteRendingClaws</ThingDef>
+			<HediffDef>WotR_BioferriteClawsThree</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing bioferrite rending claws.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WotR_BioferriteRendingClaws</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WotR_BioferriteRendingClaws</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Hand</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>WotR_BioferriteClawsThree</addsHediff>
+	</RecipeDef>
+
+
+	<!-- Bioferrite Eye -->
+	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="WotR_BioferriteEyeBase">
+		<labelNoun>a bioferrite eye</labelNoun>
+		<descriptionHyperlinks>
+			<ThingDef>WotR_BioferriteEye</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>WotR_BioferriteEye</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	TODO
+	
+
+	<!-- Bioferrite Leg -->
+	<!-- Todo come up with a cooler name -->
+	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="WotR_BioferriteLegBase">
+		<labelNoun>a bioferrite leg</labelNoun>
+		<descriptionHyperlinks>
+			<ThingDef>WotR_BioferriteLeg</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>WotR_BioferriteLeg</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="WotR_BioferriteLegBase">
+		<defName>WotR_BioferriteLegOne</defName>
+		<label>bioferrite legs (inert)</label>
+		<description>An inert bioferrite leg. The wielder's psychic connection is too weak to animate it, leaving it as little more than a cumbersome metal prosthetic.</description>
+		<comps>
+			<li Class="nuff.witches.arsenal.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.49</upperThreshold>
+				<hediffAbove>WotR_BioferriteLegTwo</hediffAbove>
+			</li>
+		</comps>
+		<addedPartProps>
+			<partEfficiency>0.5</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="WotR_BioferriteLegBase">
+		<defName>WotR_BioferriteLegTwo</defName>
+		<label>bioferrite legs (dampened)</label>
+		<description>A set of bioferrite rending claws. The wielder's weak psychic connection leaves them dull and clumsy.</description>
+		<comps>
+			<li Class="nuff.witches.arsenal.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.89</upperThreshold>
+				<hediffAbove>WotR_BioferriteLegThree</hediffAbove>
+				<lowerThreshold>0.5</lowerThreshold>
+				<hediffBelow>WotR_BioferriteLegOne</hediffBelow>
+			</li>
+		</comps>
+		<addedPartProps>
+			<partEfficiency>0.75</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="WotR_BioferriteLegBase">
+		<defName>WotR_BioferriteLegThree</defName>
+		<label>bioferrite Leg</label>
+		<description>A set of bioferrite rending claws. The wielder's psychic connection keeps the claws sharp and the fingers nimble.</description>
+		<comps>
+			<li Class="nuff.witches.arsenal.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.19</upperThreshold>
+				<hediffAbove>WotR_BioferriteLegFour</hediffAbove>
+				<lowerThreshold>0.9</lowerThreshold>
+				<hediffBelow>WotR_BioferriteLegTwo</hediffBelow>
+			</li>
+		</comps>
+		<addedPartProps>
+			<partEfficiency>1</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="WotR_BioferriteLegBase">
+		<defName>WotR_BioferriteLegFour</defName>
+		<label>bioferrite rending claws (empowered)</label>
+		<description>A set of bioferrite rending claws. The claws are responding to the wielder's psychic strength, becoming sharper and more jagged. This makes them more useful as a weapon, but less useful for work.</description>
+		<comps>
+			<li Class="nuff.witches.arsenal.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.79</upperThreshold>
+				<hediffAbove>WotR_BioferriteLegFive</hediffAbove>
+				<lowerThreshold>1.2</lowerThreshold>
+				<hediffBelow>WotR_BioferriteLegThree</hediffBelow>
+			</li>
+		</comps>
+		<addedPartProps>
+			<partEfficiency>0.75</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="WotR_BioferriteLegBase">
+		<defName>WotR_BioferriteLegFive</defName>
+		<label>bioferrite rending claws (wicked)</label>
+		<description>A set of bioferrite rending claws. The claws are responding to the wielder's immense psychic strength, making them as sharp as a Monosword. Unfortunately, not very useful for work.</description>
+		<comps>
+			<li Class="nuff.witches.arsenal.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<lowerThreshold>1.8</lowerThreshold>
+				<hediffBelow>WotR_BioferriteLegThree</hediffBelow>
+			</li>
+		</comps>
+		<addedPartProps>
+			<partEfficiency>0.5</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>WotR_BioferriteLegs</defName>
+		<label>bioferrite legs</label>
 		<description>A clawed hand made of bioferrite. The psychically-reactive metal becomes sharper and more jagged as the wielder's psychic powers grow, becomes more effective as a weapon but less effective for work.</description>
 		<graphicData>
 			<texPath>Things/Item/Health/HealthItem</texPath>

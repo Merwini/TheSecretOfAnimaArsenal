@@ -52,7 +52,11 @@ Content ideas:
 		-Eltex + Jade
 
 	Prosthetics
-		-Low tier: bionics that scale based on psychic sensitivty, but also lower it
+		-Bioferrite
+			
+		-Jade
+
+		-Eltex
 		-High tier: scale with no penalty
 
 	Factions
@@ -60,3 +64,4 @@ Content ideas:
 			-
 		-Witches of the Body
 			-
+
