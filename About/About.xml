@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Witches of the Rim</name>
+	<name>The Secret of Anima - Armory</name>
 	<author>Nuff</author>
-	<packageId>reo.witches</packageId>
+	<packageId>tsoa.armory</packageId>
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>
-	<description>Witches</description>
+	<description>Armory</description>
 	<loadAfter>
 		<li>CETeam.CombatExtended</li>
 	</loadAfter>
