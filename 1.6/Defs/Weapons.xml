@@ -2,7 +2,7 @@
 <Defs>
 
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
-		<defName>wotr_PsyGladius</defName>
+		<defName>TSOA_PsyGladius</defName>
 		<label>psy gladius</label>
 		<description>A short sword of ancient design. Good for stabbing or slashing. It's light and nimble, which sometimes lets it beat bigger, heavier weapons.</description>
 		<possessionCount>1</possessionCount>
@@ -64,7 +64,7 @@
 		</recipeMaker>
 
 		<modExtensions>
-			<li Class="nuff.witches.arsenal.PsyScalingExtension">
+			<li Class="nuff.tsoa.arsenal.PsyScalingExtension">
 				<scalingMultiplier>1</scalingMultiplier>
 				<entropyCost>10</entropyCost>
 			</li>
@@ -73,7 +73,7 @@
 
 
 	<ThingDef ParentName="ApparelArmorReconBase">
-		<defName>wotr_Apparel_ArmorRecon</defName>
+		<defName>TSOA_Apparel_ArmorRecon</defName>
 		<label>psy recon armor</label>
 		<description>A suit of light partially-powered armor, designed to permit quick movement. Lightweight plasteel-weave plates block attacks without compromising mobility, and neuro-memetic assistors in the lower body allow a human to wear the armor and still move easily.\n\nArmor like this is often used by imperial scout troops and glitterworld police forces.</description>
 		<apparel>
@@ -85,7 +85,7 @@
 			<displayPriority>115</displayPriority>
 		</recipeMaker>
 		<modExtensions>
-			<li Class="nuff.witches.arsenal.PsyScalingExtension">
+			<li Class="nuff.tsoa.arsenal.PsyScalingExtension">
 				<scalingMultiplier>1</scalingMultiplier>
 			</li>
 		</modExtensions>

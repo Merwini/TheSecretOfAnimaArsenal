@@ -5,7 +5,7 @@
 	<!-- Patch stats -->
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="wotr_PsyGladius"]/tools</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_PsyGladius"]/tools</xpath>
 		<value>
 			<tools>
 				<li Class="CombatExtended.ToolCE">
@@ -46,7 +46,7 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="wotr_PsyGladius"]/statBases</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_PsyGladius"]/statBases</xpath>
 		<value>
 			<Bulk>3.5</Bulk>
 			<MeleeCounterParryBonus>0.35</MeleeCounterParryBonus>
@@ -54,7 +54,7 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="wotr_PsyGladius"]</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_PsyGladius"]</xpath>
 		<value>
 			<equippedStatOffsets>
 				<MeleeCritChance>0.2</MeleeCritChance>
@@ -67,7 +67,7 @@
 	<!-- Add tags -->
 
 	<Operation Class="PatchOperationConditional">
-		<xpath>Defs/ThingDef[defName="wotr_PsyGladius"]/weaponTags</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_PsyGladius"]/weaponTags</xpath>
 		<nomatch Class="PatchOperationAdd">
 			<xpath>Defs/ThingDef[defName="MeleeWeapon_Gladius"]</xpath>
 			<value>
@@ -77,7 +77,7 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="wotr_PsyGladius"]/weaponTags</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_PsyGladius"]/weaponTags</xpath>
 		<value>
 			<li>CE_OneHandedWeapon</li>
 		</value>

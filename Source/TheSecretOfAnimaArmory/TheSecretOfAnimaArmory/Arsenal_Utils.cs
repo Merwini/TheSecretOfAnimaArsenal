@@ -7,9 +7,9 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 
-namespace nuff.tsoa.armory
+namespace nuff.tsoa.arsenal
 {
-    class Armory_Utils
+    class Arsenal_Utils
     {
         //was used in previous implementation
         //public static PsyScalingExtension GetPsyExtension(Verb_MeleeAttack verb)

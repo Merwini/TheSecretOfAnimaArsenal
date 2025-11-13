@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Verse;
 using RimWorld;
 
-namespace nuff.tsoa.armory
+namespace nuff.tsoa.arsenal
 {
     class HediffCompProperties_Evolving : HediffCompProperties
     {
