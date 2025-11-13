@@ -245,13 +245,5 @@ namespace nuff.tsoa.arsenal
 
             PawnOwner.psychicEntropy.TryAddEntropy(heatToAdd, null, false);
         }
-
-        public override string CompInspectStringExtra()
-        {
-            if (PawnOwner.psychicEntropy == null || !PawnOwner.psychicEntropy.IsPsychicallySensitive)
-                return "Inactive (non-psycaster)";
-
-            return $"Neural Heat Shield active. Converts damage to heat ({Props.heatPerDamage} heat per dmg)";
-        }
     }
 }
