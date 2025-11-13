@@ -191,7 +191,7 @@ namespace nuff.tsoa.arsenal
         {
             if (ShieldState == ShieldState.Active && ShouldDisplay)
             {
-                float num = Mathf.Lerp(Props.minDrawSize, Props.maxDrawSize, HeatRatio);
+                float num = Mathf.Lerp(Props.minDrawSize, Props.maxDrawSize, (1 - HeatRatio));
                 Vector3 drawPos = PawnOwner.Drawer.DrawPos;
                 drawPos.y = AltitudeLayer.MoteOverhead.AltitudeFor();
                 int num2 = Find.TickManager.TicksGame - lastAbsorbDamageTick;
