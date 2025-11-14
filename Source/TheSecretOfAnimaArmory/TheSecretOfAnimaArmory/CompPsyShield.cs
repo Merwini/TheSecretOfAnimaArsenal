@@ -10,6 +10,7 @@ using Verse.Sound;
 
 namespace nuff.tsoa.arsenal
 {
+    [StaticConstructorOnStartup]
     public class CompPsyShield : ThingComp
     {
         private Vector3 impactAngleVect;
@@ -24,20 +25,7 @@ namespace nuff.tsoa.arsenal
 
         private bool isBroken = false;
 
-        //causes errors and I don't know why. I copied it from CompShield directly
-        //private static readonly Material PsyBubbleMat = MaterialPool.MatFrom("Other/ShieldBubble", ShaderDatabase.Transparent);
-
-        private static Material psyBubbleMat;
-        public static Material PsyBubbleMat
-        {
-            get
-            {
-                if (psyBubbleMat == null)
-                    psyBubbleMat = MaterialPool.MatFrom("Other/ShieldBubble", ShaderDatabase.Transparent, Color.green);
-
-                return psyBubbleMat;
-            }
-        }
+        private static readonly Material PsyBubbleMat = MaterialPool.MatFrom("Other/ShieldBubble", ShaderDatabase.Transparent, Color.green);
 
         public CompProperties_PsyShield Props => (CompProperties_PsyShield)props;
 
@@ -105,14 +93,6 @@ namespace nuff.tsoa.arsenal
             }
         }
 
-        protected float HeatRatio
-        {
-            get
-            {
-                return (PawnOwner.psychicEntropy.EntropyValue / PawnOwner.psychicEntropy.MaxEntropy);
-            }
-        }
-
         public bool IsApparel => parent is Apparel;
 
         private bool IsBuiltIn => !IsApparel;
@@ -145,7 +125,7 @@ namespace nuff.tsoa.arsenal
         {
             if (parent.Spawned)
             {
-                float scale = Mathf.Lerp(Props.minDrawSize, Props.maxDrawSize, HeatRatio);
+                float scale = Mathf.Lerp(Props.minDrawSize, Props.maxDrawSize, PawnOwner.psychicEntropy.EntropyRelativeValue);
                 EffecterDefOf.Shield_Break.SpawnAttached(parent, parent.MapHeld, scale);
                 FleckMaker.Static(PawnOwner.TrueCenter(), PawnOwner.Map, FleckDefOf.ExplosionFlash, 12f);
                 for (int i = 0; i < 6; i++)
@@ -191,7 +171,7 @@ namespace nuff.tsoa.arsenal
         {
             if (ShieldState == ShieldState.Active && ShouldDisplay)
             {
-                float num = Mathf.Lerp(Props.minDrawSize, Props.maxDrawSize, (1 - HeatRatio));
+                float num = Mathf.Lerp(Props.minDrawSize, Props.maxDrawSize, (1 - PawnOwner.psychicEntropy.EntropyRelativeValue));
                 Vector3 drawPos = PawnOwner.Drawer.DrawPos;
                 drawPos.y = AltitudeLayer.MoteOverhead.AltitudeFor();
                 int num2 = Find.TickManager.TicksGame - lastAbsorbDamageTick;
@@ -212,7 +192,7 @@ namespace nuff.tsoa.arsenal
         public override void CompTick()
         {
             base.CompTick();
-            if (isBroken && HeatRatio < Props.resetHeatPercent)
+            if (isBroken && PawnOwner.psychicEntropy.EntropyRelativeValue < Props.resetHeatPercent)
             {
                 ticksUntilReset--;
                 if (ticksUntilReset <= 0)
