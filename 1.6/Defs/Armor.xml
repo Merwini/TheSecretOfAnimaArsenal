@@ -237,4 +237,23 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
+
+	<ThingDef ParentName="ApparelArmorReconBase">
+		<defName>TSOA_Apparel_ArmorRecon</defName>
+		<label>psy recon armor</label>
+		<description>A suit of light partially-powered armor, designed to permit quick movement. Lightweight plasteel-weave plates block attacks without compromising mobility, and neuro-memetic assistors in the lower body allow a human to wear the armor and still move easily.\n\nArmor like this is often used by imperial scout troops and glitterworld police forces.</description>
+		<apparel>
+			<tags>
+				<li>SpacerMilitary</li>
+			</tags>
+		</apparel>
+		<recipeMaker>
+			<displayPriority>115</displayPriority>
+		</recipeMaker>
+		<modExtensions>
+			<li Class="nuff.tsoa.arsenal.PsyScalingExtension">
+				<scalingMultiplier>1</scalingMultiplier>
+			</li>
+		</modExtensions>
+	</ThingDef>
 </Defs>
