@@ -167,7 +167,7 @@
 	<ThingDef ParentName="ArmorHelmetMakeableBase">
 		<defName>TSOAA_Apparel_BioferriteHelm</defName>
 		<label>witchblade helmet</label>
-		<description>A bioferrite plate helmet. Intended for those who are psychically sensitive, but have not mastered the art of psycasting. Feeds on the wearer's psychic field, </description>
+		<description>A bioferrite plate helmet. Intended for those who are psychically sensitive, but have not mastered the art of psycasting.</description>
 		<techLevel>Industrial</techLevel>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/SimpleHelmet/SimpleHelmet</texPath>

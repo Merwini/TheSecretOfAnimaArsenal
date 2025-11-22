@@ -10,7 +10,7 @@ namespace nuff.tsoa.arsenal
 {
     public class CompProperties_PsyShield : CompProperties
     {
-        public float heatPerDamage = 1f;
+        public float heatPerDamage = 0.5f;
 
         public float resetHeatPercent = 0.8f;
 

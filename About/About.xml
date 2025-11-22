@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>The Secret of Anima - Armory</name>
+	<name>The Secret of Anima - Arsenal</name>
 	<author>Nuff</author>
-	<packageId>tsoa.armory</packageId>
+	<packageId>tsoa.Arsenal</packageId>
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>
-	<description>Armory</description>
+	<description>Arsenal</description>
 	<loadAfter>
 		<li>CETeam.CombatExtended</li>
 	</loadAfter>

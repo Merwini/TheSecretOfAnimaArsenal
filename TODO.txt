@@ -1,0 +1,19 @@
+
+
+Apparel:
+	Shaman Armor
+		-Write Def
+		-Write CE patch
+	Shaman Head
+		-Write Def
+		-Write CE patch
+
+	Witch Armor
+		-Write Def
+		-Write CE patch
+	Witch Head
+		-Write Def
+		-Write CE patch
+
+	Screamer bow (screamer arrows for CE)
+		- large mood debuff for pawns hit by it, to try to induce mental breaks (AOE?)
