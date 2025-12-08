@@ -2,86 +2,152 @@
 <Defs>
 
 	<ThingDef ParentName="ApparelMakeableBase">
-		<defName>TSOAA_ShamanArmor</defName>
-		<label>shaman armor</label>
-		<description>Shamanic armor that taps into the wearer's psychic power, projecting a force field that blocks projectiles. The wearer will build up neural heat from every blocked attack.</description>
+		<defName>TSOA_AnimaArmor</defName>
+		<label>anima shaman armor</label>
+		<description>A full-body suit of shamanic armor. Made from woven anima grass and plates of anima tree bark, it offers little in the way of physical protection, but instead allows the wearer to subconsciously project a psychic force field that blocks incoming damage at the cost of building up neural heat.</description>
 		<graphicData>
-			<texPath>Things/Pawn/Humanlike/Apparel/TribalA/TribalA</texPath>
+			<texPath>Things/Pawn/Humanlike/Apparel/EltexRobe/EltexRobe</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<techLevel>Neolithic</techLevel>
-		<costStuffCount>60</costStuffCount>
-		<stuffCategories>
-			<li>Fabric</li>
-			<li>Leathery</li>
-		</stuffCategories>
-		<tradeability>Sellable</tradeability>
+		<techLevel>Medieval</techLevel>
 		<tickerType>Normal</tickerType>
+		
 		<statBases>
-			<MaxHitPoints>100</MaxHitPoints>
-			<WorkToMake>1800</WorkToMake>
-			<Mass>0.5</Mass>
-			<StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
-			<StuffEffectMultiplierInsulation_Cold>0.55</StuffEffectMultiplierInsulation_Cold>
-			<StuffEffectMultiplierInsulation_Heat>0.55</StuffEffectMultiplierInsulation_Heat>
-			<EquipDelay>1.5</EquipDelay>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToMake>20000</WorkToMake>
+			<Mass>4.0</Mass>
+			<Flammability>0.6</Flammability>
+			<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.3</ArmorRating_Heat>
+			<EquipDelay>11</EquipDelay>
 		</statBases>
-		<thingCategories>
-			<li>ApparelMisc</li>
-		</thingCategories>
-		<apparel>
-			<bodyPartGroups>
-				<li>Torso</li>
-				<li>Legs</li>
-			</bodyPartGroups>
-			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/TribalA/TribalA</wornGraphicPath>
-			<layers>
-				<li>OnSkin</li>
-			</layers>
-			<tags>
-				<li>Neolithic</li>
-			</tags>
-			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
-			<defaultOutfitTags>
-				<li>Worker</li>
-				<li>Soldier</li>
-				<li>Spacefarer</li>
-			</defaultOutfitTags>
-		</apparel>
+
+		<equippedStatOffsets>
+			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.3</SlaveSuppressionOffset>
+		</equippedStatOffsets>
+		
+		<costList>
+			<TSOA_AnimaGrassResource>150</TSOA_AnimaGrassResource>
+			<TSOA_AnimaBark>6</TSOA_AnimaBark>
+		</costList>
 		<recipeMaker>
+			<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+			<!-- TODO research prereq -->
+			<!-- TODO anima workbench? -->
 			<recipeUsers>
 				<li>ElectricTailoringBench</li>
 				<li>HandTailoringBench</li>
 				<li>CraftingSpot</li>
 			</recipeUsers>
-			<displayPriority>200</displayPriority>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<displayPriority>275</displayPriority>
 		</recipeMaker>
-		<colorGenerator Class="ColorGenerator_Options">
-			<options>
-				<li>
-					<weight>10</weight>
-					<only>(0.4,0.3,0.15)</only>
-				</li>
-				<li>
-					<weight>15</weight>
-					<only>(0.6,0.45,0.18)</only>
-				</li>
-				<li>
-					<weight>20</weight>
-					<only>(0.8,0.6,0.23)</only>
-				</li>
-			</options>
-		</colorGenerator>
+		
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		
+		<apparel>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/TribalA/TribalA</wornGraphicPath>
+			<layers>
+				<li>Middle</li>
+			</layers>
+			<tags>
+				<li>Medieval</li>
+			</tags>
+			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+				<li>Spacefarer</li>
+			</defaultOutfitTags>
+		</apparel>
+		
+		<tradeability>Sellable</tradeability>
 		<tradeTags>
-			<li>BasicClothing</li>
+			<li>Clothing</li>
+			<li>Armor</li>
 		</tradeTags>
+		
 		<comps>
 			<li Class="nuff.tsoa.arsenal.CompProperties_PsyShield" />
 		</comps>
 	</ThingDef>
 
+	<ThingDef ParentName="ApparelMakeableBase">
+		<defName>TSOA_AnimaHeaddress</defName>
+		<label>anima shaman headdress</label>
+		<description>A ritual headdress woven from anima grass and reinforced with plates of anima tree bark. Provides only light physical protection, but significantly increases psychic sensitivty and helps disperse neural heat more quickly.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/EltexHelmet/EltexHelmet</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToMake>8000</WorkToMake>
+			<Mass>1.2</Mass>
+			<Flammability>0.6</Flammability>
+			<ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.16</ArmorRating_Heat>
+		</statBases>
+		
+		<equippedStatOffsets>
+			<PsychicSensitivityOffset>0.15</PsychicSensitivityOffset>
+			<PsychicEntropyRecoveryRate>0.05</PsychicEntropyRecoveryRate>
+			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
+		</equippedStatOffsets>
+
+		<costList>
+			<TSOA_AnimaGrassResource>45</TSOA_AnimaGrassResource>
+			<TSOA_AnimaBark>2</TSOA_AnimaBark>
+		</costList>
+		<recipeMaker>
+			<!-- TODO research prereq -->
+			<!-- TODO anima workbench? -->
+			<recipeUsers>
+				<li>ElectricTailoringBench</li>
+				<li>HandTailoringBench</li>
+				<li>CraftingSpot</li>
+			</recipeUsers>
+			<displayPriority>276</displayPriority>
+		</recipeMaker>
+
+		<thingCategories>
+			<li>Apparel</li>
+		</thingCategories>
+		
+		<apparel>
+			<bodyPartGroups>
+				<li>FullHead</li>
+				<li>Neck</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<tags>
+				<li>Medieval</li>
+			</tags>
+			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+				<li>Spacefarer</li>
+			</defaultOutfitTags>
+		</apparel>
+	</ThingDef>
+
 	<ThingDef ParentName="ArmorSmithableBase">
-		<defName>TSOAA_Apparel_BioferritePlate</defName>
+		<defName>TSOA_BioferriteArmor</defName>
 		<label>witchblade plate armor</label>
 		<description>A suit of plate armor intended for those who are psychically sensitive, but have not mastered the art of psycasting. The bioferrite has been twisted by psychic patterns born of dark archotech so that, instead of bolstering the psychic powers of the wearer, it feeds on them to strengthen itself.</description>
 		<possessionCount>1</possessionCount>
@@ -165,7 +231,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="ArmorHelmetMakeableBase">
-		<defName>TSOAA_Apparel_BioferriteHelm</defName>
+		<defName>TSOA_BioferriteHelm</defName>
 		<label>witchblade helmet</label>
 		<description>A bioferrite plate helmet. Intended for those who are psychically sensitive, but have not mastered the art of psycasting.</description>
 		<techLevel>Industrial</techLevel>
