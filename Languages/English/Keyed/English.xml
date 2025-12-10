@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<TSOA_OutOfEntropy>Too much neural heat!</TSOA_OutOfEntropy>
+	<TSOA_NotACaster>Not a psycaster!</TSOA_NotACaster>
+	<TSOA_PsyScalingWorkerExplanation>This equipment scales its effectiveness based on psychic sensitivity.\nscaling factor: {0}\n\nFor example, at 150% psychic sensitivity and 50% scaling:\nArmor or weapon damage is increased by 25%.</TSOA_PsyScalingWorkerExplanation>
+	<TSOA_PsyScaling_StatPartExplanation>Psychic sensitivity: {0}\nScaling factor: {1}\nEffective multiplier: {2}</TSOA_PsyScaling_StatPartExplanation>
+</LanguageData>

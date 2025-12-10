@@ -13,40 +13,63 @@ namespace nuff.tsoa.arsenal
     {
         public override void TransformValue(StatRequest req, ref float val)
         {
-            Thing thing = req.Thing;
-            if (thing == null)
+            if (!req.HasThing)
                 return;
 
-            var extension = thing.def?.GetModExtension<PsyScalingExtension>();
-            if (extension == null)
+            Thing thing = req.Thing;
+
+            float scaling = thing.def.statBases.GetStatValueFromList(ArsenalDefOf.TSOA_PsyScaling, 0);
+            if (scaling <= 0f)
                 return;
 
             Pawn pawn = null;
             if (thing.ParentHolder is Pawn_EquipmentTracker eq)
                 pawn = eq.pawn;
             else if (thing.ParentHolder is Pawn_ApparelTracker ap)
-                pawn = ap.pawn; 
+                pawn = ap.pawn;
+
             if (pawn == null)
                 return;
 
-            float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity);
+            float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity); 
+            if (sensitivity <= 1f) // Won't scale values down
+                return;
 
-            val = Arsenal_Utils.GetPsyScaledValue(val, sensitivity, extension.scalingMultiplier, extension.canScaleDown);
+            val = Arsenal_Utils.GetPsyScaledValue(val, scaling, sensitivity);
         }
 
         public override string ExplanationPart(StatRequest req)
         {
-            Thing thing = req.Thing;
-            PsyScalingExtension extension = thing?.def?.GetModExtension<PsyScalingExtension>();
-            Pawn pawn = (thing?.ParentHolder as Pawn_EquipmentTracker)?.pawn;
+            if (!req.HasThing)
+                return null;
 
-            if (thing == null || extension == null || pawn == null)
+            Thing thing = req.Thing;
+
+            float scaling = thing.def.statBases.GetStatValueFromList(ArsenalDefOf.TSOA_PsyScaling, 0);
+            if (scaling <= 0f)
+                return null;
+
+            Pawn pawn = null;
+            if (thing.ParentHolder is Pawn_EquipmentTracker eq)
+                pawn = eq.pawn;
+            else if (thing.ParentHolder is Pawn_ApparelTracker ap)
+                pawn = ap.pawn;
+
+            if (pawn == null)
                 return null;
 
             float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity);
-            float multiplier = Arsenal_Utils.GetPsyScaledMultiplier(sensitivity, extension.scalingMultiplier, extension.canScaleDown);
+            float bonus = Arsenal_Utils.GetPsyScalingFactor(scaling, sensitivity);
+            if (bonus <= 0f)
+                return null;   // show no scaling if no bonus applied
 
-            return "Psychic Sensitivity Scaling: x" + multiplier.ToStringPercent();
+            float totalMult = 1f + bonus;
+
+            return "TSOA_PsyScaling_StatPartExplanation".Translate(
+                sensitivity.ToStringPercent(),
+                scaling.ToStringPercent(),
+                totalMult.ToStringPercent()
+            );
         }
     }
 }
