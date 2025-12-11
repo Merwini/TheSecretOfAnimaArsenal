@@ -3,6 +3,6 @@
 	<v1.6>
 		<li>/</li>
 		<li>1.6/</li>
-		<li IfModActive="CETeam.CombatExtended,CETeam.CombatExtended_steam">1.6/CE</li>
+		<li IfModActive="Ludeon.Rimworld.Anomaly">1.6/Anomaly</li>
 	</v1.6>
 </loadFolders>

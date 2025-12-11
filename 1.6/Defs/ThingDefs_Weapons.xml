@@ -1,6 +1,254 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+	<!-- Anima Tomahawk -->
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>TSOA_AnimaTomahawk</defName>
+		<label>anima hatchet</label>
+		<description>A hatchet made to channel the psychic energy of its wielder into destructive force. The haft is carved from anima tree bark and wrapped in anima grass, absorbing neural heat from the wielder which is then released by the jade blade into one's foes.</description>
+		<!-- TODO replace once textures are finished -->
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponMelee/Gladius</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<techLevel>Medieval</techLevel>
+		<relicChance>3</relicChance>
+
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToMake>24000</WorkToMake>
+			<Mass>1</Mass>
+		</statBases>
+
+		<costList>
+			<TSOA_AnimaGrassResource>10</TSOA_AnimaGrassResource>
+			<TSOA_AnimaBark>1</TSOA_AnimaBark>
+			<Jade>10</Jade>
+			<Steel>10</Steel>
+		</costList>
+		<recipeMaker>
+			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+			<!-- TODO research prereq -->
+			<!-- TODO anima workbench? -->
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+			</recipeUsers>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+			<displayPriority>279</displayPriority>
+		</recipeMaker>
+
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>edge</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>14</power>
+				<cooldownTime>1.6</cooldownTime>
+				<extraMeleeDamages>
+					<li>
+						<def>TSOA_PsyExtraDamage</def>
+						<amount>1</amount>
+					</li>
+				</extraMeleeDamages>
+			</li>
+		</tools>
+		
+		<modExtensions>
+			<li Class="nuff.tsoa.arsenal.PsyExtraDamageExtension">
+				<damageDef>Psychic</damageDef>
+			</li>
+		</modExtensions>
+
+		<tradeTags>
+			<li>WeaponMelee</li>
+		</tradeTags>
+		<!-- TODO weaponTags after I make factions -->
+		<weaponClasses>
+			<li>Neolithic</li>
+			<li>Melee</li>
+		</weaponClasses>
+	</ThingDef>
+
+	<!-- Anima War Club -->
+	<ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
+		<defName>TSOA_AnimaClub</defName>
+		<label>anima war club</label>
+		<description>A war club made to channel the psychic energy of its wielder into destructive force. The haft is carved from anima tree bark and wrapped in anima grass, absorbing neural heat from the wielder which is then released by the jade chunk into one's foes.</description>
+		<!-- TODO replace once textures are finished -->
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponMelee/Mace</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<techLevel>Medieval</techLevel>
+		<relicChance>3</relicChance>
+
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToMake>24000</WorkToMake>
+			<Mass>1.4</Mass>
+		</statBases>
+
+		<costList>
+			<TSOA_AnimaGrassResource>10</TSOA_AnimaGrassResource>
+			<TSOA_AnimaBark>1</TSOA_AnimaBark>
+			<Jade>15</Jade>
+		</costList>
+		<recipeMaker>
+			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+			<!-- TODO research prereq -->
+			<!-- TODO anima workbench? -->
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+			</recipeUsers>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+			<displayPriority>280</displayPriority>
+		</recipeMaker>
+
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>head</label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>16</power>
+				<cooldownTime>1.8</cooldownTime>
+				<extraMeleeDamages>
+					<li>
+						<def>TSOA_PsyExtraDamage</def>
+						<amount>1</amount>
+					</li>
+				</extraMeleeDamages>
+			</li>
+		</tools>
+		
+		<modExtensions>
+			<li Class="nuff.tsoa.arsenal.PsyExtraDamageExtension">
+				<damageDef>Psychic</damageDef>
+			</li>
+		</modExtensions>
+
+		<tradeTags>
+			<li>WeaponMelee</li>
+		</tradeTags>
+		<!-- TODO weaponTags after I make factions -->
+		<weaponClasses>
+			<li>Neolithic</li>
+			<li>Melee</li>
+		</weaponClasses>
+	</ThingDef>
+
+	<!-- Anima Macuahuitl -->
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>TSOA_AnimaMacuahuitl</defName>
+		<label>anima sword</label>
+		<description>A sword in the style of a macuahuitl made to channel the psychic energy of its wielder into destructive force. The body is carved from anima tree bark and handle wrapped in anima grass, absorbing neural heat from the wielder which is then released by shards of jade into one's foes.</description>
+		<!-- TODO replace once textures are finished -->
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponMelee/LongSword</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<techLevel>Medieval</techLevel>
+		<relicChance>4</relicChance>
+
+		<statBases>
+			<MaxHitPoints>220</MaxHitPoints>
+			<WorkToMake>30000</WorkToMake>
+			<Mass>2.1</Mass>
+		</statBases>
+
+		<costList>
+			<TSOA_AnimaGrassResource>15</TSOA_AnimaGrassResource>
+			<TSOA_AnimaBark>2</TSOA_AnimaBark>
+			<Jade>15</Jade>
+			<TSOA_AnimaSap>1</TSOA_AnimaSap>
+		</costList>
+		<recipeMaker>
+			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+			<!-- TODO research prereq -->
+			<!-- TODO anima workbench? -->
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+			</recipeUsers>
+			<skillRequirements>
+				<Crafting>9</Crafting>
+			</skillRequirements>
+			<displayPriority>281</displayPriority>
+		</recipeMaker>
+
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>edge</label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>22</power>
+				<cooldownTime>2.4</cooldownTime>
+				<extraMeleeDamages>
+					<li>
+						<def>TSOA_PsyExtraDamage</def>
+						<amount>1</amount>
+					</li>
+				</extraMeleeDamages>
+			</li>
+		</tools>
+		
+		<modExtensions>
+			<li Class="nuff.tsoa.arsenal.PsyExtraDamageExtension">
+				<damageDef>Psychic</damageDef>
+				<damagePerHeatConsumed>6</damagePerHeatConsumed>
+			</li>
+		</modExtensions>
+
+		<tradeTags>
+			<li>WeaponMelee</li>
+		</tradeTags>
+		<!-- TODO weaponTags after I make factions -->
+		<weaponClasses>
+			<li>Neolithic</li>
+			<li>Melee</li>
+		</weaponClasses>
+	</ThingDef>
+
+	
+	
+	
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>TSOA_PsyGladius</defName>
 		<label>psy gladius</label>
@@ -67,77 +315,6 @@
 			<li Class="nuff.tsoa.arsenal.PsyScalingExtension">
 				<scalingMultiplier>1</scalingMultiplier>
 				<entropyCost>10</entropyCost>
-			</li>
-		</modExtensions>
-	</ThingDef>
-
-	<ThingDef ParentName="BaseMeleeWeapon_Blunt">
-		<defName>TSOA_PsyHeat_Club</defName>
-		<label>neural heat club</label>
-		<description>A shaped stick, heavy at one end, for bashing enemies to death. This weapon is so old it's part of human biology. Evolutionary biologists say that a major reason humans can tilt our wrists side-to-side (instead of just forward-and-back like other primates) is to be able to better swing a club.</description>
-		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponMelee/Club</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<uiIconScale>1.1</uiIconScale>
-		<techLevel>Neolithic</techLevel>
-		<weaponTags>
-			<li>NeolithicMeleeBasic</li>
-		</weaponTags>
-		<weaponClasses>
-			<li>Neolithic</li>
-		</weaponClasses>
-		<costStuffCount>40</costStuffCount>
-		<statBases>
-			<WorkToMake>1200</WorkToMake>
-			<Mass>2</Mass>
-		</statBases>
-		<equippedAngleOffset>-65</equippedAngleOffset>
-		<stuffCategories>
-			<li>Metallic</li>
-			<li>Woody</li>
-			<li>Stony</li>
-		</stuffCategories>
-		<recipeMaker>
-			<recipeUsers>
-				<li>CraftingSpot</li>
-			</recipeUsers>
-			<displayPriority>300</displayPriority>
-		</recipeMaker>
-		<tools>
-			<li>
-				<label>handle</label>
-				<capacities>
-					<li>Poke</li>
-				</capacities>
-				<power>9</power>
-				<cooldownTime>2</cooldownTime>
-				<extraMeleeDamages>
-					<li>
-						<def>TSOA_PsyExtraDamage</def>
-						<amount>1</amount>
-					</li>
-				</extraMeleeDamages>
-			</li>
-			<li>
-				<label>head</label>
-				<labelUsedInLogging>false</labelUsedInLogging>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>14</power>
-				<cooldownTime>2</cooldownTime>
-				<extraMeleeDamages>
-					<li>
-						<def>TSOA_PsyExtraDamage</def>
-						<amount>1</amount>
-					</li>
-				</extraMeleeDamages>
-			</li>
-		</tools>
-		<modExtensions>
-			<li Class="nuff.tsoa.arsenal.PsyExtraDamageExtension">
-				<damageDef>Psychic</damageDef>
 			</li>
 		</modExtensions>
 	</ThingDef>
