@@ -28,13 +28,8 @@
 			<Steel>10</Steel>
 		</costList>
 		<recipeMaker>
+			<researchPrerequisite>TSOA_AnimaWeapons</researchPrerequisite>
 			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
-			<!-- TODO research prereq -->
-			<!-- TODO anima workbench? -->
-			<recipeUsers>
-				<li>ElectricSmithy</li>
-				<li>FueledSmithy</li>
-			</recipeUsers>
 			<skillRequirements>
 				<Crafting>7</Crafting>
 			</skillRequirements>
@@ -59,7 +54,7 @@
 				<cooldownTime>1.6</cooldownTime>
 				<extraMeleeDamages>
 					<li>
-						<def>TSOA_PsyExtraDamage</def>
+						<def>TSOA_EntropyExtraDamage</def>
 						<amount>1</amount>
 					</li>
 				</extraMeleeDamages>
@@ -67,7 +62,7 @@
 		</tools>
 		
 		<modExtensions>
-			<li Class="nuff.tsoa.arsenal.PsyExtraDamageExtension">
+			<li Class="nuff.tsoa.core.EntropyExtraDamageExtension">
 				<damageDef>Psychic</damageDef>
 			</li>
 		</modExtensions>
@@ -108,13 +103,8 @@
 			<Jade>15</Jade>
 		</costList>
 		<recipeMaker>
+			<researchPrerequisite>TSOA_AnimaWeapons</researchPrerequisite>
 			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
-			<!-- TODO research prereq -->
-			<!-- TODO anima workbench? -->
-			<recipeUsers>
-				<li>ElectricSmithy</li>
-				<li>FueledSmithy</li>
-			</recipeUsers>
 			<skillRequirements>
 				<Crafting>7</Crafting>
 			</skillRequirements>
@@ -140,7 +130,7 @@
 				<cooldownTime>1.8</cooldownTime>
 				<extraMeleeDamages>
 					<li>
-						<def>TSOA_PsyExtraDamage</def>
+						<def>TSOA_EntropyExtraDamage</def>
 						<amount>1</amount>
 					</li>
 				</extraMeleeDamages>
@@ -148,7 +138,7 @@
 		</tools>
 		
 		<modExtensions>
-			<li Class="nuff.tsoa.arsenal.PsyExtraDamageExtension">
+			<li Class="nuff.tsoa.core.EntropyExtraDamageExtension">
 				<damageDef>Psychic</damageDef>
 			</li>
 		</modExtensions>
@@ -190,13 +180,8 @@
 			<TSOA_AnimaSap>1</TSOA_AnimaSap>
 		</costList>
 		<recipeMaker>
+			<researchPrerequisite>TSOA_AnimaWeapons</researchPrerequisite>
 			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
-			<!-- TODO research prereq -->
-			<!-- TODO anima workbench? -->
-			<recipeUsers>
-				<li>ElectricSmithy</li>
-				<li>FueledSmithy</li>
-			</recipeUsers>
 			<skillRequirements>
 				<Crafting>9</Crafting>
 			</skillRequirements>
@@ -222,7 +207,7 @@
 				<cooldownTime>2.4</cooldownTime>
 				<extraMeleeDamages>
 					<li>
-						<def>TSOA_PsyExtraDamage</def>
+						<def>TSOA_EntropyExtraDamage</def>
 						<amount>1</amount>
 					</li>
 				</extraMeleeDamages>
@@ -230,7 +215,7 @@
 		</tools>
 		
 		<modExtensions>
-			<li Class="nuff.tsoa.arsenal.PsyExtraDamageExtension">
+			<li Class="nuff.tsoa.core.EntropyExtraDamageExtension">
 				<damageDef>Psychic</damageDef>
 				<damagePerHeatConsumed>6</damagePerHeatConsumed>
 			</li>
@@ -244,79 +229,6 @@
 			<li>Neolithic</li>
 			<li>Melee</li>
 		</weaponClasses>
-	</ThingDef>
-
-	
-	
-	
-	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
-		<defName>TSOA_PsyGladius</defName>
-		<label>psy gladius</label>
-		<description>A short sword of ancient design. Good for stabbing or slashing. It's light and nimble, which sometimes lets it beat bigger, heavier weapons.</description>
-		<possessionCount>1</possessionCount>
-		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponMelee/Gladius</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<uiIconScale>1.2</uiIconScale>
-		<techLevel>Medieval</techLevel>
-		<costStuffCount>50</costStuffCount>
-		<thingSetMakerTags>
-			<li>RewardStandardQualitySuper</li>
-		</thingSetMakerTags>
-		<weaponTags>
-			<li>MedievalMeleeDecent</li>
-		</weaponTags>
-		<statBases>
-			<WorkToMake>12000</WorkToMake>
-			<Mass>0.85</Mass>
-		</statBases>
-		<relicChance>2</relicChance>
-		<equippedAngleOffset>-65</equippedAngleOffset>
-		<stuffCategories>
-			<li>Metallic</li>
-			<li>Woody</li>
-		</stuffCategories>
-		<tools>
-			<li>
-				<label>handle</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>9</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-			<li>
-				<label>point</label>
-				<capacities>
-					<li>Stab</li>
-				</capacities>
-				<power>16</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-			<li>
-				<label>edge</label>
-				<capacities>
-					<li>Cut</li>
-				</capacities>
-				<power>16</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<recipeMaker>
-			<researchPrerequisite>Smithing</researchPrerequisite>
-			<skillRequirements>
-				<Crafting>3</Crafting>
-			</skillRequirements>
-			<displayPriority>410</displayPriority>
-		</recipeMaker>
-
-		<modExtensions>
-			<li Class="nuff.tsoa.arsenal.PsyScalingExtension">
-				<scalingMultiplier>1</scalingMultiplier>
-				<entropyCost>10</entropyCost>
-			</li>
-		</modExtensions>
 	</ThingDef>
 	
 </Defs>

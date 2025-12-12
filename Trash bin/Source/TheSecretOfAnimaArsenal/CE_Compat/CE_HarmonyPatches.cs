@@ -10,14 +10,14 @@
 //using System.Reflection;
 //using System.Reflection.Emit;
 
-//namespace nuff.tsoa.arsenal
+//namespace nuff.tsoa.core
 //{
 //    [StaticConstructorOnStartup]
 //    public class CE_HarmonyPatches
 //    {
 //        static CE_HarmonyPatches()
 //        {
-//            Harmony harmony = new Harmony("nuff.tsoa.arsenal.ce");
+//            Harmony harmony = new Harmony("nuff.tsoa.core.ce");
 
 //            var targetMethod = AccessTools.Method(typeof(Verb_MeleeAttackCE), "DamageInfosToApply");
 //            var meleePostfix = AccessTools.Method(typeof(VanillaHarmonyPatches), "MeleeDamagePostfix");
@@ -64,7 +64,7 @@
 //                }
 //                else
 //                {
-//                    Log.Error("nuff.tsoa.arsenal.CE_HarmonyPatches failed to find index");
+//                    Log.Error("nuff.tsoa.core.CE_HarmonyPatches failed to find index");
 //                }
 
 //                return codes.AsEnumerable();

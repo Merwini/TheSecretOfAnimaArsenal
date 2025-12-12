@@ -33,13 +33,11 @@
 			<TSOA_AnimaBark>6</TSOA_AnimaBark>
 		</costList>
 		<recipeMaker>
+			<researchPrerequisite>TSOA_AnimaArmor</researchPrerequisite>
 			<unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
-			<!-- TODO research prereq -->
-			<!-- TODO anima workbench? -->
 			<recipeUsers>
 				<li>ElectricTailoringBench</li>
 				<li>HandTailoringBench</li>
-				<li>CraftingSpot</li>
 			</recipeUsers>
 			<skillRequirements>
 				<Crafting>8</Crafting>
@@ -78,7 +76,7 @@
 		</tradeTags>
 		
 		<comps>
-			<li Class="nuff.tsoa.arsenal.CompProperties_PsyShield" />
+			<li Class="nuff.tsoa.core.CompProperties_PsyShield" />
 		</comps>
 	</ThingDef>
 
@@ -114,12 +112,10 @@
 			<TSOA_AnimaBark>2</TSOA_AnimaBark>
 		</costList>
 		<recipeMaker>
-			<!-- TODO research prereq -->
-			<!-- TODO anima workbench? -->
+			<researchPrerequisite>TSOA_AnimaArmor</researchPrerequisite>
 			<recipeUsers>
 				<li>ElectricTailoringBench</li>
 				<li>HandTailoringBench</li>
-				<li>CraftingSpot</li>
 			</recipeUsers>
 			<displayPriority>276</displayPriority>
 			<unfinishedThingDef>UnfinishedMask</unfinishedThingDef>

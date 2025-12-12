@@ -8,14 +8,14 @@
 //using UnityEngine;
 //using HarmonyLib;
 
-//namespace nuff.tsoa.arsenal
+//namespace nuff.tsoa.core
 //{
 //    [StaticConstructorOnStartup]
 //    public class VanillaHarmonyPatches
 //    {
 //        static VanillaHarmonyPatches()
 //        {
-//            Harmony harmony = new Harmony("nuff.tsoa.arsenal");
+//            Harmony harmony = new Harmony("nuff.tsoa.core");
 
 //            // Psy-enhanced melee attacks
 //            var targetMethod = AccessTools.Method(typeof(Verb_MeleeAttackDamage), "DamageInfosToApply");

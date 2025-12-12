@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Verse;
 using RimWorld;
 
-namespace nuff.tsoa.arsenal
+namespace nuff.tsoa.core
 {
     public class CompProperties_PsyShield : CompProperties
     {

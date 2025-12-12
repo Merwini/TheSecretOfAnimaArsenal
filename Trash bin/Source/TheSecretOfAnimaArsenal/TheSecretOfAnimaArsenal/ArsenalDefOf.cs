@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace nuff.tsoa.arsenal
+namespace nuff.tsoa.core
 {
     [DefOf]
     public class ArsenalDefOf

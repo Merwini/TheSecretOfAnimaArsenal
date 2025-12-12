@@ -8,7 +8,7 @@ using UnityEngine;
 using Verse;
 using Verse.Sound;
 
-namespace nuff.tsoa.arsenal
+namespace nuff.tsoa.core
 {
     [StaticConstructorOnStartup]
     public class CompPsyShield : ThingComp

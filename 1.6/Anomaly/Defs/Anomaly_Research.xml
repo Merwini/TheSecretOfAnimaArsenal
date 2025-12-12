@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ResearchProjectDef>
+		<defName>TSOA_VoidArmor</defName>
+		<label>void armor</label>
+		<description>Craft armor made from bioferrite and gold. The bioferrite feeds on the wearer's psychic potential, strengthening itself at a cost.</description>
+		<baseCost>1200</baseCost>
+		<techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>TSOA_VoidOne</li>
+			<li>PlateArmor</li>
+		</prerequisites>
+		<tab>TSOA_ResearchTab</tab>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>4.60</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>TSOA_VoidWeapons</defName>
+		<label>void weapons</label>
+		<description>Craft weapons made from bioferrite and gold. The bioferrite feeds on the wearer's psychic potential, strengthening itself at a cost.</description>
+		<baseCost>1500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>TSOA_VoidOne</li>
+			<li>LongBlades</li>
+		</prerequisites>
+		<tab>TSOA_ResearchTab</tab>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>5.60</researchViewY>
+	</ResearchProjectDef>
+	
+</Defs>

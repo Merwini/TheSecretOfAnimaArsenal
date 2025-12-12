@@ -17,10 +17,10 @@
 			<MaxHitPoints>320</MaxHitPoints>
 			<Mass>15</Mass>
 			<ArmorRating_Sharp>0.9</ArmorRating_Sharp>
-			<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+			<ArmorRating_Blunt>0.7</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.6</ArmorRating_Heat>
 			<EquipDelay>15</EquipDelay>
-			<TSOA_PsyScaling>1</TSOA_PsyScaling>
+			<TSOA_PsyScaling>0.5</TSOA_PsyScaling>
 		</statBases>
 
 		<equippedStatOffsets>
@@ -33,7 +33,7 @@
 			<Gold>50</Gold>
 		</costList>
 		<recipeMaker>
-			<!-- TODO research prereq -->
+			<researchPrerequisite>TSOA_VoidArmor</researchPrerequisite>
 			<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
 			<recipeUsers>
 				<li>ElectricSmithy</li>
@@ -78,7 +78,7 @@
 
 	<ThingDef ParentName="ArmorHelmetMakeableBase">
 		<defName>TSOA_BioferriteHelm</defName>
-		<label>witchblade helmet</label>
+		<label>void knight helmet</label>
 		<description>A helmet crafted from bioferrite. This bioferrite feeds on the psychic capabilites of the wearer, making itself stronger but weakening the wearer in the process.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/SimpleHelmet/SimpleHelmet</texPath>
@@ -95,7 +95,7 @@
 			<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.4</ArmorRating_Heat>
 			<EquipDelay>1.5</EquipDelay>
-			<TSOA_PsyScaling>1</TSOA_PsyScaling>
+			<TSOA_PsyScaling>0.5</TSOA_PsyScaling>
 		</statBases>
 
 		<equippedStatOffsets>
@@ -107,7 +107,7 @@
 			<Gold>20</Gold>
 		</costList>
 		<recipeMaker>
-			<!-- TODO research prereq -->
+			<researchPrerequisite>TSOA_VoidArmor</researchPrerequisite>
 			<recipeUsers>
 				<li>ElectricSmithy</li>
 				<li>FueledSmithy</li>
