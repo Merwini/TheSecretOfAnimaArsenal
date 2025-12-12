@@ -63,7 +63,7 @@
 		
 		<modExtensions>
 			<li Class="nuff.tsoa.core.EntropyExtraDamageExtension">
-				<damageDef>Psychic</damageDef>
+				<damageDef>TSOA_EntropicDischarge</damageDef>
 			</li>
 		</modExtensions>
 
@@ -139,7 +139,7 @@
 		
 		<modExtensions>
 			<li Class="nuff.tsoa.core.EntropyExtraDamageExtension">
-				<damageDef>Psychic</damageDef>
+				<damageDef>TSOA_EntropicDischarge</damageDef>
 			</li>
 		</modExtensions>
 
@@ -216,7 +216,7 @@
 		
 		<modExtensions>
 			<li Class="nuff.tsoa.core.EntropyExtraDamageExtension">
-				<damageDef>Psychic</damageDef>
+				<damageDef>TSOA_EntropicDischarge</damageDef>
 				<damagePerHeatConsumed>6</damagePerHeatConsumed>
 			</li>
 		</modExtensions>
