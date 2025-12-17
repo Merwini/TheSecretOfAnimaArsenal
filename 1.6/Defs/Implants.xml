@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>TSOA_AnimaThirdEye</defName>
+		<label>Jade eye</label>
+	</ThingDef>
+
+
+	
+	
+	
+</Defs>

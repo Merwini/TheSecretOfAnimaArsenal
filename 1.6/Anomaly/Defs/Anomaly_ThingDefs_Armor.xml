@@ -25,7 +25,7 @@
 
 		<equippedStatOffsets>
 			<MoveSpeed>-0.15</MoveSpeed>
-			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.4</SlaveSuppressionOffset>
+			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.3</SlaveSuppressionOffset>
 		</equippedStatOffsets>
 
 		<costList>

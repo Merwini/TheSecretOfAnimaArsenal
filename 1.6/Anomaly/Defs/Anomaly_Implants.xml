@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- bioferrite clawed arm -->
+	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="TSOA_BioferriteArmBase">
+		<labelNoun>a set of bioferrite clawed arm</labelNoun>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_BioferriteRendingClaws</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>TSOA_BioferriteRendingClaws</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_BioferriteArmBase">
+		<defName>TSOA_BioferriteArmOne</defName>
+		<label>bioferrite clawed arm (inert)</label>
+		<description>A bioferrite arm ending in clawed fingers. The wielder's psychic connection is too weak to even ambulate the digits, leaving it as little more than a hand-shaped lump of metal.</description>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>10</power>
+						<armorPenetration>0.1</armorPenetration>
+						<cooldownTime>2.4</cooldownTime>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.49</upperThreshold>
+				<hediffAbove>TSOA_BioferriteArmTwo</hediffAbove>
+			</li>
+		</comps>
+		<addedPartProps>
+			<partEfficiency>0.5</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_BioferriteArmBase">
+		<defName>TSOA_BioferriteArmTwo</defName>
+		<label>bioferrite clawed arm (dampened)</label>
+		<description>A bioferrite arm ending in clawed fingers. The wielder's weak psychic connection leaves them dull and clumsy.</description>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>claw</label>
+						<capacities>
+							<li>Scratch</li>
+						</capacities>
+						<power>12</power>
+						<armorPenetration>0.15</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+						<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.89</upperThreshold>
+				<hediffAbove>TSOA_BioferriteArmThree</hediffAbove>
+				<lowerThreshold>0.5</lowerThreshold>
+				<hediffBelow>TSOA_BioferriteArmOne</hediffBelow>
+			</li>
+		</comps>
+		<addedPartProps>
+			<partEfficiency>0.75</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_BioferriteArmBase">
+		<defName>TSOA_BioferriteArmThree</defName>
+		<label>bioferrite clawed arm</label>
+		<description>A bioferrite arm ending in clawed fingers. The wielder's psychic connection keeps the claws sharp and the fingers nimble.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<MentalBreakThreshold>-0.01</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>claw</label>
+						<capacities>
+							<li>Scratch</li>
+						</capacities>
+						<power>14</power>
+						<armorPenetration>0.3</armorPenetration>
+						<cooldownTime>1.6</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.19</upperThreshold>
+				<hediffAbove>TSOA_BioferriteArmFour</hediffAbove>
+				<lowerThreshold>0.9</lowerThreshold>
+				<hediffBelow>TSOA_BioferriteArmTwo</hediffBelow>
+			</li>
+		</comps>
+		<addedPartProps>
+			<partEfficiency>1</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_BioferriteArmBase">
+		<defName>TSOA_BioferriteArmFour</defName>
+		<label>bioferrite clawed arm (jagged)</label>
+		<description>A bioferrite arm ending in clawed fingers. The claws are responding to the wielder's psychic strength, becoming sharper and more jagged. This makes them more useful as a weapon, but less useful for work.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<MentalBreakThreshold>-0.02</MentalBreakThreshold>
+					<WorkSpeedGlobal>-0.05</WorkSpeedGlobal>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>claw</label>
+						<capacities>
+							<li>Scratch</li>
+						</capacities>
+						<power>16</power>
+						<armorPenetration>0.6</armorPenetration>
+						<cooldownTime>1.4</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.79</upperThreshold>
+				<hediffAbove>TSOA_BioferriteArmFive</hediffAbove>
+				<lowerThreshold>1.2</lowerThreshold>
+				<hediffBelow>TSOA_BioferriteArmThree</hediffBelow>
+			</li>
+		</comps>
+		<addedPartProps>
+			<partEfficiency>1.1</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_BioferriteArmBase">
+		<defName>TSOA_BioferriteArmFive</defName>
+		<label>bioferrite clawed arm (ascended)</label>
+		<description>A bioferrite arm ending in clawed fingers. The claws are responding to the wielder's immense psychic strength, making them as sharp as a Monosword. Unfortunately, this makes them very useful for work.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<MentalBreakThreshold>-0.04</MentalBreakThreshold>
+					<WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>claw</label>
+						<capacities>
+							<li>Scratch</li>
+						</capacities>
+						<power>20</power>
+						<armorPenetration>0.9</armorPenetration>
+						<cooldownTime>1.2</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<lowerThreshold>1.8</lowerThreshold>
+				<hediffBelow>TSOA_BioferriteArmThree</hediffBelow>
+			</li>
+		</comps>
+		<addedPartProps>
+			<partEfficiency>1.25</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>TSOA_BioferriteRendingClaws</defName>
+		<label>bioferrite clawed arm</label>
+		<description>An arm made of bioferrite, ending in clawed fingers. The psychically-reactive metal becomes sharper and more jagged as the wielder's psychic powers grow, becoming more effective as a weapon but less effective for work. Replacing human parts with bioferrite also has deleterious effects on the psyche, driving the wielder closer to madness.</description>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(100,80,80)</color>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>TSOA_InstallBioferriteClaws</RecipeDef>
+			<HediffDef>TSOA_BioferriteArmThree</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<statBases>
+			<Mass>5</Mass>
+		</statBases>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>TSOA_InstallBioferriteClaws</defName>
+		<label>install bioferrite arm</label>
+		<description>Install bioferrite arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_BioferriteRendingClaws</ThingDef>
+			<HediffDef>TSOA_BioferriteArmThree</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing bioferrite clawed arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_BioferriteRendingClaws</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>TSOA_BioferriteRendingClaws</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>TSOA_BioferriteArmThree</addsHediff>
+	</RecipeDef>
+
+	<!-- Bioferrite Leg -->
+	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="TSOA_BioferriteLegBase">
+		<labelNoun>a bioferrite leg</labelNoun>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_BioferriteLeg</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>TSOA_BioferriteLeg</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_BioferriteLegBase">
+		<defName>TSOA_BioferriteLegOne</defName>
+		<label>bioferrite leg (inert)</label>
+		<description>An inert bioferrite leg. The wielder's psychic connection is too weak to animate it, leaving it as little more than a metal peg leg.</description>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.49</upperThreshold>
+				<hediffAbove>TSOA_BioferriteLegTwo</hediffAbove>
+			</li>
+		</comps>
+		<addedPartProps>
+			<partEfficiency>0.5</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_BioferriteLegBase">
+		<defName>TSOA_BioferriteLegTwo</defName>
+		<label>bioferrite legs (dampened)</label>
+		<description>A bioferrite leg. The wielder's weak psychic connection leaves it stiff and slow.</description>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.89</upperThreshold>
+				<hediffAbove>TSOA_BioferriteLegThree</hediffAbove>
+				<lowerThreshold>0.5</lowerThreshold>
+				<hediffBelow>TSOA_BioferriteLegOne</hediffBelow>
+			</li>
+		</comps>
+		<addedPartProps>
+			<partEfficiency>0.75</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_BioferriteLegBase">
+		<defName>TSOA_BioferriteLegThree</defName>
+		<label>bioferrite Leg</label>
+		<description>A bioferrite leg. The wielder's psychic connection makes it function as well as a natural limb.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<MentalBreakThreshold>-0.01</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.19</upperThreshold>
+				<hediffAbove>TSOA_BioferriteLegFour</hediffAbove>
+				<lowerThreshold>0.9</lowerThreshold>
+				<hediffBelow>TSOA_BioferriteLegTwo</hediffBelow>
+			</li>
+		</comps>
+		<addedPartProps>
+			<partEfficiency>1</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_BioferriteLegBase">
+		<defName>TSOA_BioferriteLegFour</defName>
+		<label>bioferrite leg (empowered)</label>
+		<description>A bioerrite leg. The wielder's high psychic strength makes it faster and more agile than a natural leg, but at a cost of consuming more nutrition.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<MentalBreakThreshold>-0.02</MentalBreakThreshold>
+					<hungerRateFactor>1.05</hungerRateFactor>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.79</upperThreshold>
+				<hediffAbove>TSOA_BioferriteLegFive</hediffAbove>
+				<lowerThreshold>1.2</lowerThreshold>
+				<hediffBelow>TSOA_BioferriteLegThree</hediffBelow>
+			</li>
+		</comps>
+		<addedPartProps>
+			<partEfficiency>1.2</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_BioferriteLegBase">
+		<defName>TSOA_BioferriteLegFive</defName>
+		<label>bioferrite leg (ascended)</label>
+		<description>A bioerrite leg. The wielder's immense psychic strength makes superhumanly fast and agile, but at a cost of consuming much more nutrition.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<MentalBreakThreshold>-0.04</MentalBreakThreshold>
+					<hungerRateFactor>1.1</hungerRateFactor>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<lowerThreshold>1.8</lowerThreshold>
+				<hediffBelow>TSOA_BioferriteLegThree</hediffBelow>
+			</li>
+		</comps>
+		<addedPartProps>
+			<partEfficiency>1.4</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>TSOA_BioferriteLeg</defName>
+		<label>bioferrite leg</label>
+		<description>A leg made of bioferrite. The psychically-reactive metal becomes more agile as the wielder's psychic powers grow. This makes the wielder faster, but also uses more nutrition per day. Replacing human parts with bioferrite also has deleterious effects on the psyche, driving the wielder closer to madness.</description>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(100,80,80)</color>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>TSOA_InstallBioferriteLeg</RecipeDef>
+			<HediffDef>TSOA_BioferriteLegThree</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>15</Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<statBases>
+			<Mass>5</Mass>
+		</statBases>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>TSOA_InstallBioferriteLeg</defName>
+		<label>install bioferrite leg</label>
+		<description>Install bioferrite leg.</description>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_BioferriteLeg</ThingDef>
+			<HediffDef>TSOA_BioferriteLegThree</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing bioferrite leg.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_BioferriteLeg</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>TSOA_BioferriteLeg</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Leg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>TSOA_BioferriteLegThree</addsHediff>
+	</RecipeDef>
+
+	<!-- Bioferrite Eye -->
+	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="TSOA_BioferriteEyeBase">
+		<labelNoun>a bioferrite eye</labelNoun>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_BioferriteEye</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>TSOA_BioferriteEye</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+</Defs>

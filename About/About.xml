@@ -7,7 +7,10 @@
 		<li>1.6</li>
 	</supportedVersions>
 	<description>Arsenal</description>
-	<loadAfter>
-		<li>CETeam.CombatExtended</li>
-	</loadAfter>
+	<modDependencies>
+		<li>
+			<packageId>tsoa.core</packageId>
+			<displayName>The Secret of Anima</displayName>
+		</li>
+	</modDependencies>
 </ModMetaData>
