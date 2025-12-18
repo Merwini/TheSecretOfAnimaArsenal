@@ -193,7 +193,7 @@
 			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<lowerThreshold>1.8</lowerThreshold>
-				<hediffBelow>TSOA_BioferriteArmThree</hediffBelow>
+				<hediffBelow>TSOA_BioferriteArmFour</hediffBelow>
 			</li>
 		</comps>
 		<addedPartProps>
@@ -371,7 +371,7 @@
 			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<lowerThreshold>1.8</lowerThreshold>
-				<hediffBelow>TSOA_BioferriteLegThree</hediffBelow>
+				<hediffBelow>TSOA_BioferriteLegFour</hediffBelow>
 			</li>
 		</comps>
 		<addedPartProps>
@@ -574,7 +574,7 @@
 			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<lowerThreshold>1.8</lowerThreshold>
-				<hediffBelow>TSOA_BioferriteEyeThree</hediffBelow>
+				<hediffBelow>TSOA_BioferriteEyeFour</hediffBelow>
 			</li>
 		</comps>
 	</HediffDef>
@@ -582,7 +582,7 @@
 	<ThingDef ParentName="BodyPartBionicBase">
 		<defName>TSOA_BioferriteEye</defName>
 		<label>bioferrite eye</label>
-		<description>An eye shaped from bioferrite. As psychic sensitivity increases, it reframes perception toward violence and inevitability. This clarity enhances combat instincts, but erodes joy, restfulness, and mental stability.</description>
+		<description>An eye shaped from bioferrite. The psychically-reactive metal is animated by its psychic attunement to the user. As the user's psychic sensitivity increases, it alters perception to show the darkness and violence of the world more clearly, at the expense of everything else. Replacing human parts with bioferrite also has deleterious effects on the psyche, driving the user closer to madness.</description>
 		<graphicData>
 			<texPath>Things/Item/Health/HealthItem</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -634,4 +634,208 @@
 		</appliedOnFixedBodyParts>
 		<addsHediff>TSOA_BioferriteEyeThree</addsHediff>
 	</RecipeDef>
+
+	<!-- Bioferrite Skin -->
+	<HediffDef ParentName="ImplantHediffBase" Abstract="True" Name="TSOA_BioferriteSkinBase">
+		<labelNoun>a bioferrite skin graft</labelNoun>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_BioferriteSkin</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>TSOA_BioferriteSkin</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_BioferriteSkinBase">
+		<defName>TSOA_BioferriteSkinOne</defName>
+		<label>bioferrite skin graft (inert)</label>
+		<description>A plate of bioferrite grafted into the skin, animated by psychic attunement to its user. The user's psychic connection is too weak to bond with it, leaving it as nothing more than a painful, jagged chunk of metal.</description>
+		<stages>
+			<li>
+				<painFactor>1.5</painFactor>
+				<naturalHealingFactor>0.95</naturalHealingFactor>
+				<statOffsets>
+					<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.3</SlaveSuppressionOffset>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.49</upperThreshold>
+				<hediffAbove>TSOA_BioferriteSkinTwo</hediffAbove>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_BioferriteSkinBase">
+		<defName>TSOA_BioferriteSkinTwo</defName>
+		<label>bioferrite skin graft (dampened)</label>
+		<description>A plate of bioferrite grafted into the skin, animated by psychic attunement to its user. The user's weak psychic connection limits the plate's ability to spread and offering minimal protection.</description>
+		<stages>
+			<li>
+				<naturalHealingFactor>0.9</naturalHealingFactor>
+				<painFactor>1.25</painFactor>
+				<statOffsets>
+					<ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+					<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.15</SlaveSuppressionOffset>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.89</upperThreshold>
+				<hediffAbove>TSOA_BioferriteSkinThree</hediffAbove>
+				<lowerThreshold>0.5</lowerThreshold>
+				<hediffBelow>TSOA_BioferriteSkinOne</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_BioferriteSkinBase">
+		<defName>TSOA_BioferriteSkinThree</defName>
+		<label>bioferrite skin graft</label>
+		<description>A plate of bioferrite grafted into the skin, animated by psychic attunement to its user. The metal feeds on the user's psychic strength, spreading tendrils of bioferrite under the skin that make the user more resistant to harm.</description>
+		<stages>
+			<li>
+				<naturalHealingFactor>0.80</naturalHealingFactor>
+				<statOffsets>
+					<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+					<ArmorRating_Heat>0.3</ArmorRating_Heat>
+					<MentalBreakThreshold>0.01</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.19</upperThreshold>
+				<hediffAbove>TSOA_BioferriteSkinFour</hediffAbove>
+				<lowerThreshold>0.9</lowerThreshold>
+				<hediffBelow>TSOA_BioferriteSkinTwo</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_BioferriteSkinBase">
+		<defName>TSOA_BioferriteSkinFour</defName>
+		<label>bioferrite skin graft (empowered)</label>
+		<description>A plate of bioferrite grafted into the skin, animated by psychic attunement to its user. Tendrils of bioferrite spread under the user's skin, hardening it against attacks, but interfering with natural wound healing.</description>
+		<stages>
+			<li>
+				<naturalHealingFactor>0.65</naturalHealingFactor>
+				<statOffsets>
+					<ArmorRating_Sharp>0.45</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+					<ArmorRating_Heat>0.4</ArmorRating_Heat>
+					<MentalBreakThreshold>0.02</MentalBreakThreshold>
+					<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.79</upperThreshold>
+				<hediffAbove>TSOA_BioferriteSkinFive</hediffAbove>
+				<lowerThreshold>1.2</lowerThreshold>
+				<hediffBelow>TSOA_BioferriteSkinThree</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_BioferriteSkinBase">
+		<defName>TSOA_BioferriteSkinFive</defName>
+		<label>bioferrite skin graft (ascended)</label>
+		<description>A plate of bioferrite grafted into the skin, animated by psychic attunement to its user. Numerous tendrils of bioferrite spread under the user's skin, making them highly resistant to attacks, but greatly interfering with natural wound healing.</description>
+		<stages>
+			<li>
+				<naturalHealingFactor>0.5</naturalHealingFactor>
+				<statOffsets>
+					<ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+					<ArmorRating_Heat>0.5</ArmorRating_Heat>
+					<MentalBreakThreshold>0.04</MentalBreakThreshold>
+					<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<lowerThreshold>1.8</lowerThreshold>
+				<hediffBelow>TSOA_BioferriteSkinFour</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>TSOA_BioferriteSkin</defName>
+		<label>bioferrite skin graft</label>
+		<description>A plate of bioferrite metal, grafted into the skin. The psychically-reactive metal is animated by its psychic attunement to the user. The metal spreads in tendrils under the user's skin, hardening it against attacks but interfering with the body's ability to heal. Replacing human parts with bioferrite also has deleterious effects on the psyche, driving the user closer to madness.</description>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.9</drawSize>
+			<color>(85,85,85)</color>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>TSOA_InstallBioferriteSkin</RecipeDef>
+			<HediffDef>TSOA_BioferriteSkinThree</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>20</Plasteel>
+			<ComponentSpacer>5</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>8</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>TSOA_InstallBioferriteSkin</defName>
+		<label>install bioferrite skin graft</label>
+		<description>Install bioferrite skin graft.</description>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_BioferriteSkin</ThingDef>
+			<HediffDef>TSOA_BioferriteSkinThree</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing bioferrite skin graft.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_BioferriteSkin</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>TSOA_BioferriteSkin</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>TSOA_BioferriteSkinThree</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>ArmorGland</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+	
+	
+	<!-- Bioferrite Thrall Crown -->
+	
+	<!-- Bioferrite Sovereign Crown -->
+
 </Defs>
