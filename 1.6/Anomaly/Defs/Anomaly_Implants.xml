@@ -555,7 +555,7 @@
 	<HediffDef ParentName="TSOA_BioferriteEyeBase">
 		<defName>TSOA_BioferriteEyeFive</defName>
 		<label>bioferrite eye (ascended)</label>
-		<description>A bioferrite eye implanted into the skull, animated by psychic attunement to its user. The eye no longer shows the world as it is, instead showing a joyless world of death and suffering.</description>
+		<description>A bioferrite eye implanted into the skull, animated by psychic attunement to its user. The eye no longer shows the world as it is, instead revealing a stark and joyless world of predators and prey.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -834,8 +834,140 @@
 	</RecipeDef>
 	
 	
-	<!-- Bioferrite Thrall Crown -->
+	<!-- Sovereign Crown -->
+	<HediffDef ParentName="TSOA_StatExchangerBase">
+		<defName>TSOA_SovereignCrown</defName>
+		<label>sovereign crown</label>
+		<description>A band of bioferrite infused with dark archotech, fused to the skull. Allows the user to form psychic links to those implanted with Thrall Crowns, stealing their psychic power.</description>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_StatExchanger">
+				<isMaster>true</isMaster>
+				<maxLinks>5</maxLinks>
+				<recipientGainFlat>0.10</recipientGainFlat>
+				<affectedStat>PsychicSensitivity</affectedStat>
+				<targetHediffs>
+					<li>TSOA_ThrallCrown</li>
+				</targetHediffs>
+				<linkCompleteEffecter>PsychicRitual_Complete</linkCompleteEffecter>
+				<linkCompleteEffecterScale>0.25</linkCompleteEffecterScale>
+				<linkCompleteSound>PsychicShockLanceCast</linkCompleteSound>
+				<unlinkCompleteEffecter>PsychicRitual_Complete</unlinkCompleteEffecter>
+				<unlinkCompleteEffecterScale>0.25</unlinkCompleteEffecterScale>
+				<unlinkCompleteSound>PsychicShockLanceCast</unlinkCompleteSound>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>TSOA_SovereignCrown</defName>
+		<label>sovereign crown</label>
+		<description>A band of bioferrite infused with dark archotech, fused to the skull. Allows the user to form psychic links to those implanted with a Thrall Crown, stealing their psychic power.</description>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.9</drawSize>
+			<color>(85,85,85)</color>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>TSOA_InstallSovereignCrown</RecipeDef>
+			<HediffDef>TSOA_SovereignCrown</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>20</Plasteel>
+			<ComponentSpacer>5</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>8</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<RecipeDef>
+		<defName>TSOA_InstallSovereignCrown</defName>
+		<label>install sovereign crown</label>
+		<jobString>Installing sovereign crown.</jobString>
+		<workAmount>2500</workAmount>
+		<workerClass>Recipe_InstallImplant</workerClass>
+		<appliedOnFixedBodyParts>
+			<li>Head</li>
+		</appliedOnFixedBodyParts>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_SovereignCrown</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<addsHediff>TSOA_SovereignCrown</addsHediff>
+	</RecipeDef>
+
+	<!-- Thrall Crown -->
+	<HediffDef ParentName="TSOA_StatExchangerBase">
+		<defName>TSOA_ThrallCrown</defName>
+		<label>thrall crown</label>
+		<description>A band of bioferrite, fused to the skull. Exposes the user's mind, allowing those implanted with a Sovereign Crown to link to the user and steal their psychic power.</description>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_StatExchanger">
+				<isMaster>false</isMaster>
+				<isDonor>true</isDonor>
+				<maxLinks>1</maxLinks>
+				<donorLossPercent>0.50</donorLossPercent>
+				<affectedStat>PsychicSensitivity</affectedStat>
+			</li>
+		</comps>
+	</HediffDef>
 	
-	<!-- Bioferrite Sovereign Crown -->
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>TSOA_ThrallCrown</defName>
+		<label>thrall crown</label>
+		<description>A band of bioferrite, fused to the skull. Exposes the user's mind, allowing those implanted with a Sovereign Crown to link to the user and steal their psychic power.</description>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.9</drawSize>
+			<color>(85,85,85)</color>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>TSOA_InstallThrallCrown</RecipeDef>
+			<HediffDef>TSOA_ThrallCrown</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>20</Plasteel>
+			<ComponentSpacer>5</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>8</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<RecipeDef>
+		<defName>TSOA_InstallThrallCrown</defName>
+		<label>install thrall crown</label>
+		<jobString>Installing thrall crown.</jobString>
+		<workAmount>2500</workAmount>
+		<workerClass>Recipe_InstallImplant</workerClass>
+		<appliedOnFixedBodyParts>
+			<li>Head</li>
+		</appliedOnFixedBodyParts>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_ThrallCrown</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<addsHediff>TSOA_ThrallCrown</addsHediff>
+	</RecipeDef>
 
 </Defs>
