@@ -1,13 +1,146 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+	
 	<ThingDef ParentName="BodyPartBionicBase">
 		<defName>TSOA_AnimaThirdEye</defName>
 		<label>Jade eye</label>
 	</ThingDef>
 
 
-	
-	
+
+	<!-- Mentor Crown -->
+	<HediffDef ParentName="TSOA_StatExchangerBase">
+		<defName>TSOA_MentorCrown</defName>
+		<label>mentor crown</label>
+		<description>A band of carved anima tree bark, fused to the skull. Allows the user to form psychic links to one implanted with an Inheritor Crown, gifting their psychic power.</description>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_StatExchanger">
+				<isMaster>true</isMaster>
+				<isDonor>true</isDonor>
+				<donorLossPercent>0.5</donorLossPercent>
+				<affectedStat>PsychicSensitivity</affectedStat>
+				<targetHediffs>
+					<li>TSOA_InheritorCrown</li>
+				</targetHediffs>
+				<linkCompleteEffecter>PsychicRitual_Complete</linkCompleteEffecter>
+				<linkCompleteEffecterScale>0.25</linkCompleteEffecterScale>
+				<linkCompleteSound>PsychicShockLanceCast</linkCompleteSound>
+				<unlinkCompleteEffecter>PsychicRitual_Complete</unlinkCompleteEffecter>
+				<unlinkCompleteEffecterScale>0.25</unlinkCompleteEffecterScale>
+				<unlinkCompleteSound>PsychicShockLanceCast</unlinkCompleteSound>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>TSOA_MentorCrown</defName>
+		<label>mentor crown</label>
+		<description>A band of carved anima tree bark, fused to the skull. Allows the user to form psychic links to one implanted with an Inheritor Crown, gifting their psychic power.</description>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.9</drawSize>
+			<color>(85,85,85)</color>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>TSOA_InstallMentorCrown</RecipeDef>
+			<HediffDef>TSOA_MentorCrown</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>20</Plasteel>
+			<ComponentSpacer>5</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>8</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<RecipeDef>
+		<defName>TSOA_InstallMentorCrown</defName>
+		<label>install Mentor crown</label>
+		<jobString>Installing mentor crown.</jobString>
+		<workAmount>2500</workAmount>
+		<workerClass>Recipe_InstallImplant</workerClass>
+		<appliedOnFixedBodyParts>
+			<li>Head</li>
+		</appliedOnFixedBodyParts>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_MentorCrown</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<addsHediff>TSOA_MentorCrown</addsHediff>
+	</RecipeDef>
+
+	<!-- Inheritor Crown -->
+	<HediffDef ParentName="TSOA_StatExchangerBase">
+		<defName>TSOA_InheritorCrown</defName>
+		<label>Inheritor crown</label>
+		<description>A band of carved anima tree bark, fused to the skull. Exposes the user's mind, allowing those implanted with a Mentor Crown to link to the user and gift their psychic power.</description>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_StatExchanger">
+				<isMaster>false</isMaster>
+				<recipientGainPercent>1</recipientGainPercent>
+				<affectedStat>PsychicSensitivity</affectedStat>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>TSOA_InheritorCrown</defName>
+		<label>Inheritor crown</label>
+		<description>A band of carved anima tree bark, fused to the skull. Exposes the user's mind, allowing those implanted with a Mentor Crown to link to the user and gift their psychic power.</description>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.9</drawSize>
+			<color>(85,85,85)</color>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>TSOA_InstallInheritorCrown</RecipeDef>
+			<HediffDef>TSOA_InheritorCrown</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>20</Plasteel>
+			<ComponentSpacer>5</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>8</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<RecipeDef>
+		<defName>TSOA_InstallInheritorCrown</defName>
+		<label>install inheritor crown</label>
+		<jobString>Installing inheritor crown.</jobString>
+		<workAmount>2500</workAmount>
+		<workerClass>Recipe_InstallImplant</workerClass>
+		<appliedOnFixedBodyParts>
+			<li>Head</li>
+		</appliedOnFixedBodyParts>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_InheritorCrown</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<addsHediff>TSOA_InheritorCrown</addsHediff>
+	</RecipeDef>
 	
 </Defs>
