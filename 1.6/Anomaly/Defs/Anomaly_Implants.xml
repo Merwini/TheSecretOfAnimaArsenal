@@ -3,7 +3,7 @@
 
 	<!-- bioferrite clawed arm -->
 	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="TSOA_BioferriteArmBase">
-		<labelNoun>a set of bioferrite clawed arm</labelNoun>
+		<labelNoun>a bioferrite clawed arm</labelNoun>
 		<descriptionHyperlinks>
 			<ThingDef>TSOA_BioferriteArm</ThingDef>
 		</descriptionHyperlinks>
@@ -563,7 +563,6 @@
 					<MeleeDodgeChance>3</MeleeDodgeChance>
 					<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
 					<AimingDelayFactor>-0.1</AimingDelayFactor>
-
 					<JoyFallRateFactor>0.1</JoyFallRateFactor>
 					<RestFallRateFactor>0.1</RestFallRateFactor>
 					<MentalBreakThreshold>0.04</MentalBreakThreshold>
@@ -646,6 +645,9 @@
 			<solid>true</solid>
 			<betterThanNatural>true</betterThanNatural>
 		</addedPartProps>
+		<tags>
+			<li>ArmorGland</li>
+		</tags>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_BioferriteSkinBase">
@@ -833,7 +835,6 @@
 		</incompatibleWithHediffTags>
 	</RecipeDef>
 	
-	
 	<!-- Sovereign Crown -->
 	<HediffDef ParentName="TSOA_StatExchangerBase">
 		<defName>TSOA_SovereignCrown</defName>
@@ -856,6 +857,9 @@
 				<unlinkCompleteSound>PsychicShockLanceCast</unlinkCompleteSound>
 			</li>
 		</comps>
+		<tags>
+			<li>TSOA_CrownImplant</li>
+		</tags>
 	</HediffDef>
 
 	<ThingDef ParentName="BodyPartBionicBase">
@@ -920,6 +924,9 @@
 				<affectedStat>PsychicSensitivity</affectedStat>
 			</li>
 		</comps>
+		<tags>
+			<li>TSOA_CrownImplant</li>
+		</tags>
 	</HediffDef>
 	
 	<ThingDef ParentName="BodyPartBionicBase">
@@ -968,6 +975,9 @@
 			</li>
 		</ingredients>
 		<addsHediff>TSOA_ThrallCrown</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>TSOA_CrownImplant</li>
+		</incompatibleWithHediffTags>
 	</RecipeDef>
 
 </Defs>

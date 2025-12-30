@@ -1,14 +1,1070 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
 	
+	<!-- Anima Eye -->
+	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="TSOA_AnimaEyeBase">
+		<description>A chunk of jade carved into the shape of an eye, infused with anima tree essence and animated by the user's psychic attunement. The eye helps the user perceive the underlying truth not just of the world, but of themself. This self-insight brings wisdom.</description>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_AnimaEye</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>TSOA_AnimaEye</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+			<partEfficiency>0.5</partEfficiency>
+		</addedPartProps>
+		<renderNodeProperties>
+			<li Class="PawnRenderNodeProperties_Eye">
+				<workerClass>PawnRenderNodeWorker_HediffEye</workerClass>
+				<texPath>Things/Pawn/Wounds/BionicEye</texPath>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>0.15</drawSize>
+				<color>(20,90,20)</color>
+				<drawData>
+					<defaultData>
+						<layer>56</layer>
+						<offset>(0, 0, -0.25)</offset>
+					</defaultData>
+					<dataWest>
+						<flip>true</flip>
+					</dataWest>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+		<tags>
+			<li>TSOA_AnimaEye</li>
+		</tags>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaEyeBase">
+		<defName>TSOA_AnimaEyeOne</defName>
+		<label>anima eye (inert)</label>
+		<description>A chunk of jade carved into the shape of an eye, infused with anima tree essence and animated by the user's psychic attunement. The user's psychic connection is too weak to animate it, and the eye is nearly blind.</description>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.49</upperThreshold>
+				<hediffAbove>TSOA_AnimaEyeTwo</hediffAbove>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaEyeBase">
+		<defName>TSOA_AnimaEyeTwo</defName>
+		<label>anima eye (dampened)</label>
+		<description>A chunk of jade carved into the shape of an eye, infused with anima tree essence and animated by the user's psychic attunement. The eye is weakly attuned, and provides only a fraction of its potential.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<PawnTrapSpringChance>-0.5</PawnTrapSpringChance>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.89</upperThreshold>
+				<hediffAbove>TSOA_AnimaEyeThree</hediffAbove>
+				<lowerThreshold>0.5</lowerThreshold>
+				<hediffBelow>TSOA_AnimaEyeOne</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaEyeBase">
+		<defName>TSOA_AnimaEyeThree</defName>
+		<label>anima eye</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<PawnTrapSpringChance>-0.5</PawnTrapSpringChance>
+					<GlobalLearningFactor>0.2</GlobalLearningFactor>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.19</upperThreshold>
+				<hediffAbove>TSOA_AnimaEyeFour</hediffAbove>
+				<lowerThreshold>0.9</lowerThreshold>
+				<hediffBelow>TSOA_AnimaEyeTwo</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	<HediffDef ParentName="TSOA_AnimaEyeBase">
+		<defName>TSOA_AnimaEyeFour</defName>
+		<label>anima eye (empowered)</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<PawnTrapSpringChance>-0.5</PawnTrapSpringChance>
+					<GlobalLearningFactor>0.2</GlobalLearningFactor>
+					<MeditationFocusGain>0.05</MeditationFocusGain>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.79</upperThreshold>
+				<hediffAbove>TSOA_AnimaEyeFive</hediffAbove>
+				<lowerThreshold>1.2</lowerThreshold>
+				<hediffBelow>TSOA_AnimaEyeThree</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	<HediffDef ParentName="TSOA_AnimaEyeBase">
+		<defName>TSOA_AnimaEyeFive</defName>
+		<label>anima eye (ascended)</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<PawnTrapSpringChance>-0.25</PawnTrapSpringChance>
+					<GlobalLearningFactor>0.2</GlobalLearningFactor>
+					<MeditationFocusGain>0.05</MeditationFocusGain>
+					<MeleeDodgeChance>2</MeleeDodgeChance>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<lowerThreshold>1.8</lowerThreshold>
+				<hediffBelow>TSOA_AnimaEyeFour</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
 	<ThingDef ParentName="BodyPartBionicBase">
-		<defName>TSOA_AnimaThirdEye</defName>
-		<label>Jade eye</label>
+		<defName>TSOA_AnimaEye</defName>
+		<label>anima eye</label>
+		<description>A chunk of jade carved into the shape of an eye, infused with anima tree essence and animated by the user's psychic attunement. Helps the user focus on their inner self, reflecting on their experience to gain wisdom. Can only install one.</description>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.9</drawSize>
+			<color>(85,85,85)</color>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>TSOA_InstallAnimaEye</RecipeDef>
+			<HediffDef>TSOA_AnimaEyeThree</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>20</Plasteel>
+			<ComponentSpacer>5</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>8</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
 	</ThingDef>
 
+	<RecipeDef>
+		<defName>TSOA_InstallAnimaEye</defName>
+		<label>install anima eye</label>
+		<jobString>Installing anima eye.</jobString>
+		<workAmount>2500</workAmount>
+		<workerClass>Recipe_InstallImplant</workerClass>
+		<appliedOnFixedBodyParts>
+			<li>Eye</li>
+		</appliedOnFixedBodyParts>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaEye</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<addsHediff>TSOA_AnimaEyeThree</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>TSOA_AnimaEye</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
 
+	<!-- Anima Lung -->
+	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="TSOA_AnimaLungBase">
+		<description>A rough approximation of a lung, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it infuses the voice with power to communicate with and influence others.</description>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_AnimaLung</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>TSOA_AnimaLung</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+			<partEfficiency>0.9</partEfficiency>
+		</addedPartProps>
+		<tags>
+			<li>TSOA_AnimaLung</li>
+		</tags>
+	</HediffDef>
 
+	<HediffDef ParentName="TSOA_AnimaLungBase">
+		<defName>TSOA_AnimaLungOne</defName>
+		<label>anima lung (inert)</label>
+		<description>A rough approximation of a lung, crafted from anima grass, bark, and jade. The user's psychic attunement is too weak to properly animate the lung, and it functions only as a poor replacement for a natural organ.</description>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.49</upperThreshold>
+				<hediffAbove>TSOA_AnimaLungTwo</hediffAbove>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaLungBase">
+		<defName>TSOA_AnimaLungTwo</defName>
+		<label>anima lung (dampened)</label>
+		<description>A rough approximation of a lung, crafted from anima grass, bark, and jade. The user's psychic attunement animates the lung weakly, and it infuses the user's voice with only a fraction of its potential power.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<SocialImpact>0.1</SocialImpact>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.89</upperThreshold>
+				<hediffAbove>TSOA_AnimaLungThree</hediffAbove>
+				<lowerThreshold>0.5</lowerThreshold>
+				<hediffBelow>TSOA_AnimaLungOne</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaLungBase">
+		<defName>TSOA_AnimaLungThree</defName>
+		<label>anima lung</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<SocialImpact>0.1</SocialImpact>
+					<NegotiationAbility>0.1</NegotiationAbility>
+					<ConversionPower>0.1</ConversionPower>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.19</upperThreshold>
+				<hediffAbove>TSOA_AnimaLungFour</hediffAbove>
+				<lowerThreshold>0.9</lowerThreshold>
+				<hediffBelow>TSOA_AnimaLungTwo</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaLungBase">
+		<defName>TSOA_AnimaLungFour</defName>
+		<label>anima lung (empowered)</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<SocialImpact>0.1</SocialImpact>
+					<NegotiationAbility>0.1</NegotiationAbility>
+					<ConversionPower>0.1</ConversionPower>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.79</upperThreshold>
+				<hediffAbove>TSOA_AnimaLungFive</hediffAbove>
+				<lowerThreshold>1.2</lowerThreshold>
+				<hediffBelow>TSOA_AnimaLungThree</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaLungBase">
+		<defName>TSOA_AnimaLungFive</defName>
+		<label>anima lung (ascended)</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<SocialImpact>0.1</SocialImpact>
+					<NegotiationAbility>0.1</NegotiationAbility>
+					<ConversionPower>0.1</ConversionPower>
+					<TradePriceImprovement>0.1</TradePriceImprovement>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<lowerThreshold>1.8</lowerThreshold>
+				<hediffBelow>TSOA_AnimaLungFour</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>TSOA_AnimaLung</defName>
+		<label>anima lung</label>
+		<description>A rough approximation of a lung, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it infuses the voice with power to communicate with and influence others. Can only install one.</description>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.9</drawSize>
+			<color>(85,85,85)</color>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>TSOA_InstallAnimaLung</RecipeDef>
+			<HediffDef>TSOA_AnimaLungThree</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>20</Plasteel>
+			<ComponentSpacer>5</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>8</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<RecipeDef>
+		<defName>TSOA_InstallAnimaLung</defName>
+		<label>install anima lung</label>
+		<jobString>Installing anima lung.</jobString>
+		<workAmount>2500</workAmount>
+		<workerClass>Recipe_InstallImplant</workerClass>
+		<appliedOnFixedBodyParts>
+			<li>Lung</li>
+		</appliedOnFixedBodyParts>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaLung</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<addsHediff>TSOA_AnimaLungThree</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>TSOA_AnimaLung</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+
+	<!-- Anima Heart -->
+	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="TSOA_AnimaHeartBase">
+		<description>A rough approximation of a Heart, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it helps direct the body's healing energy to where it is most needed.</description>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_AnimaHeart</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>TSOA_AnimaHeart</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+			<partEfficiency>0.9</partEfficiency>
+		</addedPartProps>
+		<tags>
+			<li>TSOA_AnimaHeart</li>
+		</tags>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaHeartBase">
+		<defName>TSOA_AnimaHeartOne</defName>
+		<label>anima heart (inert)</label>
+		<description>A rough approximation of a heart, crafted from anima grass, bark, and jade. The user's psychic attunement is too weak to properly animate the heart, and it functions only as a poor replacement for a natural organ.</description>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.49</upperThreshold>
+				<hediffAbove>TSOA_AnimaHeartTwo</hediffAbove>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaHeartBase">
+		<defName>TSOA_AnimaHeartTwo</defName>
+		<label>anima heart (dampened)</label>
+		<description>A rough approximation of a Heart, crafted from anima grass, bark, and jade. The user's psychic attunement animates the heart weakly, and it provides only a fraction of its healing potential.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<InjuryHealingFactor>0.2</InjuryHealingFactor>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.89</upperThreshold>
+				<hediffAbove>TSOA_AnimaHeartThree</hediffAbove>
+				<lowerThreshold>0.5</lowerThreshold>
+				<hediffBelow>TSOA_AnimaHeartOne</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaHeartBase">
+		<defName>TSOA_AnimaHeartThree</defName>
+		<label>anima heart</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<InjuryHealingFactor>0.2</InjuryHealingFactor>
+				</statOffsets>
+				<totalBleedFactor>0.75</totalBleedFactor>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.19</upperThreshold>
+				<hediffAbove>TSOA_AnimaHeartFour</hediffAbove>
+				<lowerThreshold>0.9</lowerThreshold>
+				<hediffBelow>TSOA_AnimaHeartTwo</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaHeartBase">
+		<defName>TSOA_AnimaHeartFour</defName>
+		<label>anima heart (empowered)</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<InjuryHealingFactor>0.2</InjuryHealingFactor>
+					<ImmunityGainSpeed>0.2</ImmunityGainSpeed>
+				</statOffsets>
+				<totalBleedFactor>0.5</totalBleedFactor>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.79</upperThreshold>
+				<hediffAbove>TSOA_AnimaHeartFive</hediffAbove>
+				<lowerThreshold>1.2</lowerThreshold>
+				<hediffBelow>TSOA_AnimaHeartThree</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaHeartBase">
+		<defName>TSOA_AnimaHeartFive</defName>
+		<label>anima heart (ascended)</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<InjuryHealingFactor>0.2</InjuryHealingFactor>
+					<ImmunityGainSpeed>0.2</ImmunityGainSpeed>
+					<LifespanFactor>0.5</LifespanFactor>
+				</statOffsets>
+				<totalBleedFactor>0.25</totalBleedFactor>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<lowerThreshold>1.8</lowerThreshold>
+				<hediffBelow>TSOA_AnimaHeartFour</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>TSOA_AnimaHeart</defName>
+		<label>anima heart</label>
+		<description>A rough approximation of a heart, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it infuses the body with healing energy. Can only install one.</description>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.9</drawSize>
+			<color>(85,85,85)</color>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>TSOA_InstallAnimaHeart</RecipeDef>
+			<HediffDef>TSOA_AnimaHeartThree</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>20</Plasteel>
+			<ComponentSpacer>5</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>8</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<RecipeDef>
+		<defName>TSOA_InstallAnimaHeart</defName>
+		<label>install anima heart</label>
+		<jobString>Installing anima heart.</jobString>
+		<workAmount>2500</workAmount>
+		<workerClass>Recipe_InstallImplant</workerClass>
+		<appliedOnFixedBodyParts>
+			<li>Heart</li>
+		</appliedOnFixedBodyParts>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaHeart</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<addsHediff>TSOA_AnimaHeartThree</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>TSOA_AnimaHeart</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+
+	<!-- Anima Liver -->
+	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="TSOA_AnimaLiverBase">
+		<description>A rough approximation of a liver, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it helps the body project and store its inner power.</description>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_AnimaLiver</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>TSOA_AnimaLiver</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+			<partEfficiency>0.9</partEfficiency>
+		</addedPartProps>
+		<tags>
+			<li>TSOA_AnimaLiver</li>
+		</tags>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaLiverBase">
+		<defName>TSOA_AnimaLiverOne</defName>
+		<label>anima liver (inert)</label>
+		<description>A rough approximation of a liver, crafted from anima grass, bark, and jade. The user's psychic attunement is too weak to properly animate the liver, and it functions only as a poor replacement for a natural organ.</description>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.49</upperThreshold>
+				<hediffAbove>TSOA_AnimaLiverTwo</hediffAbove>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaLiverBase">
+		<defName>TSOA_AnimaLiverTwo</defName>
+		<label>anima liver (dampened)</label>
+		<description>A rough approximation of a liver, crafted from anima grass, bark, and jade. The user's psychic attunement animates the liver weakly, and it provides only a fraction of its potential.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<RestFallRateFactor>-0.1</RestFallRateFactor>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.89</upperThreshold>
+				<hediffAbove>TSOA_AnimaLiverThree</hediffAbove>
+				<lowerThreshold>0.5</lowerThreshold>
+				<hediffBelow>TSOA_AnimaLiverOne</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaLiverBase">
+		<defName>TSOA_AnimaLiverThree</defName>
+		<label>anima liver</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<RestFallRateFactor>-0.1</RestFallRateFactor>
+					<PainShockThreshold>0.03</PainShockThreshold>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.19</upperThreshold>
+				<hediffAbove>TSOA_AnimaLiverFour</hediffAbove>
+				<lowerThreshold>0.9</lowerThreshold>
+				<hediffBelow>TSOA_AnimaLiverTwo</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaLiverBase">
+		<defName>TSOA_AnimaLiverFour</defName>
+		<label>anima liver (empowered)</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<RestFallRateFactor>-0.1</RestFallRateFactor>
+					<PainShockThreshold>0.03</PainShockThreshold>
+					<PsychicEntropyMax>20</PsychicEntropyMax>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.79</upperThreshold>
+				<hediffAbove>TSOA_AnimaLiverFive</hediffAbove>
+				<lowerThreshold>1.2</lowerThreshold>
+				<hediffBelow>TSOA_AnimaLiverThree</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaLiverBase">
+		<defName>TSOA_AnimaLiverFive</defName>
+		<label>anima liver (ascended)</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<RestFallRateFactor>-0.1</RestFallRateFactor>
+					<PainShockThreshold>0.03</PainShockThreshold>
+					<PsychicEntropyMax>20</PsychicEntropyMax>
+					<ArrestSuccessChance>0.1</ArrestSuccessChance>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<lowerThreshold>1.8</lowerThreshold>
+				<hediffBelow>TSOA_AnimaLiverFour</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>TSOA_AnimaLiver</defName>
+		<label>anima liver</label>
+		<description>A rough approximation of a liver, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it helps the body project and store its inner power.</description>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.9</drawSize>
+			<color>(85,85,85)</color>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>TSOA_InstallAnimaLiver</RecipeDef>
+			<HediffDef>TSOA_AnimaLiverThree</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>20</Plasteel>
+			<ComponentSpacer>5</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>8</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<RecipeDef>
+		<defName>TSOA_InstallAnimaLiver</defName>
+		<label>install anima Liver</label>
+		<jobString>Installing anima Liver.</jobString>
+		<workAmount>2500</workAmount>
+		<workerClass>Recipe_InstallImplant</workerClass>
+		<appliedOnFixedBodyParts>
+			<li>Liver</li>
+		</appliedOnFixedBodyParts>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaLiver</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<addsHediff>TSOA_AnimaLiverThree</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>TSOA_AnimaLiver</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+
+	<!-- Anima Kidney -->
+	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="TSOA_AnimaKidneyBase">
+		<description>A rough approximation of a kidney, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it helps the body .</description>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_AnimaKidney</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>TSOA_AnimaKidney</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+			<partEfficiency>0.9</partEfficiency>
+		</addedPartProps>
+		<tags>
+			<li>TSOA_AnimaKidney</li>
+		</tags>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaKidneyBase">
+		<defName>TSOA_AnimaKidneyOne</defName>
+		<label>anima kidney (inert)</label>
+		<description>A rough approximation of a Kidney, crafted from anima grass, bark, and jade. The user's psychic attunement is too weak to properly animate the kidney, and it functions only as a poor replacement for a natural organ.</description>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.49</upperThreshold>
+				<hediffAbove>TSOA_AnimaKidneyTwo</hediffAbove>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaKidneyBase">
+		<defName>TSOA_AnimaKidneyTwo</defName>
+		<label>anima kidney (dampened)</label>
+		<description>A rough approximation of a kidney, crafted from anima grass, bark, and jade. The user's psychic attunement animates the kidney weakly, and it provides only a fraction of its potential.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<JoyFallRateFactor>-0.1</JoyFallRateFactor>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.89</upperThreshold>
+				<hediffAbove>TSOA_AnimaKidneyThree</hediffAbove>
+				<lowerThreshold>0.5</lowerThreshold>
+				<hediffBelow>TSOA_AnimaKidneyOne</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaKidneyBase">
+		<defName>TSOA_AnimaKidneyThree</defName>
+		<label>anima kidney</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<JoyFallRateFactor>-0.1</JoyFallRateFactor>
+					<TSOA_ComfortGainFactor>0.1</TSOA_ComfortGainFactor>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.19</upperThreshold>
+				<hediffAbove>TSOA_AnimaKidneyFour</hediffAbove>
+				<lowerThreshold>0.9</lowerThreshold>
+				<hediffBelow>TSOA_AnimaKidneyTwo</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaKidneyBase">
+		<defName>TSOA_AnimaKidneyFour</defName>
+		<label>anima kidney (empowered)</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<JoyFallRateFactor>-0.1</JoyFallRateFactor>
+					<TSOA_ComfortGainFactor>0.1</TSOA_ComfortGainFactor>
+					<MentalBreakThreshold>-0.02</MentalBreakThreshold>
+					<PsychicEntropyRecoveryRateOffset>0.1</PsychicEntropyRecoveryRateOffset>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.79</upperThreshold>
+				<hediffAbove>TSOA_AnimaKidneyFive</hediffAbove>
+				<lowerThreshold>1.2</lowerThreshold>
+				<hediffBelow>TSOA_AnimaKidneyThree</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaKidneyBase">
+		<defName>TSOA_AnimaKidneyFive</defName>
+		<label>anima kidney (ascended)</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<JoyFallRateFactor>-0.1</JoyFallRateFactor>
+					<TSOA_ComfortGainFactor>0.1</TSOA_ComfortGainFactor>
+					<MentalBreakThreshold>-0.02</MentalBreakThreshold>
+					<PsychicEntropyRecoveryRateOffset>0.1</PsychicEntropyRecoveryRateOffset>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<lowerThreshold>1.8</lowerThreshold>
+				<hediffBelow>TSOA_AnimaKidneyFour</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>TSOA_AnimaKidney</defName>
+		<label>anima kidney</label>
+		<description>A rough approximation of a kidney, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it helps the body project and store its inner power.</description>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.9</drawSize>
+			<color>(85,85,85)</color>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>TSOA_InstallAnimaKidney</RecipeDef>
+			<HediffDef>TSOA_AnimaKidneyThree</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>20</Plasteel>
+			<ComponentSpacer>5</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>8</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<RecipeDef>
+		<defName>TSOA_InstallAnimaKidney</defName>
+		<label>install anima kidney</label>
+		<jobString>Installing anima Kidney.</jobString>
+		<workAmount>2500</workAmount>
+		<workerClass>Recipe_InstallImplant</workerClass>
+		<appliedOnFixedBodyParts>
+			<li>Kidney</li>
+		</appliedOnFixedBodyParts>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaKidney</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<addsHediff>TSOA_AnimaKidneyThree</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>TSOA_AnimaKidney</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+
+	<!-- Anima Stomach -->
+	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="TSOA_AnimaStomachBase">
+		<description>A rough approximation of a stomach, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it helps the body stabilize its energy.</description>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_AnimaStomach</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>TSOA_AnimaStomach</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+			<partEfficiency>0.9</partEfficiency>
+		</addedPartProps>
+		<tags>
+			<li>TSOA_AnimaStomach</li>
+		</tags>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaStomachBase">
+		<defName>TSOA_AnimaStomachOne</defName>
+		<label>anima stomach (inert)</label>
+		<description>A rough approximation of a Stomach, crafted from anima grass, bark, and jade. The user's psychic attunement is too weak to properly animate the stomach, and it functions only as a poor replacement for a natural organ.</description>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.49</upperThreshold>
+				<hediffAbove>TSOA_AnimaStomachTwo</hediffAbove>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaStomachBase">
+		<defName>TSOA_AnimaStomachTwo</defName>
+		<label>anima stomach (dampened)</label>
+		<description>A rough approximation of a stomach, crafted from anima grass, bark, and jade. The user's psychic attunement animates the stomach weakly, and it provides only a fraction of its potential.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<MaxNutrition>1</MaxNutrition>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>0.89</upperThreshold>
+				<hediffAbove>TSOA_AnimaStomachThree</hediffAbove>
+				<lowerThreshold>0.5</lowerThreshold>
+				<hediffBelow>TSOA_AnimaStomachOne</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaStomachBase">
+		<defName>TSOA_AnimaStomachThree</defName>
+		<label>anima stomach</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<MaxNutrition>1</MaxNutrition>
+					<ToxicEnvironmentResistance>0.25</ToxicEnvironmentResistance>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.19</upperThreshold>
+				<hediffAbove>TSOA_AnimaStomachFour</hediffAbove>
+				<lowerThreshold>0.9</lowerThreshold>
+				<hediffBelow>TSOA_AnimaStomachTwo</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaStomachBase">
+		<defName>TSOA_AnimaStomachFour</defName>
+		<label>anima stomach (empowered)</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<MaxNutrition>1</MaxNutrition>
+					<ToxicEnvironmentResistance>0.25</ToxicEnvironmentResistance>
+					<ComfyTemperatureMin>-4</ComfyTemperatureMin>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<upperThreshold>1.79</upperThreshold>
+				<hediffAbove>TSOA_AnimaStomachFive</hediffAbove>
+				<lowerThreshold>1.2</lowerThreshold>
+				<hediffBelow>TSOA_AnimaStomachThree</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="TSOA_AnimaStomachBase">
+		<defName>TSOA_AnimaStomachFive</defName>
+		<label>anima stomach (ascended)</label>
+		<stages>
+			<li>
+				<statOffsets>
+					<MaxNutrition>1</MaxNutrition>
+					<ToxicEnvironmentResistance>0.25</ToxicEnvironmentResistance>
+					<ComfyTemperatureMin>-4</ComfyTemperatureMin>
+					<ComfyTemperatureMax>4</ComfyTemperatureMax>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
+		<comps>
+			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
+				<evolvingStat>PsychicSensitivity</evolvingStat>
+				<lowerThreshold>1.8</lowerThreshold>
+				<hediffBelow>TSOA_AnimaStomachFour</hediffBelow>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="BodyPartBionicBase">
+		<defName>TSOA_AnimaStomach</defName>
+		<label>anima stomach</label>
+		<description>A rough approximation of a stomach, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it helps the body stabilize its energy.</description>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.9</drawSize>
+			<color>(85,85,85)</color>
+		</graphicData>
+		<descriptionHyperlinks>
+			<RecipeDef>TSOA_InstallAnimaStomach</RecipeDef>
+			<HediffDef>TSOA_AnimaStomachThree</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Plasteel>20</Plasteel>
+			<ComponentSpacer>5</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>8</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<RecipeDef>
+		<defName>TSOA_InstallAnimaStomach</defName>
+		<label>install anima stomach</label>
+		<jobString>Installing anima Stomach.</jobString>
+		<workAmount>2500</workAmount>
+		<workerClass>Recipe_InstallImplant</workerClass>
+		<appliedOnFixedBodyParts>
+			<li>Stomach</li>
+		</appliedOnFixedBodyParts>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaStomach</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<addsHediff>TSOA_AnimaStomachThree</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>TSOA_AnimaStomach</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+	
 	<!-- Mentor Crown -->
 	<HediffDef ParentName="TSOA_StatExchangerBase">
 		<defName>TSOA_MentorCrown</defName>
@@ -31,6 +1087,9 @@
 				<unlinkCompleteSound>PsychicShockLanceCast</unlinkCompleteSound>
 			</li>
 		</comps>
+		<tags>
+			<li>TSOA_CrownImplant</li>
+		</tags>
 	</HediffDef>
 
 	<ThingDef ParentName="BodyPartBionicBase">
@@ -93,6 +1152,9 @@
 				<affectedStat>PsychicSensitivity</affectedStat>
 			</li>
 		</comps>
+		<tags>
+			<li>TSOA_CrownImplant</li>
+		</tags>
 	</HediffDef>
 
 	<ThingDef ParentName="BodyPartBionicBase">
@@ -141,6 +1203,9 @@
 			</li>
 		</ingredients>
 		<addsHediff>TSOA_InheritorCrown</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>TSOA_CrownImplant</li>
+		</incompatibleWithHediffTags>
 	</RecipeDef>
 	
 </Defs>

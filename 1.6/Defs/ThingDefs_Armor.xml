@@ -80,7 +80,7 @@
 		</comps>
 	</ThingDef>
 
-	<ThingDef ParentName="ApparelMakeableBase">
+	<ThingDef ParentName="ApparelBase">
 		<defName>TSOA_AnimaHeaddress</defName>
 		<label>anima shaman headdress</label>
 		<description>A ritual headdress woven from anima grass and reinforced with plates of anima tree bark. Provides only light physical protection, but significantly increases psychic sensitivty and helps disperse neural heat more quickly.</description>
@@ -111,7 +111,9 @@
 			<TSOA_AnimaGrassResource>45</TSOA_AnimaGrassResource>
 			<TSOA_AnimaBark>2</TSOA_AnimaBark>
 		</costList>
-		<recipeMaker>
+		
+		
+		<!--<recipeMaker>
 			<researchPrerequisite>TSOA_AnimaArmor</researchPrerequisite>
 			<recipeUsers>
 				<li>ElectricTailoringBench</li>
@@ -119,7 +121,7 @@
 			</recipeUsers>
 			<displayPriority>276</displayPriority>
 			<unfinishedThingDef>UnfinishedMask</unfinishedThingDef>
-		</recipeMaker>
+		</recipeMaker>-->
 
 		<thingCategories>
 			<li>Apparel</li>
@@ -149,5 +151,55 @@
 			<li>Armor</li>
 		</tradeTags>
 	</ThingDef>
+
+	<RecipeDef>
+		<defName>TSOA_Make_AnimaHeaddress</defName>
+		<label>make anima shaman headdress</label>
+		<jobString>Making anima shaman headdress.</jobString>
+
+		<researchPrerequisite>TSOA_AnimaArmor</researchPrerequisite>
+
+		<workAmount>8000</workAmount>
+		<workSkill>Crafting</workSkill>
+
+		<effectWorking>Tailor</effectWorking>
+		<soundWorking>Recipe_Tailor</soundWorking>
+
+		<recipeUsers>
+			<li>ElectricTailoringBench</li>
+			<li>HandTailoringBench</li>
+		</recipeUsers>
+
+		<products>
+			<TSOA_AnimaHeaddress>1</TSOA_AnimaHeaddress>
+		</products>
+
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaGrassResource</li>
+					</thingDefs>
+				</filter>
+				<count>45</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaBark</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+
+		<unfinishedThingDef>UnfinishedMask</unfinishedThingDef>
+		<displayPriority>276</displayPriority>
+		<modExtensions>
+			<li Class="nuff.tsoa.core.PsyLinkRecipeExtension">
+				<minPsylinkLevel>3</minPsylinkLevel>
+			</li>
+		</modExtensions>
+	</RecipeDef>
 
 </Defs>
