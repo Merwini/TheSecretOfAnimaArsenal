@@ -1,6 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+	<ThingDef ParentName="BodyPartBase" Abstract="True" Name="TSOA_BioferriteBodyPartBase">
+		<techLevel>Medieval</techLevel>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(100,80,80)</color>
+		</graphicData>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<statBases>
+			<Mass>5</Mass>
+		</statBases>
+	</ThingDef>
+
+	<RecipeDef Abstract="True" Name="TSOA_CraftBioferritePartBase">
+		<workSkill>Crafting</workSkill>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Smith</soundWorking>
+		<workAmount>26000</workAmount>
+		<researchPrerequisite>TSOA_BioferriteImplants</researchPrerequisite>
+		<unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+		<recipeUsers>
+			<li>ElectricSmithy</li>
+			<li>FueledSmithy</li>
+		</recipeUsers>
+		<displayPriority>300</displayPriority>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Bioferrite</li>
+					</thingDefs>
+				</filter>
+				<count>75</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Shard</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+
+		<modExtensions>
+			<li Class="nuff.tsoa.core.PsyLinkRecipeExtension">
+				<minPsylinkLevel>3</minPsylinkLevel>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+	
 	<!-- bioferrite clawed arm -->
 	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="TSOA_BioferriteArmBase">
 		<labelNoun>a bioferrite clawed arm</labelNoun>
@@ -201,31 +259,24 @@
 		</addedPartProps>
 	</HediffDef>
 
-	<ThingDef ParentName="BodyPartBionicBase">
+	<ThingDef ParentName="TSOA_BioferriteBodyPartBase">
 		<defName>TSOA_BioferriteArm</defName>
 		<label>bioferrite clawed arm</label>
 		<description>An arm made of bioferrite, ending in clawed fingers. The psychically-reactive metal is animated by its psychic attunement to the user. Becomes sharper and more dangerous as the user's psychic powers grow, growing more effective as a weapon but less effective for work. Replacing human parts with bioferrite also has deleterious effects on the psyche, driving the user closer to madness.</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.80</drawSize>
-			<color>(100,80,80)</color>
-		</graphicData>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallBioferriteArm</RecipeDef>
 			<HediffDef>TSOA_BioferriteArmThree</HediffDef>
 		</descriptionHyperlinks>
-		<costList>
-			<Plasteel>15</Plasteel>
-			<ComponentSpacer>4</ComponentSpacer>
-		</costList>
-		<thingSetMakerTags>
-			<li>RewardStandardMidFreq</li>
-		</thingSetMakerTags>
-		<statBases>
-			<Mass>5</Mass>
-		</statBases>
 	</ThingDef>
+
+	<RecipeDef ParentName="TSOA_CraftBioferritePartBase">
+		<defName>TSOA_CraftBioferriteArm</defName>
+		<label>make bioferrite arm</label>
+		<jobString>Making bioferrite arm.</jobString>
+		<products>
+			<TSOA_BioferriteArm>1</TSOA_BioferriteArm>
+		</products>
+	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
 		<defName>TSOA_InstallBioferriteArm</defName>
@@ -288,7 +339,7 @@
 
 	<HediffDef ParentName="TSOA_BioferriteLegBase">
 		<defName>TSOA_BioferriteLegTwo</defName>
-		<label>bioferrite legs (dampened)</label>
+		<label>bioferrite leg (dampened)</label>
 		<description>A bioferrite leg, animated by psychic attunement to its user. The user's weak psychic connection leaves it stiff and slow.</description>
 		<comps>
 			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
@@ -306,7 +357,7 @@
 
 	<HediffDef ParentName="TSOA_BioferriteLegBase">
 		<defName>TSOA_BioferriteLegThree</defName>
-		<label>bioferrite Leg</label>
+		<label>bioferrite leg</label>
 		<description>A bioferrite leg, animated by psychic attunement to its user. The user's psychic connection makes it function about as well as a natural limb.</description>
 		<stages>
 			<li>
@@ -379,31 +430,24 @@
 		</addedPartProps>
 	</HediffDef>
 
-	<ThingDef ParentName="BodyPartBionicBase">
+	<ThingDef ParentName="TSOA_BioferriteBodyPartBase">
 		<defName>TSOA_BioferriteLeg</defName>
 		<label>bioferrite leg</label>
 		<description>A leg made of bioferrite. The psychically-reactive metal is animated by its psychic attunement to the user. Becomes faster and more agile as the user's psychic powers grow, but also consumes more of the user's energy. Replacing human parts with bioferrite also has deleterious effects on the psyche, driving the user closer to madness.</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.80</drawSize>
-			<color>(100,80,80)</color>
-		</graphicData>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallBioferriteLeg</RecipeDef>
 			<HediffDef>TSOA_BioferriteLegThree</HediffDef>
 		</descriptionHyperlinks>
-		<costList>
-			<Plasteel>15</Plasteel>
-			<ComponentSpacer>4</ComponentSpacer>
-		</costList>
-		<thingSetMakerTags>
-			<li>RewardStandardMidFreq</li>
-		</thingSetMakerTags>
-		<statBases>
-			<Mass>5</Mass>
-		</statBases>
 	</ThingDef>
+
+	<RecipeDef ParentName="TSOA_CraftBioferritePartBase">
+		<defName>TSOA_CraftBioferriteLeg</defName>
+		<label>make bioferrite leg</label>
+		<jobString>Making bioferrite leg.</jobString>
+		<products>
+			<TSOA_BioferriteLeg>1</TSOA_BioferriteLeg>
+		</products>
+	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
 		<defName>TSOA_InstallBioferriteLeg</defName>
@@ -578,31 +622,24 @@
 		</comps>
 	</HediffDef>
 
-	<ThingDef ParentName="BodyPartBionicBase">
+	<ThingDef ParentName="TSOA_BioferriteBodyPartBase">
 		<defName>TSOA_BioferriteEye</defName>
 		<label>bioferrite eye</label>
 		<description>An eye shaped from bioferrite. The psychically-reactive metal is animated by its psychic attunement to the user. As the user's psychic sensitivity increases, it alters perception to show the darkness and violence of the world more clearly, at the expense of everything else. Replacing human parts with bioferrite also has deleterious effects on the psyche, driving the user closer to madness.</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.8</drawSize>
-			<color>(90,70,90)</color>
-		</graphicData>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallBioferriteEye</RecipeDef>
 			<HediffDef>TSOA_BioferriteEyeThree</HediffDef>
 		</descriptionHyperlinks>
-		<costList>
-			<Plasteel>10</Plasteel>
-			<ComponentSpacer>3</ComponentSpacer>
-		</costList>
-		<statBases>
-			<Mass>1</Mass>
-		</statBases>
-		<thingSetMakerTags>
-			<li>RewardStandardMidFreq</li>
-		</thingSetMakerTags>
 	</ThingDef>
+
+	<RecipeDef ParentName="TSOA_CraftBioferritePartBase">
+		<defName>TSOA_CraftBioferriteEye</defName>
+		<label>make bioferrite eye</label>
+		<jobString>Making bioferrite eye.</jobString>
+		<products>
+			<TSOA_BioferriteEye>1</TSOA_BioferriteEye>
+		</products>
+	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
 		<defName>TSOA_InstallBioferriteEye</defName>
@@ -776,33 +813,26 @@
 		</comps>
 	</HediffDef>
 
-	<ThingDef ParentName="BodyPartBionicBase">
+	<ThingDef ParentName="TSOA_BioferriteBodyPartBase">
 		<defName>TSOA_BioferriteSkin</defName>
 		<label>bioferrite skin graft</label>
 		<description>A plate of bioferrite metal, grafted into the skin. The psychically-reactive metal is animated by its psychic attunement to the user. The metal spreads in tendrils under the user's skin, hardening it against attacks but interfering with the body's ability to heal. Replacing human parts with bioferrite also has deleterious effects on the psyche, driving the user closer to madness.</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.9</drawSize>
-			<color>(85,85,85)</color>
-		</graphicData>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallBioferriteSkin</RecipeDef>
 			<HediffDef>TSOA_BioferriteSkinThree</HediffDef>
 		</descriptionHyperlinks>
-		<costList>
-			<Plasteel>20</Plasteel>
-			<ComponentSpacer>5</ComponentSpacer>
-		</costList>
-		<statBases>
-			<Mass>8</Mass>
-		</statBases>
-		<thingSetMakerTags>
-			<li>RewardStandardMidFreq</li>
-		</thingSetMakerTags>
 	</ThingDef>
 
-	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+	<RecipeDef ParentName="TSOA_CraftBioferritePartBase">
+		<defName>TSOA_CraftBioferriteSkin</defName>
+		<label>make bioferrite skin</label>
+		<jobString>Making bioferrite skin.</jobString>
+		<products>
+			<TSOA_BioferriteSkin>1</TSOA_BioferriteSkin>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
 		<defName>TSOA_InstallBioferriteSkin</defName>
 		<label>install bioferrite skin graft</label>
 		<description>Install bioferrite skin graft.</description>
@@ -862,36 +892,30 @@
 		</tags>
 	</HediffDef>
 
-	<ThingDef ParentName="BodyPartBionicBase">
+	<ThingDef ParentName="TSOA_BioferriteBodyPartBase">
 		<defName>TSOA_SovereignCrown</defName>
-		<label>sovereign crown</label>
+		<label>sovereign crown implant</label>
 		<description>A band of bioferrite infused with dark archotech, fused to the skull. Allows the user to form psychic links to those implanted with a Thrall Crown, stealing their psychic power.</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.9</drawSize>
-			<color>(85,85,85)</color>
-		</graphicData>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallSovereignCrown</RecipeDef>
 			<HediffDef>TSOA_SovereignCrown</HediffDef>
 		</descriptionHyperlinks>
-		<costList>
-			<Plasteel>20</Plasteel>
-			<ComponentSpacer>5</ComponentSpacer>
-		</costList>
-		<statBases>
-			<Mass>8</Mass>
-		</statBases>
-		<thingSetMakerTags>
-			<li>RewardStandardMidFreq</li>
-		</thingSetMakerTags>
 	</ThingDef>
 
-	<RecipeDef>
+	<RecipeDef ParentName="TSOA_CraftBioferritePartBase">
+		<defName>TSOA_CraftSovereignCrown</defName>
+		<label>make sovereign crown implant</label>
+		<jobString>Making sovereign crown implant.</jobString>
+		<products>
+			<TSOA_SovereignCrown>1</TSOA_SovereignCrown>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
 		<defName>TSOA_InstallSovereignCrown</defName>
-		<label>install sovereign crown</label>
-		<jobString>Installing sovereign crown.</jobString>
+		<label>install sovereign crown implant</label>
+		<description>Install a sovereign crown implant.</description>
+		<jobString>Installing sovereign crown implant.</jobString>
 		<workAmount>2500</workAmount>
 		<workerClass>Recipe_InstallImplant</workerClass>
 		<appliedOnFixedBodyParts>
@@ -929,36 +953,30 @@
 		</tags>
 	</HediffDef>
 	
-	<ThingDef ParentName="BodyPartBionicBase">
+	<ThingDef ParentName="TSOA_BioferriteBodyPartBase">
 		<defName>TSOA_ThrallCrown</defName>
-		<label>thrall crown</label>
+		<label>thrall crown implant</label>
 		<description>A band of bioferrite, fused to the skull. Exposes the user's mind, allowing those implanted with a Sovereign Crown to link to the user and steal their psychic power.</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.9</drawSize>
-			<color>(85,85,85)</color>
-		</graphicData>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallThrallCrown</RecipeDef>
 			<HediffDef>TSOA_ThrallCrown</HediffDef>
 		</descriptionHyperlinks>
-		<costList>
-			<Plasteel>20</Plasteel>
-			<ComponentSpacer>5</ComponentSpacer>
-		</costList>
-		<statBases>
-			<Mass>8</Mass>
-		</statBases>
-		<thingSetMakerTags>
-			<li>RewardStandardMidFreq</li>
-		</thingSetMakerTags>
 	</ThingDef>
 
-	<RecipeDef>
+	<RecipeDef ParentName="TSOA_CraftBioferritePartBase">
+		<defName>TSOA_CraftThrallCrown</defName>
+		<label>make sovereign thrall implant</label>
+		<jobString>Making thrall crown implant.</jobString>
+		<products>
+			<TSOA_ThrallCrown>1</TSOA_ThrallCrown>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
 		<defName>TSOA_InstallThrallCrown</defName>
-		<label>install thrall crown</label>
-		<jobString>Installing thrall crown.</jobString>
+		<label>install thrall crown implant</label>
+		<description>Install a thrall crown implant.</description>
+		<jobString>Installing thrall crown implant.</jobString>
 		<workAmount>2500</workAmount>
 		<workerClass>Recipe_InstallImplant</workerClass>
 		<appliedOnFixedBodyParts>

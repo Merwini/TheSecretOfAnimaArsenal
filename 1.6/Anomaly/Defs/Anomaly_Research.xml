@@ -30,5 +30,18 @@
 		<researchViewX>1.00</researchViewX>
 		<researchViewY>5.60</researchViewY>
 	</ResearchProjectDef>
-	
+
+	<ResearchProjectDef>
+		<defName>TSOA_BioferriteImplants</defName>
+		<label>bioferrite limbs</label>
+		<description>Craft artificial body parts made from bioferrite and shards of dark archotech. These limbs feed on the bearer's psychic sensitivity, growing stronger but weakening the bearer in other ways.</description>
+		<baseCost>2500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>TSOA_VoidOne</li>
+		</prerequisites>
+		<tab>TSOA_ResearchTab</tab>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>3.60</researchViewY>
+	</ResearchProjectDef>
 </Defs>
