@@ -197,7 +197,7 @@
 		<displayPriority>276</displayPriority>
 		<modExtensions>
 			<li Class="nuff.tsoa.core.PsyLinkRecipeExtension">
-				<minPsylinkLevel>3</minPsylinkLevel>
+				<minPsylinkLevel>2</minPsylinkLevel>
 			</li>
 		</modExtensions>
 	</RecipeDef>

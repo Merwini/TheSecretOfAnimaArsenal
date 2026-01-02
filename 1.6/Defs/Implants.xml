@@ -1,5 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
+	<ThingDef ParentName="BodyPartBase" Abstract="True" Name="TSOA_AnimaBodyPartBase">
+		<techLevel>Medieval</techLevel>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.90</drawSize>
+			<color>(20,90,20)</color>
+		</graphicData>
+	</ThingDef>
+
+	<RecipeDef Abstract="True" Name="TSOA_CraftAnimaPartBase">
+		<workSkill>Crafting</workSkill>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Smith</soundWorking>
+		<workAmount>26000</workAmount>
+		<researchPrerequisite>TSOA_AnimaImplants</researchPrerequisite>
+		<unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+		<recipeUsers>
+			<li>ElectricSmithy</li>
+			<li>FueledSmithy</li>
+		</recipeUsers>
+		<displayPriority>300</displayPriority>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Jade</li>
+					</thingDefs>
+				</filter>
+				<count>15</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaGrassResource</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaBark</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+
+		<modExtensions>
+			<li Class="nuff.tsoa.core.PsyLinkRecipeExtension">
+				<minPsylinkLevel>3</minPsylinkLevel>
+			</li>
+		</modExtensions>
+	</RecipeDef>
 	
 	<!-- Anima Eye -->
 	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="TSOA_AnimaEyeBase">
@@ -39,7 +99,7 @@
 	<HediffDef ParentName="TSOA_AnimaEyeBase">
 		<defName>TSOA_AnimaEyeOne</defName>
 		<label>anima eye (inert)</label>
-		<description>A chunk of jade carved into the shape of an eye, infused with anima tree essence and animated by the user's psychic attunement. The user's psychic connection is too weak to animate it, and the eye is nearly blind.</description>
+		<description>A chunk of jade carved into the shape of an eye, infused with anima tree essence and animated by the user's psychic attunement. The user's psychic connection is too weak to properly animate it, and it functions only as a poor approximation of the natural organ.</description>
 		<comps>
 			<li Class="nuff.tsoa.core.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
@@ -142,24 +202,14 @@
 		</comps>
 	</HediffDef>
 
-	<ThingDef ParentName="BodyPartBionicBase">
+	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
 		<defName>TSOA_AnimaEye</defName>
 		<label>anima eye</label>
 		<description>A chunk of jade carved into the shape of an eye, infused with anima tree essence and animated by the user's psychic attunement. Helps the user focus on their inner self, reflecting on their experience to gain wisdom. Can only install one.</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.9</drawSize>
-			<color>(85,85,85)</color>
-		</graphicData>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallAnimaEye</RecipeDef>
 			<HediffDef>TSOA_AnimaEyeThree</HediffDef>
 		</descriptionHyperlinks>
-		<costList>
-			<Plasteel>20</Plasteel>
-			<ComponentSpacer>5</ComponentSpacer>
-		</costList>
 		<statBases>
 			<Mass>8</Mass>
 		</statBases>
@@ -167,6 +217,15 @@
 			<li>RewardStandardMidFreq</li>
 		</thingSetMakerTags>
 	</ThingDef>
+
+	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
+		<defName>TSOA_CraftAnimaEye</defName>
+		<label>make anima eye</label>
+		<jobString>Making anima eye.</jobString>
+		<products>
+			<TSOA_AnimaEye>1</TSOA_AnimaEye>
+		</products>
+	</RecipeDef>
 
 	<RecipeDef>
 		<defName>TSOA_InstallAnimaEye</defName>
@@ -317,24 +376,14 @@
 		</comps>
 	</HediffDef>
 
-	<ThingDef ParentName="BodyPartBionicBase">
+	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
 		<defName>TSOA_AnimaLung</defName>
 		<label>anima lung</label>
 		<description>A rough approximation of a lung, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it infuses the voice with power to communicate with and influence others. Can only install one.</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.9</drawSize>
-			<color>(85,85,85)</color>
-		</graphicData>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallAnimaLung</RecipeDef>
 			<HediffDef>TSOA_AnimaLungThree</HediffDef>
 		</descriptionHyperlinks>
-		<costList>
-			<Plasteel>20</Plasteel>
-			<ComponentSpacer>5</ComponentSpacer>
-		</costList>
 		<statBases>
 			<Mass>8</Mass>
 		</statBases>
@@ -342,6 +391,15 @@
 			<li>RewardStandardMidFreq</li>
 		</thingSetMakerTags>
 	</ThingDef>
+	
+	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
+		<defName>TSOA_CraftAnimaLung</defName>
+		<label>make anima lung</label>
+		<jobString>Making anima lung.</jobString>
+		<products>
+			<TSOA_AnimaLung>1</TSOA_AnimaLung>
+		</products>
+	</RecipeDef>
 
 	<RecipeDef>
 		<defName>TSOA_InstallAnimaLung</defName>
@@ -491,24 +549,14 @@
 		</comps>
 	</HediffDef>
 
-	<ThingDef ParentName="BodyPartBionicBase">
+	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
 		<defName>TSOA_AnimaHeart</defName>
 		<label>anima heart</label>
 		<description>A rough approximation of a heart, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it infuses the body with healing energy. Can only install one.</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.9</drawSize>
-			<color>(85,85,85)</color>
-		</graphicData>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallAnimaHeart</RecipeDef>
 			<HediffDef>TSOA_AnimaHeartThree</HediffDef>
 		</descriptionHyperlinks>
-		<costList>
-			<Plasteel>20</Plasteel>
-			<ComponentSpacer>5</ComponentSpacer>
-		</costList>
 		<statBases>
 			<Mass>8</Mass>
 		</statBases>
@@ -516,6 +564,15 @@
 			<li>RewardStandardMidFreq</li>
 		</thingSetMakerTags>
 	</ThingDef>
+
+	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
+		<defName>TSOA_CraftAnimaHeart</defName>
+		<label>make anima heart</label>
+		<jobString>Making anima heart.</jobString>
+		<products>
+			<TSOA_AnimaHeart>1</TSOA_AnimaHeart>
+		</products>
+	</RecipeDef>
 
 	<RecipeDef>
 		<defName>TSOA_InstallAnimaHeart</defName>
@@ -665,24 +722,14 @@
 		</comps>
 	</HediffDef>
 
-	<ThingDef ParentName="BodyPartBionicBase">
+	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
 		<defName>TSOA_AnimaLiver</defName>
 		<label>anima liver</label>
 		<description>A rough approximation of a liver, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it helps the body project and store its inner power.</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.9</drawSize>
-			<color>(85,85,85)</color>
-		</graphicData>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallAnimaLiver</RecipeDef>
 			<HediffDef>TSOA_AnimaLiverThree</HediffDef>
 		</descriptionHyperlinks>
-		<costList>
-			<Plasteel>20</Plasteel>
-			<ComponentSpacer>5</ComponentSpacer>
-		</costList>
 		<statBases>
 			<Mass>8</Mass>
 		</statBases>
@@ -691,10 +738,19 @@
 		</thingSetMakerTags>
 	</ThingDef>
 
+	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
+		<defName>TSOA_CraftAnimaLiver</defName>
+		<label>make anima liver</label>
+		<jobString>Making anima liver.</jobString>
+		<products>
+			<TSOA_AnimaLiver>1</TSOA_AnimaLiver>
+		</products>
+	</RecipeDef>
+
 	<RecipeDef>
 		<defName>TSOA_InstallAnimaLiver</defName>
-		<label>install anima Liver</label>
-		<jobString>Installing anima Liver.</jobString>
+		<label>install anima liver</label>
+		<jobString>Installing anima liver.</jobString>
 		<workAmount>2500</workAmount>
 		<workerClass>Recipe_InstallImplant</workerClass>
 		<appliedOnFixedBodyParts>
@@ -718,7 +774,7 @@
 
 	<!-- Anima Kidney -->
 	<HediffDef ParentName="AddedBodyPartBase" Abstract="True" Name="TSOA_AnimaKidneyBase">
-		<description>A rough approximation of a kidney, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it helps the body .</description>
+		<description>A rough approximation of a kidney, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it helps the body maintain comfort and stability.</description>
 		<descriptionHyperlinks>
 			<ThingDef>TSOA_AnimaKidney</ThingDef>
 		</descriptionHyperlinks>
@@ -776,7 +832,7 @@
 			<li>
 				<statOffsets>
 					<JoyFallRateFactor>-0.1</JoyFallRateFactor>
-					<TSOA_ComfortGainFactor>0.1</TSOA_ComfortGainFactor>
+					<TSOA_ComfortFactor>0.1</TSOA_ComfortFactor>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
@@ -799,9 +855,9 @@
 			<li>
 				<statOffsets>
 					<JoyFallRateFactor>-0.1</JoyFallRateFactor>
-					<TSOA_ComfortGainFactor>0.1</TSOA_ComfortGainFactor>
+					<TSOA_ComfortFactor>0.1</TSOA_ComfortFactor>
 					<MentalBreakThreshold>-0.02</MentalBreakThreshold>
-					<PsychicEntropyRecoveryRateOffset>0.1</PsychicEntropyRecoveryRateOffset>
+					<PsychicEntropyRecoveryRate>0.1</PsychicEntropyRecoveryRate>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
@@ -824,9 +880,9 @@
 			<li>
 				<statOffsets>
 					<JoyFallRateFactor>-0.1</JoyFallRateFactor>
-					<TSOA_ComfortGainFactor>0.1</TSOA_ComfortGainFactor>
+					<TSOA_ComfortFactor>0.1</TSOA_ComfortFactor>
 					<MentalBreakThreshold>-0.02</MentalBreakThreshold>
-					<PsychicEntropyRecoveryRateOffset>0.1</PsychicEntropyRecoveryRateOffset>
+					<PsychicEntropyRecoveryRate>0.1</PsychicEntropyRecoveryRate>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
@@ -840,24 +896,14 @@
 		</comps>
 	</HediffDef>
 
-	<ThingDef ParentName="BodyPartBionicBase">
+	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
 		<defName>TSOA_AnimaKidney</defName>
 		<label>anima kidney</label>
 		<description>A rough approximation of a kidney, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it helps the body project and store its inner power.</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.9</drawSize>
-			<color>(85,85,85)</color>
-		</graphicData>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallAnimaKidney</RecipeDef>
 			<HediffDef>TSOA_AnimaKidneyThree</HediffDef>
 		</descriptionHyperlinks>
-		<costList>
-			<Plasteel>20</Plasteel>
-			<ComponentSpacer>5</ComponentSpacer>
-		</costList>
 		<statBases>
 			<Mass>8</Mass>
 		</statBases>
@@ -866,10 +912,19 @@
 		</thingSetMakerTags>
 	</ThingDef>
 
+	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
+		<defName>TSOA_CraftAnimaKidney</defName>
+		<label>make anima kidney</label>
+		<jobString>Making anima kidney.</jobString>
+		<products>
+			<TSOA_AnimaKidney>1</TSOA_AnimaKidney>
+		</products>
+	</RecipeDef>
+
 	<RecipeDef>
 		<defName>TSOA_InstallAnimaKidney</defName>
 		<label>install anima kidney</label>
-		<jobString>Installing anima Kidney.</jobString>
+		<jobString>Installing anima kidney.</jobString>
 		<workAmount>2500</workAmount>
 		<workerClass>Recipe_InstallImplant</workerClass>
 		<appliedOnFixedBodyParts>
@@ -1014,24 +1069,14 @@
 		</comps>
 	</HediffDef>
 
-	<ThingDef ParentName="BodyPartBionicBase">
+	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
 		<defName>TSOA_AnimaStomach</defName>
 		<label>anima stomach</label>
 		<description>A rough approximation of a stomach, crafted from anima grass, bark, and jade. Animated by its user's psychic attunement, it helps the body stabilize its energy.</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.9</drawSize>
-			<color>(85,85,85)</color>
-		</graphicData>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallAnimaStomach</RecipeDef>
 			<HediffDef>TSOA_AnimaStomachThree</HediffDef>
 		</descriptionHyperlinks>
-		<costList>
-			<Plasteel>20</Plasteel>
-			<ComponentSpacer>5</ComponentSpacer>
-		</costList>
 		<statBases>
 			<Mass>8</Mass>
 		</statBases>
@@ -1039,6 +1084,15 @@
 			<li>RewardStandardMidFreq</li>
 		</thingSetMakerTags>
 	</ThingDef>
+
+	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
+		<defName>TSOA_CraftAnimaStomach</defName>
+		<label>make anima stomach</label>
+		<jobString>Making anima stomach.</jobString>
+		<products>
+			<TSOA_AnimaStomach>1</TSOA_AnimaStomach>
+		</products>
+	</RecipeDef>
 
 	<RecipeDef>
 		<defName>TSOA_InstallAnimaStomach</defName>
@@ -1092,24 +1146,14 @@
 		</tags>
 	</HediffDef>
 
-	<ThingDef ParentName="BodyPartBionicBase">
+	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
 		<defName>TSOA_MentorCrown</defName>
 		<label>mentor crown</label>
 		<description>A band of carved anima tree bark, fused to the skull. Allows the user to form psychic links to one implanted with an Inheritor Crown, gifting their psychic power.</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.9</drawSize>
-			<color>(85,85,85)</color>
-		</graphicData>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallMentorCrown</RecipeDef>
 			<HediffDef>TSOA_MentorCrown</HediffDef>
 		</descriptionHyperlinks>
-		<costList>
-			<Plasteel>20</Plasteel>
-			<ComponentSpacer>5</ComponentSpacer>
-		</costList>
 		<statBases>
 			<Mass>8</Mass>
 		</statBases>
@@ -1117,6 +1161,15 @@
 			<li>RewardStandardMidFreq</li>
 		</thingSetMakerTags>
 	</ThingDef>
+
+	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
+		<defName>TSOA_CraftMentorCrown</defName>
+		<label>make mentor crown</label>
+		<jobString>Making mentor crown.</jobString>
+		<products>
+			<TSOA_MentorCrown>1</TSOA_MentorCrown>
+		</products>
+	</RecipeDef>
 
 	<RecipeDef>
 		<defName>TSOA_InstallMentorCrown</defName>
@@ -1138,6 +1191,9 @@
 			</li>
 		</ingredients>
 		<addsHediff>TSOA_MentorCrown</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>TSOA_CrownImplant</li>
+		</incompatibleWithHediffTags>
 	</RecipeDef>
 
 	<!-- Inheritor Crown -->
@@ -1157,24 +1213,14 @@
 		</tags>
 	</HediffDef>
 
-	<ThingDef ParentName="BodyPartBionicBase">
+	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
 		<defName>TSOA_InheritorCrown</defName>
 		<label>Inheritor crown</label>
 		<description>A band of carved anima tree bark, fused to the skull. Exposes the user's mind, allowing those implanted with a Mentor Crown to link to the user and gift their psychic power.</description>
-		<graphicData>
-			<texPath>Things/Item/Health/HealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.9</drawSize>
-			<color>(85,85,85)</color>
-		</graphicData>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallInheritorCrown</RecipeDef>
 			<HediffDef>TSOA_InheritorCrown</HediffDef>
 		</descriptionHyperlinks>
-		<costList>
-			<Plasteel>20</Plasteel>
-			<ComponentSpacer>5</ComponentSpacer>
-		</costList>
 		<statBases>
 			<Mass>8</Mass>
 		</statBases>
@@ -1182,6 +1228,15 @@
 			<li>RewardStandardMidFreq</li>
 		</thingSetMakerTags>
 	</ThingDef>
+
+	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
+		<defName>TSOA_CraftInheritorCrown</defName>
+		<label>make inheritor crown</label>
+		<jobString>Making inheritor crown.</jobString>
+		<products>
+			<TSOA_InheritorCrown>1</TSOA_InheritorCrown>
+		</products>
+	</RecipeDef>
 
 	<RecipeDef>
 		<defName>TSOA_InstallInheritorCrown</defName>

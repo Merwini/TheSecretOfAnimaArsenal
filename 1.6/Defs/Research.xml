@@ -31,5 +31,19 @@
 		<researchViewX>1.00</researchViewX>
 		<researchViewY>2.60</researchViewY>
 	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>TSOA_AnimaImplants</defName>
+		<label>anima organs</label>
+		<description>Craft artificial organs made from anima grass, bark, and jade. They tend to be less efficient than natural organs, but confer a variety of benefits based on the psychic sensitivity of the bearer.</description>
+		<baseCost>2500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>TSOA_AnimaOne</li>
+		</prerequisites>
+		<tab>TSOA_ResearchTab</tab>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>0.60</researchViewY>
+	</ResearchProjectDef>
 	
 </Defs>
