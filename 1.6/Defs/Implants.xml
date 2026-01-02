@@ -9,6 +9,12 @@
 			<drawSize>0.90</drawSize>
 			<color>(20,90,20)</color>
 		</graphicData>
+		<statBases>
+			<Mass>8</Mass>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
 	</ThingDef>
 
 	<RecipeDef Abstract="True" Name="TSOA_CraftAnimaPartBase">
@@ -210,12 +216,6 @@
 			<RecipeDef>TSOA_InstallAnimaEye</RecipeDef>
 			<HediffDef>TSOA_AnimaEyeThree</HediffDef>
 		</descriptionHyperlinks>
-		<statBases>
-			<Mass>8</Mass>
-		</statBases>
-		<thingSetMakerTags>
-			<li>RewardStandardMidFreq</li>
-		</thingSetMakerTags>
 	</ThingDef>
 
 	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
@@ -227,7 +227,7 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef>
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
 		<defName>TSOA_InstallAnimaEye</defName>
 		<label>install anima eye</label>
 		<jobString>Installing anima eye.</jobString>
@@ -384,12 +384,6 @@
 			<RecipeDef>TSOA_InstallAnimaLung</RecipeDef>
 			<HediffDef>TSOA_AnimaLungThree</HediffDef>
 		</descriptionHyperlinks>
-		<statBases>
-			<Mass>8</Mass>
-		</statBases>
-		<thingSetMakerTags>
-			<li>RewardStandardMidFreq</li>
-		</thingSetMakerTags>
 	</ThingDef>
 	
 	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
@@ -401,7 +395,7 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef>
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
 		<defName>TSOA_InstallAnimaLung</defName>
 		<label>install anima lung</label>
 		<jobString>Installing anima lung.</jobString>
@@ -557,12 +551,6 @@
 			<RecipeDef>TSOA_InstallAnimaHeart</RecipeDef>
 			<HediffDef>TSOA_AnimaHeartThree</HediffDef>
 		</descriptionHyperlinks>
-		<statBases>
-			<Mass>8</Mass>
-		</statBases>
-		<thingSetMakerTags>
-			<li>RewardStandardMidFreq</li>
-		</thingSetMakerTags>
 	</ThingDef>
 
 	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
@@ -574,7 +562,7 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef>
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
 		<defName>TSOA_InstallAnimaHeart</defName>
 		<label>install anima heart</label>
 		<jobString>Installing anima heart.</jobString>
@@ -730,12 +718,6 @@
 			<RecipeDef>TSOA_InstallAnimaLiver</RecipeDef>
 			<HediffDef>TSOA_AnimaLiverThree</HediffDef>
 		</descriptionHyperlinks>
-		<statBases>
-			<Mass>8</Mass>
-		</statBases>
-		<thingSetMakerTags>
-			<li>RewardStandardMidFreq</li>
-		</thingSetMakerTags>
 	</ThingDef>
 
 	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
@@ -747,7 +729,7 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef>
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
 		<defName>TSOA_InstallAnimaLiver</defName>
 		<label>install anima liver</label>
 		<jobString>Installing anima liver.</jobString>
@@ -904,12 +886,6 @@
 			<RecipeDef>TSOA_InstallAnimaKidney</RecipeDef>
 			<HediffDef>TSOA_AnimaKidneyThree</HediffDef>
 		</descriptionHyperlinks>
-		<statBases>
-			<Mass>8</Mass>
-		</statBases>
-		<thingSetMakerTags>
-			<li>RewardStandardMidFreq</li>
-		</thingSetMakerTags>
 	</ThingDef>
 
 	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
@@ -921,7 +897,7 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef>
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
 		<defName>TSOA_InstallAnimaKidney</defName>
 		<label>install anima kidney</label>
 		<jobString>Installing anima kidney.</jobString>
@@ -1077,12 +1053,6 @@
 			<RecipeDef>TSOA_InstallAnimaStomach</RecipeDef>
 			<HediffDef>TSOA_AnimaStomachThree</HediffDef>
 		</descriptionHyperlinks>
-		<statBases>
-			<Mass>8</Mass>
-		</statBases>
-		<thingSetMakerTags>
-			<li>RewardStandardMidFreq</li>
-		</thingSetMakerTags>
 	</ThingDef>
 
 	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
@@ -1094,7 +1064,7 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef>
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
 		<defName>TSOA_InstallAnimaStomach</defName>
 		<label>install anima stomach</label>
 		<jobString>Installing anima Stomach.</jobString>
@@ -1148,33 +1118,28 @@
 
 	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
 		<defName>TSOA_MentorCrown</defName>
-		<label>mentor crown</label>
+		<label>mentor crown implant</label>
 		<description>A band of carved anima tree bark, fused to the skull. Allows the user to form psychic links to one implanted with an Inheritor Crown, gifting their psychic power.</description>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallMentorCrown</RecipeDef>
 			<HediffDef>TSOA_MentorCrown</HediffDef>
 		</descriptionHyperlinks>
-		<statBases>
-			<Mass>8</Mass>
-		</statBases>
-		<thingSetMakerTags>
-			<li>RewardStandardMidFreq</li>
-		</thingSetMakerTags>
 	</ThingDef>
 
 	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
 		<defName>TSOA_CraftMentorCrown</defName>
-		<label>make mentor crown</label>
-		<jobString>Making mentor crown.</jobString>
+		<label>make mentor crown implant</label>
+		<jobString>Making mentor crown implant.</jobString>
 		<products>
 			<TSOA_MentorCrown>1</TSOA_MentorCrown>
 		</products>
 	</RecipeDef>
 
-	<RecipeDef>
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
 		<defName>TSOA_InstallMentorCrown</defName>
-		<label>install Mentor crown</label>
-		<jobString>Installing mentor crown.</jobString>
+		<label>install mentor crown implant</label>
+		<description>Install a mentor crown implant.</description>
+		<jobString>Installing mentor crown implant.</jobString>
 		<workAmount>2500</workAmount>
 		<workerClass>Recipe_InstallImplant</workerClass>
 		<appliedOnFixedBodyParts>
@@ -1199,7 +1164,7 @@
 	<!-- Inheritor Crown -->
 	<HediffDef ParentName="TSOA_StatExchangerBase">
 		<defName>TSOA_InheritorCrown</defName>
-		<label>Inheritor crown</label>
+		<label>inheritor crown</label>
 		<description>A band of carved anima tree bark, fused to the skull. Exposes the user's mind, allowing those implanted with a Mentor Crown to link to the user and gift their psychic power.</description>
 		<comps>
 			<li Class="nuff.tsoa.core.HediffCompProperties_StatExchanger">
@@ -1215,7 +1180,7 @@
 
 	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
 		<defName>TSOA_InheritorCrown</defName>
-		<label>Inheritor crown</label>
+		<label>inheritor crown implant</label>
 		<description>A band of carved anima tree bark, fused to the skull. Exposes the user's mind, allowing those implanted with a Mentor Crown to link to the user and gift their psychic power.</description>
 		<descriptionHyperlinks>
 			<RecipeDef>TSOA_InstallInheritorCrown</RecipeDef>
@@ -1231,17 +1196,18 @@
 
 	<RecipeDef ParentName="TSOA_CraftAnimaPartBase">
 		<defName>TSOA_CraftInheritorCrown</defName>
-		<label>make inheritor crown</label>
-		<jobString>Making inheritor crown.</jobString>
+		<label>make inheritor crown implant</label>
+		<jobString>Making inheritor crown implant.</jobString>
 		<products>
 			<TSOA_InheritorCrown>1</TSOA_InheritorCrown>
 		</products>
 	</RecipeDef>
 
-	<RecipeDef>
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
 		<defName>TSOA_InstallInheritorCrown</defName>
-		<label>install inheritor crown</label>
-		<jobString>Installing inheritor crown.</jobString>
+		<label>install inheritor crown implant</label>
+		<description>Install an inheritor crown implant.</description>
+		<jobString>Installing inheritor crown implant.</jobString>
 		<workAmount>2500</workAmount>
 		<workerClass>Recipe_InstallImplant</workerClass>
 		<appliedOnFixedBodyParts>
