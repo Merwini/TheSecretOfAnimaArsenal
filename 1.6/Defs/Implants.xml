@@ -6,7 +6,7 @@
 		<graphicData>
 			<texPath>Things/Item/Health/HealthItem</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.90</drawSize>
+			<drawSize>0.80</drawSize>
 			<color>(20,90,20)</color>
 		</graphicData>
 		<statBases>
