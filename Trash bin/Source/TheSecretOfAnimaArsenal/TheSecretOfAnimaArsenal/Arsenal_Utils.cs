@@ -7,7 +7,7 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 
-namespace nuff.tsoa.core
+namespace tsoa.core
 {
     class Arsenal_Utils
     {

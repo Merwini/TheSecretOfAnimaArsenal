@@ -76,7 +76,7 @@
 		</tradeTags>
 		
 		<comps>
-			<li Class="nuff.tsoa.core.CompProperties_PsyShield" />
+			<li Class="tsoa.core.CompProperties_PsyShield" />
 		</comps>
 	</ThingDef>
 
@@ -196,7 +196,7 @@
 		<unfinishedThingDef>UnfinishedMask</unfinishedThingDef>
 		<displayPriority>276</displayPriority>
 		<modExtensions>
-			<li Class="nuff.tsoa.core.PsyLinkRecipeExtension">
+			<li Class="tsoa.core.PsyLinkRecipeExtension">
 				<minPsylinkLevel>2</minPsylinkLevel>
 			</li>
 		</modExtensions>
