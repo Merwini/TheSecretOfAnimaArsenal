@@ -5,7 +5,7 @@
 		<defName>TSOA_VoidArmor</defName>
 		<label>void armor</label>
 		<description>Craft armor made from bioferrite and gold. The bioferrite feeds on the wearer's psychic potential, strengthening itself at a cost.</description>
-		<baseCost>1200</baseCost>
+		<baseCost>1500</baseCost>
 		<techLevel>Medieval</techLevel>
 		<prerequisites>
 			<li>TSOA_VoidOne</li>
@@ -13,14 +13,14 @@
 		</prerequisites>
 		<tab>TSOA_ResearchTab</tab>
 		<researchViewX>1.00</researchViewX>
-		<researchViewY>4.60</researchViewY>
+		<researchViewY>5.10</researchViewY>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
 		<defName>TSOA_VoidWeapons</defName>
 		<label>void weapons</label>
 		<description>Craft weapons made from bioferrite and gold. The bioferrite feeds on the wearer's psychic potential, strengthening itself at a cost.</description>
-		<baseCost>1500</baseCost>
+		<baseCost>1200</baseCost>
 		<techLevel>Medieval</techLevel>
 		<prerequisites>
 			<li>TSOA_VoidOne</li>
@@ -28,20 +28,20 @@
 		</prerequisites>
 		<tab>TSOA_ResearchTab</tab>
 		<researchViewX>1.00</researchViewX>
-		<researchViewY>5.60</researchViewY>
+		<researchViewY>4.60</researchViewY>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
 		<defName>TSOA_BioferriteImplants</defName>
 		<label>bioferrite limbs</label>
 		<description>Craft artificial body parts made from bioferrite and shards of dark archotech. These limbs feed on the bearer's psychic sensitivity, growing stronger but weakening the bearer in other ways.</description>
-		<baseCost>2500</baseCost>
+		<baseCost>2000</baseCost>
 		<techLevel>Medieval</techLevel>
 		<prerequisites>
 			<li>TSOA_VoidOne</li>
 		</prerequisites>
 		<tab>TSOA_ResearchTab</tab>
 		<researchViewX>1.00</researchViewX>
-		<researchViewY>3.60</researchViewY>
+		<researchViewY>5.60</researchViewY>
 	</ResearchProjectDef>
 </Defs>

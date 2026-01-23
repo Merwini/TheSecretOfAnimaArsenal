@@ -14,7 +14,7 @@
 		</prerequisites>
 		<tab>TSOA_ResearchTab</tab>
 		<researchViewX>1.00</researchViewX>
-		<researchViewY>1.60</researchViewY>
+		<researchViewY>3.60</researchViewY>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
@@ -29,7 +29,7 @@
 		</prerequisites>
 		<tab>TSOA_ResearchTab</tab>
 		<researchViewX>1.00</researchViewX>
-		<researchViewY>2.60</researchViewY>
+		<researchViewY>3.10</researchViewY>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
@@ -43,7 +43,7 @@
 		</prerequisites>
 		<tab>TSOA_ResearchTab</tab>
 		<researchViewX>1.00</researchViewX>
-		<researchViewY>0.60</researchViewY>
+		<researchViewY>4.10</researchViewY>
 	</ResearchProjectDef>
 	
 </Defs>
