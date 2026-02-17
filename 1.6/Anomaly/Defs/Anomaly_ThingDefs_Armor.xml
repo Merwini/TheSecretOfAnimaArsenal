@@ -6,7 +6,7 @@
 		<label>void knight plate armor</label>
 		<description>A suit of armor crafted from bioferrite. This bioferrite feeds on the psychic capabilites of the wearer, making itself stronger but weakening the wearer in the process.</description>
 		<graphicData>
-			<texPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</texPath>
+			<texPath>Anima/VoidKnight/VoidKnight</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<techLevel>Medieval</techLevel>
@@ -81,7 +81,7 @@
 		<label>void knight helmet</label>
 		<description>A helmet crafted from bioferrite. This bioferrite feeds on the psychic capabilites of the wearer, making itself stronger but weakening the wearer in the process.</description>
 		<graphicData>
-			<texPath>Things/Pawn/Humanlike/Apparel/SimpleHelmet/SimpleHelmet</texPath>
+			<texPath>Anima/VoidKnight/VoidKnightHelm</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<techLevel>Medieval</techLevel>

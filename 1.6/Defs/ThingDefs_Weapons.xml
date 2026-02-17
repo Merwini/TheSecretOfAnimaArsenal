@@ -8,7 +8,7 @@
 		<description>A hatchet made to channel the psychic energy of its wielder into destructive force. The haft is carved from anima tree bark and wrapped in anima grass, absorbing neural heat from the wielder which is then released by the jade blade into one's foes.</description>
 		<!-- TODO replace once textures are finished -->
 		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponMelee/Gladius</texPath>
+			<texPath>Anima/Tomahawk</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<equippedAngleOffset>-65</equippedAngleOffset>
@@ -84,7 +84,7 @@
 		<description>A war club made to channel the psychic energy of its wielder into destructive force. The haft is carved from anima tree bark and wrapped in anima grass, absorbing neural heat from the wielder which is then released by the jade chunk into one's foes.</description>
 		<!-- TODO replace once textures are finished -->
 		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponMelee/Mace</texPath>
+			<texPath>Anima/ClibJ</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<equippedAngleOffset>-65</equippedAngleOffset>
@@ -160,7 +160,7 @@
 		<description>A sword in the style of a macuahuitl made to channel the psychic energy of its wielder into destructive force. The body is carved from anima tree bark and handle wrapped in anima grass, absorbing neural heat from the wielder which is then released by shards of jade into one's foes.</description>
 		<!-- TODO replace once textures are finished -->
 		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponMelee/LongSword</texPath>
+			<texPath>Anima/Macuahuitl</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<equippedAngleOffset>-65</equippedAngleOffset>
