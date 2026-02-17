@@ -56,7 +56,7 @@
 				<li>Arms</li>
 				<li>Legs</li>
 			</bodyPartGroups>
-			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</wornGraphicPath>
+			<wornGraphicPath>Anima/VoidKnight/VoidKnight</wornGraphicPath>
 			<layers>
 				<li>Middle</li>
 				<li>Shell</li>
@@ -124,7 +124,7 @@
 				<li>FullHead</li>
 				<li>Neck</li>
 			</bodyPartGroups>
-			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/SimpleHelmet/SimpleHelmet</wornGraphicPath>
+			<wornGraphicPath>Anima/VoidKnight/VoidKnightHelm</wornGraphicPath>
 			<layers>
 				<li>Overhead</li>
 			</layers>

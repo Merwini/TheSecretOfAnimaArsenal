@@ -56,7 +56,7 @@
 				<li>Arms</li>
 				<li>Legs</li>
 			</bodyPartGroups>
-			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexRobe/EltexRobe</wornGraphicPath>
+			<wornGraphicPath>Anima/AnimaShaman/AnimaShaman</wornGraphicPath>
 			<layers>
 				<li>Middle</li>
 			</layers>
@@ -132,7 +132,7 @@
 				<li>UpperHead</li>
 				<li>Neck</li>
 			</bodyPartGroups>
-			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/EltexHelmet/EltexHelmet</wornGraphicPath>
+			<wornGraphicPath>Anima/AnimaShaman/AnimaShamanHelm</wornGraphicPath>
 			<layers>
 				<li>Overhead</li>
 			</layers>
