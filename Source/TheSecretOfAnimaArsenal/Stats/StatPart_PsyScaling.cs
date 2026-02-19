@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using Verse;
 using RimWorld;
 using UnityEngine;
+using tsoa.core;
 
-namespace tsoa.core
+namespace tsoa.arsenal
 {
     class StatPart_PsyScaling : StatPart
     {
@@ -18,7 +19,7 @@ namespace tsoa.core
 
             Thing thing = req.Thing;
 
-            float scaling = thing.def.statBases.GetStatValueFromList(ArsenalDefOf.TSOA_PsyScaling, 0);
+            float scaling = thing.def.statBases.GetStatValueFromList(TSOAA_DefOf.TSOA_PsyScaling, 0);
             if (scaling <= 0f)
                 return;
 
@@ -31,11 +32,11 @@ namespace tsoa.core
             if (pawn == null)
                 return;
 
-            float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity); 
+            float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity);
             if (sensitivity <= 1f) // Won't scale values down
                 return;
 
-            val = Arsenal_Utils.GetPsyScaledValue(val, scaling, sensitivity);
+            val = TSOA_Utils.GetPsyScaledValue(val, scaling, sensitivity);
         }
 
         public override string ExplanationPart(StatRequest req)
@@ -45,7 +46,7 @@ namespace tsoa.core
 
             Thing thing = req.Thing;
 
-            float scaling = thing.def.statBases.GetStatValueFromList(ArsenalDefOf.TSOA_PsyScaling, 0);
+            float scaling = thing.def.statBases.GetStatValueFromList(TSOA_DefOf.TSOA_PsyScaling, 0);
             if (scaling <= 0f)
                 return null;
 
@@ -59,7 +60,7 @@ namespace tsoa.core
                 return null;
 
             float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity);
-            float bonus = Arsenal_Utils.GetPsyScalingFactor(scaling, sensitivity);
+            float bonus = TSOA_Utils.GetPsyScalingFactor(scaling, sensitivity);
             if (bonus <= 0f)
                 return null;   // show no scaling if no bonus applied
 

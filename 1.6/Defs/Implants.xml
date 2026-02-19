@@ -107,7 +107,7 @@
 		<label>anima eye (inert)</label>
 		<description>A chunk of jade carved into the shape of an eye, infused with anima tree essence and animated by the user's psychic attunement. The user's psychic connection is too weak to properly animate it, and it functions only as a poor approximation of the natural organ.</description>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.49</upperThreshold>
 				<hediffAbove>TSOA_AnimaEyeTwo</hediffAbove>
@@ -128,7 +128,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.89</upperThreshold>
 				<hediffAbove>TSOA_AnimaEyeThree</hediffAbove>
@@ -151,7 +151,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.19</upperThreshold>
 				<hediffAbove>TSOA_AnimaEyeFour</hediffAbove>
@@ -175,7 +175,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.79</upperThreshold>
 				<hediffAbove>TSOA_AnimaEyeFive</hediffAbove>
@@ -200,7 +200,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<lowerThreshold>1.8</lowerThreshold>
 				<hediffBelow>TSOA_AnimaEyeFour</hediffBelow>
@@ -274,7 +274,7 @@
 		<label>anima lung (inert)</label>
 		<description>A rough approximation of a lung, crafted from anima grass, bark, and jade. The user's psychic attunement is too weak to properly animate the lung, and it functions only as a poor replacement for a natural organ.</description>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.49</upperThreshold>
 				<hediffAbove>TSOA_AnimaLungTwo</hediffAbove>
@@ -295,7 +295,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.89</upperThreshold>
 				<hediffAbove>TSOA_AnimaLungThree</hediffAbove>
@@ -319,7 +319,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.19</upperThreshold>
 				<hediffAbove>TSOA_AnimaLungFour</hediffAbove>
@@ -343,7 +343,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.79</upperThreshold>
 				<hediffAbove>TSOA_AnimaLungFive</hediffAbove>
@@ -368,7 +368,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<lowerThreshold>1.8</lowerThreshold>
 				<hediffBelow>TSOA_AnimaLungFour</hediffBelow>
@@ -442,7 +442,7 @@
 		<label>anima heart (inert)</label>
 		<description>A rough approximation of a heart, crafted from anima grass, bark, and jade. The user's psychic attunement is too weak to properly animate the heart, and it functions only as a poor replacement for a natural organ.</description>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.49</upperThreshold>
 				<hediffAbove>TSOA_AnimaHeartTwo</hediffAbove>
@@ -463,7 +463,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.89</upperThreshold>
 				<hediffAbove>TSOA_AnimaHeartThree</hediffAbove>
@@ -486,7 +486,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.19</upperThreshold>
 				<hediffAbove>TSOA_AnimaHeartFour</hediffAbove>
@@ -510,7 +510,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.79</upperThreshold>
 				<hediffAbove>TSOA_AnimaHeartFive</hediffAbove>
@@ -535,7 +535,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<lowerThreshold>1.8</lowerThreshold>
 				<hediffBelow>TSOA_AnimaHeartFour</hediffBelow>
@@ -609,7 +609,7 @@
 		<label>anima liver (inert)</label>
 		<description>A rough approximation of a liver, crafted from anima grass, bark, and jade. The user's psychic attunement is too weak to properly animate the liver, and it functions only as a poor replacement for a natural organ.</description>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.49</upperThreshold>
 				<hediffAbove>TSOA_AnimaLiverTwo</hediffAbove>
@@ -630,7 +630,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.89</upperThreshold>
 				<hediffAbove>TSOA_AnimaLiverThree</hediffAbove>
@@ -653,7 +653,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.19</upperThreshold>
 				<hediffAbove>TSOA_AnimaLiverFour</hediffAbove>
@@ -677,7 +677,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.79</upperThreshold>
 				<hediffAbove>TSOA_AnimaLiverFive</hediffAbove>
@@ -702,7 +702,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<lowerThreshold>1.8</lowerThreshold>
 				<hediffBelow>TSOA_AnimaLiverFour</hediffBelow>
@@ -776,7 +776,7 @@
 		<label>anima kidney (inert)</label>
 		<description>A rough approximation of a Kidney, crafted from anima grass, bark, and jade. The user's psychic attunement is too weak to properly animate the kidney, and it functions only as a poor replacement for a natural organ.</description>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.49</upperThreshold>
 				<hediffAbove>TSOA_AnimaKidneyTwo</hediffAbove>
@@ -797,7 +797,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.89</upperThreshold>
 				<hediffAbove>TSOA_AnimaKidneyThree</hediffAbove>
@@ -820,7 +820,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.19</upperThreshold>
 				<hediffAbove>TSOA_AnimaKidneyFour</hediffAbove>
@@ -845,7 +845,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.79</upperThreshold>
 				<hediffAbove>TSOA_AnimaKidneyFive</hediffAbove>
@@ -870,7 +870,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<lowerThreshold>1.8</lowerThreshold>
 				<hediffBelow>TSOA_AnimaKidneyFour</hediffBelow>
@@ -944,7 +944,7 @@
 		<label>anima stomach (inert)</label>
 		<description>A rough approximation of a Stomach, crafted from anima grass, bark, and jade. The user's psychic attunement is too weak to properly animate the stomach, and it functions only as a poor replacement for a natural organ.</description>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.49</upperThreshold>
 				<hediffAbove>TSOA_AnimaStomachTwo</hediffAbove>
@@ -965,7 +965,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.89</upperThreshold>
 				<hediffAbove>TSOA_AnimaStomachThree</hediffAbove>
@@ -988,7 +988,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.19</upperThreshold>
 				<hediffAbove>TSOA_AnimaStomachFour</hediffAbove>
@@ -1012,7 +1012,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.79</upperThreshold>
 				<hediffAbove>TSOA_AnimaStomachFive</hediffAbove>
@@ -1037,7 +1037,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<lowerThreshold>1.8</lowerThreshold>
 				<hediffBelow>TSOA_AnimaStomachFour</hediffBelow>
@@ -1095,7 +1095,7 @@
 		<label>mentor crown</label>
 		<description>A band of carved anima tree bark, fused to the skull. Allows the user to form psychic links to one implanted with an Inheritor Crown, gifting their psychic power.</description>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_StatExchanger">
+			<li Class="tsoa.arsenal.HediffCompProperties_StatExchanger">
 				<isMaster>true</isMaster>
 				<isDonor>true</isDonor>
 				<donorLossPercent>0.5</donorLossPercent>
@@ -1167,7 +1167,7 @@
 		<label>inheritor crown</label>
 		<description>A band of carved anima tree bark, fused to the skull. Exposes the user's mind, allowing those implanted with a Mentor Crown to link to the user and gift their psychic power.</description>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_StatExchanger">
+			<li Class="tsoa.arsenal.HediffCompProperties_StatExchanger">
 				<isMaster>false</isMaster>
 				<recipientGainPercent>1</recipientGainPercent>
 				<affectedStat>PsychicSensitivity</affectedStat>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Verse;
 using RimWorld;
 
-namespace tsoa.core
+namespace tsoa.arsenal
 {
     class HediffComp_Evolving : HediffComp
     {

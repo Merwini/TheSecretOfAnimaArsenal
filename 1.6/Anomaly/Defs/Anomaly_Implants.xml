@@ -53,7 +53,7 @@
 		</ingredients>
 
 		<modExtensions>
-			<li Class="tsoa.core.PsyLinkRecipeExtension">
+			<li Class="tsoa.arsenal.PsyLinkRecipeExtension">
 				<minPsylinkLevel>3</minPsylinkLevel>
 			</li>
 		</modExtensions>
@@ -92,7 +92,7 @@
 					</li>
 				</tools>
 			</li>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.49</upperThreshold>
 				<hediffAbove>TSOA_BioferriteArmTwo</hediffAbove>
@@ -123,7 +123,7 @@
 					</li>
 				</tools>
 			</li>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.89</upperThreshold>
 				<hediffAbove>TSOA_BioferriteArmThree</hediffAbove>
@@ -164,7 +164,7 @@
 					</li>
 				</tools>
 			</li>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.19</upperThreshold>
 				<hediffAbove>TSOA_BioferriteArmFour</hediffAbove>
@@ -206,7 +206,7 @@
 					</li>
 				</tools>
 			</li>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.79</upperThreshold>
 				<hediffAbove>TSOA_BioferriteArmFive</hediffAbove>
@@ -248,7 +248,7 @@
 					</li>
 				</tools>
 			</li>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<lowerThreshold>1.8</lowerThreshold>
 				<hediffBelow>TSOA_BioferriteArmFour</hediffBelow>
@@ -326,7 +326,7 @@
 		<label>bioferrite leg (inert)</label>
 		<description>A bioferrite leg, animated by psychic attunement to its user. The user's psychic connection is too weak to animate it, leaving it as little better than a metal peg leg.</description>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.49</upperThreshold>
 				<hediffAbove>TSOA_BioferriteLegTwo</hediffAbove>
@@ -342,7 +342,7 @@
 		<label>bioferrite leg (dampened)</label>
 		<description>A bioferrite leg, animated by psychic attunement to its user. The user's weak psychic connection leaves it stiff and slow.</description>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.89</upperThreshold>
 				<hediffAbove>TSOA_BioferriteLegThree</hediffAbove>
@@ -367,7 +367,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.19</upperThreshold>
 				<hediffAbove>TSOA_BioferriteLegFour</hediffAbove>
@@ -393,7 +393,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.79</upperThreshold>
 				<hediffAbove>TSOA_BioferriteLegFive</hediffAbove>
@@ -419,7 +419,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<lowerThreshold>1.8</lowerThreshold>
 				<hediffBelow>TSOA_BioferriteLegFour</hediffBelow>
@@ -515,7 +515,7 @@
 		<label>bioferrite eye (inert)</label>
 		<description>A bioferrite eye implanted into the skull, animated by psychic attunement to its user. The user's psychic connection is too weak to fully animate it, and it shows the world only as shapes and shadows.</description>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.49</upperThreshold>
 				<hediffAbove>TSOA_BioferriteEyeTwo</hediffAbove>
@@ -531,7 +531,7 @@
 		<label>bioferrite eye (dampened)</label>
 		<description>A bioferrite eye implanted into the skull, animated by psychic attunement to its user. The user's weak psychic connection causes the eye to show the world as a blurry grayscale.</description>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.89</upperThreshold>
 				<hediffAbove>TSOA_BioferriteEyeThree</hediffAbove>
@@ -558,7 +558,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.19</upperThreshold>
 				<hediffAbove>TSOA_BioferriteEyeFour</hediffAbove>
@@ -586,7 +586,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.79</upperThreshold>
 				<hediffAbove>TSOA_BioferriteEyeFive</hediffAbove>
@@ -614,7 +614,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<lowerThreshold>1.8</lowerThreshold>
 				<hediffBelow>TSOA_BioferriteEyeFour</hediffBelow>
@@ -701,7 +701,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.49</upperThreshold>
 				<hediffAbove>TSOA_BioferriteSkinTwo</hediffAbove>
@@ -725,7 +725,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>0.89</upperThreshold>
 				<hediffAbove>TSOA_BioferriteSkinThree</hediffAbove>
@@ -751,7 +751,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.19</upperThreshold>
 				<hediffAbove>TSOA_BioferriteSkinFour</hediffAbove>
@@ -778,7 +778,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<upperThreshold>1.79</upperThreshold>
 				<hediffAbove>TSOA_BioferriteSkinFive</hediffAbove>
@@ -805,7 +805,7 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_Evolving">
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingStat>PsychicSensitivity</evolvingStat>
 				<lowerThreshold>1.8</lowerThreshold>
 				<hediffBelow>TSOA_BioferriteSkinFour</hediffBelow>
@@ -871,7 +871,7 @@
 		<label>sovereign crown</label>
 		<description>A band of bioferrite infused with dark archotech, fused to the skull. Allows the user to form psychic links to those implanted with Thrall Crowns, stealing their psychic power.</description>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_StatExchanger">
+			<li Class="tsoa.arsenal.HediffCompProperties_StatExchanger">
 				<isMaster>true</isMaster>
 				<maxLinks>5</maxLinks>
 				<recipientGainFlat>0.10</recipientGainFlat>
@@ -940,7 +940,7 @@
 		<label>thrall crown</label>
 		<description>A band of bioferrite, fused to the skull. Exposes the user's mind, allowing those implanted with a Sovereign Crown to link to the user and steal their psychic power.</description>
 		<comps>
-			<li Class="tsoa.core.HediffCompProperties_StatExchanger">
+			<li Class="tsoa.arsenal.HediffCompProperties_StatExchanger">
 				<isMaster>false</isMaster>
 				<isDonor>true</isDonor>
 				<maxLinks>1</maxLinks>

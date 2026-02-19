@@ -76,7 +76,7 @@
 		</tradeTags>
 		
 		<comps>
-			<li Class="tsoa.core.CompProperties_PsyShield" />
+			<li Class="tsoa.arsenal.CompProperties_PsyShield" />
 		</comps>
 	</ThingDef>
 

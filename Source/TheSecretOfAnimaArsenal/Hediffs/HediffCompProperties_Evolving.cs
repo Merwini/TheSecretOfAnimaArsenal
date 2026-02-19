@@ -1,14 +1,14 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Verse;
-using RimWorld;
 
-namespace tsoa.core
+namespace tsoa.arsenal
 {
-    class HediffCompProperties_Evolving : HediffCompProperties
+    public class HediffCompProperties_Evolving : HediffCompProperties
     {
         public StatDef evolvingStat;
 
@@ -22,6 +22,5 @@ namespace tsoa.core
         {
             this.compClass = typeof(HediffComp_Evolving);
         }
-
     }
 }
