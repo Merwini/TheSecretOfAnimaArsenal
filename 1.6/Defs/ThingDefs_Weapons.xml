@@ -63,7 +63,7 @@
 		</tools>
 		
 		<modExtensions>
-			<li Class="tsoa.core.EntropyExtraDamageExtension">
+			<li Class="tsoa.arsenal.EntropyExtraDamageExtension">
 				<damageDef>TSOA_EntropicDischarge</damageDef>
 			</li>
 		</modExtensions>
@@ -140,7 +140,7 @@
 		</tools>
 		
 		<modExtensions>
-			<li Class="tsoa.core.EntropyExtraDamageExtension">
+			<li Class="tsoa.arsenal.EntropyExtraDamageExtension">
 				<damageDef>TSOA_EntropicDischarge</damageDef>
 			</li>
 		</modExtensions>
@@ -218,7 +218,7 @@
 		</tools>
 		
 		<modExtensions>
-			<li Class="tsoa.core.EntropyExtraDamageExtension">
+			<li Class="tsoa.arsenal.EntropyExtraDamageExtension">
 				<damageDef>TSOA_EntropicDischarge</damageDef>
 				<damagePerHeatConsumed>6</damagePerHeatConsumed>
 			</li>
