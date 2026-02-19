@@ -8,6 +8,7 @@
 		<graphicData>
 			<texPath>Anima/VoidKnight/VoidKnight</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.6, 1.6)</drawSize>
 		</graphicData>
 		<techLevel>Medieval</techLevel>
 		<relicChance>2</relicChance>
@@ -81,8 +82,9 @@
 		<label>void knight helmet</label>
 		<description>A helmet crafted from bioferrite. This bioferrite feeds on the psychic capabilites of the wearer, making itself stronger but weakening the wearer in the process.</description>
 		<graphicData>
-			<texPath>Anima/VoidKnight/VoidKnightHelm</texPath>
+			<texPath>Anima/VoidKnight/VoidKnightHelm_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.4, 1.4)</drawSize>
 		</graphicData>
 		<techLevel>Medieval</techLevel>
 		<relicChance>2</relicChance>

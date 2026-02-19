@@ -11,7 +11,8 @@
 			<texPath>Anima/Tomahawk</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<equippedAngleOffset>-65</equippedAngleOffset>
+		<equippedAngleOffset>0</equippedAngleOffset>
+		<uiIconScale>1.2</uiIconScale>
 		<techLevel>Medieval</techLevel>
 		<relicChance>3</relicChance>
 
@@ -87,7 +88,8 @@
 			<texPath>Anima/ClibJ</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<equippedAngleOffset>-65</equippedAngleOffset>
+		<uiIconScale>1.2</uiIconScale>
+		<equippedAngleOffset>0</equippedAngleOffset>
 		<techLevel>Medieval</techLevel>
 		<relicChance>3</relicChance>
 
@@ -163,7 +165,8 @@
 			<texPath>Anima/Macuahuitl</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<equippedAngleOffset>-65</equippedAngleOffset>
+		<uiIconScale>1.3</uiIconScale>
+		<equippedAngleOffset>0</equippedAngleOffset>
 		<techLevel>Medieval</techLevel>
 		<relicChance>4</relicChance>
 

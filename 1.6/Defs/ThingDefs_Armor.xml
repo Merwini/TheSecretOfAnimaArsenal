@@ -8,6 +8,7 @@
 		<graphicData>
 			<texPath>Anima/AnimaShaman/AnimaShaman</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.6, 1.6)</drawSize>
 		</graphicData>
 		<techLevel>Medieval</techLevel>
 		<tickerType>Normal</tickerType>
@@ -85,8 +86,9 @@
 		<label>anima shaman headdress</label>
 		<description>A ritual headdress woven from anima grass and reinforced with plates of anima tree bark. Provides only light physical protection, but significantly increases psychic sensitivty and helps disperse neural heat more quickly.</description>
 		<graphicData>
-			<texPath>Anima/AnimaShaman/AnimaShamanHelm</texPath>
+			<texPath>Anima/AnimaShaman/AnimaShamanHelm_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.2, 1.2)</drawSize>
 		</graphicData>
 		<techLevel>Medieval</techLevel>
 		<relicChance>2</relicChance>
