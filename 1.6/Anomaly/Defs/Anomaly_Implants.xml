@@ -53,7 +53,7 @@
 		</ingredients>
 
 		<modExtensions>
-			<li Class="tsoa.arsenal.PsyLinkRecipeExtension">
+			<li Class="tsoa.core.PsyLinkRecipeExtension">
 				<minPsylinkLevel>3</minPsylinkLevel>
 			</li>
 		</modExtensions>

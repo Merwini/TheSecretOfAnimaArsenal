@@ -46,7 +46,7 @@ namespace tsoa.arsenal
 
             Thing thing = req.Thing;
 
-            float scaling = thing.def.statBases.GetStatValueFromList(TSOA_DefOf.TSOA_PsyScaling, 0);
+            float scaling = thing.def.statBases.GetStatValueFromList(TSOAA_DefOf.TSOA_PsyScaling, 0);
             if (scaling <= 0f)
                 return null;
 
