@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+	<!-- Fake "Grown from seed workbench" so when player inspects equipment it will say how to acquire it -->
+	<!-- Seeds themselves -->
+	<!-- Hediffs for each seed? Or one hediff with the target object stored somehow -->
+
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase" Abstract="True" Name="TSOA_ImplantVirionBase" >
+		<workAmount>500</workAmount>
+		<jobString>Implanting virion in TargetA.</jobString>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<isViolation>true</isViolation>
+		<targetsBodyPart>true</targetsBodyPart>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<addsHediff>TSOA_VirionHediff</addsHediff>
+		<workerClass>tsoa.arsenal.Recipe_ImplantVirion</workerClass>
+		
+		<incompatibleWithHediffTags>
+			<li>TSOA_Virion</li>
+		</incompatibleWithHediffTags>
+
+		<researchPrerequisites>
+			<li>TSOA_VoidOne</li>
+		</researchPrerequisites>
+	</RecipeDef>
+
+	<RecipeDef ParentName="TSOA_ImplantVirionBase">
+		<defName>TSOA_ImplantVirionArmor</defName>
+		<label>implant virion (armor)</label>
+		<description>Implant a bioferrite virion in the target. This will gestate into a suit of bioferrite armorm, killing the recipient in the process.</description>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_BioferriteArmor</ThingDef>
+		</descriptionHyperlinks>
+		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
+		<uiIconThing>TSOA_VirionArmor</uiIconThing>
+		<ingredients Inherit="false">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_VirionArmor</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter Inherit="false">
+			<thingDefs>
+				<li>TSOA_VirionArmor</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	
+	<ThingDef ParentName="ResourceBase" Abstract="true" Name="TSOA_VirionBase">
+		<!-- placeholder values -->
+		<graphicData>
+			<texPath>Things/Item/Resource/Shard</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Standard_Drop</soundDrop>
+		<stackLimit>5</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<genericMarketSellable>false</genericMarketSellable>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<MarketValue>400</MarketValue>
+			<Mass>0.6</Mass>
+			<Flammability>0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<intricate>true</intricate>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef ParentName="TSOA_VirionBase">
+		<defName>TSOA_VirionArmor</defName>
+		<label>bioferrite virion (armor)</label>
+		<description>A strange device made from dark archotech nanites, that blurs the lines between organic and inorganic. Implanted into a human, it will consume the recipient's body to grow a piece of bioferrite equipment. When the growth is complete, it will emerge, killing the recipient in the process. If the recipient dies before the growth is complete, a hostile entity will emerge.</description>
+		<modExtensions>
+			<li Class="tsoa.arsenal.VirionExtension">
+				<producedItem>TSOA_BioferriteArmor</producedItem>
+				<gestationDays>5</gestationDays>
+			</li>
+		</modExtensions>
+	</ThingDef>
+	
+</Defs>
