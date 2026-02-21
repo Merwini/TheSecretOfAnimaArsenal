@@ -6,21 +6,20 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace tsoa.arsenal
+namespace tsoa.arsenal;
+
+public class HediffCompProperties_Evolving : HediffCompProperties
 {
-    public class HediffCompProperties_Evolving : HediffCompProperties
+    public StatDef evolvingStat;
+
+    public float lowerThreshold = 0f;
+    public float upperThreshold = 999f;
+
+    public HediffDef hediffAbove = null;
+    public HediffDef hediffBelow = null;
+
+    public HediffCompProperties_Evolving()
     {
-        public StatDef evolvingStat;
-
-        public float lowerThreshold = 0f;
-        public float upperThreshold = 999f;
-
-        public HediffDef hediffAbove = null;
-        public HediffDef hediffBelow = null;
-
-        public HediffCompProperties_Evolving()
-        {
-            this.compClass = typeof(HediffComp_Evolving);
-        }
+        this.compClass = typeof(HediffComp_Evolving);
     }
 }

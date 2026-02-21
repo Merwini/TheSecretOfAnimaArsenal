@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 using Verse;
 using RimWorld;
 
-namespace tsoa.arsenal
+namespace tsoa.arsenal;
+
+[DefOf]
+public class TSOAA_DefOf
 {
-    [DefOf]
-    public class TSOAA_DefOf
-    {
-        public static JobDef TSOA_StatExchangeLink;
+    public static JobDef TSOA_StatExchangeLink;
 
-        public static JobDef TSOA_StatExchangeUnlink;
+    public static JobDef TSOA_StatExchangeUnlink;
 
-        public static StatDef TSOA_PsyScaling;
+    public static StatDef TSOA_PsyScaling;
 
-        public static DamageDef TSOA_EntropyExtraDamage;
-    }
+    public static DamageDef TSOA_EntropyExtraDamage;
 }
