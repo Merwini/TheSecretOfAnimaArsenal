@@ -84,6 +84,18 @@ public class Hediff_Virion : HediffWithComps
         pawn.health.RemoveHediff(this);
     }
 
+    public override bool TendableNow(bool ignoreTimer = false)
+    {
+        return base.TendableNow(ignoreTimer);
+        // TODO virion becomes restless at random intervals, requiring tending
+    }
+
+    public override void Tended(float quality, float maxQuality, int batchPosition = 0)
+    {
+        base.Tended(quality, maxQuality, batchPosition);
+        // TODO
+    }
+
     private void DoEmergingEffects(Map map, IntVec3 pos)
     {
         EffecterDefOf.MetalhorrorEmerging.Spawn(pos, map).Cleanup();
@@ -139,8 +151,8 @@ public class Hediff_Virion : HediffWithComps
         if (comp == null)
             return;
 
-        QualityCategory qual = QualityCategory.Normal;
-
+        QualityCategory qual = QualityCategory.Awful;
+        qual++;
         comp.SetQuality(qual, null);
     }
 
