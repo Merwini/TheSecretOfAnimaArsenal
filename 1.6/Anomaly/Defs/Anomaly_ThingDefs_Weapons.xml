@@ -11,7 +11,7 @@
 			<texPath>Anima/Kopesh</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<equippedAngleOffset>0</equippedAngleOffset>
+		<equippedAngleOffset>-15</equippedAngleOffset>
 		<techLevel>Medieval</techLevel>
 		<relicChance>3</relicChance>
 
@@ -84,9 +84,9 @@
 		<graphicData>
 			<texPath>Anima/AxeD</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(1.4, 1.4)</drawSize>
+			<drawSize>(1.2, 1.2)</drawSize>
 		</graphicData>
-		<equippedAngleOffset>0</equippedAngleOffset>
+		<equippedAngleOffset>-15</equippedAngleOffset>
 		<techLevel>Medieval</techLevel>
 		<relicChance>3</relicChance>
 
@@ -151,9 +151,9 @@
 		<graphicData>
 			<texPath>Anima/Kanabo</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(1.4, 1.4)</drawSize>
+			<drawSize>(1.2, 1.2)</drawSize>
 		</graphicData>
-		<equippedAngleOffset>0</equippedAngleOffset>
+		<equippedAngleOffset>-15</equippedAngleOffset>
 		<techLevel>Medieval</techLevel>
 		<relicChance>3</relicChance>
 		

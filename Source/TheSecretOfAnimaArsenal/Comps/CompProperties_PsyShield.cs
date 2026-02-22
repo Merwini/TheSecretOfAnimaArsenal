@@ -6,23 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace tsoa.arsenal
+namespace tsoa.arsenal;
+
+public class CompProperties_PsyShield : CompProperties
 {
-    public class CompProperties_PsyShield : CompProperties
+    public float heatPerDamage = 0.5f;
+
+    public float resetHeatPercent = 0.8f;
+
+    public int resetDelayTicks = 120;
+
+    public float minDrawSize = 1.2f;
+
+    public float maxDrawSize = 1.55f;
+
+    public CompProperties_PsyShield()
     {
-        public float heatPerDamage = 0.5f;
-
-        public float resetHeatPercent = 0.8f;
-
-        public int resetDelayTicks = 120;
-
-        public float minDrawSize = 1.2f;
-
-        public float maxDrawSize = 1.55f;
-
-        public CompProperties_PsyShield()
-        {
-            this.compClass = typeof(CompPsyShield);
-        }
+        this.compClass = typeof(CompPsyShield);
     }
 }

@@ -7,78 +7,77 @@ using Verse;
 using Verse.AI;
 using Verse.Sound;
 
-namespace tsoa.arsenal
+namespace tsoa.arsenal;
+
+public class JobDriver_StatExchangeUnlink : JobDriver
 {
-    public class JobDriver_StatExchangeUnlink : JobDriver
+    // Job targets:
+    // A = target pawn to unlink from
+    public Pawn TargetPawn => (Pawn)job.targetA.Thing;
+
+    private HediffComp_StatExchanger MasterComp => pawn?.health?.hediffSet?.hediffs?
+        .Select(h => h.TryGetComp<HediffComp_StatExchanger>())
+        .FirstOrDefault(c => c != null && c.Props.isMaster);
+
+    public int DurationTicks => MasterComp?.Props?.unlinkJobDuration ?? 300;
+
+    public override bool TryMakePreToilReservations(bool errorOnFailed)
     {
-        // Job targets:
-        // A = target pawn to unlink from
-        public Pawn TargetPawn => (Pawn)job.targetA.Thing;
+        return true;
+    }
 
-        private HediffComp_StatExchanger MasterComp => pawn?.health?.hediffSet?.hediffs?
-            .Select(h => h.TryGetComp<HediffComp_StatExchanger>())
-            .FirstOrDefault(c => c != null && c.Props.isMaster);
+    protected override IEnumerable<Toil> MakeNewToils()
+    {
+        this.FailOn(() => MasterComp == null);
+        this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
+        this.FailOn(() => TargetPawn == null || TargetPawn.Dead);
 
-        public int DurationTicks => MasterComp?.Props?.unlinkJobDuration ?? 300;
+        Toil wait = Toils_General.Wait(DurationTicks);
+        wait.handlingFacing = true;
+        wait.WithProgressBarToilDelay(TargetIndex.None);
 
-        public override bool TryMakePreToilReservations(bool errorOnFailed)
+        wait.tickAction = () =>
         {
-            return true;
-        }
+            if (TargetPawn != null && TargetPawn.Spawned)
+                pawn.rotationTracker.FaceCell(TargetPawn.Position);
+        };
 
-        protected override IEnumerable<Toil> MakeNewToils()
+        yield return wait;
+
+        Toil finalize = Toils_General.Do(() =>
         {
-            this.FailOn(() => MasterComp == null);
-            this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
-            this.FailOn(() => TargetPawn == null || TargetPawn.Dead);
+            if (MasterComp == null || TargetPawn == null)
+                return;
 
-            Toil wait = Toils_General.Wait(DurationTicks);
-            wait.handlingFacing = true;
-            wait.WithProgressBarToilDelay(TargetIndex.None);
+            HediffComp_StatExchanger targetComp = TargetPawn.health?.hediffSet?.hediffs?
+                .Select(h => h.TryGetComp<HediffComp_StatExchanger>())
+                .FirstOrDefault(c => c != null);
 
-            wait.tickAction = () =>
+            if (targetComp == null)
+                return;
+
+            if (!MasterComp.LinkedComps.Contains(targetComp))
+                return;
+
+            MasterComp.UnlinkOtherPawn(targetComp);
+
+            EffecterDef effDef = MasterComp.Props.unlinkCompleteEffecter;
+            if (effDef != null && pawn.Map != null)
             {
-                if (TargetPawn != null && TargetPawn.Spawned)
-                    pawn.rotationTracker.FaceCell(TargetPawn.Position);
-            };
+                Effecter eff = effDef.Spawn();
+                eff.scale = MasterComp.Props.unlinkCompleteEffecterScale;
+                eff.Trigger(pawn, pawn);
+                eff.Cleanup();
+            }
 
-            yield return wait;
-
-            Toil finalize = Toils_General.Do(() =>
+            SoundDef snd = MasterComp.Props.unlinkCompleteSound;
+            if (snd != null && pawn.Map != null)
             {
-                if (MasterComp == null || TargetPawn == null)
-                    return;
+                snd.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
+            }
+        });
+        finalize.defaultCompleteMode = ToilCompleteMode.Instant;
 
-                HediffComp_StatExchanger targetComp = TargetPawn.health?.hediffSet?.hediffs?
-                    .Select(h => h.TryGetComp<HediffComp_StatExchanger>())
-                    .FirstOrDefault(c => c != null);
-
-                if (targetComp == null)
-                    return;
-
-                if (!MasterComp.LinkedComps.Contains(targetComp))
-                    return;
-
-                MasterComp.UnlinkOtherPawn(targetComp);
-
-                EffecterDef effDef = MasterComp.Props.unlinkCompleteEffecter;
-                if (effDef != null && pawn.Map != null)
-                {
-                    Effecter eff = effDef.Spawn();
-                    eff.scale = MasterComp.Props.unlinkCompleteEffecterScale;
-                    eff.Trigger(pawn, pawn);
-                    eff.Cleanup();
-                }
-
-                SoundDef snd = MasterComp.Props.unlinkCompleteSound;
-                if (snd != null && pawn.Map != null)
-                {
-                    snd.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
-                }
-            });
-            finalize.defaultCompleteMode = ToilCompleteMode.Instant;
-
-            yield return finalize;
-        }
+        yield return finalize;
     }
 }

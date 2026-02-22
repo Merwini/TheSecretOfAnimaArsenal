@@ -6,14 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace tsoa.arsenal
+namespace tsoa.arsenal;
+
+public class EntropyExtraDamageExtension : DefModExtension
 {
-    public class EntropyExtraDamageExtension : DefModExtension
-    {
-        public float heatConsumedPercent = 0.1f;
+    public float heatConsumedPercent = 0.1f;
 
-        public float damagePerHeatConsumed = 4f;
+    public float damagePerHeatConsumed = 4f;
 
-        public DamageDef damageDef;
-    }
+    public DamageDef damageDef;
 }

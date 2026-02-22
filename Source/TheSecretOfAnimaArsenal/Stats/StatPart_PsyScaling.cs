@@ -8,69 +8,68 @@ using RimWorld;
 using UnityEngine;
 using tsoa.core;
 
-namespace tsoa.arsenal
+namespace tsoa.arsenal;
+
+class StatPart_PsyScaling : StatPart
 {
-    class StatPart_PsyScaling : StatPart
+    public override void TransformValue(StatRequest req, ref float val)
     {
-        public override void TransformValue(StatRequest req, ref float val)
-        {
-            if (!req.HasThing)
-                return;
+        if (!req.HasThing)
+            return;
 
-            Thing thing = req.Thing;
+        Thing thing = req.Thing;
 
-            float scaling = thing.def.statBases.GetStatValueFromList(TSOAA_DefOf.TSOA_PsyScaling, 0);
-            if (scaling <= 0f)
-                return;
+        float scaling = thing.def.statBases.GetStatValueFromList(TSOAA_DefOf.TSOA_PsyScaling, 0);
+        if (scaling <= 0f)
+            return;
 
-            Pawn pawn = null;
-            if (thing.ParentHolder is Pawn_EquipmentTracker eq)
-                pawn = eq.pawn;
-            else if (thing.ParentHolder is Pawn_ApparelTracker ap)
-                pawn = ap.pawn;
+        Pawn pawn = null;
+        if (thing.ParentHolder is Pawn_EquipmentTracker eq)
+            pawn = eq.pawn;
+        else if (thing.ParentHolder is Pawn_ApparelTracker ap)
+            pawn = ap.pawn;
 
-            if (pawn == null)
-                return;
+        if (pawn == null)
+            return;
 
-            float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity);
-            if (sensitivity <= 1f) // Won't scale values down
-                return;
+        float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity);
+        if (sensitivity <= 1f) // Won't scale values down
+            return;
 
-            val = TSOA_Utils.GetPsyScaledValue(val, scaling, sensitivity);
-        }
+        val = TSOA_Utils.GetPsyScaledValue(val, scaling, sensitivity);
+    }
 
-        public override string ExplanationPart(StatRequest req)
-        {
-            if (!req.HasThing)
-                return null;
+    public override string ExplanationPart(StatRequest req)
+    {
+        if (!req.HasThing)
+            return null;
 
-            Thing thing = req.Thing;
+        Thing thing = req.Thing;
 
-            float scaling = thing.def.statBases.GetStatValueFromList(TSOAA_DefOf.TSOA_PsyScaling, 0);
-            if (scaling <= 0f)
-                return null;
+        float scaling = thing.def.statBases.GetStatValueFromList(TSOAA_DefOf.TSOA_PsyScaling, 0);
+        if (scaling <= 0f)
+            return null;
 
-            Pawn pawn = null;
-            if (thing.ParentHolder is Pawn_EquipmentTracker eq)
-                pawn = eq.pawn;
-            else if (thing.ParentHolder is Pawn_ApparelTracker ap)
-                pawn = ap.pawn;
+        Pawn pawn = null;
+        if (thing.ParentHolder is Pawn_EquipmentTracker eq)
+            pawn = eq.pawn;
+        else if (thing.ParentHolder is Pawn_ApparelTracker ap)
+            pawn = ap.pawn;
 
-            if (pawn == null)
-                return null;
+        if (pawn == null)
+            return null;
 
-            float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity);
-            float bonus = TSOA_Utils.GetPsyScalingFactor(scaling, sensitivity);
-            if (bonus <= 0f)
-                return null;   // show no scaling if no bonus applied
+        float sensitivity = pawn.GetStatValue(StatDefOf.PsychicSensitivity);
+        float bonus = TSOA_Utils.GetPsyScalingFactor(scaling, sensitivity);
+        if (bonus <= 0f)
+            return null;   // show no scaling if no bonus applied
 
-            float totalMult = 1f + bonus;
+        float totalMult = 1f + bonus;
 
-            return "TSOA_PsyScaling_StatPartExplanation".Translate(
-                sensitivity.ToStringPercent(),
-                scaling.ToStringPercent(),
-                totalMult.ToStringPercent()
-            );
-        }
+        return "TSOA_PsyScaling_StatPartExplanation".Translate(
+            sensitivity.ToStringPercent(),
+            scaling.ToStringPercent(),
+            totalMult.ToStringPercent()
+        );
     }
 }
