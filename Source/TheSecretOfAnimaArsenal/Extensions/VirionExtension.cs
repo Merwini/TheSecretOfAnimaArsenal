@@ -14,8 +14,18 @@ public class VirionExtension : DefModExtension
 
     public int producedCount = 1;
 
-    public float gestationDays;
+    public float initialGestationDays;
 
+    public List<float> qualityGestationDaysList = new List<float>()
+    {
+        // starts at awful
+        1, // poor
+        3, // normal
+        5, // good
+        7, // excellent
+        10, // masterwork
+        15, // legendary
+    };
     public List<PawnKindDef> spawnedEntities;
 
     public override IEnumerable<string> ConfigErrors()
@@ -31,9 +41,9 @@ public class VirionExtension : DefModExtension
             yield return "BioferriteVirionExtension missing producedItem. Defaulting to one wooden log (this is funny to me).";
         }
 
-        if (gestationDays <= 0)
+        if (initialGestationDays <= 0)
         {
-            gestationDays = 1;
+            initialGestationDays = 1;
             yield return "BioferriteVirionExtension gestationDays must be greater than 0. Defaulting to 1.";
         }
     }
