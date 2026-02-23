@@ -18,4 +18,6 @@ public class TSOAA_DefOf
     public static StatDef TSOA_PsyScaling;
 
     public static DamageDef TSOA_EntropyExtraDamage;
+
+    public static HediffDef TSOA_VirionHediff;
 }

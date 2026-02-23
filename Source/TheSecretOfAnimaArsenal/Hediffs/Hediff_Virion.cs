@@ -13,8 +13,33 @@ namespace tsoa.arsenal;
 
 public class Hediff_Virion : HediffWithComps
 {
-    private int TicksToSpawn => (int)(Extension.gestationDays * GenDate.TicksPerDay);
-    private int ticksRemaining = -1;
+    /* Reminder
+        Awful = 0
+        Poor = 1
+        Normal = 2
+        Good = 3
+        Excellent = 4
+        Masterwork = 5
+        Legendary = 6
+     */
+
+    private int curStageIndex = -1;
+    private int ticksRemainingInStage = -1;
+    public int TicksForNextStage
+    {
+        get
+        {
+            if (curStageIndex == -1) // initial gestation
+                return (int)Extension.initialGestationDays * GenDate.TicksPerDay;
+
+            if (curStageIndex == 6) // already at legendary, no more stages
+                return int.MaxValue;
+
+            return (int)Extension.qualityGestationDaysList[curStageIndex + 1] * GenDate.TicksPerDay;
+        }
+    }
+
+    private bool extracting = false;
 
     internal ThingDef virionDef;
 
@@ -35,27 +60,40 @@ public class Hediff_Virion : HediffWithComps
 
     private bool fullyGestated = false; // don't need to save, no ticks between when it is set and when it is read
 
+    public override string LabelInBrackets
+    {
+        get
+        {
+            // TODO current quality + Severity
+            return null;
+        }
+    }
+
     public override void PostAdd(DamageInfo? dinfo)
     {
         base.PostAdd(dinfo);
-        ticksRemaining = TicksToSpawn;
+        ticksRemainingInStage = (int)(Extension.initialGestationDays * GenDate.TicksPerDay);
+        curStageIndex = -1;
     }
 
     public override void TickInterval(int delta)
     {
         base.TickInterval(delta);
 
-        if (ticksRemaining > 0)
+        if (ticksRemainingInStage > 0)
         {
-            ticksRemaining = Math.Max(0, ticksRemaining - delta);
+            ticksRemainingInStage = Math.Max(0, ticksRemainingInStage - delta);
         }
 
-        Severity = 1f - (float)ticksRemaining / TicksToSpawn;
+        Severity = 1f - (float)ticksRemainingInStage / TicksForNextStage;
 
-        if (ticksRemaining <= 0 && pawn.SpawnedOrAnyParentSpawned)
+        if (ticksRemainingInStage <= 0 && pawn.SpawnedOrAnyParentSpawned)
         {
-            fullyGestated = true;
-            HealthUtility.DamageUntilDead(pawn); // maybe destroy the torso instead?
+            if (curStageIndex < 6)
+            {
+                curStageIndex++;
+                ticksRemainingInStage = TicksForNextStage;
+            }
         }
     }
 
@@ -71,17 +109,14 @@ public class Hediff_Virion : HediffWithComps
         IntVec3 pos = pawn.PositionHeld;
 
         DoEmergingEffects(map, pos);
-        if (fullyGestated)
-        {
-            SpawnItem(map, pos);
-            Messages.Message("TSOA_VirionComplete".Translate(pawn.Name), new LookTargets(pos, map), MessageTypeDefOf.PositiveEvent);
-        }
-        else
-        {
-            SpawnEntity(map, pos);
-            Messages.Message("TSOA_VirionIncomplete".Translate(pawn.Name), new LookTargets(pos, map), MessageTypeDefOf.NegativeHealthEvent);
-        }
+        SpawnResult(map, pos, !extracting);
         pawn.health.RemoveHediff(this);
+    }
+
+    public void Notify_VirionExtracted()
+    {
+        extracting = true;
+        HealthUtility.DamageUntilDead(pawn); // maybe destroy specifically the torso instead?
     }
 
     public override bool TendableNow(bool ignoreTimer = false)
@@ -111,12 +146,27 @@ public class Hediff_Virion : HediffWithComps
         SoundDefOf.Crunch.PlayOneShot(new TargetInfo(pos, map));
     }
 
+    private void SpawnResult(Map map, IntVec3 pos, bool premature)
+    {
+        // TODO check pawn spawned here, or in the caller?
+
+        if (curStageIndex == -1 || premature) // maybe give item if stage is Legendary? Am I merciful?
+        {
+            SpawnEntity(map, pos);
+        }
+        else
+        {
+            SpawnItem(map, pos);
+        }
+    }
+
     private void SpawnItem(Map map, IntVec3 pos)
     {
         Thing thing = ThingMaker.MakeThing(Extension.producedItem);
-        SetThingQuality(thing);
+        SetThingQuality(thing, curStageIndex);
         thing.stackCount = Extension.producedCount;
         GenPlace.TryPlaceThing(thing, pos, map, ThingPlaceMode.Near);
+        Messages.Message("TSOA_VirionComplete".Translate(pawn.Name), new LookTargets(pos, map), MessageTypeDefOf.PositiveEvent);
     }
 
     private void SpawnEntity(Map map, IntVec3 pos)
@@ -142,9 +192,10 @@ public class Hediff_Virion : HediffWithComps
         }
 
         GenSpawn.Spawn(entity, pos, map);
+        Messages.Message("TSOA_VirionIncomplete".Translate(pawn.Name), new LookTargets(pos, map), MessageTypeDefOf.NegativeHealthEvent);
     }
 
-    private void SetThingQuality(Thing thing)
+    private void SetThingQuality(Thing thing, int index)
     {
         //TODO
         CompQuality comp = thing.TryGetComp<CompQuality>();
@@ -152,7 +203,10 @@ public class Hediff_Virion : HediffWithComps
             return;
 
         QualityCategory qual = QualityCategory.Awful;
-        qual++;
+        for (int i = 0; i <= index; i++)
+        {
+            qual++;
+        }
         comp.SetQuality(qual, null);
     }
 
@@ -179,7 +233,8 @@ public class Hediff_Virion : HediffWithComps
     {
         base.ExposeData();
         Scribe_Defs.Look(ref virionDef, "virionDef");
-        Scribe_Values.Look(ref ticksRemaining, "ticksRemaining");
+        Scribe_Values.Look(ref ticksRemainingInStage, "ticksRemainingInStage", -1);
+        Scribe_Values.Look(ref curStageIndex, "curStageIndex", -1);
     }
 
 }
