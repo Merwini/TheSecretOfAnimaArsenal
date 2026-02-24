@@ -24,5 +24,8 @@
 	<TSOA_VirionNotSpawned>{0} died outside of your map, and their Virion was wasted.</TSOA_VirionNotSpawned>
 	<TSOA_VirionIncomplete>{0} has died before their Virion finished gestating, and it has emerged as a hostile entity!</TSOA_VirionIncomplete>
 	<TSOA_VirionComplete>{0} has finished gestating their Virion, and it has fatally emerged from them!</TSOA_VirionComplete>
+	<TSOA_GestatingStage>Gestating</TSOA_GestatingStage>
+	<TSOA_VirionTendSuccess>Virion pacified!</TSOA_VirionTendSuccess>
+	<TSOA_VirionTendFailure>Failed tending. Tend quality: {0}, required: {1}.</TSOA_VirionTendFailure>
 	
 </LanguageData>

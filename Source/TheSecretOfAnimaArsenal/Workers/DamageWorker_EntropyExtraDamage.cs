@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 using RimWorld;
+using LudeonTK;
 
 namespace tsoa.arsenal;
 
@@ -38,7 +39,7 @@ public class DamageWorker_EntropyExtraDamage : DamageWorker_AddInjury
         newDinfo.Def = extension.damageDef;
         newDinfo.SetAmount(bonusDamage);
 
-        if (Prefs.DevMode)
+        if (DebugSettings.godMode)
         {
             Log.Message($"[TSOA] DamageWorker_PsyExtraDamage: {pawn.LabelShort} consumed {heatCost} heat (from {originalHeat}) to deal {bonusDamage} extra {extension.damageDef.label} damage to {victim.LabelShort}.");
         }

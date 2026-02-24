@@ -25,17 +25,21 @@ public class Hediff_Virion : HediffWithComps
 
     private int curStageIndex = -1;
     private int ticksRemainingInStage = -1;
-    public int TicksForNextStage
+    private bool hasQuality; // store this so I don't have to keep checking for QualityComp, saves some CPU cycles
+
+    private int InitialGestationTicks => (int)(Extension.initialGestationDays * GenDate.TicksPerDay);
+
+    public int TicksUntilNextStage
     {
         get
         {
             if (curStageIndex == -1) // initial gestation
-                return (int)Extension.initialGestationDays * GenDate.TicksPerDay;
+                return (int)(Extension.initialGestationDays * GenDate.TicksPerDay);
 
             if (curStageIndex == 6) // already at legendary, no more stages
                 return int.MaxValue;
 
-            return (int)Extension.qualityGestationDaysList[curStageIndex + 1] * GenDate.TicksPerDay;
+            return (int)(Extension.qualityGestationDaysList[curStageIndex] * GenDate.TicksPerDay);
         }
     }
 
@@ -43,6 +47,8 @@ public class Hediff_Virion : HediffWithComps
     private int ticksUntilNextVirionDamage = -1;
     private bool virionActive = false;
     public float TendQualityRequirement => Extension.requiredTendQualityPerStage * curStageIndex;
+    public int RandomTicksUntilNextVirionActivity => (int)(Extension.virionActivityDaysRange.RandomInRange * GenDate.TicksPerDay);
+    public int RandomTicksUntilNextVirionDamage => (int)(Extension.virionDamageDaysRange.RandomInRange * GenDate.TicksPerDay);
 
     private bool extracting = false;
 
@@ -63,26 +69,38 @@ public class Hediff_Virion : HediffWithComps
 
     internal List<PawnKindDef> spawnedEntities;
 
-    private bool fullyGestated = false; // don't need to save, no ticks between when it is set and when it is read
-
     public override string LabelInBrackets
     {
         get
         {
-            // TODO current quality + Severity
-            return null;
+            string stageLabel = curStageIndex switch
+            {
+                -1 => "TSOA_GestatingStage".Translate(),
+                0 => "QualityCategory_Awful".Translate(),
+                1 => "QualityCategory_Poor".Translate(),
+                2 => "QualityCategory_Normal".Translate(),
+                3 => "QualityCategory_Good".Translate(),
+                4 => "QualityCategory_Excellent".Translate(),
+                5 => "QualityCategory_Masterwork".Translate(),
+                6 => "QualityCategory_Legendary".Translate(),
+                _ => "ERROR"
+            };
+            return $"{stageLabel} {Severity.ToStringPercent()}";
         }
     }
 
     public override void PostAdd(DamageInfo? dinfo)
     {
         base.PostAdd(dinfo);
-        ticksRemainingInStage = (int)(Extension.initialGestationDays * GenDate.TicksPerDay);
+        ticksRemainingInStage = InitialGestationTicks;
         curStageIndex = -1;
 
-        ticksUntilNextVirionActivity = ticksRemainingInStage + (Extension.virionAcvtivityDaysRange.RandomInRange() * GenDate.TicksPerDay); // Pre-load an activity with enough padding to also get past initial gestation
+        ticksUntilNextVirionActivity = ticksRemainingInStage + RandomTicksUntilNextVirionActivity; // Pre-load an activity with enough padding to also get past initial gestation
+
+        hasQuality = Extension.producedItem.HasComp<CompQuality>();
     }
 
+    // TODO make stage advancement skip if !hasQuality
     public override void TickInterval(int delta)
     {
         base.TickInterval(delta);
@@ -92,12 +110,12 @@ public class Hediff_Virion : HediffWithComps
             ticksRemainingInStage = Math.Max(0, ticksRemainingInStage - delta);
         }
 
-        Severity = 1f - (float)ticksRemainingInStage / TicksForNextStage;
+        Severity = 1f - (float)ticksRemainingInStage / TicksUntilNextStage;
 
         if (ticksRemainingInStage <= 0 && curStageIndex < 6)
         {
             curStageIndex++;
-            ticksRemainingInStage = TicksForNextStage;
+            ticksRemainingInStage = TicksUntilNextStage;
         }
 
         if (!virionActive)
@@ -111,7 +129,7 @@ public class Hediff_Virion : HediffWithComps
             if (ticksUntilNextVirionActivity <= 0)
             {
                 virionActive = true;
-                ticksUntilNextVirionDamage = Extension.virionDamageDaysRange.RandomInRange() * GenDate.TicksPerDay;
+                ticksUntilNextVirionDamage = RandomTicksUntilNextVirionDamage;
             }
         }
         else
@@ -122,7 +140,8 @@ public class Hediff_Virion : HediffWithComps
             }
             if (ticksUntilNextVirionDamage <= 0)
             {
-                // TODO virion damages host
+                DoVirionDamage();
+                ticksUntilNextVirionDamage = RandomTicksUntilNextVirionDamage;
             }
         }
     }
@@ -151,15 +170,71 @@ public class Hediff_Virion : HediffWithComps
 
     public override bool TendableNow(bool ignoreTimer = false)
     {
-        return base.TendableNow(ignoreTimer);
-        // TODO virion becomes restless at random intervals, requiring tending
+        return virionActive;
     }
 
     public override void Tended(float quality, float maxQuality, int batchPosition = 0)
     {
-        base.Tended(quality, maxQuality, batchPosition);
-        // TODO check tend quality again rwquirement for growth stage. If above, virionActive = false and reset timer
-        // if below, send a message and a text mote that says quality vs requirement
+        if (quality >= TendQualityRequirement)
+        {
+            virionActive = false;
+            ticksUntilNextVirionActivity = RandomTicksUntilNextVirionActivity;
+            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "TSOA_VirionTendSuccess".Translate());
+        }
+        else
+        {
+            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "TSOA_VirionTendFailure".Translate(quality.ToStringPercent(), TendQualityRequirement.ToStringPercent()), Color.red);
+        }
+    }
+
+    private void DoVirionDamage()
+    {
+        if (!pawn.SpawnedOrAnyParentSpawned)
+        {
+            return;
+        }
+
+        EffecterDefOf.MeatExplosionSmall.Spawn(pawn.Position, pawn.Map).Cleanup();
+        SoundDefOf.FleshmassHeart_Throb.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
+
+        BodyPartRecord torso = pawn.RaceProps.body.corePart;
+        if (torso == null)
+        {
+            return;
+        }
+
+        List<BodyPartRecord> candidates = new List<BodyPartRecord>();
+        foreach (BodyPartRecord part in torso.GetDirectChildParts())
+        {
+            if (part.depth == BodyPartDepth.Inside)
+            {
+                candidates.Add(part);
+            }
+        }
+
+        BodyPartRecord targetPart;
+
+        if (candidates.Count > 0 && Rand.Bool) // 50% chance to hit torso vs a random organ
+        {
+            targetPart = candidates.RandomElement(); 
+        }
+        else
+        {
+            targetPart = torso;
+        }
+
+        float damageAmount = Rand.Range(4f, 10f); // organs have 15-20 hitPoints, on average fatal damage will happen if the same organ is hit 3 times, but could happen in 2
+
+        DamageInfo dinfo = new DamageInfo(
+            DamageDefOf.Cut,
+            damageAmount,
+            0f,
+            -1f,
+            instigator: null,
+            hitPart: targetPart
+        );
+
+        pawn.TakeDamage(dinfo);
     }
 
     private void DoEmergingEffects(Map map, IntVec3 pos)
@@ -179,8 +254,6 @@ public class Hediff_Virion : HediffWithComps
 
     private void SpawnResult(Map map, IntVec3 pos, bool premature)
     {
-        // TODO check pawn spawned here, or in the caller?
-
         if (curStageIndex == -1 || premature) // maybe give item if stage is Legendary? Am I merciful?
         {
             SpawnEntity(map, pos);
@@ -205,15 +278,10 @@ public class Hediff_Virion : HediffWithComps
         Pawn entity;
         PawnKindDef kindDef;
 
-        if (Extension.spawnedEntities.NullOrEmpty())
-        {
-            entity = PawnGenerator.GeneratePawn(PawnKindDefOf.Metalhorror, Faction.OfEntities);
-            entity.ageTracker.LockCurrentLifeStageIndex(CurStageIndex); // I think this should make it so that stage 1 spawns a larva, 2 a juvenile, and 3 an adult
-            pawn.ageTracker.AgeBiologicalTicks = this.ageTicks;
-            pawn.ageTracker.AgeChronologicalTicks = this.ageTicks;
+        List<List<VirionSpawnEntry>> entitiesToSpawn = Extension.entitySpawnByStage ?? VirionExtension.metalhorrorDefaults;
 
-        }
-        else if (Extension.spawnedEntities.Count < CurStageIndex + 1)
+        
+        if (Extension.spawnedEntities.Count < CurStageIndex + 1)
         {
             entity = PawnGenerator.GeneratePawn(Extension.spawnedEntities.Last(), Faction.OfEntities);
         }
@@ -228,17 +296,14 @@ public class Hediff_Virion : HediffWithComps
 
     private void SetThingQuality(Thing thing, int index)
     {
-        //TODO
+        if (!hasQuality)
+            return;
+
         CompQuality comp = thing.TryGetComp<CompQuality>();
         if (comp == null)
             return;
 
-        QualityCategory qual = QualityCategory.Awful;
-        for (int i = 0; i <= index; i++)
-        {
-            qual++;
-        }
-        comp.SetQuality(qual, null);
+        comp.SetQuality((QualityCategory)index, null);
     }
 
     public override IEnumerable<Gizmo> GetGizmos()
@@ -254,7 +319,25 @@ public class Hediff_Virion : HediffWithComps
                 defaultLabel = "Dev: Progress virion 1 day",
                 action = () =>
                 {
-                    ticksRemaining -= GenDate.TicksPerDay;
+                    ticksRemainingInStage -= GenDate.TicksPerDay;
+                }
+            };
+
+            yield return new Command_Action
+            {
+                defaultLabel = "Dev: Virion activity next tick",
+                action = () =>
+                {
+                    ticksUntilNextVirionActivity = 0;
+                }
+            };
+
+            yield return new Command_Action
+            {
+                defaultLabel = "Dev: Virion damage next tick",
+                action = () =>
+                {
+                    ticksUntilNextVirionDamage = 0;
                 }
             };
         }
@@ -266,6 +349,7 @@ public class Hediff_Virion : HediffWithComps
         Scribe_Defs.Look(ref virionDef, "virionDef");
         Scribe_Values.Look(ref ticksRemainingInStage, "ticksRemainingInStage", -1);
         Scribe_Values.Look(ref curStageIndex, "curStageIndex", -1);
+        Scribe_Values.Look(ref hasQuality, "hasQuality", false);
 
         Scribe_Values.Look(ref ticksUntilNextVirionActivity, "ticksUntilNextVirionActivity", -1);
         Scribe_Values.Look(ref ticksUntilNextVirionDamage, "ticksUntilNextVirionDamage", -1);
