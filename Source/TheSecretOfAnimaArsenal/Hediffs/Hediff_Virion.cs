@@ -39,6 +39,11 @@ public class Hediff_Virion : HediffWithComps
         }
     }
 
+    private int ticksUntilNextVirionActivity = -1;
+    private int ticksUntilNextVirionDamage = -1;
+    private bool virionActive = false;
+    public float TendQualityRequirement => Extension.requiredTendQualityPerStage * curStageIndex;
+
     private bool extracting = false;
 
     internal ThingDef virionDef;
@@ -74,6 +79,8 @@ public class Hediff_Virion : HediffWithComps
         base.PostAdd(dinfo);
         ticksRemainingInStage = (int)(Extension.initialGestationDays * GenDate.TicksPerDay);
         curStageIndex = -1;
+
+        ticksUntilNextVirionActivity = ticksRemainingInStage + (Extension.virionAcvtivityDaysRange.RandomInRange() * GenDate.TicksPerDay); // Pre-load an activity with enough padding to also get past initial gestation
     }
 
     public override void TickInterval(int delta)
@@ -87,12 +94,35 @@ public class Hediff_Virion : HediffWithComps
 
         Severity = 1f - (float)ticksRemainingInStage / TicksForNextStage;
 
-        if (ticksRemainingInStage <= 0 && pawn.SpawnedOrAnyParentSpawned)
+        if (ticksRemainingInStage <= 0 && curStageIndex < 6)
         {
-            if (curStageIndex < 6)
+            curStageIndex++;
+            ticksRemainingInStage = TicksForNextStage;
+        }
+
+        if (!virionActive)
+        {
+            if (ticksUntilNextVirionActivity > 0)
             {
-                curStageIndex++;
-                ticksRemainingInStage = TicksForNextStage;
+
+                ticksUntilNextVirionActivity = Math.Max(0, ticksUntilNextVirionActivity - delta);
+            }
+
+            if (ticksUntilNextVirionActivity <= 0)
+            {
+                virionActive = true;
+                ticksUntilNextVirionDamage = Extension.virionDamageDaysRange.RandomInRange() * GenDate.TicksPerDay;
+            }
+        }
+        else
+        {
+            if (ticksUntilNextVirionDamage > 0)
+            {
+                ticksUntilNextVirionDamage = Math.Max(0, ticksUntilNextVirionDamage - delta);
+            }
+            if (ticksUntilNextVirionDamage <= 0)
+            {
+                // TODO virion damages host
             }
         }
     }
@@ -128,7 +158,8 @@ public class Hediff_Virion : HediffWithComps
     public override void Tended(float quality, float maxQuality, int batchPosition = 0)
     {
         base.Tended(quality, maxQuality, batchPosition);
-        // TODO
+        // TODO check tend quality again rwquirement for growth stage. If above, virionActive = false and reset timer
+        // if below, send a message and a text mote that says quality vs requirement
     }
 
     private void DoEmergingEffects(Map map, IntVec3 pos)
@@ -235,6 +266,10 @@ public class Hediff_Virion : HediffWithComps
         Scribe_Defs.Look(ref virionDef, "virionDef");
         Scribe_Values.Look(ref ticksRemainingInStage, "ticksRemainingInStage", -1);
         Scribe_Values.Look(ref curStageIndex, "curStageIndex", -1);
+
+        Scribe_Values.Look(ref ticksUntilNextVirionActivity, "ticksUntilNextVirionActivity", -1);
+        Scribe_Values.Look(ref ticksUntilNextVirionDamage, "ticksUntilNextVirionDamage", -1);
+        Scribe_Values.Look(ref virionActive, "virionActive", false);
     }
 
 }

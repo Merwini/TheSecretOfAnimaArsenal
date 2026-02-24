@@ -26,6 +26,13 @@ public class VirionExtension : DefModExtension
         10, // masterwork
         15, // legendary
     };
+
+    public float requiredTendQualityPerStage = 0.15f;
+
+    public FloatRange virionAcvtivityDaysRange = new FloatRange(3f, 7f);
+
+    public float virionDamageDaysRange = new FloatRange(0.041f, 0.125f);
+
     public List<PawnKindDef> spawnedEntities;
 
     public override IEnumerable<string> ConfigErrors()
