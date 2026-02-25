@@ -6,7 +6,7 @@
 		<label>anima shaman armor</label>
 		<description>A full-body suit of shamanic armor. Made from woven anima grass and plates of anima tree bark, it offers little in the way of physical protection, but instead allows the wearer to subconsciously project a psychic force field that blocks incoming damage at the cost of building up neural heat.</description>
 		<graphicData>
-			<texPath>Anima/AnimaShaman/AnimaShaman</texPath>
+			<texPath>TSOA/Armor/AnimaShaman/AnimaShaman</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.6, 1.6)</drawSize>
 		</graphicData>
@@ -57,7 +57,7 @@
 				<li>Arms</li>
 				<li>Legs</li>
 			</bodyPartGroups>
-			<wornGraphicPath>Anima/AnimaShaman/AnimaShaman</wornGraphicPath>
+			<wornGraphicPath>TSOA/Armor/AnimaShaman/AnimaShaman</wornGraphicPath>
 			<layers>
 				<li>Middle</li>
 			</layers>
@@ -86,7 +86,7 @@
 		<label>anima shaman headdress</label>
 		<description>A ritual headdress woven from anima grass and reinforced with plates of anima tree bark. Provides only light physical protection, but significantly increases psychic sensitivty and helps disperse neural heat more quickly.</description>
 		<graphicData>
-			<texPath>Anima/AnimaShaman/AnimaShamanHelm_south</texPath>
+			<texPath>TSOA/Armor/AnimaShaman/AnimaShamanHelm_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.2, 1.2)</drawSize>
 		</graphicData>
@@ -134,7 +134,7 @@
 				<li>UpperHead</li>
 				<li>Neck</li>
 			</bodyPartGroups>
-			<wornGraphicPath>Anima/AnimaShaman/AnimaShamanHelm</wornGraphicPath>
+			<wornGraphicPath>TSOA/Armor/AnimaShaman/AnimaShamanHelm</wornGraphicPath>
 			<layers>
 				<li>Overhead</li>
 			</layers>

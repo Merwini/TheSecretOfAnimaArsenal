@@ -8,7 +8,7 @@
 		<description>A hatchet made to channel the psychic energy of its wielder into destructive force. The haft is carved from anima tree bark and wrapped in anima grass, absorbing neural heat from the wielder which is then released by the jade blade into one's foes.</description>
 		<!-- TODO replace once textures are finished -->
 		<graphicData>
-			<texPath>Anima/Tomahawk</texPath>
+			<texPath>TSOA/Weapon/AnimaTomahawk</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<equippedAngleOffset>0</equippedAngleOffset>
@@ -85,7 +85,7 @@
 		<description>A war club made to channel the psychic energy of its wielder into destructive force. The haft is carved from anima tree bark and wrapped in anima grass, absorbing neural heat from the wielder which is then released by the jade chunk into one's foes.</description>
 		<!-- TODO replace once textures are finished -->
 		<graphicData>
-			<texPath>Anima/ClibJ</texPath>
+			<texPath>TSOA/Weapon/AnimaClub</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<uiIconScale>1.2</uiIconScale>
@@ -162,7 +162,7 @@
 		<description>A sword in the style of a macuahuitl made to channel the psychic energy of its wielder into destructive force. The body is carved from anima tree bark and handle wrapped in anima grass, absorbing neural heat from the wielder which is then released by shards of jade into one's foes.</description>
 		<!-- TODO replace once textures are finished -->
 		<graphicData>
-			<texPath>Anima/Macuahuitl</texPath>
+			<texPath>TSOA/Weapon/AnimaMacuahuitl</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<uiIconScale>1.3</uiIconScale>
