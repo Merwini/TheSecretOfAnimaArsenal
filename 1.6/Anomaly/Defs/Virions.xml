@@ -6,7 +6,7 @@
 	<!-- Hediffs for each seed? Or one hediff with the target object stored somehow -->
 
 
-	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase" Abstract="True" Name="TSOA_ImplantVirionBase" >
+	<RecipeDef ParentName="SurgeryInstallImplantBase" Abstract="True" Name="TSOA_ImplantVirionBase" >
 		<workAmount>500</workAmount>
 		<jobString>Implanting virion in TargetA.</jobString>
 		<hideBodyPartNames>true</hideBodyPartNames>
@@ -15,7 +15,6 @@
 		<appliedOnFixedBodyParts>
 			<li>Torso</li>
 		</appliedOnFixedBodyParts>
-		<hideBodyPartNames>true</hideBodyPartNames>
 		<addsHediff>TSOA_VirionHediff</addsHediff>
 		<workerClass>tsoa.arsenal.Recipe_ImplantVirion</workerClass>
 		
@@ -26,6 +25,14 @@
 		<researchPrerequisites>
 			<li>TSOA_VoidOne</li>
 		</researchPrerequisites>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>TSOA_ExtractVirion</defName>
+		<label>extract virion</label>
+		<description>Extract a fully- or partially-grown virion from the target, killing them messily in the process.</description>
+		<workerClass>tsoa.arsenal.Recipe_ExtractVirion</workerClass>
+		<surgerySuccessChanceFactor>3</surgerySuccessChanceFactor>
 	</RecipeDef>
 
 	<RecipeDef ParentName="TSOA_ImplantVirionBase">

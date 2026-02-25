@@ -19,12 +19,12 @@ public class VirionExtension : DefModExtension
     public List<float> qualityGestationDaysList = new List<float>()
     {
         // starts at awful
-        1, // poor
-        3, // normal
-        5, // good
-        7, // excellent
-        10, // masterwork
-        15, // legendary
+        1, // days until poor
+        3, // days until normal
+        5, // days until good
+        7, // days until excellent
+        10, // days until masterwork
+        15, // days until legendary
     };
 
     public float requiredTendQualityPerStage = 0.15f;
@@ -66,7 +66,17 @@ public class VirionExtension : DefModExtension
                 count = 1,
             }
         },
-        
+
+        new List<VirionSpawnEntry>() // Awful -  1 juvinile
+        {
+            new VirionSpawnEntry()
+            {
+                kind = PawnKindDefOf.Metalhorror,
+                forcedLifeStageIndex = 1,
+                count = 1,
+            }
+        },
+
         new List<VirionSpawnEntry>() // Poor -  1 juvinile
         {
             new VirionSpawnEntry()
@@ -77,7 +87,7 @@ public class VirionExtension : DefModExtension
             }
         },
 
-        new List<VirionSpawnEntry>() // Normal - 1 adult
+        new List<VirionSpawnEntry>() // Normal -  1 adult
         {
             new VirionSpawnEntry()
             {
@@ -94,6 +104,16 @@ public class VirionExtension : DefModExtension
                 kind = PawnKindDefOf.Metalhorror,
                 forcedLifeStageIndex = 2,
                 count = 1,
+            }
+        },
+
+        new List<VirionSpawnEntry>() // Excellent - 1 adult, 1 juvenile
+        {
+            new VirionSpawnEntry()
+            {
+                kind = PawnKindDefOf.Metalhorror,
+                forcedLifeStageIndex = 2,
+                count = 1,
             },
             new VirionSpawnEntry()
             {
@@ -103,7 +123,7 @@ public class VirionExtension : DefModExtension
             }
         },
 
-        new List<VirionSpawnEntry>() // Excellent - 1 adult, 1 juvenile
+        new List<VirionSpawnEntry>() // Masterwork - 2 adults
         {
             new VirionSpawnEntry()
             {
@@ -119,23 +139,13 @@ public class VirionExtension : DefModExtension
             }
         },
 
-        new List<VirionSpawnEntry>() // Masterwork - 2 adults
-        {
-            new VirionSpawnEntry()
-            {
-                kind = PawnKindDefOf.Metalhorror,
-                forcedLifeStageIndex = 2,
-                count = 2,
-            }
-        },
-
         new List<VirionSpawnEntry>() // Legendary - 3 adults
         {
             new VirionSpawnEntry()
             {
                 kind = PawnKindDefOf.Metalhorror,
                 forcedLifeStageIndex = 2,
-                count = 3,
+                count = 2,
             }
         }
     };

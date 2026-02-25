@@ -46,7 +46,7 @@ public class Hediff_Virion : HediffWithComps
     private int ticksUntilNextVirionActivity = -1;
     private int ticksUntilNextVirionDamage = -1;
     private bool virionActive = false;
-    public float TendQualityRequirement => Extension.requiredTendQualityPerStage * curStageIndex;
+    public float TendQualityRequirement => Extension.requiredTendQualityPerStage * (curStageIndex + 1);
     public int RandomTicksUntilNextVirionActivity => (int)(Extension.virionActivityDaysRange.RandomInRange * GenDate.TicksPerDay);
     public int RandomTicksUntilNextVirionDamage => (int)(Extension.virionDamageDaysRange.RandomInRange * GenDate.TicksPerDay);
 
@@ -66,8 +66,6 @@ public class Hediff_Virion : HediffWithComps
             return extension;
         }
     }
-
-    internal List<PawnKindDef> spawnedEntities;
 
     public override string LabelInBrackets
     {
@@ -95,12 +93,11 @@ public class Hediff_Virion : HediffWithComps
         ticksRemainingInStage = InitialGestationTicks;
         curStageIndex = -1;
 
-        ticksUntilNextVirionActivity = ticksRemainingInStage + RandomTicksUntilNextVirionActivity; // Pre-load an activity with enough padding to also get past initial gestation
+        ticksUntilNextVirionActivity = RandomTicksUntilNextVirionActivity; // Pre-load an activity
 
         hasQuality = Extension.producedItem.HasComp<CompQuality>();
     }
 
-    // TODO make stage advancement skip if !hasQuality
     public override void TickInterval(int delta)
     {
         base.TickInterval(delta);
@@ -112,7 +109,7 @@ public class Hediff_Virion : HediffWithComps
 
         Severity = 1f - (float)ticksRemainingInStage / TicksUntilNextStage;
 
-        if (ticksRemainingInStage <= 0 && curStageIndex < 6)
+        if (ticksRemainingInStage <= 0 && ((!hasQuality && curStageIndex < 0) || curStageIndex < 6))
         {
             curStageIndex++;
             ticksRemainingInStage = TicksUntilNextStage;
@@ -280,17 +277,39 @@ public class Hediff_Virion : HediffWithComps
 
         List<List<VirionSpawnEntry>> entitiesToSpawn = Extension.entitySpawnByStage ?? VirionExtension.metalhorrorDefaults;
 
-        
-        if (Extension.spawnedEntities.Count < CurStageIndex + 1)
+        if (entitiesToSpawn.NullOrEmpty())
         {
-            entity = PawnGenerator.GeneratePawn(Extension.spawnedEntities.Last(), Faction.OfEntities);
-        }
-        else
-        {
-            entity = PawnGenerator.GeneratePawn(Extension.spawnedEntities[CurStageIndex], Faction.OfEntities);
+            Log.Error($"Hediff_Virion: No entitySpawnByStage for Virion producing {Extension.producedItem.defName}");
+            return;
         }
 
-        GenSpawn.Spawn(entity, pos, map);
+        if (entitiesToSpawn.Count < curStageIndex + 1)
+        {
+            Log.Error($"Hediff_Virion: Not enough stages in entitySpawnByStage for Virion producing {Extension.producedItem.defName}");
+            return;
+        }
+
+        List<VirionSpawnEntry> entitiesForStage = entitiesToSpawn[curStageIndex + 1];
+
+        if (entitiesForStage.NullOrEmpty())
+        {
+            Log.Error("Hediff_Virion: No spawn entries for stage " + curStageIndex + " for Virion producing " + Extension.producedItem.defName);
+            return;
+        }
+
+        foreach (VirionSpawnEntry spawnEntry in entitiesForStage)
+        {
+            for (int i = 0; i < spawnEntry.count; i++)
+            {
+                entity = PawnGenerator.GeneratePawn(spawnEntry.kind, Faction.OfEntities);
+                if (spawnEntry.forcedLifeStageIndex >= 0)
+                {
+                    entity.ageTracker.LockCurrentLifeStageIndex(spawnEntry.forcedLifeStageIndex);
+                }
+                GenSpawn.Spawn(entity, pos, map);
+            }
+        }
+
         Messages.Message("TSOA_VirionIncomplete".Translate(pawn.Name), new LookTargets(pos, map), MessageTypeDefOf.NegativeHealthEvent);
     }
 
@@ -303,7 +322,7 @@ public class Hediff_Virion : HediffWithComps
         if (comp == null)
             return;
 
-        comp.SetQuality((QualityCategory)index, null);
+        comp.SetQuality((QualityCategory)Math.Clamp(index, 0, 6), null);
     }
 
     public override IEnumerable<Gizmo> GetGizmos()
