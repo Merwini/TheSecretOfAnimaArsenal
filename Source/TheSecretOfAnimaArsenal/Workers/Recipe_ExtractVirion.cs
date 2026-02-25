@@ -12,13 +12,23 @@ public class Recipe_ExtractVirion : Recipe_Surgery
 {
     public override bool AvailableOnNow(Thing thing, BodyPartRecord part = null)
     {
+        Log.Message("checking if recipe_extractvirior is available on " + thing.LabelShort);
         if (!base.AvailableOnNow(thing, part))
+        {
+            Log.Message("base not available now");
             return false;
+        }
 
         if (thing is not Pawn pawn)
+        {
+            Log.Message("not a pawn");
             return false;
 
-        return pawn.health?.hediffSet?.GetFirstHediffOfDef(TSOAA_DefOf.TSOA_VirionHediff) != null;
+        }
+
+        bool available = pawn.health?.hediffSet?.GetFirstHediffOfDef(TSOAA_DefOf.TSOA_VirionHediff) != null;
+        Log.Message("found Virion Hediff: " + available);
+        return available;
     }
 
     public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)

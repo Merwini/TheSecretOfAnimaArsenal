@@ -32,7 +32,12 @@
 		<label>extract virion</label>
 		<description>Extract a fully- or partially-grown virion from the target, killing them messily in the process.</description>
 		<workerClass>tsoa.arsenal.Recipe_ExtractVirion</workerClass>
+		<jobString>Extracting virion from TargetA</jobString>
 		<surgerySuccessChanceFactor>3</surgerySuccessChanceFactor>
+		<removesHediff>TSOA_VirionHediff</removesHediff>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<targetsBodyPart>false</targetsBodyPart>
+		<uiIconThing>Shard</uiIconThing>
 	</RecipeDef>
 
 	<RecipeDef ParentName="TSOA_ImplantVirionBase">
@@ -93,7 +98,7 @@
 		<modExtensions>
 			<li Class="tsoa.arsenal.VirionExtension">
 				<producedItem>TSOA_BioferriteArmor</producedItem>
-				<gestationDays>5</gestationDays>
+				<initialGestationDays>5</initialGestationDays>
 			</li>
 		</modExtensions>
 	</ThingDef>

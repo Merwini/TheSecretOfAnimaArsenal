@@ -55,100 +55,168 @@ public class VirionExtension : DefModExtension
         }
     }
 
-    public static List<List<VirionSpawnEntry>> metalhorrorDefaults = new List<List<VirionSpawnEntry>>()
-    { 
-        new List<VirionSpawnEntry>() // Gestating - 1 larva
-        {
-            new VirionSpawnEntry()
-            {
-                kind = PawnKindDefOf.Metalhorror,
-                forcedLifeStageIndex = 0,
-                count = 1,
-            }
-        },
+    //public static List<List<VirionSpawnEntry>> metalhorrorDefaults = new List<List<VirionSpawnEntry>>()
+    //{ 
+    //    new List<VirionSpawnEntry>() // Gestating - 1 larva
+    //    {
+    //        new VirionSpawnEntry()
+    //        {
+    //            kind = PawnKindDefOf.Metalhorror,
+    //            forcedLifeStageIndex = 0,
+    //            count = 1,
+    //        }
+    //    },
 
-        new List<VirionSpawnEntry>() // Awful -  1 juvinile
-        {
-            new VirionSpawnEntry()
-            {
-                kind = PawnKindDefOf.Metalhorror,
-                forcedLifeStageIndex = 1,
-                count = 1,
-            }
-        },
+    //    new List<VirionSpawnEntry>() // Awful -  1 juvinile
+    //    {
+    //        new VirionSpawnEntry()
+    //        {
+    //            kind = PawnKindDefOf.Metalhorror,
+    //            forcedLifeStageIndex = 1,
+    //            count = 1,
+    //        }
+    //    },
 
-        new List<VirionSpawnEntry>() // Poor -  1 juvinile
-        {
-            new VirionSpawnEntry()
-            {
-                kind = PawnKindDefOf.Metalhorror,
-                forcedLifeStageIndex = 1,
-                count = 1,
-            }
-        },
+    //    new List<VirionSpawnEntry>() // Poor -  1 juvinile
+    //    {
+    //        new VirionSpawnEntry()
+    //        {
+    //            kind = PawnKindDefOf.Metalhorror,
+    //            forcedLifeStageIndex = 1,
+    //            count = 1,
+    //        }
+    //    },
 
-        new List<VirionSpawnEntry>() // Normal -  1 adult
-        {
-            new VirionSpawnEntry()
-            {
-                kind = PawnKindDefOf.Metalhorror,
-                forcedLifeStageIndex = 2,
-                count = 1,
-            }
-        },
+    //    new List<VirionSpawnEntry>() // Normal -  1 adult
+    //    {
+    //        new VirionSpawnEntry()
+    //        {
+    //            kind = PawnKindDefOf.Metalhorror,
+    //            forcedLifeStageIndex = 2,
+    //            count = 1,
+    //        }
+    //    },
 
-        new List<VirionSpawnEntry>() // Good - 1 adult, 1 larva
-        {
-            new VirionSpawnEntry()
-            {
-                kind = PawnKindDefOf.Metalhorror,
-                forcedLifeStageIndex = 2,
-                count = 1,
-            }
-        },
+    //    new List<VirionSpawnEntry>() // Good - 1 adult, 1 larva
+    //    {
+    //        new VirionSpawnEntry()
+    //        {
+    //            kind = PawnKindDefOf.Metalhorror,
+    //            forcedLifeStageIndex = 2,
+    //            count = 1,
+    //        }
+    //    },
 
-        new List<VirionSpawnEntry>() // Excellent - 1 adult, 1 juvenile
-        {
-            new VirionSpawnEntry()
-            {
-                kind = PawnKindDefOf.Metalhorror,
-                forcedLifeStageIndex = 2,
-                count = 1,
-            },
-            new VirionSpawnEntry()
-            {
-                kind = PawnKindDefOf.Metalhorror,
-                forcedLifeStageIndex = 0,
-                count = 1,
-            }
-        },
+    //    new List<VirionSpawnEntry>() // Excellent - 1 adult, 1 juvenile
+    //    {
+    //        new VirionSpawnEntry()
+    //        {
+    //            kind = PawnKindDefOf.Metalhorror,
+    //            forcedLifeStageIndex = 2,
+    //            count = 1,
+    //        },
+    //        new VirionSpawnEntry()
+    //        {
+    //            kind = PawnKindDefOf.Metalhorror,
+    //            forcedLifeStageIndex = 0,
+    //            count = 1,
+    //        }
+    //    },
 
-        new List<VirionSpawnEntry>() // Masterwork - 2 adults
-        {
-            new VirionSpawnEntry()
-            {
-                kind = PawnKindDefOf.Metalhorror,
-                forcedLifeStageIndex = 2,
-                count = 1,
-            },
-            new VirionSpawnEntry()
-            {
-                kind = PawnKindDefOf.Metalhorror,
-                forcedLifeStageIndex = 1,
-                count = 1,
-            }
-        },
+    //    new List<VirionSpawnEntry>() // Masterwork - 2 adults
+    //    {
+    //        new VirionSpawnEntry()
+    //        {
+    //            kind = PawnKindDefOf.Metalhorror,
+    //            forcedLifeStageIndex = 2,
+    //            count = 1,
+    //        },
+    //        new VirionSpawnEntry()
+    //        {
+    //            kind = PawnKindDefOf.Metalhorror,
+    //            forcedLifeStageIndex = 1,
+    //            count = 1,
+    //        }
+    //    },
 
-        new List<VirionSpawnEntry>() // Legendary - 3 adults
+    //    new List<VirionSpawnEntry>() // Legendary - 3 adults
+    //    {
+    //        new VirionSpawnEntry()
+    //        {
+    //            kind = PawnKindDefOf.Metalhorror,
+    //            forcedLifeStageIndex = 2,
+    //            count = 2,
+    //        }
+    //    }
+    //};
+
+    public static List<List<VirionSpawnEntry>> _metalhorrorDefaults;
+
+    public static List<List<VirionSpawnEntry>> MetalhorrorDefaults
+    {
+        get
         {
-            new VirionSpawnEntry()
+            if (_metalhorrorDefaults == null)
             {
-                kind = PawnKindDefOf.Metalhorror,
-                forcedLifeStageIndex = 2,
-                count = 2,
+                PawnKindDef metalhorror = PawnKindDefOf.Metalhorror;
+
+                _metalhorrorDefaults = new List<List<VirionSpawnEntry>>
+            {
+                // Gestating - 1 larva
+                new List<VirionSpawnEntry>
+                {
+                    new VirionSpawnEntry { kind = metalhorror, forcedLifeStageIndex = 0, count = 1 }
+                },
+
+                // Awful - 1 juvenile
+                new List<VirionSpawnEntry>
+                {
+                    new VirionSpawnEntry { kind = metalhorror, forcedLifeStageIndex = 1, count = 1 }
+                },
+
+                // Poor - 1 juvenile
+                new List<VirionSpawnEntry>
+                {
+                    new VirionSpawnEntry { kind = metalhorror, forcedLifeStageIndex = 1, count = 1 }
+                },
+
+                // Normal - 1 adult
+                new List<VirionSpawnEntry>
+                {
+                    new VirionSpawnEntry { kind = metalhorror, forcedLifeStageIndex = 2, count = 1 }
+                },
+
+                // Good - 1 adult, 1 larva
+                new List<VirionSpawnEntry>
+                {
+                    new VirionSpawnEntry { kind = metalhorror, forcedLifeStageIndex = 2, count = 1 },
+                    new VirionSpawnEntry { kind = metalhorror, forcedLifeStageIndex = 0, count = 1 }
+                },
+
+                // Excellent - 1 adult, 1 juvenile
+                new List<VirionSpawnEntry>
+                {
+                    new VirionSpawnEntry { kind = metalhorror, forcedLifeStageIndex = 2, count = 1 },
+                    new VirionSpawnEntry { kind = metalhorror, forcedLifeStageIndex = 1, count = 1 }
+                },
+
+                // Masterwork - 2 adults
+                new List<VirionSpawnEntry>
+                {
+                    new VirionSpawnEntry { kind = metalhorror, forcedLifeStageIndex = 2, count = 2 }
+                },
+
+                // Legendary - 3 adults
+                new List<VirionSpawnEntry>
+                {
+                    new VirionSpawnEntry { kind = metalhorror, forcedLifeStageIndex = 2, count = 3 }
+                }
+            };
             }
+
+            return _metalhorrorDefaults;
         }
-    };
+    }
 }
 
 public class VirionSpawnEntry

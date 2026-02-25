@@ -275,21 +275,21 @@ public class Hediff_Virion : HediffWithComps
         Pawn entity;
         PawnKindDef kindDef;
 
-        List<List<VirionSpawnEntry>> entitiesToSpawn = Extension.entitySpawnByStage ?? VirionExtension.metalhorrorDefaults;
+        List<List<VirionSpawnEntry>> entitiesForVirion = Extension.entitySpawnByStage ?? VirionExtension.MetalhorrorDefaults;
 
-        if (entitiesToSpawn.NullOrEmpty())
+        if (entitiesForVirion.NullOrEmpty())
         {
             Log.Error($"Hediff_Virion: No entitySpawnByStage for Virion producing {Extension.producedItem.defName}");
             return;
         }
 
-        if (entitiesToSpawn.Count < curStageIndex + 1)
+        if (entitiesForVirion.Count < curStageIndex + 1)
         {
             Log.Error($"Hediff_Virion: Not enough stages in entitySpawnByStage for Virion producing {Extension.producedItem.defName}");
             return;
         }
 
-        List<VirionSpawnEntry> entitiesForStage = entitiesToSpawn[curStageIndex + 1];
+        List<VirionSpawnEntry> entitiesForStage = entitiesForVirion[curStageIndex + 1];
 
         if (entitiesForStage.NullOrEmpty())
         {
@@ -301,7 +301,7 @@ public class Hediff_Virion : HediffWithComps
         {
             for (int i = 0; i < spawnEntry.count; i++)
             {
-                entity = PawnGenerator.GeneratePawn(spawnEntry.kind, Faction.OfEntities);
+                entity = PawnGenerator.GeneratePawn(new PawnGenerationRequest(spawnEntry.kind, Faction.OfEntities));
                 if (spawnEntry.forcedLifeStageIndex >= 0)
                 {
                     entity.ageTracker.LockCurrentLifeStageIndex(spawnEntry.forcedLifeStageIndex);
