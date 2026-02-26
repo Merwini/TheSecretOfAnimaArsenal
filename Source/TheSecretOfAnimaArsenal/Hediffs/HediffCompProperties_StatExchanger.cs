@@ -13,8 +13,8 @@ public class HediffCompProperties_StatExchanger : HediffCompProperties
     public bool isMaster = false;  // controls the link
     public bool isDonor = false; // loses the stat
 
-    public bool showLinkGizmo = false;
-    public bool showUnlinkGizmo = false;
+    public string linkGizmoPath;
+    public string unlinkGizmoPath;
 
     public List<HediffDef> targetHediffs = null;
 

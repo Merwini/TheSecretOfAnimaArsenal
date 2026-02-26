@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.Remoting.Lifetime;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -20,6 +21,8 @@ public class HediffComp_StatExchanger : HediffComp
     private float cachedAmount;
 
     public IEnumerable<HediffComp_StatExchanger> LinkedComps => linkedComps.ToList();
+
+    public Pawn LinkedTo => linkedComps.FirstOrDefault()?.parent?.pawn; // only called if IsLinked == true
     //public float Donation => cachedDonation;
     //public float Received => cachedReceived;
     public bool IsLinked => linkedComps.Count > 0;
@@ -28,6 +31,34 @@ public class HediffComp_StatExchanger : HediffComp
     public StatDef AffectedStat => Props.affectedStat; 
 
     public HediffCompProperties_StatExchanger Props => (HediffCompProperties_StatExchanger)props;
+
+    private Texture2D linkGizmoTex;
+    public Texture2D LinkGizmoTex
+    {
+        get
+        {
+            if (linkGizmoTex == null)
+            {
+                string path = Props.linkGizmoPath ?? "TSOA/Gizmos/CrownGreen";
+                linkGizmoTex = ContentFinder<Texture2D>.Get(path);
+            }
+            return linkGizmoTex;
+        }
+    }
+
+    private Texture2D unlinkGizmoTex;
+    public Texture2D UnlinkGizmoTex
+    {
+        get
+        {
+            if (unlinkGizmoTex == null)
+            {
+                string path = Props.unlinkGizmoPath ?? "TSOA/Gizmos/CrownNone";
+                unlinkGizmoTex = ContentFinder<Texture2D>.Get(path);
+            }
+            return unlinkGizmoTex;
+        }
+    }
 
     public float StatAdjustment
     {
@@ -309,7 +340,7 @@ public class HediffComp_StatExchanger : HediffComp
         {
             defaultLabel = "TSOA_StatExchangeGizmoLinkLabel".Translate(),
             defaultDesc = "TSOA_StatExchangeGizmoLinkDescription".Translate(),
-            //icon = TODO
+            icon = LinkGizmoTex,
             targetingParams = new TargetingParameters
             {
                 canTargetPawns = true,
@@ -342,7 +373,7 @@ public class HediffComp_StatExchanger : HediffComp
         {
             defaultLabel = "TSOA_StatExchangeGizmoUnlinkLabel".Translate(),
             defaultDesc = "TSOA_StatExchangeGizmoUnlinkDescription".Translate(),
-            //icon = TODO,
+            icon = UnlinkGizmoTex,
             action = () =>
             {
                 List<FloatMenuOption> opts = new List<FloatMenuOption>();
@@ -379,7 +410,7 @@ public class HediffComp_StatExchanger : HediffComp
         {
             if (Props.maxLinks == 1)
             {
-                return IsLinked ? "TSOA_StatExchangeHediffLabelExtraLinked".Translate() : "TSOA_StatExchangeHediffLabelExtraUnlinked".Translate();
+                return IsLinked ? "TSOA_StatExchangeHediffLabelExtraLinked".Translate(LinkedTo.NameShortColored) : "TSOA_StatExchangeHediffLabelExtraUnlinked".Translate();
             }
             else
             {

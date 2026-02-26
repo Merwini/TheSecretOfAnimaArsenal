@@ -15,7 +15,7 @@
 	<TSOA_StatExchangeGizmoUnlinkLabel>Break link with:</TSOA_StatExchangeGizmoUnlinkLabel>
 	<TSOA_StatExchangeGizmoUnlinkDescription>Break an existing psychic link.</TSOA_StatExchangeGizmoUnlinkDescription>
 	<TSOA_StatExchangeGizmoNoLinks>No links</TSOA_StatExchangeGizmoNoLinks>
-	<TSOA_StatExchangeHediffLabelExtraLinked>linked</TSOA_StatExchangeHediffLabelExtraLinked>
+	<TSOA_StatExchangeHediffLabelExtraLinked>linked to {0}</TSOA_StatExchangeHediffLabelExtraLinked>
 	<TSOA_StatExchangeHediffLabelExtraUnlinked></TSOA_StatExchangeHediffLabelExtraUnlinked>
 	<TSOA_StatExchangeHediffLabelExtraLinkCount>{0} links</TSOA_StatExchangeHediffLabelExtraLinkCount>
 	<TSOA_StatPartExchangerExplanation>Stat Exchange: </TSOA_StatPartExchangerExplanation>
