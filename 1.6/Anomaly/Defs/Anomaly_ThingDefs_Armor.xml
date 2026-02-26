@@ -6,7 +6,7 @@
 		<label>void knight plate armor</label>
 		<description>A suit of armor crafted from bioferrite. This bioferrite feeds on the psychic capabilites of the wearer, making itself stronger but weakening the wearer in the process.</description>
 		<graphicData>
-			<texPath>TSOA/Armor/VoidKnight/VoidKnight</texPath>
+			<texPath>TSOA/Things/Apparel/VoidKnight/VoidKnight</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.6, 1.6)</drawSize>
 		</graphicData>
@@ -57,7 +57,7 @@
 				<li>Arms</li>
 				<li>Legs</li>
 			</bodyPartGroups>
-			<wornGraphicPath>TSOA/Armor/VoidKnight/VoidKnight</wornGraphicPath>
+			<wornGraphicPath>TSOA/Things/Apparel/VoidKnight/VoidKnight</wornGraphicPath>
 			<layers>
 				<li>Middle</li>
 				<li>Shell</li>
@@ -82,7 +82,7 @@
 		<label>void knight helmet</label>
 		<description>A helmet crafted from bioferrite. This bioferrite feeds on the psychic capabilites of the wearer, making itself stronger but weakening the wearer in the process.</description>
 		<graphicData>
-			<texPath>TSOA/Armor/VoidKnight/VoidKnightHelm_south</texPath>
+			<texPath>TSOA/Things/Apparel/VoidKnight/VoidKnightHelm_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.4, 1.4)</drawSize>
 		</graphicData>
@@ -126,7 +126,7 @@
 				<li>FullHead</li>
 				<li>Neck</li>
 			</bodyPartGroups>
-			<wornGraphicPath>TSOA/Armor/VoidKnight/VoidKnightHelm</wornGraphicPath>
+			<wornGraphicPath>TSOA/Things/Apparel/VoidKnight/VoidKnightHelm</wornGraphicPath>
 			<layers>
 				<li>Overhead</li>
 			</layers>

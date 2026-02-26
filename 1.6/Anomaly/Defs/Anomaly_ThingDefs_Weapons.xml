@@ -8,7 +8,7 @@
 		<description>A bioferrite sword styled after an ancient khopesh. The bioferrite acts like a living organism, and feeds on the wielder's psychic potential to grow more powerful.</description>
 		<!-- TODO replace once textures are finished -->
 		<graphicData>
-			<texPath>TSOA/Weapon/BioferriteKopesh</texPath>
+			<texPath>TSOA/Things/Weapons/BioferriteKopesh</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<equippedAngleOffset>-15</equippedAngleOffset>
@@ -82,7 +82,7 @@
 		<description>A bioferrite axe. The bioferrite acts like a living organism, and feeds on the wielder's psychic potential to grow more powerful.</description>
 		<!-- TODO replace once textures are finished -->
 		<graphicData>
-			<texPath>TSOA/Weapon/BioferriteAxe</texPath>
+			<texPath>TSOA/Things/Weapons/BioferriteAxe</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.2, 1.2)</drawSize>
 		</graphicData>
@@ -149,7 +149,7 @@
 		<description>A bioferrite greatclub styled after a Kanabo. The bioferrite acts like a living organism, and feeds on the wielder's psychic potential to grow more powerful.</description>
 		<!-- TODO replace once textures are finished -->
 		<graphicData>
-			<texPath>TSOA/Weapon/BioferriteKanabo</texPath>
+			<texPath>TSOA/Things/Weapons/BioferriteKanabo</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.2, 1.2)</drawSize>
 		</graphicData>
