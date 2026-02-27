@@ -20,4 +20,6 @@ public class TSOAA_DefOf
     public static DamageDef TSOA_EntropyExtraDamage;
 
     public static HediffDef TSOA_VirionHediff;
+
+    public static HediffDef TSOA_VirionActiveHediff;
 }

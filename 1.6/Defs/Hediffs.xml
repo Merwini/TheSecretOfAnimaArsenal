@@ -97,9 +97,8 @@
 	</HediffDef>
 
 	<HediffDef>
-		<defName>TSOA_VirionActivityHediff</defName>
+		<defName>TSOA_VirionActiveHediff</defName>
 		<hediffClass>tsoa.arsenal.Hediff_VirionActivity</hediffClass>
-		<!-- TODO better term than active -->
 		<label>virion active</label>
 		<labelNoun>virion activity</labelNoun>
 		<description>a virion is causing internal damage</description>

@@ -410,7 +410,7 @@ public class HediffComp_StatExchanger : HediffComp
         {
             if (Props.maxLinks == 1)
             {
-                return IsLinked ? "TSOA_StatExchangeHediffLabelExtraLinked".Translate(LinkedTo.NameShortColored) : "TSOA_StatExchangeHediffLabelExtraUnlinked".Translate();
+                return IsLinked ? "TSOA_StatExchangeHediffLabelExtraLinked".Translate(LinkedTo.LabelShort) : "TSOA_StatExchangeHediffLabelExtraUnlinked".Translate();
             }
             else
             {

@@ -8,10 +8,11 @@ using RimWorld;
 using UnityEngine;
 using Verse.Sound;
 using LudeonTK;
+using tsoa.core;
 
 namespace tsoa.arsenal;
 
-public class Hediff_Virion : HediffWithComps
+public class Hediff_Virion : Hediff
 {
     /* Reminder
         Awful = 0
@@ -26,6 +27,18 @@ public class Hediff_Virion : HediffWithComps
     private int curStageIndex = -1;
     private int ticksRemainingInStage = -1;
     private bool hasQuality; // store this so I don't have to keep checking for QualityComp, saves some CPU cycles
+    private int MaxStage
+    {
+        get
+        {
+            if (hasQuality)
+            {
+                return 6;
+            }
+
+            return 0;
+        }
+    }
 
     private int InitialGestationTicks => (int)(Extension.initialGestationDays * GenDate.TicksPerDay);
 
@@ -44,11 +57,9 @@ public class Hediff_Virion : HediffWithComps
     }
 
     private int ticksUntilNextVirionActivity = -1;
-    private int ticksUntilNextVirionDamage = -1;
     private bool virionActive = false;
     public float TendQualityRequirement => Extension.requiredTendQualityPerStage * (curStageIndex + 1);
     public int RandomTicksUntilNextVirionActivity => (int)(Extension.virionActivityDaysRange.RandomInRange * GenDate.TicksPerDay);
-    public int RandomTicksUntilNextVirionDamage => (int)(Extension.virionDamageDaysRange.RandomInRange * GenDate.TicksPerDay);
 
     private bool extracting = false;
 
@@ -90,6 +101,14 @@ public class Hediff_Virion : HediffWithComps
     public override void PostAdd(DamageInfo? dinfo)
     {
         base.PostAdd(dinfo);
+
+        if (Extension == null)
+        {
+            Log.Error("Added Hediff_Virion, but implanted Virion did not have valid extension");
+            pawn.health.RemoveHediff(this);
+            return;
+        }
+
         ticksRemainingInStage = InitialGestationTicks;
         curStageIndex = -1;
 
@@ -109,7 +128,7 @@ public class Hediff_Virion : HediffWithComps
 
         Severity = 1f - (float)ticksRemainingInStage / TicksUntilNextStage;
 
-        if (ticksRemainingInStage <= 0 && ((!hasQuality && curStageIndex < 0) || curStageIndex < 6))
+        if (ticksRemainingInStage <= 0 && curStageIndex < MaxStage)
         {
             curStageIndex++;
             ticksRemainingInStage = TicksUntilNextStage;
@@ -125,20 +144,7 @@ public class Hediff_Virion : HediffWithComps
 
             if (ticksUntilNextVirionActivity <= 0)
             {
-                virionActive = true;
-                ticksUntilNextVirionDamage = RandomTicksUntilNextVirionDamage;
-            }
-        }
-        else
-        {
-            if (ticksUntilNextVirionDamage > 0)
-            {
-                ticksUntilNextVirionDamage = Math.Max(0, ticksUntilNextVirionDamage - delta);
-            }
-            if (ticksUntilNextVirionDamage <= 0)
-            {
-                DoVirionDamage();
-                ticksUntilNextVirionDamage = RandomTicksUntilNextVirionDamage;
+                StartVirionActivity();
             }
         }
     }
@@ -165,73 +171,27 @@ public class Hediff_Virion : HediffWithComps
         HealthUtility.DamageUntilDead(pawn); // maybe destroy specifically the torso instead?
     }
 
-    public override bool TendableNow(bool ignoreTimer = false)
+    public void Notify_ActivityEnded()
     {
-        return virionActive;
+        virionActive = false;
+        ticksUntilNextVirionActivity = RandomTicksUntilNextVirionActivity;
     }
 
-    public override void Tended(float quality, float maxQuality, int batchPosition = 0)
+    private void StartVirionActivity()
     {
-        if (quality >= TendQualityRequirement)
+        Hediff_VirionActivity existingActivity = pawn.health.hediffSet.GetFirstHediffOfDef(TSOAA_DefOf.TSOA_VirionActiveHediff) as Hediff_VirionActivity;
+        if (existingActivity != null)
         {
-            virionActive = false;
-            ticksUntilNextVirionActivity = RandomTicksUntilNextVirionActivity;
-            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "TSOA_VirionTendSuccess".Translate());
-        }
-        else
-        {
-            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "TSOA_VirionTendFailure".Translate(quality.ToStringPercent(), TendQualityRequirement.ToStringPercent()), Color.red);
-        }
-    }
-
-    private void DoVirionDamage()
-    {
-        if (!pawn.SpawnedOrAnyParentSpawned)
-        {
+            Log.Error("Hediff_Virion: tried to start virion activity but one already exists on pawn " + pawn.Name);
             return;
         }
 
-        EffecterDefOf.MeatExplosionSmall.Spawn(pawn.Position, pawn.Map).Cleanup();
-        SoundDefOf.FleshmassHeart_Throb.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
-
-        BodyPartRecord torso = pawn.RaceProps.body.corePart;
-        if (torso == null)
-        {
-            return;
-        }
-
-        List<BodyPartRecord> candidates = new List<BodyPartRecord>();
-        foreach (BodyPartRecord part in torso.GetDirectChildParts())
-        {
-            if (part.depth == BodyPartDepth.Inside)
-            {
-                candidates.Add(part);
-            }
-        }
-
-        BodyPartRecord targetPart;
-
-        if (candidates.Count > 0 && Rand.Bool) // 50% chance to hit torso vs a random organ
-        {
-            targetPart = candidates.RandomElement(); 
-        }
-        else
-        {
-            targetPart = torso;
-        }
-
-        float damageAmount = Rand.Range(4f, 10f); // organs have 15-20 hitPoints, on average fatal damage will happen if the same organ is hit 3 times, but could happen in 2
-
-        DamageInfo dinfo = new DamageInfo(
-            DamageDefOf.Cut,
-            damageAmount,
-            0f,
-            -1f,
-            instigator: null,
-            hitPart: targetPart
-        );
-
-        pawn.TakeDamage(dinfo);
+        virionActive = true;
+        Hediff_VirionActivity hediff = HediffMaker.MakeHediff(TSOAA_DefOf.TSOA_VirionActiveHediff, pawn) as Hediff_VirionActivity;
+        hediff.tendQualityRequirement = TendQualityRequirement;
+        hediff.virionDamageDaysRange = Extension.virionDamageDaysRange;
+        pawn.health.AddHediff(hediff);
+        Messages.Message("TSOA_VirionActiveMessage".Translate(pawn.LabelShort), pawn, MessageTypeDefOf.NegativeHealthEvent);
     }
 
     private void DoEmergingEffects(Map map, IntVec3 pos)
@@ -327,39 +287,37 @@ public class Hediff_Virion : HediffWithComps
 
     public override IEnumerable<Gizmo> GetGizmos()
     {
-        foreach (Gizmo gizmo in base.GetGizmos())
+        if (!DebugSettings.godMode)
         {
-            yield return gizmo;
+            yield break;
         }
-        if (DebugSettings.godMode)
+
+        yield return new Command_Action
         {
-            yield return new Command_Action
+            defaultLabel = "Dev: Progress virion 1 day",
+            action = () =>
             {
-                defaultLabel = "Dev: Progress virion 1 day",
-                action = () =>
-                {
-                    ticksRemainingInStage -= GenDate.TicksPerDay;
-                }
-            };
+                ticksRemainingInStage -= GenDate.TicksPerDay;
+            }
+        };
 
-            yield return new Command_Action
+        yield return new Command_Action
+        {
+            defaultLabel = "Dev: Virion activity next tick",
+            action = () =>
             {
-                defaultLabel = "Dev: Virion activity next tick",
-                action = () =>
-                {
-                    ticksUntilNextVirionActivity = 0;
-                }
-            };
+                ticksUntilNextVirionActivity = 0;
+            }
+        };
 
-            yield return new Command_Action
+        yield return new Command_Action
+        {
+            defaultLabel = "Dev: Log ticks until next activity",
+            action = () =>
             {
-                defaultLabel = "Dev: Virion damage next tick",
-                action = () =>
-                {
-                    ticksUntilNextVirionDamage = 0;
-                }
-            };
-        }
+                Log.Message("Ticks until next virion activity: " + ticksUntilNextVirionActivity);
+            }
+        };
     }
 
     public override void ExposeData()
@@ -371,8 +329,6 @@ public class Hediff_Virion : HediffWithComps
         Scribe_Values.Look(ref hasQuality, "hasQuality", false);
 
         Scribe_Values.Look(ref ticksUntilNextVirionActivity, "ticksUntilNextVirionActivity", -1);
-        Scribe_Values.Look(ref ticksUntilNextVirionDamage, "ticksUntilNextVirionDamage", -1);
         Scribe_Values.Look(ref virionActive, "virionActive", false);
     }
-
 }
