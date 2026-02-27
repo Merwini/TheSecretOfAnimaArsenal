@@ -1,23 +1,19 @@
 
 ExposeData on relevant Comps
 
-Apparel:
-	Shaman Armor
-		-Write Def
-		-Write CE patch
-	Shaman Head
-		-Write Def
-		-Write CE patch
+Learning opportunities for various mechanics
 
-	Witch Armor
-		-Write Def
-		-Write CE patch
-	Witch Head
-		-Write Def
-		-Write CE patch
+Rewrite HediffComp_StatExchanger as a Hediff subclass, overriding CurStage instead of affecting stats with a StatPart
+
+Make the rest of the virion defs. + texture for virion itself
+
+CE patches
 
 	Screamer bow (screamer arrows for CE)
 		- large mood debuff for pawns hit by it, to try to induce mental breaks (AOE?)
+
+	Virion bow (arrows)
+		- implants a metalhorror in the target, that grows rapidly and erupts if they die
 
 
 		Eye of Entity Study

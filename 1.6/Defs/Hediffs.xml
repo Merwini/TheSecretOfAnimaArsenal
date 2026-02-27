@@ -91,64 +91,21 @@
 		<isBad>false</isBad>
 		<tendable>false</tendable>
 		<scenarioCanAdd>true</scenarioCanAdd>
-		<stages>
-			<li>
-				<minSeverity>0.0</minSeverity>
-				<label>incubating</label>
-				<capMods>
-					<li>
-						<capacity>Moving</capacity>
-						<offset>-0.05</offset>
-					</li>
-				</capMods>
-				<statOffsets>
-					<PainShockThreshold>-0.02</PainShockThreshold>
-				</statOffsets>
-			</li>
-
-			<li>
-				<minSeverity>0.33</minSeverity>
-				<label>integrating</label>
-				<capMods>
-					<li>
-						<capacity>Moving</capacity>
-						<offset>-0.10</offset>
-					</li>
-					<li>
-						<capacity>Manipulation</capacity>
-						<offset>-0.10</offset>
-					</li>
-				</capMods>
-				<statOffsets>
-					<PainShockThreshold>-0.05</PainShockThreshold>
-				</statOffsets>
-			</li>
-
-			<li>
-				<minSeverity>0.66</minSeverity>
-				<label>overwriting</label>
-				<capMods>
-					<li>
-						<capacity>Moving</capacity>
-						<offset>-0.20</offset>
-					</li>
-					<li>
-						<capacity>Manipulation</capacity>
-						<offset>-0.20</offset>
-					</li>
-					<li>
-						<capacity>Consciousness</capacity>
-						<offset>-0.15</offset>
-					</li>
-				</capMods>
-				<statOffsets>
-					<PainShockThreshold>-0.10</PainShockThreshold>
-				</statOffsets>
-			</li>
-		</stages>
 		<tags>
 			<li>TSOA_Virion</li>
 		</tags>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>TSOA_VirionActivityHediff</defName>
+		<hediffClass>tsoa.arsenal.Hediff_VirionActivity</hediffClass>
+		<!-- TODO better term than active -->
+		<label>virion active</label>
+		<labelNoun>virion activity</labelNoun>
+		<description>a virion is causing internal damage</description>
+		<isBad>true</isBad>
+		<tendable>true</tendable>
+		<scenarioCanAdd>false</scenarioCanAdd>
 	</HediffDef>
 
 </Defs>
