@@ -31,5 +31,6 @@
 	<TSOA_VirionTendSuccessMessage>{0}'s virion was medically pacified.</TSOA_VirionTendSuccessMessage>
 	<TSOA_VirionTendFailureMote>Failed tending. Tend quality: {0}, required: {1}.</TSOA_VirionTendFailureMote>
 	<TSOA_VirionTendFailureMessage>{0}'s virion was not successfully tended. It is still active.</TSOA_VirionTendFailureMessage>
+	<TSOA_VirionActivityDeathMessage>{0} has died from their virion's activity!</TSOA_VirionActivityDeathMessage>
 	
 </LanguageData>

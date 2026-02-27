@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Void Knight Armor -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]/statBases</xpath>
+		<value>
+			<Bulk>100</Bulk>
+			<WornBulk>10</WornBulk>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]/equippedStatOffsets/MoveSpeed</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]/apparel/bodyPartGroups</xpath>
+		<value>
+			<li>Hands</li>
+			<li>Feet</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]</xpath>
+		<value>
+			<li Class="CombatExtended.PartialArmorExt">
+				<stats>
+					<li>
+						<ArmorRating_Sharp>0.70</ArmorRating_Sharp>
+						<parts>
+							<li>Neck</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.70</ArmorRating_Blunt>
+						<parts>
+							<li>Neck</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Sharp>0.90</ArmorRating_Sharp>
+						<parts>
+							<li>Leg</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.90</ArmorRating_Blunt>
+						<parts>
+							<li>Leg</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+						<parts>
+							<li>Arm</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.80</ArmorRating_Blunt>
+						<parts>
+							<li>Arm</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+						<parts>
+							<li>Hand</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.60</ArmorRating_Blunt>
+						<parts>
+							<li>Hand</li>
+						</parts>
+					</li>
+				</stats>
+			</li>
+		</value>
+	</Operation>
+
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>6</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>8</ArmorRating_Blunt>
+		</value>
+	</Operation>
+	
+	<!-- Void Knight Helm -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidHelm"]/statBases</xpath>
+		<value>
+			<Bulk>5</Bulk>
+			<WornBulk>1</WornBulk>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidHelm"]</xpath>
+		<value>
+			<equippedStatOffsets>
+				<AimingAccuracy>-0.1</AimingAccuracy>
+				<MeleeHitChance>-0.3</MeleeHitChance>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidHelm"]/apparel/bodyPartGroups</xpath>
+		<value>
+			<bodyPartGroups>
+				<li>UpperHead</li>
+				<li>Eyes</li>
+				<li>Teeth</li>
+			</bodyPartGroups>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidHelm"]</xpath>
+		<value>
+			<li Class="CombatExtended.PartialArmorExt">
+				<stats>
+					<li>
+						<ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+						<parts>
+							<li>Eye</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.60</ArmorRating_Blunt>
+						<parts>
+							<li>Eye</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+						<parts>
+							<li>Jaw</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.80</ArmorRating_Blunt>
+						<parts>
+							<li>Jaw</li>
+						</parts>
+					</li>
+				</stats>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidHelm"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>5</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidHelm"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>6.5</ArmorRating_Blunt>
+		</value>
+	</Operation>
+	
+	<!-- Bioferrite Khopesh -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidKhopesh"]/statBases</xpath>
+		<value>
+			<Bulk>4</Bulk>
+			<MeleeCounterParryBonus>0.35</MeleeCounterParryBonus>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidKhopesh"]</xpath>
+		<value>
+			<equippedStatOffsets>
+				<MeleeCritChance>0.4</MeleeCritChance>
+				<MeleeParryChance>1.6</MeleeParryChance>
+				<MeleeDodgeChance>1.4</MeleeDodgeChance>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidKhopesh"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>handle</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>2</power>
+					<chanceFactor>0.33</chanceFactor>
+					<cooldownTime>1.44</cooldownTime>
+					<armorPenetrationBlunt>0.425</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>point</label>
+					<capacities>
+						<li>Stab</li>
+					</capacities>
+					<power>27</power>
+					<cooldownTime>1.44</cooldownTime>
+					<armorPenetrationBlunt>0.425</armorPenetrationBlunt>
+					<armorPenetrationSharp>0.48</armorPenetrationSharp>
+					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>edge</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>20</power>
+					<cooldownTime>1.34</cooldownTime>
+					<armorPenetrationBlunt>0.956</armorPenetrationBlunt>
+					<armorPenetrationSharp>0.43</armorPenetrationSharp>
+					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidKhopesh"]/weaponTags</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="TSOA_VoidKhopesh"]</xpath>
+			<value>
+				<weaponTags />
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidKhopesh"]/weaponTags</xpath>
+		<value>
+			<li>CE_OneHandedWeapon</li>
+		</value>
+	</Operation>
+	
+	<!-- Bioferrite Axe -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidAxe"]/statBases</xpath>
+		<value>
+			<Bulk>13</Bulk>
+			<MeleeCounterParryBonus>1.5</MeleeCounterParryBonus>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidAxe"]</xpath>
+		<value>
+			<equippedStatOffsets>
+				<MeleeCritChance>1.2</MeleeCritChance>
+				<MeleeParryChance>0.8</MeleeParryChance>
+				<MeleeDodgeChance>0.56</MeleeDodgeChance>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidAxe"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>handle</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>6</power>
+					<chanceFactor>0.25</chanceFactor>
+					<cooldownTime>1.31</cooldownTime>
+					<armorPenetrationBlunt>2.025</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>edge</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>36</power>
+					<cooldownTime>2.9</cooldownTime>
+					<armorPenetrationBlunt>14.4</armorPenetrationBlunt>
+					<armorPenetrationSharp>2.6</armorPenetrationSharp>
+					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<!-- Bioferrite Kanabo -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidKanabo"]/statBases</xpath>
+		<value>
+			<Bulk>16</Bulk>
+			<MeleeCounterParryBonus>0.5</MeleeCounterParryBonus>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidKanabo"]</xpath>
+		<value>
+			<equippedStatOffsets>
+				<MeleeCritChance>1.6</MeleeCritChance>
+				<MeleeParryChance>0.38</MeleeParryChance>
+				<MeleeDodgeChance>0.4</MeleeDodgeChance>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidKanabo"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>handle</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>6</power>
+					<chanceFactor>0.25</chanceFactor>
+					<cooldownTime>1.31</cooldownTime>
+					<armorPenetrationBlunt>2.025</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>head</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>48</power>
+					<cooldownTime>3.4</cooldownTime>
+					<armorPenetrationBlunt>20.8</armorPenetrationBlunt>
+					<armorPenetrationSharp>1.3</armorPenetrationSharp>
+					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<!--  Bioferrite Skin-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/HediffDef[defName="TSOA_BioferriteSkinTwo"]/stages/li/statOffsets/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/HediffDef[defName="TSOA_BioferriteSkinTwo"]/stages/li/statOffsets/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>2</ArmorRating_Blunt>
+	</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/HediffDef[defName="TSOA_BioferriteSkinThree"]/stages/li/statOffsets/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>2.5</ArmorRating_Sharp>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/HediffDef[defName="TSOA_BioferriteSkinThree"]/stages/li/statOffsets/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>6</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/HediffDef[defName="TSOA_BioferriteSkinFour"]/stages/li/statOffsets/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>4.5</ArmorRating_Sharp>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/HediffDef[defName="TSOA_BioferriteSkinFour"]/stages/li/statOffsets/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>10</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/HediffDef[defName="TSOA_BioferriteSkinFive"]/stages/li/statOffsets/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>6.5</ArmorRating_Sharp>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/HediffDef[defName="TSOA_BioferriteSkinFive"]/stages/li/statOffsets/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>18</ArmorRating_Blunt>
+		</value>
+	</Operation>
+	
+	<!-- Bioferrite Arm -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/HediffDef[defName="TSOA_BioferriteArmOne"]/comps/li[@Class="HediffCompProperties_VerbGiver"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>fist</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>2</power>
+					<cooldownTime>1.26</cooldownTime>
+					<armorPenetrationBlunt>0.76</armorPenetrationBlunt>
+					<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+					<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/HediffDef[defName="TSOA_BioferriteArmTwo"]/comps/li[@Class="HediffCompProperties_VerbGiver"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>claw</label>
+					<capacities>
+						<li>Scratch</li>
+					</capacities>
+					<power>4</power>
+					<cooldownTime>1.13</cooldownTime>
+					<armorPenetrationBlunt>0.66</armorPenetrationBlunt>
+					<armorPenetrationSharp>1.42</armorPenetrationSharp>
+					<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+					<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/HediffDef[defName="TSOA_BioferriteArmThree"]/comps/li[@Class="HediffCompProperties_VerbGiver"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>claw</label>
+					<capacities>
+						<li>Scratch</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.0</cooldownTime>
+					<armorPenetrationBlunt>0.56</armorPenetrationBlunt>
+					<armorPenetrationSharp>3.1</armorPenetrationSharp>
+					<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+					<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/HediffDef[defName="TSOA_BioferriteArmFour"]/comps/li[@Class="HediffCompProperties_VerbGiver"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>claw</label>
+					<capacities>
+						<li>Scratch</li>
+					</capacities>
+					<power>16</power>
+					<cooldownTime>0.93</cooldownTime>
+					<armorPenetrationBlunt>0.56</armorPenetrationBlunt>
+					<armorPenetrationSharp>10.6</armorPenetrationSharp>
+					<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+					<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/HediffDef[defName="TSOA_BioferriteArmFive"]/comps/li[@Class="HediffCompProperties_VerbGiver"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>claw</label>
+					<capacities>
+						<li>Scratch</li>
+					</capacities>
+					<power>24</power>
+					<cooldownTime>0.83</cooldownTime>
+					<armorPenetrationBlunt>0.56</armorPenetrationBlunt>
+					<armorPenetrationSharp>18</armorPenetrationSharp>
+					<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
+					<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+	
+</Patch>

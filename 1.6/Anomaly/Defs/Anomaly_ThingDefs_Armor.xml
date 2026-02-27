@@ -2,9 +2,9 @@
 <Defs>
 
 	<ThingDef ParentName="ArmorSmithableBase">
-		<defName>TSOA_BioferriteArmor</defName>
+		<defName>TSOA_VoidArmor</defName>
 		<label>void knight plate armor</label>
-		<description>A suit of armor crafted from bioferrite. This bioferrite feeds on the psychic capabilites of the wearer, making itself stronger but weakening the wearer in the process.</description>
+		<description>A suit of plate armor crafted from bioferrite and gold. The bioferrite feeds on the wearer's psychic presence to harden itself, while gold cladding in key areas prevents the suit from injuring the wearer. While not much stronger than steel armor for the average person, when worn by a powerful psychic its defensive properties are formidable.</description>
 		<graphicData>
 			<texPath>TSOA/Things/Apparel/VoidKnight/VoidKnight</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -78,9 +78,9 @@
 	</ThingDef>
 
 	<ThingDef ParentName="ArmorHelmetMakeableBase">
-		<defName>TSOA_BioferriteHelm</defName>
-		<label>void knight helmet</label>
-		<description>A helmet crafted from bioferrite. This bioferrite feeds on the psychic capabilites of the wearer, making itself stronger but weakening the wearer in the process.</description>
+		<defName>TSOA_VoidHelm</defName>
+		<label>void knight helm</label>
+		<description>A helmet crafted from bioferrite and gold. The bioferrite feeds on the wearer's psychic presence to harden itself, while gold cladding in key areas prevents the suit from injuring the wearer. While not much stronger than steel armor for the average person, when worn by a powerful psychic its defensive properties are formidable.</description>
 		<graphicData>
 			<texPath>TSOA/Things/Apparel/VoidKnight/VoidKnightHelm_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -97,12 +97,8 @@
 			<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.4</ArmorRating_Heat>
 			<EquipDelay>1.5</EquipDelay>
-			<TSOA_PsyScaling>0.5</TSOA_PsyScaling>
+			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
 		</statBases>
-
-		<equippedStatOffsets>
-			<PsychicSensitivity>-0.1</PsychicSensitivity>
-		</equippedStatOffsets>
 
 		<costList>
 			<Bioferrite>50</Bioferrite>

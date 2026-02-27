@@ -19,7 +19,7 @@
 			<MaxHitPoints>200</MaxHitPoints>
 			<WorkToMake>24000</WorkToMake>
 			<Mass>1.8</Mass>
-			<TSOA_PsyScaling>0.5</TSOA_PsyScaling>
+			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
 		</statBases>
 
 		<costList>
@@ -94,7 +94,7 @@
 			<MaxHitPoints>200</MaxHitPoints>
 			<WorkToMake>27000</WorkToMake>
 			<Mass>2.3</Mass>
-			<TSOA_PsyScaling>0.5</TSOA_PsyScaling>
+			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
 		</statBases>
 
 		<costList>
@@ -161,7 +161,7 @@
 			<MaxHitPoints>200</MaxHitPoints>
 			<WorkToMake>30000</WorkToMake>
 			<Mass>6</Mass>
-			<TSOA_PsyScaling>0.5</TSOA_PsyScaling>
+			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
 		</statBases>
 
 		<costList>
