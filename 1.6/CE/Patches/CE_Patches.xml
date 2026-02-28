@@ -258,8 +258,8 @@
 		<xpath>Defs/ThingDef[defName="TSOA_AnimaTomahawk"]</xpath>
 		<value>
 			<equippedStatOffsets>
-				<MeleeCritChance>0.10</MeleeCritChance>
-				<MeleeParryChance>1.1</MeleeParryChance>
+				<MeleeCritChance>0.40</MeleeCritChance>
+				<MeleeParryChance>0.7</MeleeParryChance>
 				<MeleeDodgeChance>1.2</MeleeDodgeChance>
 			</equippedStatOffsets>
 		</value>
@@ -286,7 +286,7 @@
 						<li>Cut</li>
 					</capacities>
 					<power>17</power>
-					<cooldownTime>3.52</cooldownTime>
+					<cooldownTime>2.52</cooldownTime>
 					<armorPenetrationBlunt>3.025</armorPenetrationBlunt>
 					<armorPenetrationSharp>2.28</armorPenetrationSharp>
 					<extraMeleeDamages>
@@ -396,6 +396,7 @@
 		<value>
 			<Bulk>10</Bulk>
 			<MeleeCounterParryBonus>0.53</MeleeCounterParryBonus>
+			<ArmorRating_Sharp
 		</value>
 	</Operation>
 

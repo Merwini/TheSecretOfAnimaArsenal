@@ -6,7 +6,6 @@
 		<defName>TSOA_VoidKhopesh</defName>
 		<label>void knight sword</label>
 		<description>A bioferrite sword styled after an ancient khopesh. The bioferrite acts like a living organism, and feeds on the wielder's psychic potential to grow more powerful.</description>
-		<!-- TODO replace once textures are finished -->
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteKopesh</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

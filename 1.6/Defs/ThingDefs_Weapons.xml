@@ -6,7 +6,6 @@
 		<defName>TSOA_AnimaTomahawk</defName>
 		<label>anima hatchet</label>
 		<description>A hatchet made to channel the psychic energy of its wielder into destructive force. The haft is carved from anima tree bark and wrapped in anima grass, absorbing neural heat from the wielder which is then released by the jade blade into one's foes.</description>
-		<!-- TODO replace once textures are finished -->
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/AnimaTomahawk</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
