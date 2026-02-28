@@ -1,6 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+	<ThingDef>
+		<defName>TSOA_AnomalyFakeBench</defName>
+		<label>Virion Implant Surgery</label>
+		<description>This is a fake workbench to make the research tab work correctly. If you see this in-game please report it as a bug.</description>
+		<thingClass>Building</thingClass>
+	</ThingDef>
+	
 	<ThingDef ParentName="BodyPartBase" Abstract="True" Name="TSOA_BioferriteBodyPartBase">
 		<techLevel>Medieval</techLevel>
 		<graphicData>
@@ -52,11 +59,11 @@
 			</li>
 		</ingredients>
 
-		<modExtensions>
+		<!--<modExtensions>
 			<li Class="tsoa.core.PsyLinkRecipeExtension">
 				<minPsylinkLevel>3</minPsylinkLevel>
 			</li>
-		</modExtensions>
+		</modExtensions>-->
 	</RecipeDef>
 	
 	<!-- bioferrite clawed arm -->
@@ -276,6 +283,20 @@
 		<products>
 			<TSOA_BioferriteArm>1</TSOA_BioferriteArm>
 		</products>
+
+		<recipeUsers Inherit="false">
+			<li>TSOA_AnomalyFakeBench</li>
+		</recipeUsers>
+		<ingredients Inherit="false">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Bioferrite</li>
+					</thingDefs>
+				</filter>
+				<count>60</count>
+			</li>
+		</ingredients>
 	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
@@ -447,6 +468,20 @@
 		<products>
 			<TSOA_BioferriteLeg>1</TSOA_BioferriteLeg>
 		</products>
+		
+		<recipeUsers Inherit="false">
+			<li>TSOA_AnomalyFakeBench</li>
+		</recipeUsers>
+		<ingredients Inherit="false">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Bioferrite</li>
+					</thingDefs>
+				</filter>
+				<count>60</count>
+			</li>
+		</ingredients>
 	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
@@ -639,6 +674,20 @@
 		<products>
 			<TSOA_BioferriteEye>1</TSOA_BioferriteEye>
 		</products>
+
+		<recipeUsers Inherit="false">
+			<li>TSOA_AnomalyFakeBench</li>
+		</recipeUsers>
+		<ingredients Inherit="false">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Bioferrite</li>
+					</thingDefs>
+				</filter>
+				<count>60</count>
+			</li>
+		</ingredients>
 	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
@@ -830,6 +879,20 @@
 		<products>
 			<TSOA_BioferriteSkin>1</TSOA_BioferriteSkin>
 		</products>
+
+		<recipeUsers Inherit="false">
+			<li>TSOA_AnomalyFakeBench</li>
+		</recipeUsers>
+		<ingredients Inherit="false">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Bioferrite</li>
+					</thingDefs>
+				</filter>
+				<count>80</count>
+			</li>
+		</ingredients>
 	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryInstallImplantBase">

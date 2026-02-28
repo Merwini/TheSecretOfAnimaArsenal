@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+	<!-- Void Knight Plate Armor -->
 	<ThingDef ParentName="ArmorSmithableBase">
 		<defName>TSOA_VoidArmor</defName>
 		<label>void knight plate armor</label>
@@ -77,6 +78,7 @@
 		</tradeTags>
 	</ThingDef>
 
+	<!-- Void Knight Helm -->
 	<ThingDef ParentName="ArmorHelmetMakeableBase">
 		<defName>TSOA_VoidHelm</defName>
 		<label>void knight helm</label>
@@ -141,4 +143,227 @@
 		</tradeTags>
 	</ThingDef>
 	
+	<!-- Bioferrite Virion Armor -->
+	<ThingDef ParentName="ArmorSmithableBase">
+		<defName>TSOA_BioferriteVirionArmor</defName>
+		<label>bioferrite virion armor</label>
+		<description>A suit of bioferrite armor. This armor blurs the line between organic and inorganic material, being grown from a Virion instead of crafted by hand. While naturally brittle, the bioferrite feeds on the wearer's psychic prescence, hardening itself but fraying the wearer's sanity.</description>
+		<graphicData>
+			<!-- TODO placeholder -->
+			<texPath>TSOA/Things/Apparel/VoidKnight/VoidKnight</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.6, 1.6)</drawSize>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<relicChance>2</relicChance>
+
+		<statBases>
+			<WorkToMake>38000</WorkToMake>
+			<MaxHitPoints>320</MaxHitPoints>
+			<Mass>15</Mass>
+			<ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.8</ArmorRating_Heat>
+			<EquipDelay>15</EquipDelay>
+			<TSOA_PsyScaling>1</TSOA_PsyScaling>
+		</statBases>
+
+		<equippedStatOffsets>
+			<MoveSpeed>-0.15</MoveSpeed>
+			<MentalBreakThreshold>0.03</MentalBreakThreshold>
+			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.3</SlaveSuppressionOffset>
+		</equippedStatOffsets>
+
+		<costList>
+			<Bioferrite>120</Bioferrite>
+			<Shard>1</Shard>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>TSOA_BioferriteImplants</li>
+				<li>TSOA_VoidArmor</li>
+			</researchPrerequisites>
+			<recipeUsers Inherit="false">
+				<li>TSOA_AnomalyFakeBench</li>
+			</recipeUsers>
+		</recipeMaker>
+
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+
+		<apparel>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+			</bodyPartGroups>
+			<wornGraphicPath>TSOA/Things/Apparel/VoidKnight/VoidKnight</wornGraphicPath>
+			<layers>
+				<li>Middle</li>
+				<li>Shell</li>
+			</layers>
+			<tags>
+				<li>MedievalMilitary</li>
+			</tags>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+		</apparel>
+
+		<tradeability>Sellable</tradeability>
+		<tradeTags>
+			<li>Clothing</li>
+			<li>Armor</li>
+		</tradeTags>
+	</ThingDef>
+
+	<RecipeDef ParentName="TSOA_ImplantVirionBase">
+		<defName>TSOA_ImplantVirionArmor</defName>
+		<label>implant virion (bioferrite armor)</label>
+		<description>Implant a bioferrite virion in the target. This will gestate into a suit of bioferrite armor, killing the host in the process.</description>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_BioferriteVirionArmor</ThingDef>
+		</descriptionHyperlinks>
+		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
+		<uiIconThing>Shard</uiIconThing>
+
+		<researchPrerequisites>
+			<li>TSOA_BioferriteImplants</li>
+			<li>TSOA_VoidArmor</li>
+		</researchPrerequisites>
+		<ingredients Inherit="false">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Bioferrite</li>
+					</thingDefs>
+				</filter>
+				<count>120</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Shard</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter Inherit="false">
+			<thingDefs>
+				<li>Bioferrite</li>
+				<li>Shard</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<!-- Bioferrite Virion Helm -->
+	<ThingDef ParentName="ArmorHelmetMakeableBase">
+		<defName>TSOA_BioferriteVirionHelm</defName>
+		<label>bioferrite virion helm</label>
+		<description>A bioferrite helmet. This armor blurs the line between organic and inorganic material, being grown from a Virion instead of crafted by hand. While naturally brittle, the bioferrite feeds on the wearer's psychic prescence, hardening itself but fraying the wearer's sanity.</description>
+		<graphicData>
+			<!-- TODO placeholder -->
+			<texPath>TSOA/Things/Apparel/VoidKnight/VoidKnightHelm_south</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.4, 1.4)</drawSize>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<relicChance>2</relicChance>
+
+		<statBases>
+			<WorkToMake>3200</WorkToMake>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Mass>2</Mass>
+			<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.7</ArmorRating_Heat>
+			<EquipDelay>1.5</EquipDelay>
+			<TSOA_PsyScaling>1</TSOA_PsyScaling>
+		</statBases>
+
+		<equippedStatOffsets>
+			<MentalBreakThreshold>0.02</MentalBreakThreshold>
+		</equippedStatOffsets>
+
+		<costList>
+			<Bioferrite>60</Bioferrite>
+			<Shard>1</Shard>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>TSOA_BioferriteImplants</li>
+				<li>TSOA_VoidArmor</li>
+			</researchPrerequisites>
+			<recipeUsers Inherit="false">
+				<li>TSOA_AnomalyFakeBench</li>
+			</recipeUsers>
+		</recipeMaker>
+
+		<apparel>
+			<countsAsClothingForNudity>false</countsAsClothingForNudity>
+			<bodyPartGroups>
+				<li>FullHead</li>
+				<li>Neck</li>
+			</bodyPartGroups>
+			<wornGraphicPath>TSOA/Things/Apparel/VoidKnight/VoidKnightHelm</wornGraphicPath>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<tags>
+				<li>IndustrialMilitaryBasic</li>
+			</tags>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+		</apparel>
+
+		<tradeability>Sellable</tradeability>
+		<tradeTags>
+			<li>Clothing</li>
+			<li>Armor</li>
+		</tradeTags>
+	</ThingDef>
+
+	<RecipeDef ParentName="TSOA_ImplantVirionBase">
+		<defName>TSOA_ImplantVirionHelm</defName>
+		<label>implant virion (bioferrite helm)</label>
+		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite helmet, killing the host in the process.</description>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_BioferriteVirionHelm</ThingDef>
+		</descriptionHyperlinks>
+		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
+		<uiIconThing>Shard</uiIconThing>
+
+		<researchPrerequisites>
+			<li>TSOA_BioferriteImplants</li>
+			<li>TSOA_VoidArmor</li>
+		</researchPrerequisites>
+		<ingredients Inherit="false">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Bioferrite</li>
+					</thingDefs>
+				</filter>
+				<count>60</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Shard</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter Inherit="false">
+			<thingDefs>
+				<li>Bioferrite</li>
+				<li>Shard</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
 </Defs>
