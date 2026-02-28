@@ -9,7 +9,6 @@
 		<hediff>Burn</hediff>
 		<defaultDamage>1</defaultDamage>
 		<externalViolence>true</externalViolence>
-		<deathMessage>{0} has died from discharged neural heat.</deathMessage>
 	</DamageDef>
 
 	<DamageDef>
@@ -21,6 +20,8 @@
 		<hediff>TSOA_EntropicDischarge_Injury</hediff>
 		<hediffSkin>TSOA_EntropicDischarge_Skin</hediffSkin>
 		<hediffSolid>TSOA_EntropicDischarge_Solid</hediffSolid>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has died from discharged neural heat.</deathMessage>
 	</DamageDef>
 	
 </Defs>

@@ -10,8 +10,11 @@
 		</value>
 	</Operation>
 
-	<Operation Class="PatchOperationRemove">
+	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]/equippedStatOffsets/MoveSpeed</xpath>
+		<value>
+			<CarryBulk>10</CarryBulk>
+		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
@@ -84,14 +87,14 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]/statBases/ArmorRating_Sharp</xpath>
 		<value>
-			<ArmorRating_Sharp>6</ArmorRating_Sharp>
+			<ArmorRating_Sharp>10</ArmorRating_Sharp>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]/statBases/ArmorRating_Blunt</xpath>
 		<value>
-			<ArmorRating_Blunt>8</ArmorRating_Blunt>
+			<ArmorRating_Blunt>14</ArmorRating_Blunt>
 		</value>
 	</Operation>
 	
@@ -162,14 +165,14 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="TSOA_VoidHelm"]/statBases/ArmorRating_Sharp</xpath>
 		<value>
-			<ArmorRating_Sharp>5</ArmorRating_Sharp>
+			<ArmorRating_Sharp>8</ArmorRating_Sharp>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="TSOA_VoidHelm"]/statBases/ArmorRating_Blunt</xpath>
 		<value>
-			<ArmorRating_Blunt>6.5</ArmorRating_Blunt>
+			<ArmorRating_Blunt>11</ArmorRating_Blunt>
 		</value>
 	</Operation>
 	
@@ -205,7 +208,7 @@
 					<power>2</power>
 					<chanceFactor>0.33</chanceFactor>
 					<cooldownTime>1.44</cooldownTime>
-					<armorPenetrationBlunt>0.425</armorPenetrationBlunt>
+					<armorPenetrationBlunt>1.025</armorPenetrationBlunt>
 					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
 				</li>
 				<li Class="CombatExtended.ToolCE">
@@ -215,8 +218,8 @@
 					</capacities>
 					<power>27</power>
 					<cooldownTime>1.44</cooldownTime>
-					<armorPenetrationBlunt>0.425</armorPenetrationBlunt>
-					<armorPenetrationSharp>0.48</armorPenetrationSharp>
+					<armorPenetrationBlunt>4.425</armorPenetrationBlunt>
+					<armorPenetrationSharp>6.48</armorPenetrationSharp>
 					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
 				</li>
 				<li Class="CombatExtended.ToolCE">
@@ -226,8 +229,8 @@
 					</capacities>
 					<power>20</power>
 					<cooldownTime>1.34</cooldownTime>
-					<armorPenetrationBlunt>0.956</armorPenetrationBlunt>
-					<armorPenetrationSharp>0.43</armorPenetrationSharp>
+					<armorPenetrationBlunt>4.956</armorPenetrationBlunt>
+					<armorPenetrationSharp>3.43</armorPenetrationSharp>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
 				</li>
 			</tools>
@@ -294,7 +297,7 @@
 					<power>36</power>
 					<cooldownTime>2.9</cooldownTime>
 					<armorPenetrationBlunt>14.4</armorPenetrationBlunt>
-					<armorPenetrationSharp>2.6</armorPenetrationSharp>
+					<armorPenetrationSharp>4.6</armorPenetrationSharp>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
 				</li>
 			</tools>

@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<!-- Anima Shaman Armor -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]/statBases</xpath>
+		<value>
+			<Bulk>50</Bulk>
+			<WornBulk>10</WornBulk>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]/equippedStatOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]</xpath>
+			<value>
+				<equippedStatOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]</xpath>
+		<value>
+			<equippedStatOffsets>
+				<CarryBulk>10</CarryBulk>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+
+		<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]/apparel/bodyPartGroups</xpath>
+		<value>
+			<li>Hands</li>
+			<li>Feet</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]</xpath>
+		<value>
+			<li Class="CombatExtended.PartialArmorExt">
+				<stats>
+					<li>
+						<ArmorRating_Sharp>0.70</ArmorRating_Sharp>
+						<parts>
+							<li>Neck</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.70</ArmorRating_Blunt>
+						<parts>
+							<li>Neck</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Sharp>0.90</ArmorRating_Sharp>
+						<parts>
+							<li>Leg</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.90</ArmorRating_Blunt>
+						<parts>
+							<li>Leg</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+						<parts>
+							<li>Arm</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.80</ArmorRating_Blunt>
+						<parts>
+							<li>Arm</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+						<parts>
+							<li>Hand</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.60</ArmorRating_Blunt>
+						<parts>
+							<li>Hand</li>
+						</parts>
+					</li>
+				</stats>
+			</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>4</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>6</ArmorRating_Blunt>
+		</value>
+	</Operation>
+	
+	<!-- Anima Shaman Headdress-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaHeaddress"]/statBases</xpath>
+		<value>
+			<Bulk>5</Bulk>
+			<WornBulk>1</WornBulk>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaHeaddress"]</xpath>
+		<value>
+			<equippedStatOffsets>
+				<AimingAccuracy>-0.1</AimingAccuracy>
+				<MeleeHitChance>-0.2</MeleeHitChance>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaHeaddress"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>2</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaHeaddress"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>4</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<!-- Anima Tomahawk -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaTomahawk"]/statBases</xpath>
+		<value>
+			<Bulk>4</Bulk>
+			<MeleeCounterParryBonus>0.15</MeleeCounterParryBonus>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaTomahawk"]</xpath>
+		<value>
+			<equippedStatOffsets>
+				<MeleeCritChance>0.10</MeleeCritChance>
+				<MeleeParryChance>1.1</MeleeParryChance>
+				<MeleeDodgeChance>1.2</MeleeDodgeChance>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaTomahawk"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>handle</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>3</power>
+					<cooldownTime>1.59</cooldownTime>
+					<chanceFactor>0.25</chanceFactor>
+					<armorPenetrationBlunt>0.625</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>edge</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>17</power>
+					<cooldownTime>3.52</cooldownTime>
+					<armorPenetrationBlunt>4.025</armorPenetrationBlunt>
+					<armorPenetrationSharp>2.28</armorPenetrationSharp>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_EntropyExtraDamage</def>
+							<amount>1</amount>
+						</li>
+					</extraMeleeDamages>
+					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaTomahawk"]/weaponTags</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="TSOA_AnimaTomahawk"]</xpath>
+			<value>
+				<weaponTags />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaTomahawk"]/weaponTags</xpath>
+		<value>
+			<li>CE_OneHandedWeapon</li>
+		</value>
+	</Operation>
+
+	<!-- Anima War Club -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaClub"]/statBases</xpath>
+		<value>
+			<Bulk>6</Bulk>
+			<MeleeCounterParryBonus>0.73</MeleeCounterParryBonus>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaClub"]</xpath>
+		<value>
+			<equippedStatOffsets>
+				<MeleeCritChance>1.1</MeleeCritChance>
+				<MeleeParryChance>0.4</MeleeParryChance>
+				<MeleeDodgeChance>0.35</MeleeDodgeChance>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaClub"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>handle</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>4</power>
+					<chanceFactor>0.25</chanceFactor>
+					<cooldownTime>1.24</cooldownTime>
+					<armorPenetrationBlunt>1</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>head</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>12</power>
+					<cooldownTime>2.01</cooldownTime>
+					<armorPenetrationBlunt>8.75</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaClub"]/weaponTags</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="TSOA_AnimaClub"]</xpath>
+			<value>
+				<weaponTags />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaClub"]/weaponTags</xpath>
+		<value>
+			<li>CE_OneHandedWeapon</li>
+		</value>
+	</Operation>
+	
+	<!-- Anima Macuahuitl -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaMacuahuitl"]/statBases</xpath>
+		<value>
+			<Bulk>10</Bulk>
+			<MeleeCounterParryBonus>0.53</MeleeCounterParryBonus>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaMacuahuitl"]</xpath>
+		<value>
+			<equippedStatOffsets>
+				<MeleeCritChance>1.45</MeleeCritChance>
+				<MeleeParryChance>0.42</MeleeParryChance>
+				<MeleeDodgeChance>0.35</MeleeDodgeChance>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaMacuahuitl"]/tools</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>handle</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>6</power>
+					<chanceFactor>0.25</chanceFactor>
+					<cooldownTime>1.31</cooldownTime>
+					<armorPenetrationBlunt>2.025</armorPenetrationBlunt>
+					<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>edge</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>28</power>
+					<cooldownTime>2.6</cooldownTime>
+					<armorPenetrationBlunt>12.4</armorPenetrationBlunt>
+					<armorPenetrationSharp>8.6</armorPenetrationSharp>
+					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+	
+</Patch>

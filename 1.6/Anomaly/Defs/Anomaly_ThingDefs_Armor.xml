@@ -21,7 +21,7 @@
 			<ArmorRating_Blunt>0.7</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.6</ArmorRating_Heat>
 			<EquipDelay>15</EquipDelay>
-			<TSOA_PsyScaling>0.5</TSOA_PsyScaling>
+			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
 		</statBases>
 
 		<equippedStatOffsets>

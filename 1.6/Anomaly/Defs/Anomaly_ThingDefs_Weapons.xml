@@ -84,7 +84,7 @@
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteAxe</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(1.2, 1.2)</drawSize>
+			<drawSize>(1.6, 1.6)</drawSize>
 		</graphicData>
 		<equippedAngleOffset>-15</equippedAngleOffset>
 		<techLevel>Medieval</techLevel>
@@ -151,7 +151,7 @@
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteKanabo</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(1.2, 1.2)</drawSize>
+			<drawSize>(1.6, 1.6)</drawSize>
 		</graphicData>
 		<equippedAngleOffset>-15</equippedAngleOffset>
 		<techLevel>Medieval</techLevel>
