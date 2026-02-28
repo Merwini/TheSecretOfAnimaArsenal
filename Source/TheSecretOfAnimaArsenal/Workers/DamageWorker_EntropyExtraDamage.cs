@@ -38,10 +38,11 @@ public class DamageWorker_EntropyExtraDamage : DamageWorker_AddInjury
         DamageInfo newDinfo = new DamageInfo(dinfo);
         newDinfo.Def = extension.damageDef;
         newDinfo.SetAmount(bonusDamage);
+        newDinfo.SetIgnoreArmor(true);
 
         if (DebugSettings.godMode)
         {
-            Log.Message($"[TSOA] DamageWorker_PsyExtraDamage: {pawn.LabelShort} consumed {heatCost} heat (from {originalHeat}) to deal {bonusDamage} extra {extension.damageDef.label} damage to {victim.LabelShort}.");
+            Log.Message($"[TSOA] DamageWorker_PsyExtraDamage: {pawn.LabelShort} consumed {heatCost} heat (from {originalHeat}) to deal {bonusDamage} extra {extension.damageDef.label} damage to {victim.LabelShort} with penetration: {dinfo.ArmorPenetrationInt}");
         }
 
         return base.Apply(newDinfo, victim);

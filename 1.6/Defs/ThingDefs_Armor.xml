@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<ThingDef ParentName="ApparelMakeableBase">
-		<defName>TSOA_AnimaArmor</defName>
+	<!-- Anima Shaman Armor -->
+	<ThingDef ParentName="ApparelBase">
+		<defName>TSOA_AnimaShamanArmor</defName>
 		<label>anima shaman armor</label>
-		<description>A full-body suit of shamanic armor. Made from woven anima grass and plates of anima tree bark, it offers little in the way of physical protection, but instead allows the wearer to subconsciously project a psychic force field that blocks incoming damage at the cost of building up neural heat.</description>
+		<description>A full-body suit of shamanic armor. Made from woven anima grass and plates of anima tree bark, it offers little in the way of physical protection, but when worn by a psycaster passively projects a psychic force field that blocks incoming damage at the cost of building up neural heat. Must be crafted by a psycaster.</description>
 		<graphicData>
 			<texPath>TSOA/Things/Apparel/AnimaShaman/AnimaShaman</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -12,7 +13,8 @@
 		</graphicData>
 		<techLevel>Medieval</techLevel>
 		<tickerType>Normal</tickerType>
-		<relicChance>2</relicChance>
+		<relicChance>3</relicChance>
+		<smeltable>false</smeltable>
 		
 		<statBases>
 			<MaxHitPoints>200</MaxHitPoints>
@@ -28,23 +30,6 @@
 		<equippedStatOffsets>
 			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.3</SlaveSuppressionOffset>
 		</equippedStatOffsets>
-		
-		<costList>
-			<TSOA_AnimaGrassResource>150</TSOA_AnimaGrassResource>
-			<TSOA_AnimaBark>6</TSOA_AnimaBark>
-		</costList>
-		<recipeMaker>
-			<researchPrerequisite>TSOA_AnimaArmor</researchPrerequisite>
-			<unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
-			<recipeUsers>
-				<li>ElectricTailoringBench</li>
-				<li>HandTailoringBench</li>
-			</recipeUsers>
-			<skillRequirements>
-				<Crafting>8</Crafting>
-			</skillRequirements>
-			<displayPriority>275</displayPriority>
-		</recipeMaker>
 		
 		<thingCategories>
 			<li>ApparelArmor</li>
@@ -81,17 +66,72 @@
 		</comps>
 	</ThingDef>
 
+	<!-- Anima Shaman Armor Recipe -->
+	<RecipeDef>
+		<defName>TSOA_Make_AnimaShamanArmor</defName>
+		<label>make anima shaman gambeson</label>
+		<jobString>Making anima shaman gambeson.</jobString>
+
+		<researchPrerequisite>TSOA_AnimaArmor</researchPrerequisite>
+
+		<workAmount>8000</workAmount>
+		<workSkill>Crafting</workSkill>
+		<skillRequirements>
+			<Crafting>7</Crafting>
+		</skillRequirements>
+		<effectWorking>Tailor</effectWorking>
+		<soundWorking>Recipe_Tailor</soundWorking>
+		<unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+		<displayPriority>275</displayPriority>
+
+		<recipeUsers>
+			<li>ElectricTailoringBench</li>
+			<li>HandTailoringBench</li>
+		</recipeUsers>
+
+		<products>
+			<TSOA_AnimaShamanArmor>1</TSOA_AnimaShamanArmor>
+		</products>
+
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaGrassResource</li>
+					</thingDefs>
+				</filter>
+				<count>150</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaBark</li>
+					</thingDefs>
+				</filter>
+				<count>6</count>
+			</li>
+		</ingredients>
+
+		<modExtensions>
+			<li Class="tsoa.core.PsyLinkRecipeExtension">
+				<minPsylinkLevel>2</minPsylinkLevel>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+
+	<!-- Anima Shaman Headdress -->
 	<ThingDef ParentName="ApparelBase">
-		<defName>TSOA_AnimaHeaddress</defName>
+		<defName>TSOA_AnimaShamanHeaddress</defName>
 		<label>anima shaman headdress</label>
-		<description>A ritual headdress woven from anima grass and reinforced with plates of anima tree bark. Provides only light physical protection, but significantly increases psychic sensitivty and helps disperse neural heat more quickly.</description>
+		<description>A ritual headdress woven from anima grass and reinforced with plates of anima tree bark. Provides only light physical protection, but helps the wearer store more neural heat and disperse it more quickly. Must be crafted by a psycaster.</description>
 		<graphicData>
 			<texPath>TSOA/Things/Apparel/AnimaShaman/AnimaShamanHelm_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.2, 1.2)</drawSize>
 		</graphicData>
 		<techLevel>Medieval</techLevel>
-		<relicChance>2</relicChance>
+		<relicChance>3</relicChance>
+		<smeltable>false</smeltable>
 
 		<statBases>
 			<MaxHitPoints>200</MaxHitPoints>
@@ -104,26 +144,11 @@
 		</statBases>
 		
 		<equippedStatOffsets>
-			<PsychicSensitivityOffset>0.15</PsychicSensitivityOffset>
+			<PsychicEntropyMaxOffset>20</PsychicEntropyMaxOffset>
 			<PsychicEntropyRecoveryRate>0.05</PsychicEntropyRecoveryRate>
 			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
 		</equippedStatOffsets>
-
-		<costList>
-			<TSOA_AnimaGrassResource>45</TSOA_AnimaGrassResource>
-			<TSOA_AnimaBark>2</TSOA_AnimaBark>
-		</costList>
 		
-		<!--<recipeMaker>
-			<researchPrerequisite>TSOA_AnimaArmor</researchPrerequisite>
-			<recipeUsers>
-				<li>ElectricTailoringBench</li>
-				<li>HandTailoringBench</li>
-			</recipeUsers>
-			<displayPriority>276</displayPriority>
-			<unfinishedThingDef>UnfinishedMask</unfinishedThingDef>
-		</recipeMaker>-->
-
 		<thingCategories>
 			<li>Apparel</li>
 		</thingCategories>
@@ -153,6 +178,7 @@
 		</tradeTags>
 	</ThingDef>
 
+	<!-- Anima Shaman Headdress Recipe -->
 	<RecipeDef>
 		<defName>TSOA_Make_AnimaHeaddress</defName>
 		<label>make anima shaman headdress</label>
@@ -160,11 +186,15 @@
 
 		<researchPrerequisite>TSOA_AnimaArmor</researchPrerequisite>
 
-		<workAmount>8000</workAmount>
+		<workAmount>6000</workAmount>
 		<workSkill>Crafting</workSkill>
-
+		<skillRequirements>
+			<Crafting>7</Crafting>
+		</skillRequirements>
 		<effectWorking>Tailor</effectWorking>
 		<soundWorking>Recipe_Tailor</soundWorking>
+		<unfinishedThingDef>UnfinishedMask</unfinishedThingDef>
+		<displayPriority>276</displayPriority>
 
 		<recipeUsers>
 			<li>ElectricTailoringBench</li>
@@ -172,7 +202,7 @@
 		</recipeUsers>
 
 		<products>
-			<TSOA_AnimaHeaddress>1</TSOA_AnimaHeaddress>
+			<TSOA_AnimaShamanHeaddress>1</TSOA_AnimaShamanHeaddress>
 		</products>
 
 		<ingredients>
@@ -194,11 +224,263 @@
 			</li>
 		</ingredients>
 
-		<unfinishedThingDef>UnfinishedMask</unfinishedThingDef>
-		<displayPriority>276</displayPriority>
 		<modExtensions>
 			<li Class="tsoa.core.PsyLinkRecipeExtension">
 				<minPsylinkLevel>2</minPsylinkLevel>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+
+	<!-- Anima Acolyte Armor -->
+	<ThingDef ParentName="ApparelBase">
+		<defName>TSOA_AnimaAcolyteArmor</defName>
+		<label>anima acolyte gambeson</label>
+		<description>A fabric gambeson with an outer layer of anima grass. The gambeson provides minimal protection against attacks when worn by most individuals. When worn by a psycaster, though, the anima grass passively emits a psychic shield that blocks incoming damage, building up neural heat in the wearer. Must be crafted by a psycaster.</description>
+		<graphicData>
+			<texPath>TSOA/Things/Apparel/AnimaShaman/AnimaShaman</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.6, 1.6)</drawSize>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<tickerType>Normal</tickerType>
+		<relicChance>2</relicChance>
+		<smeltable>false</smeltable>
+
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToMake>20000</WorkToMake>
+			<Mass>4.0</Mass>
+			<Flammability>0.6</Flammability>
+			<StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierInsulation_Cold>0.3</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>0.15</StuffEffectMultiplierInsulation_Heat>
+			<EquipDelay>11</EquipDelay>
+		</statBases>
+
+		<equippedStatOffsets>
+			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.3</SlaveSuppressionOffset>
+		</equippedStatOffsets>
+
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+
+		<apparel>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+			</bodyPartGroups>
+			<wornGraphicPath>TSOA/Things/Apparel/AnimaShaman/AnimaShaman</wornGraphicPath>
+			<layers>
+				<li>Middle</li>
+			</layers>
+			<tags>
+				<li>Medieval</li>
+			</tags>
+			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+		</apparel>
+
+		<tradeability>Sellable</tradeability>
+		<tradeTags>
+			<li>Clothing</li>
+			<li>Armor</li>
+		</tradeTags>
+
+		<comps>
+			<li Class="tsoa.arsenal.CompProperties_PsyShield">
+				<heatPerDamage>0.75</heatPerDamage>
+				<resetDelayTicks>180</resetDelayTicks>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Anima Acolyte Armor Recipe -->
+	<RecipeDef>
+		<defName>TSOA_Make_AnimaAcolyteArmor</defName>
+		<label>make anima acolyte gambeson</label>
+		<jobString>Making anima acolyte gambeson.</jobString>
+
+		<researchPrerequisite>TSOA_AnimaArmor</researchPrerequisite>
+
+		<workAmount>5000</workAmount>
+		<workSkill>Crafting</workSkill>
+
+		<effectWorking>Tailor</effectWorking>
+		<soundWorking>Recipe_Tailor</soundWorking>
+
+		<unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+		<skillRequirements>
+			<Crafting>4</Crafting>
+		</skillRequirements>
+		<displayPriority>273</displayPriority>
+		
+		<recipeUsers>
+			<li>ElectricTailoringBench</li>
+			<li>HandTailoringBench</li>
+		</recipeUsers>
+
+		<products>
+			<TSOA_AnimaAcolyteArmor>1</TSOA_AnimaAcolyteArmor>
+		</products>
+		
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Leathers</li>
+						<li>Textiles</li>
+					</categories>
+				</filter>
+				<count>75</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaGrassResource</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Leathers</li>
+				<li>Textiles</li>
+			</categories>
+		</fixedIngredientFilter>
+
+		<modExtensions>
+			<li Class="tsoa.core.PsyLinkRecipeExtension">
+				<minPsylinkLevel>1</minPsylinkLevel>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+
+	<!-- Anima Acolyte Helmet -->
+	<ThingDef ParentName="ApparelBase">
+		<defName>TSOA_AnimaAcolyteHelmet</defName>
+		<label>anima acolyte helmet</label>
+		<description>A leather helmet with a circlet of braided anima grass. Offers little in the way of protection. When worn by a psycaster, allows the wearer to store more neural heat and disperse it more quickly.</description>
+		<graphicData>
+			<texPath>TSOA/Things/Apparel/AnimaShaman/AnimaShamanHelm_south</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.2, 1.2)</drawSize>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<relicChance>2</relicChance>
+		<smeltable>false</smeltable>
+
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToMake>8000</WorkToMake>
+			<Mass>1.2</Mass>
+			<Flammability>0.6</Flammability>
+			<StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierInsulation_Cold>0.55</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>0.55</StuffEffectMultiplierInsulation_Heat>
+			<ArmorRating_Heat>0.16</ArmorRating_Heat>
+		</statBases>
+
+		<equippedStatOffsets>
+			<PsychicEntropyMaxOffset>10</PsychicEntropyMaxOffset>
+			<PsychicEntropyRecoveryRate>0.05</PsychicEntropyRecoveryRate>
+			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
+		</equippedStatOffsets>
+
+		<costList>
+			<TSOA_AnimaGrassResource>45</TSOA_AnimaGrassResource>
+		</costList>
+
+		<thingCategories>
+			<li>Apparel</li>
+		</thingCategories>
+
+		<apparel>
+			<bodyPartGroups>
+				<li>UpperHead</li>
+				<li>Neck</li>
+			</bodyPartGroups>
+			<wornGraphicPath>TSOA/Things/Apparel/AnimaShaman/AnimaShamanHelm</wornGraphicPath>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<tags>
+				<li>Medieval</li>
+			</tags>
+			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+		</apparel>
+
+		<tradeability>Sellable</tradeability>
+		<tradeTags>
+			<li>Clothing</li>
+			<li>Armor</li>
+		</tradeTags>
+	</ThingDef>
+
+	<!-- Anima Acolyte Helmet Recipe -->
+	<RecipeDef>
+		<defName>TSOA_Make_AnimaAcolyteHelmet</defName>
+		<label>make anima acolyte helmet</label>
+		<jobString>Making anima acolyte helmet.</jobString>
+
+		<researchPrerequisite>TSOA_AnimaArmor</researchPrerequisite>
+
+		<workAmount>3500</workAmount>
+		<workSkill>Crafting</workSkill>
+
+		<effectWorking>Tailor</effectWorking>
+		<soundWorking>Recipe_Tailor</soundWorking>
+
+		<unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+		<skillRequirements>
+			<Crafting>4</Crafting>
+		</skillRequirements>
+		<displayPriority>274</displayPriority>
+
+		<recipeUsers>
+			<li>ElectricTailoringBench</li>
+			<li>HandTailoringBench</li>
+		</recipeUsers>
+
+		<products>
+			<TSOA_AnimaAcolyteHelmet>1</TSOA_AnimaAcolyteHelmet>
+		</products>
+
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Leathers</li>
+					</categories>
+				</filter>
+				<count>30</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaGrassResource</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Leathers</li>
+			</categories>
+		</fixedIngredientFilter>
+
+		<modExtensions>
+			<li Class="tsoa.core.PsyLinkRecipeExtension">
+				<minPsylinkLevel>1</minPsylinkLevel>
 			</li>
 		</modExtensions>
 	</RecipeDef>

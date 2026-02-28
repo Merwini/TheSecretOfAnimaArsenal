@@ -3,17 +3,17 @@
 	
 	<!-- Anima Shaman Armor -->
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]/statBases</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanArmor"]/statBases</xpath>
 		<value>
-			<Bulk>50</Bulk>
-			<WornBulk>10</WornBulk>
+			<Bulk>80</Bulk>
+			<WornBulk>12</WornBulk>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationConditional">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]/equippedStatOffsets</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanArmor"]/equippedStatOffsets</xpath>
 		<nomatch Class="PatchOperationAdd">
-			<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]</xpath>
+			<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanArmor"]</xpath>
 			<value>
 				<equippedStatOffsets />
 			</value>
@@ -21,7 +21,7 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanArmor"]</xpath>
 		<value>
 			<equippedStatOffsets>
 				<CarryBulk>10</CarryBulk>
@@ -30,7 +30,7 @@
 	</Operation>
 
 		<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]/apparel/bodyPartGroups</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanArmor"]/apparel/bodyPartGroups</xpath>
 		<value>
 			<li>Hands</li>
 			<li>Feet</li>
@@ -38,7 +38,7 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAddModExtension">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanArmor"]</xpath>
 		<value>
 			<li Class="CombatExtended.PartialArmorExt">
 				<stats>
@@ -96,14 +96,14 @@
 	</Operation>
 	
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]/statBases/ArmorRating_Sharp</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanArmor"]/statBases/ArmorRating_Sharp</xpath>
 		<value>
 			<ArmorRating_Sharp>4</ArmorRating_Sharp>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaArmor"]/statBases/ArmorRating_Blunt</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanArmor"]/statBases/ArmorRating_Blunt</xpath>
 		<value>
 			<ArmorRating_Blunt>6</ArmorRating_Blunt>
 		</value>
@@ -111,15 +111,15 @@
 	
 	<!-- Anima Shaman Headdress-->
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaHeaddress"]/statBases</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanHeaddress"]/statBases</xpath>
 		<value>
-			<Bulk>5</Bulk>
-			<WornBulk>1</WornBulk>
+			<Bulk>7</Bulk>
+			<WornBulk>2</WornBulk>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaHeaddress"]</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanHeaddress"]</xpath>
 		<value>
 			<equippedStatOffsets>
 				<AimingAccuracy>-0.1</AimingAccuracy>
@@ -129,19 +129,122 @@
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaHeaddress"]/statBases/ArmorRating_Sharp</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanHeaddress"]/statBases/ArmorRating_Sharp</xpath>
 		<value>
 			<ArmorRating_Sharp>2</ArmorRating_Sharp>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaHeaddress"]/statBases/ArmorRating_Blunt</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanHeaddress"]/statBases/ArmorRating_Blunt</xpath>
 		<value>
 			<ArmorRating_Blunt>4</ArmorRating_Blunt>
 		</value>
 	</Operation>
 
+	<!-- Anima Acolyte Armor -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaAcolyteArmor"]/statBases</xpath>
+		<value>
+			<Bulk>40</Bulk>
+			<WornBulk>8</WornBulk>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaAcolyteArmor"]/equippedStatOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="TSOA_AnimaAcolyteArmor"]</xpath>
+			<value>
+				<equippedStatOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaAcolyteArmor"]</xpath>
+		<value>
+			<equippedStatOffsets>
+				<CarryBulk>5</CarryBulk>
+			</equippedStatOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaAcolyteArmor"]/apparel/bodyPartGroups</xpath>
+		<value>
+			<li>Hands</li>
+			<li>Feet</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaAcolyteArmor"]</xpath>
+		<value>
+			<li Class="CombatExtended.PartialArmorExt">
+				<stats>
+					<li>
+						<ArmorRating_Sharp>0.70</ArmorRating_Sharp>
+						<parts>
+							<li>Neck</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.70</ArmorRating_Blunt>
+						<parts>
+							<li>Neck</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Sharp>0.90</ArmorRating_Sharp>
+						<parts>
+							<li>Leg</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.90</ArmorRating_Blunt>
+						<parts>
+							<li>Leg</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+						<parts>
+							<li>Arm</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.80</ArmorRating_Blunt>
+						<parts>
+							<li>Arm</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+						<parts>
+							<li>Hand</li>
+						</parts>
+					</li>
+					<li>
+						<ArmorRating_Blunt>0.60</ArmorRating_Blunt>
+						<parts>
+							<li>Hand</li>
+						</parts>
+					</li>
+				</stats>
+			</li>
+		</value>
+	</Operation>
+	
+	<!-- Anima Acolyte Headdress-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaAcolyteHelmet"]/statBases</xpath>
+		<value>
+			<Bulk>5</Bulk>
+			<WornBulk>1</WornBulk>
+		</value>
+	</Operation>
+	
 	<!-- Anima Tomahawk -->
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="TSOA_AnimaTomahawk"]/statBases</xpath>
@@ -184,7 +287,7 @@
 					</capacities>
 					<power>17</power>
 					<cooldownTime>3.52</cooldownTime>
-					<armorPenetrationBlunt>4.025</armorPenetrationBlunt>
+					<armorPenetrationBlunt>3.025</armorPenetrationBlunt>
 					<armorPenetrationSharp>2.28</armorPenetrationSharp>
 					<extraMeleeDamages>
 						<li>
@@ -257,8 +360,14 @@
 					</capacities>
 					<power>12</power>
 					<cooldownTime>2.01</cooldownTime>
-					<armorPenetrationBlunt>8.75</armorPenetrationBlunt>
+					<armorPenetrationBlunt>6.75</armorPenetrationBlunt>
 					<linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_EntropyExtraDamage</def>
+							<amount>1</amount>
+						</li>
+					</extraMeleeDamages>
 				</li>
 			</tools>
 		</value>
@@ -323,9 +432,15 @@
 					</capacities>
 					<power>28</power>
 					<cooldownTime>2.6</cooldownTime>
-					<armorPenetrationBlunt>12.4</armorPenetrationBlunt>
-					<armorPenetrationSharp>8.6</armorPenetrationSharp>
+					<armorPenetrationBlunt>8.4</armorPenetrationBlunt>
+					<armorPenetrationSharp>4.6</armorPenetrationSharp>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_EntropyExtraDamage</def>
+							<amount>1</amount>
+						</li>
+					</extraMeleeDamages>
 				</li>
 			</tools>
 		</value>

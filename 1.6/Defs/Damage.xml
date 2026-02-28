@@ -5,7 +5,7 @@
 		<defName>TSOA_EntropyExtraDamage</defName>
 		<label>psychic burn</label>
 		<workerClass>tsoa.arsenal.DamageWorker_EntropyExtraDamage</workerClass>
-		<armorCategory>Sharp</armorCategory>
+		<!--<armorCategory>Sharp</armorCategory>-->
 		<hediff>Burn</hediff>
 		<defaultDamage>1</defaultDamage>
 		<externalViolence>true</externalViolence>
