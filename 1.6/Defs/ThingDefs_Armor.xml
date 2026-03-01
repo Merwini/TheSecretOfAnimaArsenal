@@ -231,7 +231,8 @@
 		</modExtensions>
 	</RecipeDef>
 
-	<!-- Anima Acolyte Armor -->
+	<!-- TODO enable once I have textures -->
+	<!-- Anima Acolyte Armor --><!--
 	<ThingDef ParentName="ApparelBase">
 		<defName>TSOA_AnimaAcolyteArmor</defName>
 		<label>anima acolyte gambeson</label>
@@ -299,7 +300,7 @@
 		</comps>
 	</ThingDef>
 
-	<!-- Anima Acolyte Armor Recipe -->
+	--><!-- Anima Acolyte Armor Recipe --><!--
 	<RecipeDef>
 		<defName>TSOA_Make_AnimaAcolyteArmor</defName>
 		<label>make anima acolyte gambeson</label>
@@ -361,7 +362,7 @@
 		</modExtensions>
 	</RecipeDef>
 
-	<!-- Anima Acolyte Helmet -->
+	--><!-- Anima Acolyte Helmet --><!--
 	<ThingDef ParentName="ApparelBase">
 		<defName>TSOA_AnimaAcolyteHelmet</defName>
 		<label>anima acolyte helmet</label>
@@ -425,7 +426,7 @@
 		</tradeTags>
 	</ThingDef>
 
-	<!-- Anima Acolyte Helmet Recipe -->
+	--><!-- Anima Acolyte Helmet Recipe --><!--
 	<RecipeDef>
 		<defName>TSOA_Make_AnimaAcolyteHelmet</defName>
 		<label>make anima acolyte helmet</label>
@@ -483,6 +484,6 @@
 				<minPsylinkLevel>1</minPsylinkLevel>
 			</li>
 		</modExtensions>
-	</RecipeDef>
+	</RecipeDef>-->
 
 </Defs>

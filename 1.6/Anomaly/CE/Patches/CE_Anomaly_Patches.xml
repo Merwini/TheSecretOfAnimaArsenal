@@ -13,6 +13,7 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]/equippedStatOffsets/MoveSpeed</xpath>
 		<value>
+			<CarryWeight>40</CarryWeight>
 			<CarryBulk>10</CarryBulk>
 		</value>
 	</Operation>
@@ -216,9 +217,9 @@
 					<capacities>
 						<li>Stab</li>
 					</capacities>
-					<power>27</power>
+					<power>23</power>
 					<cooldownTime>1.44</cooldownTime>
-					<armorPenetrationBlunt>4.425</armorPenetrationBlunt>
+					<armorPenetrationBlunt>2.425</armorPenetrationBlunt>
 					<armorPenetrationSharp>6.48</armorPenetrationSharp>
 					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
 				</li>
@@ -227,10 +228,10 @@
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>20</power>
+					<power>16</power>
 					<cooldownTime>1.34</cooldownTime>
-					<armorPenetrationBlunt>4.956</armorPenetrationBlunt>
-					<armorPenetrationSharp>3.43</armorPenetrationSharp>
+					<armorPenetrationBlunt>2.9</armorPenetrationBlunt>
+					<armorPenetrationSharp>4.03</armorPenetrationSharp>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
 				</li>
 			</tools>
@@ -294,10 +295,10 @@
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>36</power>
+					<power>40</power>
 					<cooldownTime>2.9</cooldownTime>
-					<armorPenetrationBlunt>14.4</armorPenetrationBlunt>
-					<armorPenetrationSharp>4.6</armorPenetrationSharp>
+					<armorPenetrationBlunt>44.4</armorPenetrationBlunt>
+					<armorPenetrationSharp>12.6</armorPenetrationSharp>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
 				</li>
 			</tools>
@@ -346,7 +347,7 @@
 					</capacities>
 					<power>48</power>
 					<cooldownTime>3.4</cooldownTime>
-					<armorPenetrationBlunt>20.8</armorPenetrationBlunt>
+					<armorPenetrationBlunt>80.8</armorPenetrationBlunt>
 					<armorPenetrationSharp>1.3</armorPenetrationSharp>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
 				</li>
