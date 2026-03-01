@@ -79,7 +79,6 @@
 		<defName>TSOA_VoidAxe</defName>
 		<label>void knight axe</label>
 		<description>A bioferrite axe. The bioferrite acts like a living organism, and feeds on the wielder's psychic potential to grow more powerful.</description>
-		<!-- TODO replace once textures are finished -->
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteAxe</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -146,7 +145,6 @@
 		<defName>TSOA_VoidKanabo</defName>
 		<label>void knight greatclub</label>
 		<description>A bioferrite greatclub styled after a Kanabo. The bioferrite acts like a living organism, and feeds on the wielder's psychic potential to grow more powerful.</description>
-		<!-- TODO replace once textures are finished -->
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteKanabo</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
