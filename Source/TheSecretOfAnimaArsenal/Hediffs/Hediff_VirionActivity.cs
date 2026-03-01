@@ -95,7 +95,7 @@ public class Hediff_VirionActivity : Hediff
         }
 
         EffecterDefOf.MeatExplosionSmall.Spawn(pawn.Position, pawn.Map).Cleanup();
-        SoundDefOf.FleshmassHeart_Throb.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map)); // TODO find a better sound
+        SoundDefOf.Execute_Cut.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
 
         BodyPartRecord torso = pawn.RaceProps.body.corePart;
         if (torso == null)
