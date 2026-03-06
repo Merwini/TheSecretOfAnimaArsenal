@@ -72,7 +72,7 @@
 		<label>make anima shaman gambeson</label>
 		<jobString>Making anima shaman gambeson.</jobString>
 
-		<researchPrerequisite>TSOA_AnimaArmor</researchPrerequisite>
+		<researchPrerequisite>TSOA_AnimaShamanArmor</researchPrerequisite>
 
 		<workAmount>8000</workAmount>
 		<workSkill>Crafting</workSkill>
@@ -184,7 +184,7 @@
 		<label>make anima shaman headdress</label>
 		<jobString>Making anima shaman headdress.</jobString>
 
-		<researchPrerequisite>TSOA_AnimaArmor</researchPrerequisite>
+		<researchPrerequisite>TSOA_AnimaShamanArmor</researchPrerequisite>
 
 		<workAmount>6000</workAmount>
 		<workSkill>Crafting</workSkill>
