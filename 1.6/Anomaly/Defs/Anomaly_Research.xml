@@ -2,8 +2,8 @@
 <Defs>
 
 	<ResearchProjectDef>
-		<defName>TSOA_VoidArmor</defName>
-		<label>void knight armor</label>
+		<defName>TSOA_VoidInitiateArmor</defName>
+		<label>void initiate armor</label>
 		<description>Craft armor made from bioferrite and gold. The bioferrite feeds on the wearer's psychic prescence to grow stronger.</description>
 		<baseCost>1500</baseCost>
 		<techLevel>Medieval</techLevel>
@@ -17,8 +17,8 @@
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
-		<defName>TSOA_VoidWeapons</defName>
-		<label>void knight weapons</label>
+		<defName>TSOA_VoidInitiateWeapons</defName>
+		<label>void initiate weapons</label>
 		<description>Craft weapons made from bioferrite and gold. The bioferrite feeds on the wearer's psychic prescence to grow stronger.</description>
 		<baseCost>1200</baseCost>
 		<techLevel>Medieval</techLevel>

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<!-- Void Knight Armor -->
+	<!-- Void Initiate Armor -->
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]/statBases</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateArmor"]/statBases</xpath>
 		<value>
 			<Bulk>100</Bulk>
 			<WornBulk>10</WornBulk>
@@ -11,7 +11,7 @@
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]/equippedStatOffsets/MoveSpeed</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateArmor"]/equippedStatOffsets/MoveSpeed</xpath>
 		<value>
 			<CarryWeight>40</CarryWeight>
 			<CarryBulk>10</CarryBulk>
@@ -19,7 +19,7 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]/apparel/bodyPartGroups</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateArmor"]/apparel/bodyPartGroups</xpath>
 		<value>
 			<li>Hands</li>
 			<li>Feet</li>
@@ -27,7 +27,7 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAddModExtension">
-		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateArmor"]</xpath>
 		<value>
 			<li Class="CombatExtended.PartialArmorExt">
 				<stats>
@@ -86,22 +86,22 @@
 
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]/statBases/ArmorRating_Sharp</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateArmor"]/statBases/ArmorRating_Sharp</xpath>
 		<value>
 			<ArmorRating_Sharp>10</ArmorRating_Sharp>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="TSOA_VoidArmor"]/statBases/ArmorRating_Blunt</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateArmor"]/statBases/ArmorRating_Blunt</xpath>
 		<value>
 			<ArmorRating_Blunt>14</ArmorRating_Blunt>
 		</value>
 	</Operation>
 	
-	<!-- Void Knight Helm -->
+	<!-- Void Initiate Helm -->
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_VoidHelm"]/statBases</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateHelm"]/statBases</xpath>
 		<value>
 			<Bulk>5</Bulk>
 			<WornBulk>1</WornBulk>
@@ -109,7 +109,7 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_VoidHelm"]</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateHelm"]</xpath>
 		<value>
 			<equippedStatOffsets>
 				<AimingAccuracy>-0.1</AimingAccuracy>
@@ -119,7 +119,7 @@
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="TSOA_VoidHelm"]/apparel/bodyPartGroups</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateHelm"]/apparel/bodyPartGroups</xpath>
 		<value>
 			<bodyPartGroups>
 				<li>UpperHead</li>
@@ -130,7 +130,7 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAddModExtension">
-		<xpath>Defs/ThingDef[defName="TSOA_VoidHelm"]</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateHelm"]</xpath>
 		<value>
 			<li Class="CombatExtended.PartialArmorExt">
 				<stats>
@@ -164,14 +164,14 @@
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="TSOA_VoidHelm"]/statBases/ArmorRating_Sharp</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateHelm"]/statBases/ArmorRating_Sharp</xpath>
 		<value>
 			<ArmorRating_Sharp>8</ArmorRating_Sharp>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="TSOA_VoidHelm"]/statBases/ArmorRating_Blunt</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateHelm"]/statBases/ArmorRating_Blunt</xpath>
 		<value>
 			<ArmorRating_Blunt>11</ArmorRating_Blunt>
 		</value>

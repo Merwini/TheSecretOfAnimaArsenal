@@ -4,8 +4,8 @@
 	<!-- Void Knight Khopesh -->
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>TSOA_VoidKhopesh</defName>
-		<label>void knight sword</label>
-		<description>A bioferrite sword styled after an ancient khopesh. The bioferrite acts like a living organism, and feeds on the wielder's psychic potential to grow more powerful.</description>
+		<label>void initiate sword</label>
+		<description>A bioferrite sword styled after an ancient khopesh. The bioferrite acts like a living organism, and feeds on the wielder's psychic prescence to grow more powerful.</description>
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteKopesh</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -26,7 +26,7 @@
 			<Gold>5</Gold>
 		</costList>
 		<recipeMaker>
-			<researchPrerequisite>TSOA_VoidWeapons</researchPrerequisite>
+			<researchPrerequisite>TSOA_VoidInitiateWeapons</researchPrerequisite>
 			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
 			<recipeUsers>
 				<li>ElectricSmithy</li>
@@ -77,8 +77,8 @@
 	<!-- Void Knight Axe -->
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>TSOA_VoidAxe</defName>
-		<label>void knight axe</label>
-		<description>A bioferrite axe. The bioferrite acts like a living organism, and feeds on the wielder's psychic potential to grow more powerful.</description>
+		<label>void initiate axe</label>
+		<description>A bioferrite axe. The bioferrite acts like a living organism, and feeds on the wielder's psychic prescence to grow more powerful.</description>
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteAxe</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -100,7 +100,7 @@
 			<Gold>10</Gold>
 		</costList>
 		<recipeMaker>
-			<researchPrerequisite>TSOA_VoidWeapons</researchPrerequisite>
+			<researchPrerequisite>TSOA_VoidInitiateWeapons</researchPrerequisite>
 			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
 			<recipeUsers>
 				<li>ElectricSmithy</li>
@@ -143,8 +143,8 @@
 	<!-- Void Knight Kanabo -->
 	<ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
 		<defName>TSOA_VoidKanabo</defName>
-		<label>void knight greatclub</label>
-		<description>A bioferrite greatclub styled after a Kanabo. The bioferrite acts like a living organism, and feeds on the wielder's psychic potential to grow more powerful.</description>
+		<label>void initiate greatclub</label>
+		<description>A bioferrite greatclub styled after a Kanabo. The bioferrite acts like a living organism, and feeds on the wielder's psychic prescence to grow more powerful.</description>
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteKanabo</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -167,7 +167,7 @@
 			<WoodLog>10</WoodLog>
 		</costList>
 		<recipeMaker>
-			<researchPrerequisite>TSOA_VoidWeapons</researchPrerequisite>
+			<researchPrerequisite>TSOA_VoidInitiateWeapons</researchPrerequisite>
 			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
 			<recipeUsers>
 				<li>ElectricSmithy</li>

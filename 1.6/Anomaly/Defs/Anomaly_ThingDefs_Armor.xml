@@ -3,11 +3,11 @@
 
 	<!-- Void Knight Plate Armor -->
 	<ThingDef ParentName="ArmorSmithableBase">
-		<defName>TSOA_VoidArmor</defName>
-		<label>void knight plate armor</label>
+		<defName>TSOA_VoidInitiateArmor</defName>
+		<label>void initiate plate armor</label>
 		<description>A suit of plate armor crafted from bioferrite and gold. The bioferrite feeds on the wearer's psychic presence to harden itself, while gold cladding in key areas prevents the suit from injuring the wearer. While not much stronger than steel armor for the average person, when worn by a powerful psychic its defensive properties are formidable.</description>
 		<graphicData>
-			<texPath>TSOA/Things/Apparel/VoidKnight/VoidKnight</texPath>
+			<texPath>TSOA/Things/Apparel/VoidInitiate/VoidInitiate</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.6, 1.6)</drawSize>
 		</graphicData>
@@ -35,7 +35,7 @@
 			<Gold>50</Gold>
 		</costList>
 		<recipeMaker>
-			<researchPrerequisite>TSOA_VoidArmor</researchPrerequisite>
+			<researchPrerequisite>TSOA_VoidInitiateArmor</researchPrerequisite>
 			<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
 			<recipeUsers>
 				<li>ElectricSmithy</li>
@@ -58,7 +58,7 @@
 				<li>Arms</li>
 				<li>Legs</li>
 			</bodyPartGroups>
-			<wornGraphicPath>TSOA/Things/Apparel/VoidKnight/VoidKnight</wornGraphicPath>
+			<wornGraphicPath>TSOA/Things/Apparel/VoidInitiate/VoidInitiate</wornGraphicPath>
 			<layers>
 				<li>Middle</li>
 				<li>Shell</li>
@@ -80,11 +80,11 @@
 
 	<!-- Void Knight Helm -->
 	<ThingDef ParentName="ArmorHelmetMakeableBase">
-		<defName>TSOA_VoidHelm</defName>
-		<label>void knight helm</label>
+		<defName>TSOA_VoidInitiateHelm</defName>
+		<label>void initiate helm</label>
 		<description>A helmet crafted from bioferrite and gold. The bioferrite feeds on the wearer's psychic presence to harden itself, while gold cladding in key areas prevents the suit from injuring the wearer. While not much stronger than steel armor for the average person, when worn by a powerful psychic its defensive properties are formidable.</description>
 		<graphicData>
-			<texPath>TSOA/Things/Apparel/VoidKnight/VoidKnightHelm_south</texPath>
+			<texPath>TSOA/Things/Apparel/VoidInitiate/VoidInitiateHelm_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.4, 1.4)</drawSize>
 		</graphicData>
@@ -107,7 +107,7 @@
 			<Gold>20</Gold>
 		</costList>
 		<recipeMaker>
-			<researchPrerequisite>TSOA_VoidArmor</researchPrerequisite>
+			<researchPrerequisite>TSOA_VoidInitiateArmor</researchPrerequisite>
 			<recipeUsers>
 				<li>ElectricSmithy</li>
 				<li>FueledSmithy</li>
@@ -124,7 +124,7 @@
 				<li>FullHead</li>
 				<li>Neck</li>
 			</bodyPartGroups>
-			<wornGraphicPath>TSOA/Things/Apparel/VoidKnight/VoidKnightHelm</wornGraphicPath>
+			<wornGraphicPath>TSOA/Things/Apparel/VoidInitiate/VoidInitiateHelm</wornGraphicPath>
 			<layers>
 				<li>Overhead</li>
 			</layers>
@@ -151,7 +151,7 @@
 		<description>A suit of bioferrite armor. This armor blurs the line between organic and inorganic material, being grown from a Virion instead of crafted by hand. While naturally brittle, the bioferrite feeds on the wearer's psychic prescence, hardening itself but fraying the wearer's sanity.</description>
 		<graphicData>
 			--><!-- TODO placeholder --><!--
-			<texPath>TSOA/Things/Apparel/VoidKnight/VoidKnight</texPath>
+			<texPath>TSOA/Things/Apparel/VoidInitiate/VoidInitiate</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.6, 1.6)</drawSize>
 		</graphicData>
@@ -200,7 +200,7 @@
 				<li>Arms</li>
 				<li>Legs</li>
 			</bodyPartGroups>
-			<wornGraphicPath>TSOA/Things/Apparel/VoidKnight/VoidKnight</wornGraphicPath>
+			<wornGraphicPath>TSOA/Things/Apparel/VoidInitiate/VoidInitiate</wornGraphicPath>
 			<layers>
 				<li>Middle</li>
 				<li>Shell</li>
@@ -267,7 +267,7 @@
 		<description>A bioferrite helmet. This armor blurs the line between organic and inorganic material, being grown from a Virion instead of crafted by hand. While naturally brittle, the bioferrite feeds on the wearer's psychic prescence, hardening itself but fraying the wearer's sanity.</description>
 		<graphicData>
 			--><!-- TODO placeholder --><!--
-			<texPath>TSOA/Things/Apparel/VoidKnight/VoidKnightHelm_south</texPath>
+			<texPath>TSOA/Things/Apparel/VoidInitiate/VoidInitiateHelm_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.4, 1.4)</drawSize>
 		</graphicData>
@@ -309,7 +309,7 @@
 				<li>FullHead</li>
 				<li>Neck</li>
 			</bodyPartGroups>
-			<wornGraphicPath>TSOA/Things/Apparel/VoidKnight/VoidKnightHelm</wornGraphicPath>
+			<wornGraphicPath>TSOA/Things/Apparel/VoidInitiate/VoidInitiateHelm</wornGraphicPath>
 			<layers>
 				<li>Overhead</li>
 			</layers>
