@@ -313,7 +313,7 @@
 				<statOffsets>
 					<SocialImpact>0.1</SocialImpact>
 					<NegotiationAbility>0.1</NegotiationAbility>
-					<ConversionPower>0.1</ConversionPower>
+					<ConversionPower MayRequire="Ludeon.RimWorld.Ideology">0.1</ConversionPower>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
@@ -337,7 +337,7 @@
 				<statOffsets>
 					<SocialImpact>0.1</SocialImpact>
 					<NegotiationAbility>0.1</NegotiationAbility>
-					<ConversionPower>0.1</ConversionPower>
+					<ConversionPower MayRequire="Ludeon.RimWorld.Ideology">0.1</ConversionPower>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
@@ -361,7 +361,7 @@
 				<statOffsets>
 					<SocialImpact>0.1</SocialImpact>
 					<NegotiationAbility>0.1</NegotiationAbility>
-					<ConversionPower>0.1</ConversionPower>
+					<ConversionPower MayRequire="Ludeon.RimWorld.Ideology">0.1</ConversionPower>
 					<TradePriceImprovement>0.1</TradePriceImprovement>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
