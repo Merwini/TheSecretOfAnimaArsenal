@@ -1103,10 +1103,10 @@
 				<targetHediffs>
 					<li>TSOA_InheritorCrown</li>
 				</targetHediffs>
-				<linkCompleteEffecter>PsychicRitual_Complete</linkCompleteEffecter>
+				<linkCompleteEffecter>ForcedVisible</linkCompleteEffecter>
 				<linkCompleteEffecterScale>0.25</linkCompleteEffecterScale>
 				<linkCompleteSound>PsychicShockLanceCast</linkCompleteSound>
-				<unlinkCompleteEffecter>PsychicRitual_Complete</unlinkCompleteEffecter>
+				<unlinkCompleteEffecter>ForcedVisible</unlinkCompleteEffecter>
 				<unlinkCompleteEffecterScale>0.25</unlinkCompleteEffecterScale>
 				<unlinkCompleteSound>PsychicShockLanceCast</unlinkCompleteSound>
 			</li>
