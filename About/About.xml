@@ -12,6 +12,10 @@
 			<packageId>tsoa.core</packageId>
 			<displayName>The Secret of Anima</displayName>
 		</li>
+		<li>
+			<packageId>Ludeon.RimWorld.Royalty</packageId>
+			<displayName>Royalty</displayName>
+		</li>
 	</modDependencies>
 	<loadAfter>
 		<li>tsoa.core</li>
