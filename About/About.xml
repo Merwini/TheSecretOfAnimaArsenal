@@ -2,11 +2,11 @@
 <ModMetaData>
 	<name>The Secret of Anima - Arsenal</name>
 	<author>Nuff</author>
-	<packageId>tsoa.Arsenal</packageId>
+	<packageId>tsoa.arsenal</packageId>
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>
-	<description>Arsenal</description>
+	<description>A mod in The Secret of Anima series adding new weapons and armors. Contains weapons and armor that are empowered by the psychic strength of your colonists, armor that converts incoming damage into neural heat, weapons that turn neural heat into damage, and new ways to craft equipment.</description>
 	<modDependencies>
 		<li>
 			<packageId>tsoa.core</packageId>
