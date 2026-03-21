@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- Void Knight Plate Armor -->
+	<!-- Void Initiate Plate Armor -->
 	<ThingDef ParentName="ArmorSmithableBase">
 		<defName>TSOA_VoidInitiateArmor</defName>
 		<label>void initiate plate armor</label>
@@ -64,7 +64,8 @@
 				<li>Shell</li>
 			</layers>
 			<tags>
-				<li>MedievalMilitary</li>
+				<li>TSOA_VoidArmor</li>
+				<li>TSOA_VoidArmorBasic</li>
 			</tags>
 			<defaultOutfitTags>
 				<li>Soldier</li>
@@ -129,7 +130,8 @@
 				<li>Overhead</li>
 			</layers>
 			<tags>
-				<li>IndustrialMilitaryBasic</li>
+				<li>TSOA_VoidArmor</li>
+				<li>TSOA_VoidArmorBasic</li>
 			</tags>
 			<defaultOutfitTags>
 				<li>Soldier</li>
@@ -143,14 +145,13 @@
 		</tradeTags>
 	</ThingDef>
 	
-	<!-- TODO enable once I have textures -->
-	<!-- Bioferrite Virion Armor --><!--
+	<!-- Bioferrite Virion Armor -->
 	<ThingDef ParentName="ArmorSmithableBase">
 		<defName>TSOA_BioferriteVirionArmor</defName>
 		<label>bioferrite virion armor</label>
 		<description>A suit of bioferrite armor. This armor blurs the line between organic and inorganic material, being grown from a Virion instead of crafted by hand. While naturally brittle, the bioferrite feeds on the wearer's psychic prescence, hardening itself but fraying the wearer's sanity.</description>
 		<graphicData>
-			--><!-- TODO placeholder --><!--
+			<!-- TODO placeholder -->
 			<texPath>TSOA/Things/Apparel/VoidInitiate/VoidInitiate</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.6, 1.6)</drawSize>
@@ -166,7 +167,7 @@
 			<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.8</ArmorRating_Heat>
 			<EquipDelay>15</EquipDelay>
-			<TSOA_PsyScaling>1</TSOA_PsyScaling>
+			<TSOA_PsyScaling>0.8</TSOA_PsyScaling>
 		</statBases>
 
 		<equippedStatOffsets>
@@ -206,7 +207,8 @@
 				<li>Shell</li>
 			</layers>
 			<tags>
-				<li>MedievalMilitary</li>
+				<li>TSOA_VoidArmor</li>
+				<li>TSOA_VoidArmorElite</li>
 			</tags>
 			<defaultOutfitTags>
 				<li>Soldier</li>
@@ -260,13 +262,13 @@
 		</fixedIngredientFilter>
 	</RecipeDef>
 
-	--><!-- Bioferrite Virion Helm --><!--
+	<!-- Bioferrite Virion Helm -->
 	<ThingDef ParentName="ArmorHelmetMakeableBase">
 		<defName>TSOA_BioferriteVirionHelm</defName>
 		<label>bioferrite virion helm</label>
 		<description>A bioferrite helmet. This armor blurs the line between organic and inorganic material, being grown from a Virion instead of crafted by hand. While naturally brittle, the bioferrite feeds on the wearer's psychic prescence, hardening itself but fraying the wearer's sanity.</description>
 		<graphicData>
-			--><!-- TODO placeholder --><!--
+			<!-- TODO placeholder -->
 			<texPath>TSOA/Things/Apparel/VoidInitiate/VoidInitiateHelm_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.4, 1.4)</drawSize>
@@ -282,7 +284,7 @@
 			<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.7</ArmorRating_Heat>
 			<EquipDelay>1.5</EquipDelay>
-			<TSOA_PsyScaling>1</TSOA_PsyScaling>
+			<TSOA_PsyScaling>0.8</TSOA_PsyScaling>
 		</statBases>
 
 		<equippedStatOffsets>
@@ -314,7 +316,8 @@
 				<li>Overhead</li>
 			</layers>
 			<tags>
-				<li>IndustrialMilitaryBasic</li>
+				<li>TSOA_VoidArmor</li>
+				<li>TSOA_VoidArmorElite</li>
 			</tags>
 			<defaultOutfitTags>
 				<li>Soldier</li>
@@ -366,5 +369,5 @@
 				<li>Shard</li>
 			</thingDefs>
 		</fixedIngredientFilter>
-	</RecipeDef>-->
+	</RecipeDef>
 </Defs>

@@ -47,7 +47,8 @@
 				<li>Middle</li>
 			</layers>
 			<tags>
-				<li>Medieval</li>
+				<li>TSOA_AnimaArmor</li>
+				<li>TSOA_AnimaArmorElite</li>
 			</tags>
 			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
 			<defaultOutfitTags>
@@ -163,7 +164,8 @@
 				<li>Overhead</li>
 			</layers>
 			<tags>
-				<li>Medieval</li>
+				<li>TSOA_AnimaArmor</li>
+				<li>TSOA_AnimaArmorElite</li>
 			</tags>
 			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
 			<defaultOutfitTags>
@@ -231,8 +233,7 @@
 		</modExtensions>
 	</RecipeDef>
 
-	<!-- TODO enable once I have textures -->
-	<!-- Anima Acolyte Armor --><!--
+	<!-- Anima Acolyte Armor -->
 	<ThingDef ParentName="ApparelBase">
 		<defName>TSOA_AnimaAcolyteArmor</defName>
 		<label>anima acolyte gambeson</label>
@@ -278,7 +279,8 @@
 				<li>Middle</li>
 			</layers>
 			<tags>
-				<li>Medieval</li>
+				<li>TSOA_AnimaArmor</li>
+				<li>TSOA_AnimaArmorBasic</li>
 			</tags>
 			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
 			<defaultOutfitTags>
@@ -300,7 +302,7 @@
 		</comps>
 	</ThingDef>
 
-	--><!-- Anima Acolyte Armor Recipe --><!--
+	<!-- Anima Acolyte Armor Recipe -->
 	<RecipeDef>
 		<defName>TSOA_Make_AnimaAcolyteArmor</defName>
 		<label>make anima acolyte gambeson</label>
@@ -362,7 +364,7 @@
 		</modExtensions>
 	</RecipeDef>
 
-	--><!-- Anima Acolyte Helmet --><!--
+	<!-- Anima Acolyte Helmet -->
 	<ThingDef ParentName="ApparelBase">
 		<defName>TSOA_AnimaAcolyteHelmet</defName>
 		<label>anima acolyte helmet</label>
@@ -411,7 +413,8 @@
 				<li>Overhead</li>
 			</layers>
 			<tags>
-				<li>Medieval</li>
+				<li>TSOA_AnimaArmor</li>
+				<li>TSOA_AnimaArmorBasic</li>
 			</tags>
 			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
 			<defaultOutfitTags>
@@ -426,7 +429,7 @@
 		</tradeTags>
 	</ThingDef>
 
-	--><!-- Anima Acolyte Helmet Recipe --><!--
+	<!-- Anima Acolyte Helmet Recipe -->
 	<RecipeDef>
 		<defName>TSOA_Make_AnimaAcolyteHelmet</defName>
 		<label>make anima acolyte helmet</label>
@@ -484,6 +487,6 @@
 				<minPsylinkLevel>1</minPsylinkLevel>
 			</li>
 		</modExtensions>
-	</RecipeDef>-->
+	</RecipeDef>
 
 </Defs>
