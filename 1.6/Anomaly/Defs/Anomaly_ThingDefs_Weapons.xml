@@ -68,7 +68,9 @@
 		<tradeTags>
 			<li>WeaponMelee</li>
 		</tradeTags>
-		<!-- TODO weaponTags after I make factions -->
+		<weaponTags>
+			<li>TSOA_VoidWeapons</li>
+		</weaponTags>
 		<weaponClasses>
 			<li>Melee</li>
 		</weaponClasses>
@@ -134,7 +136,10 @@
 		<tradeTags>
 			<li>WeaponMelee</li>
 		</tradeTags>
-		<!-- TODO weaponTags after I make factions -->
+		<weaponTags>
+			<li>TSOA_VoidWeapons</li>
+		</weaponTags>
+		<generateCommonality>0.75</generateCommonality>
 		<weaponClasses>
 			<li>Melee</li>
 		</weaponClasses>
@@ -202,7 +207,10 @@
 		<tradeTags>
 			<li>WeaponMelee</li>
 		</tradeTags>
-		<!-- TODO weaponTags after I make factions -->
+		<weaponTags>
+			<li>TSOA_VoidWeapons</li>
+		</weaponTags>
+		<generateCommonality>0.25</generateCommonality>
 		<weaponClasses>
 			<li>Melee</li>
 		</weaponClasses>
