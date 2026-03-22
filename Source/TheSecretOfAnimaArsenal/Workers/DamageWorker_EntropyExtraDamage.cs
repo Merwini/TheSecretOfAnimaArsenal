@@ -43,7 +43,7 @@ public class DamageWorker_EntropyExtraDamage : DamageWorker_AddInjury
 
         if (DebugSettings.godMode)
         {
-            Log.Message($"[TSOA] DamageWorker_PsyExtraDamage: {pawn.LabelShort} consumed {heatCost} heat (from {originalHeat}) to deal {bonusDamage} extra {TSOAA_DefOf.TSOA_EntropyExtraDamage.label} damage to {victim.LabelShort} with penetration: {dinfo.ArmorPenetrationInt}");
+            Log.Message($"[TSOA] DamageWorker_PsyExtraDamage: {pawn.LabelShort} consumed {heatCost} heat (from {originalHeat}) to deal {bonusDamage} extra {TSOAA_DefOf.TSOA_EntropicDischarge.label} damage to {victim.LabelShort} with penetration: {dinfo.ArmorPenetrationInt}");
         }
 
         return base.Apply(newDinfo, victim);
