@@ -3,8 +3,12 @@
 	
 	<TSOA_OutOfEntropy>Too much neural heat!</TSOA_OutOfEntropy>
 	<TSOA_NotACaster>Not a psycaster!</TSOA_NotACaster>
-	<TSOA_PsyScalingWorkerExplanation>This equipment scales its effectiveness based on psychic sensitivity.\nscaling factor: {0}\n\nFor example, at 150% psychic sensitivity and 50% scaling:\nArmor or weapon damage is increased by 25%.</TSOA_PsyScalingWorkerExplanation>
+	
+	<TSOA_EntropyDamageWorkerExplanation>When wielded by a psycaster, this weapon disperses a portion of their accumulated neural heat to deal extra damage with every successful attack.\n\nHeat consumed percent: {0}\nDamage per heat consumed: {1}</TSOA_EntropyDamageWorkerExplanation>
+	
+	<TSOA_PsyScalingWorkerExplanation>This equipment scales its effectiveness based on psychic sensitivity.\nFor example, at 150% psychic sensitivity and 50% scaling:\nArmor or weapon damage is increased by 25%.\n\nScaling factor: {0}</TSOA_PsyScalingWorkerExplanation>
 	<TSOA_PsyScaling_StatPartExplanation>Psychic sensitivity: {0}\nScaling factor: {1}\nEffective multiplier: {2}</TSOA_PsyScaling_StatPartExplanation>
+	
 	<TSOA_StatExchangerNoComp>Can't form psychic bond, target lacks a matching crown implant.</TSOA_StatExchangerNoComp>
 	<TSOA_StatExchangerAlreadyLinked>Can't form psychic bond, target is already linked to {0}.</TSOA_StatExchangerAlreadyLinked>
 	<TSOA_StatExchangerAtCapacity>{0} already has the maximum number of psychic links.</TSOA_StatExchangerAtCapacity>

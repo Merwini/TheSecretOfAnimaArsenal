@@ -8,15 +8,15 @@ using RimWorld;
 
 namespace tsoa.arsenal;
 
-class StatWorker_PsyScalingDisplay : StatWorker
+public class StatWorker_EntropyDamageDisplay : StatWorker
 {
     public override bool ShouldShowFor(StatRequest req)
     {
         if (req.HasThing)
-            return req.HasThing && req.Thing.def.statBases.StatListContains(TSOAA_DefOf.TSOA_PsyScaling);
+            return req.Thing.def.statBases.StatListContains(TSOAA_DefOf.TSOA_EntropyDamage);
 
         if (req.Def is ThingDef thingDef)
-            return thingDef.statBases != null && thingDef.statBases.StatListContains(TSOAA_DefOf.TSOA_PsyScaling);
+            return thingDef.statBases != null && thingDef.statBases.StatListContains(TSOAA_DefOf.TSOA_EntropyDamage);
 
         return false;
     }
@@ -24,10 +24,10 @@ class StatWorker_PsyScalingDisplay : StatWorker
     public override float GetValueUnfinalized(StatRequest req, bool applyPostProcess = true)
     {
         if (req.HasThing)
-            return req.Thing.def.statBases.GetStatValueFromList(TSOAA_DefOf.TSOA_PsyScaling, 0f);
+            return req.Thing.def.statBases.GetStatValueFromList(TSOAA_DefOf.TSOA_EntropyDamage, 0f);
 
         if (req.Def is ThingDef thingDef)
-            return thingDef.statBases?.GetStatValueFromList(TSOAA_DefOf.TSOA_PsyScaling, 0f) ?? 0f;
+            return thingDef.statBases?.GetStatValueFromList(TSOAA_DefOf.TSOA_EntropyDamage, 0f) ?? 0f;
 
         return 0f;
     }
@@ -40,9 +40,14 @@ class StatWorker_PsyScalingDisplay : StatWorker
         else
             def = req.Def as ThingDef;
 
-        float scale = def.statBases.GetStatValueFromList(TSOAA_DefOf.TSOA_PsyScaling, 0);
+        float percent = def.statBases.GetStatValueFromList(TSOAA_DefOf.TSOA_EntropyDamage, 0);
+        float damage = def.tools
+            .Where(t => !t.extraMeleeDamages.NullOrEmpty())
+            .SelectMany(t => t.extraMeleeDamages)
+            .FirstOrDefault(d => d.def == TSOAA_DefOf.TSOA_EntropyExtraDamage)
+            ?.amount ?? 0f;
 
-        return "TSOA_PsyScalingWorkerExplanation".Translate(scale.ToStringPercent());
+        return "TSOA_EntropyDamageWorkerExplanation".Translate(percent.ToStringPercent(), damage);
     }
 
     public override string GetExplanationFinalizePart(StatRequest req, ToStringNumberSense numberSense, float finalVal)

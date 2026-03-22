@@ -308,7 +308,7 @@
 		<label>make anima acolyte gambeson</label>
 		<jobString>Making anima acolyte gambeson.</jobString>
 
-		<researchPrerequisite>TSOA_AnimaArmor</researchPrerequisite>
+		<researchPrerequisite>TSOA_AnimaAcolyteArmor</researchPrerequisite>
 
 		<workAmount>5000</workAmount>
 		<workSkill>Crafting</workSkill>
@@ -435,7 +435,7 @@
 		<label>make anima acolyte helmet</label>
 		<jobString>Making anima acolyte helmet.</jobString>
 
-		<researchPrerequisite>TSOA_AnimaArmor</researchPrerequisite>
+		<researchPrerequisite>TSOA_AnimaAcolyteArmor</researchPrerequisite>
 
 		<workAmount>3500</workAmount>
 		<workSkill>Crafting</workSkill>

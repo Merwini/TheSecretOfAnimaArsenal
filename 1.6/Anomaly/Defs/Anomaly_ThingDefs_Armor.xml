@@ -183,7 +183,7 @@
 		<recipeMaker>
 			<researchPrerequisites>
 				<li>TSOA_BioferriteImplants</li>
-				<li>TSOA_VoidArmor</li>
+				<li>TSOA_VoidInitiateArmor</li>
 			</researchPrerequisites>
 			<recipeUsers Inherit="false">
 				<li>TSOA_AnomalyFakeBench</li>
@@ -234,7 +234,7 @@
 
 		<researchPrerequisites>
 			<li>TSOA_BioferriteImplants</li>
-			<li>TSOA_VoidArmor</li>
+			<li>TSOA_VoidInitiateArmor</li>
 		</researchPrerequisites>
 		<ingredients Inherit="false">
 			<li>
@@ -298,7 +298,7 @@
 		<recipeMaker>
 			<researchPrerequisites>
 				<li>TSOA_BioferriteImplants</li>
-				<li>TSOA_VoidArmor</li>
+				<li>TSOA_VoidInitiateArmor</li>
 			</researchPrerequisites>
 			<recipeUsers Inherit="false">
 				<li>TSOA_AnomalyFakeBench</li>
@@ -343,7 +343,7 @@
 
 		<researchPrerequisites>
 			<li>TSOA_BioferriteImplants</li>
-			<li>TSOA_VoidArmor</li>
+			<li>TSOA_VoidInitiateArmor</li>
 		</researchPrerequisites>
 		<ingredients Inherit="false">
 			<li>
