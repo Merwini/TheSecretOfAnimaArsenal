@@ -151,7 +151,7 @@
 		</equippedStatOffsets>
 		
 		<thingCategories>
-			<li>Apparel</li>
+			<li>ApparelArmor</li>
 		</thingCategories>
 		
 		<apparel>
@@ -253,9 +253,11 @@
 			<WorkToMake>20000</WorkToMake>
 			<Mass>4.0</Mass>
 			<Flammability>0.6</Flammability>
-			<StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
-			<StuffEffectMultiplierInsulation_Cold>0.3</StuffEffectMultiplierInsulation_Cold>
-			<StuffEffectMultiplierInsulation_Heat>0.15</StuffEffectMultiplierInsulation_Heat>
+			<StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
+			<ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+			<StuffEffectMultiplierInsulation_Cold>1</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>1</StuffEffectMultiplierInsulation_Heat>
 			<EquipDelay>11</EquipDelay>
 		</statBases>
 
@@ -266,6 +268,11 @@
 		<thingCategories>
 			<li>ApparelArmor</li>
 		</thingCategories>
+
+		<stuffCategories>
+			<li>Leathery</li>
+			<li>Fabric</li>
+		</stuffCategories>
 
 		<apparel>
 			<bodyPartGroups>
@@ -335,7 +342,6 @@
 			<li>
 				<filter>
 					<categories>
-						<li>Leathers</li>
 						<li>Textiles</li>
 					</categories>
 				</filter>
@@ -352,7 +358,6 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<categories>
-				<li>Leathers</li>
 				<li>Textiles</li>
 			</categories>
 		</fixedIngredientFilter>
@@ -383,9 +388,11 @@
 			<WorkToMake>8000</WorkToMake>
 			<Mass>1.2</Mass>
 			<Flammability>0.6</Flammability>
-			<StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
-			<StuffEffectMultiplierInsulation_Cold>0.55</StuffEffectMultiplierInsulation_Cold>
-			<StuffEffectMultiplierInsulation_Heat>0.55</StuffEffectMultiplierInsulation_Heat>
+			<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+			<StuffEffectMultiplierArmor>0.45</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierInsulation_Cold>0.9</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>0.9</StuffEffectMultiplierInsulation_Heat>
 			<ArmorRating_Heat>0.16</ArmorRating_Heat>
 		</statBases>
 
@@ -395,13 +402,13 @@
 			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
 		</equippedStatOffsets>
 
-		<costList>
-			<TSOA_AnimaGrassResource>45</TSOA_AnimaGrassResource>
-		</costList>
-
 		<thingCategories>
-			<li>Apparel</li>
+			<li>ApparelArmor</li>
 		</thingCategories>
+
+		<stuffCategories>
+			<li>Leathery</li>
+		</stuffCategories>
 
 		<apparel>
 			<bodyPartGroups>
@@ -462,7 +469,7 @@
 			<li>
 				<filter>
 					<categories>
-						<li>Leathers</li>
+						<li>Textiles</li>
 					</categories>
 				</filter>
 				<count>30</count>
@@ -478,7 +485,7 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<categories>
-				<li>Leathers</li>
+				<li>Textiles</li>
 			</categories>
 		</fixedIngredientFilter>
 
