@@ -26,4 +26,6 @@ public class TSOAA_DefOf
     public static HediffDef TSOA_VirionHediff;
 
     public static HediffDef TSOA_VirionActiveHediff;
+
+    public static ThoughtDef TSOA_AnimaArrowScream;
 }

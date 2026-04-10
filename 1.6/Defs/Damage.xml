@@ -23,5 +23,16 @@
 		<externalViolence>true</externalViolence>
 		<deathMessage>{0} has died from discharged neural heat.</deathMessage>
 	</DamageDef>
+
+	<DamageDef>
+		<defName>TSOA_AnimaScreamer</defName>
+		<label>anima scream</label>
+		<workerClass>tsoa.arsenal.DamageWorker_Screamer</workerClass>
+		<!-- injury should not actually be applied, worker will just apply thought -->
+		<hediff>Burn</hediff>
+		<defaultDamage>1</defaultDamage>
+		<externalViolence>true</externalViolence>
+		<soundExplosion>TSOA_AnimaScreamer</soundExplosion>
+	</DamageDef>
 	
 </Defs>
