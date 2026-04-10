@@ -25,7 +25,7 @@ public class DamageWorker_Screamer : DamageWorker
         {
             pawn.needs.mood.thoughts.memories.TryGainMemory(TSOAA_DefOf.TSOA_AnimaArrowScream);
         }
-        else if (pawn.RaceProps.Animal)
+        else if (pawn.RaceProps.Animal && pawn.Faction == null)
         {
             pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Manhunter);
         }
