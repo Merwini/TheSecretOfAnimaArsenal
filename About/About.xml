@@ -11,6 +11,7 @@
 		<li>
 			<packageId>tsoa.core</packageId>
 			<displayName>The Secret of Anima</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3705373372</steamWorkshopUrl>
 		</li>
 		<li>
 			<packageId>Ludeon.RimWorld.Royalty</packageId>
@@ -19,5 +20,6 @@
 	</modDependencies>
 	<loadAfter>
 		<li>tsoa.core</li>
+		<li>Ludeon.RimWorld.Anomaly</li>
 	</loadAfter>
 </ModMetaData>
