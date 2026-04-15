@@ -239,9 +239,10 @@
 		<label>anima acolyte gambeson</label>
 		<description>A fabric gambeson with an outer layer of anima grass. The gambeson provides minimal protection against attacks when worn by most individuals. When worn by a psycaster, though, the anima grass passively emits a psychic shield that blocks incoming damage, building up neural heat in the wearer. Must be crafted by a psycaster.</description>
 		<graphicData>
-			<texPath>TSOA/Things/Apparel/AnimaShaman/AnimaShaman</texPath>
+			<texPath>TSOA/Things/Apparel/AnimaAcolyte/AnArmorStuffable_Male_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(1.6, 1.6)</drawSize>
+			<drawSize>(1, 1)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
 		<techLevel>Medieval</techLevel>
 		<tickerType>Normal</tickerType>
@@ -281,7 +282,8 @@
 				<li>Arms</li>
 				<li>Legs</li>
 			</bodyPartGroups>
-			<wornGraphicPath>TSOA/Things/Apparel/AnimaShaman/AnimaShaman</wornGraphicPath>
+			<wornGraphicPath>TSOA/Things/Apparel/AnimaAcolyte/AnArmorStuffable</wornGraphicPath>
+			<useWornGraphicMask>true</useWornGraphicMask>
 			<layers>
 				<li>Middle</li>
 			</layers>
@@ -375,9 +377,10 @@
 		<label>anima acolyte helmet</label>
 		<description>A leather helmet with a circlet of braided anima grass. Offers little in the way of protection. When worn by a psycaster, allows the wearer to store more neural heat and disperse it more quickly.</description>
 		<graphicData>
-			<texPath>TSOA/Things/Apparel/AnimaShaman/AnimaShamanHelm_south</texPath>
+			<texPath>TSOA/Things/Apparel/AnimaAcolyte/AnHelmetStuffable_south</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(1.2, 1.2)</drawSize>
+			<drawSize>(1, 1)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
 		<techLevel>Medieval</techLevel>
 		<relicChance>2</relicChance>
@@ -415,7 +418,8 @@
 				<li>UpperHead</li>
 				<li>Neck</li>
 			</bodyPartGroups>
-			<wornGraphicPath>TSOA/Things/Apparel/AnimaShaman/AnimaShamanHelm</wornGraphicPath>
+			<wornGraphicPath>TSOA/Things/Apparel/AnimaAcolyte/AnHelmetStuffable</wornGraphicPath>
+			<useWornGraphicMask>true</useWornGraphicMask>
 			<layers>
 				<li>Overhead</li>
 			</layers>

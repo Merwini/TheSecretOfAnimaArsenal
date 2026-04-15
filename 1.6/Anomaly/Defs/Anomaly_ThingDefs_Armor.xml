@@ -152,9 +152,9 @@
 		<description>A suit of bioferrite armor. This armor blurs the line between organic and inorganic material, being grown from a Virion instead of crafted by hand. While naturally brittle, the bioferrite feeds on the wearer's psychic prescence, hardening itself but fraying the wearer's sanity.</description>
 		<graphicData>
 			<!-- TODO placeholder -->
-			<texPath>TSOA/Things/Apparel/VoidInitiate/VoidInitiate</texPath>
+			<texPath>TSOA/Things/Apparel/BioferriteVirion/BiofArmor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(1.6, 1.6)</drawSize>
+			<drawSize>(1, 1)</drawSize>
 		</graphicData>
 		<techLevel>Medieval</techLevel>
 		<relicChance>2</relicChance>
@@ -201,7 +201,7 @@
 				<li>Arms</li>
 				<li>Legs</li>
 			</bodyPartGroups>
-			<wornGraphicPath>TSOA/Things/Apparel/VoidInitiate/VoidInitiate</wornGraphicPath>
+			<wornGraphicPath>TSOA/Things/Apparel/BioferriteVirion/BiofArmor</wornGraphicPath>
 			<layers>
 				<li>Middle</li>
 				<li>Shell</li>
@@ -269,9 +269,9 @@
 		<description>A bioferrite helmet. This armor blurs the line between organic and inorganic material, being grown from a Virion instead of crafted by hand. While naturally brittle, the bioferrite feeds on the wearer's psychic prescence, hardening itself but fraying the wearer's sanity.</description>
 		<graphicData>
 			<!-- TODO placeholder -->
-			<texPath>TSOA/Things/Apparel/VoidInitiate/VoidInitiateHelm_south</texPath>
+			<texPath>TSOA/Things/Apparel/BioferriteVirion/BiofHelm</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(1.4, 1.4)</drawSize>
+			<drawSize>(1, 1)</drawSize>
 		</graphicData>
 		<techLevel>Medieval</techLevel>
 		<relicChance>2</relicChance>
@@ -311,7 +311,7 @@
 				<li>FullHead</li>
 				<li>Neck</li>
 			</bodyPartGroups>
-			<wornGraphicPath>TSOA/Things/Apparel/VoidInitiate/VoidInitiateHelm</wornGraphicPath>
+			<wornGraphicPath>TSOA/Things/Apparel/BioferriteVirion/BiofHelm</wornGraphicPath>
 			<layers>
 				<li>Overhead</li>
 			</layers>
