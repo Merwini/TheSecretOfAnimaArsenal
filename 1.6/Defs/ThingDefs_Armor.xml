@@ -239,7 +239,7 @@
 		<label>anima acolyte gambeson</label>
 		<description>A fabric gambeson with an outer layer of anima grass. The gambeson provides minimal protection against attacks when worn by most individuals. When worn by a psycaster, though, the anima grass passively emits a psychic shield that blocks incoming damage, building up neural heat in the wearer. Must be crafted by a psycaster.</description>
 		<graphicData>
-			<texPath>TSOA/Things/Apparel/AnimaAcolyte/AnArmorStuffable_Male_south</texPath>
+			<texPath>TSOA/Things/Apparel/AnimaAcolyte/AnArmorStuffable</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1, 1)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
@@ -377,7 +377,7 @@
 		<label>anima acolyte helmet</label>
 		<description>A leather helmet with a circlet of braided anima grass. Offers little in the way of protection. When worn by a psycaster, allows the wearer to store more neural heat and disperse it more quickly.</description>
 		<graphicData>
-			<texPath>TSOA/Things/Apparel/AnimaAcolyte/AnHelmetStuffable_south</texPath>
+			<texPath>TSOA/Things/Apparel/AnimaAcolyte/AnHelmetStuffable</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1, 1)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
