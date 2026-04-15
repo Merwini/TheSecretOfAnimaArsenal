@@ -154,7 +154,7 @@
 			<!-- TODO placeholder -->
 			<texPath>TSOA/Things/Apparel/BioferriteVirion/BiofArmor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(1, 1)</drawSize>
+			<drawSize>(1.2, 1.2)</drawSize>
 		</graphicData>
 		<techLevel>Medieval</techLevel>
 		<relicChance>2</relicChance>
@@ -204,7 +204,6 @@
 			<wornGraphicPath>TSOA/Things/Apparel/BioferriteVirion/BiofArmor</wornGraphicPath>
 			<layers>
 				<li>Middle</li>
-				<li>Shell</li>
 			</layers>
 			<tags>
 				<li>TSOA_VoidArmor</li>
@@ -271,7 +270,7 @@
 			<!-- TODO placeholder -->
 			<texPath>TSOA/Things/Apparel/BioferriteVirion/BiofHelm</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(1, 1)</drawSize>
+			<drawSize>(0.9, 0.9)</drawSize>
 		</graphicData>
 		<techLevel>Medieval</techLevel>
 		<relicChance>2</relicChance>
