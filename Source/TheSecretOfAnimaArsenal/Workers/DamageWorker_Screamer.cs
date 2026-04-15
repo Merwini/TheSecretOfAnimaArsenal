@@ -30,6 +30,9 @@ public class DamageWorker_Screamer : DamageWorker
             pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Manhunter);
         }
 
+        Effecter eff = EffecterDefOf.ForcedVisible.Spawn();
+        eff.Trigger(new TargetInfo(pawn.Position, pawn.Map, false), new TargetInfo(pawn.Position, pawn.Map, false));
+
         return base.Apply(newDinfo, victim);
     }
 }
