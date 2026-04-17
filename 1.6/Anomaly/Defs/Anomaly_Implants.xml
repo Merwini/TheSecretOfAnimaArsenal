@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+	<ThingCategoryDef>
+		<defName>TSOA_BodyPartsBioferrite</defName>
+		<label>bioferrite</label>
+		<parent>BodyParts</parent>
+	</ThingCategoryDef>
+
 	<ThingDef>
 		<defName>TSOA_AnomalyFakeBench</defName>
 		<label>Virion Implant Surgery</label>
@@ -10,6 +16,9 @@
 	
 	<ThingDef ParentName="BodyPartBase" Abstract="True" Name="TSOA_BioferriteBodyPartBase">
 		<techLevel>Medieval</techLevel>
+		<thingCategories>
+			<li>TSOA_BodyPartsBioferrite</li>
+		</thingCategories>
 		<graphicData>
 			<texPath>Things/Item/Health/HealthItem</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

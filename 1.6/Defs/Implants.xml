@@ -1,8 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+	<ThingCategoryDef>
+		<defName>TSOA_BodyPartsAnima</defName>
+		<label>anima</label>
+		<parent>BodyParts</parent>
+	</ThingCategoryDef>
+
 	<ThingDef ParentName="BodyPartBase" Abstract="True" Name="TSOA_AnimaBodyPartBase">
 		<techLevel>Medieval</techLevel>
+		<thingCategories>
+			<li>TSOA_BodyPartsAnima</li>
+		</thingCategories>
 		<graphicData>
 			<texPath>Things/Item/Health/HealthItem</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
