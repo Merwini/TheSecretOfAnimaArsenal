@@ -274,6 +274,7 @@
 			<li>Leathery</li>
 			<li>Fabric</li>
 		</stuffCategories>
+		<costStuffCount>75</costStuffCount>
 
 		<apparel>
 			<bodyPartGroups>
@@ -412,6 +413,7 @@
 		<stuffCategories>
 			<li>Leathery</li>
 		</stuffCategories>
+		<costStuffCount>30</costStuffCount>
 
 		<apparel>
 			<bodyPartGroups>

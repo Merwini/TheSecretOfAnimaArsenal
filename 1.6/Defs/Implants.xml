@@ -7,7 +7,7 @@
 			<texPath>Things/Item/Health/HealthItem</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>0.80</drawSize>
-			<color>(20,90,20)</color>
+			<color>(173,208,195)</color>
 		</graphicData>
 		<statBases>
 			<Mass>8</Mass>
