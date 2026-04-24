@@ -17,8 +17,8 @@
 		<smeltable>false</smeltable>
 		
 		<statBases>
-			<MaxHitPoints>200</MaxHitPoints>
-			<WorkToMake>20000</WorkToMake>
+			<MaxHitPoints>300</MaxHitPoints>
+			<WorkToMake>24000</WorkToMake>
 			<Mass>4.0</Mass>
 			<Flammability>0.6</Flammability>
 			<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
@@ -75,7 +75,7 @@
 
 		<researchPrerequisite>TSOA_AnimaShamanArmor</researchPrerequisite>
 
-		<workAmount>8000</workAmount>
+		<workAmount>24000</workAmount>
 		<workSkill>Crafting</workSkill>
 		<skillRequirements>
 			<Crafting>7</Crafting>
@@ -98,10 +98,18 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>TSOA_AnimaGrassResource</li>
+						<li>Devilstrand</li>
 					</thingDefs>
 				</filter>
 				<count>150</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaGrassResource</li>
+					</thingDefs>
+				</filter>
+				<count>40</count>
 			</li>
 			<li>
 				<filter>
@@ -135,8 +143,8 @@
 		<smeltable>false</smeltable>
 
 		<statBases>
-			<MaxHitPoints>200</MaxHitPoints>
-			<WorkToMake>8000</WorkToMake>
+			<MaxHitPoints>300</MaxHitPoints>
+			<WorkToMake>12000</WorkToMake>
 			<Mass>1.2</Mass>
 			<Flammability>0.6</Flammability>
 			<ArmorRating_Sharp>0.40</ArmorRating_Sharp>
@@ -188,7 +196,7 @@
 
 		<researchPrerequisite>TSOA_AnimaShamanArmor</researchPrerequisite>
 
-		<workAmount>6000</workAmount>
+		<workAmount>12000</workAmount>
 		<workSkill>Crafting</workSkill>
 		<skillRequirements>
 			<Crafting>7</Crafting>
@@ -251,7 +259,7 @@
 
 		<statBases>
 			<MaxHitPoints>200</MaxHitPoints>
-			<WorkToMake>20000</WorkToMake>
+			<WorkToMake>12000</WorkToMake>
 			<Mass>4.0</Mass>
 			<Flammability>0.6</Flammability>
 			<StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
@@ -320,7 +328,7 @@
 
 		<researchPrerequisite>TSOA_AnimaAcolyteArmor</researchPrerequisite>
 
-		<workAmount>5000</workAmount>
+		<workAmount>12000</workAmount>
 		<workSkill>Crafting</workSkill>
 
 		<effectWorking>Tailor</effectWorking>
@@ -450,7 +458,7 @@
 
 		<researchPrerequisite>TSOA_AnimaAcolyteArmor</researchPrerequisite>
 
-		<workAmount>3500</workAmount>
+		<workAmount>8000</workAmount>
 		<workSkill>Crafting</workSkill>
 
 		<effectWorking>Tailor</effectWorking>

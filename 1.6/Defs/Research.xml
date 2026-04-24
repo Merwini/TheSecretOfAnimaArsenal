@@ -3,9 +3,9 @@
 
 	<ResearchProjectDef>
 		<defName>TSOA_AnimaAcolyteArmor</defName>
-		<label>Coming soon!</label>
-		<description>Anima acolyte armor set will be unlocked as soon as the textures are done!</description>
-		<baseCost>100</baseCost>
+		<label>acolyte armor</label>
+		<description>Craft suits of armor from anima grass. This lightweight armor projects a protective field that blocks incoming damage, at the cost of neural heat buildup in the wearer.</description>
+		<baseCost>1400</baseCost>
 		<!-- Meant to be Industrial-equivalent, but needs to play nice with tech-limiting mods -->
 		<techLevel>Medieval</techLevel>
 		<prerequisites>
@@ -20,8 +20,8 @@
 	<ResearchProjectDef>
 		<defName>TSOA_AnimaShamanArmor</defName>
 		<label>shaman armor</label>
-		<description>Craft suits of armor made from anima tree parts. This armor projects a protective field that blocks incoming damage at the cost of neural heat buildup in the wearer.</description>
-		<baseCost>1200</baseCost>
+		<description>Craft suits of armor made from anima tree parts. The protective shield this armor emits produces less neural heat in the wearer, but the armor is heavier and harder to move in.</description>
+		<baseCost>4000</baseCost>
 		<!-- Meant to be Industrial-equivalent, but needs to play nice with tech-limiting mods -->
 		<techLevel>Medieval</techLevel>
 		<prerequisites>
