@@ -20,6 +20,17 @@ public class CompProperties_PsyShield : CompProperties
 
     public float maxDrawSize = 1.55f;
 
+    public Dictionary<QualityCategory, float> qualityHeatMultipliers = new Dictionary<QualityCategory, float>
+    {
+        { QualityCategory.Awful, 1f },
+        { QualityCategory.Poor, 1f },
+        { QualityCategory.Normal, 0.9f },
+        { QualityCategory.Good, 0.8f },
+        { QualityCategory.Excellent, 0.7f },
+        { QualityCategory.Masterwork, 0.6f },
+        { QualityCategory.Legendary, 0.5f }
+    };
+
     public CompProperties_PsyShield()
     {
         this.compClass = typeof(CompPsyShield);

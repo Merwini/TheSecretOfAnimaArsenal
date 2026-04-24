@@ -23,6 +23,10 @@ public class CompPsyShield : ThingComp
 
     private int KeepDisplayingTicks = 1000;
 
+    private CompQuality qualityComp;
+
+    private float BaseHeatPerDamage => Props.heatPerDamage;
+
     private static readonly Material PsyBubbleMat = MaterialPool.MatFrom("Other/ShieldBubble", ShaderDatabase.Transparent, Color.green);
 
     public CompProperties_PsyShield Props => (CompProperties_PsyShield)props;
@@ -206,11 +210,13 @@ public class CompPsyShield : ThingComp
             return;
 
         float damage = dinfo.Amount;
-        float heatToAdd = damage * Props.heatPerDamage;
+        float heatToAdd = CalculateEntropy(damage);
 
-        if (PawnOwner.psychicEntropy.EntropyValue + heatToAdd >= PawnOwner.psychicEntropy.MaxEntropy)
+        float availableEntropy = PawnOwner.psychicEntropy.MaxEntropy - PawnOwner.psychicEntropy.EntropyValue;
+
+        if (heatToAdd > availableEntropy)
         {
-            heatToAdd = PawnOwner.psychicEntropy.MaxEntropy - PawnOwner.psychicEntropy.EntropyValue;
+            heatToAdd = availableEntropy;
             Break();
         }
         else
@@ -221,6 +227,29 @@ public class CompPsyShield : ThingComp
         absorbed = true;
 
         PawnOwner.psychicEntropy.TryAddEntropy(heatToAdd, null, false);
+    }
+
+    private float CalculateEntropy(float damage)
+    {
+        return damage * CalculateEntropyMultiplier();
+    }
+
+    public float CalculateEntropyMultiplier()
+    {
+        float mult = BaseHeatPerDamage;
+
+        if (qualityComp != null)
+        {
+            mult *= Props.qualityHeatMultipliers.TryGetValue(qualityComp.Quality, out float qualMult) ? qualMult : 1f;
+        }
+
+        return mult;
+    }
+
+    public override void Initialize(CompProperties props)
+    {
+        base.Initialize(props);
+        qualityComp = parent.TryGetComp<CompQuality>();
     }
 
     public override void PostExposeData()

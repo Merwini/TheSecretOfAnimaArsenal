@@ -314,7 +314,7 @@
 
 		<comps>
 			<li Class="tsoa.arsenal.CompProperties_PsyShield">
-				<heatPerDamage>0.75</heatPerDamage>
+				<heatPerDamage>1</heatPerDamage>
 				<resetDelayTicks>180</resetDelayTicks>
 			</li>
 		</comps>
