@@ -259,6 +259,12 @@
 				<li>Shard</li>
 			</thingDefs>
 		</fixedIngredientFilter>
+		<modExtensions>
+			<li Class="tsoa.arsenal.VirionExtension">
+				<producedItem>TSOA_BioferriteVirionArmor</producedItem>
+				<initialGestationDays>10</initialGestationDays>
+			</li>
+		</modExtensions>
 	</RecipeDef>
 
 	<!-- Bioferrite Virion Helm -->
@@ -368,5 +374,11 @@
 				<li>Shard</li>
 			</thingDefs>
 		</fixedIngredientFilter>
+		<modExtensions>
+			<li Class="tsoa.arsenal.VirionExtension">
+				<producedItem>TSOA_BioferriteVirionHelm</producedItem>
+				<initialGestationDays>10</initialGestationDays>
+			</li>
+		</modExtensions>
 	</RecipeDef>
 </Defs>

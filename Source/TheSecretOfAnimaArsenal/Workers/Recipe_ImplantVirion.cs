@@ -21,23 +21,16 @@ public class Recipe_ImplantVirion : Recipe_InstallImplant
             TaleRecorder.RecordTale(TaleDefOf.DidSurgery, billDoer, pawn);
         }
 
-        Thing virionThing = null;
-        if (ingredients != null)
+        VirionExtension extension = bill.recipe.GetModExtension<VirionExtension>();
+        if (extension == null)
         {
-            for (int i = 0; i < ingredients.Count; i++)
-            {
-                Thing t = ingredients[i];
-                if (t != null)
-                {
-                    virionThing = t;
-                    break;
-                }
-            }
+            Log.Error("Recipe_ImplantVirion used recipe without VirionExtension");
+            return;
         }
 
         Hediff_Virion hediff = HediffMaker.MakeHediff(recipe.addsHediff, pawn, part) as Hediff_Virion;
 
-        hediff.virionDef = virionThing.def;
+        hediff.virionRecipeDef = bill.recipe;
 
         pawn.health.AddHediff(hediff, part);
     }

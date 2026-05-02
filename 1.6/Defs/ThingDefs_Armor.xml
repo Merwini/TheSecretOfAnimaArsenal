@@ -70,8 +70,8 @@
 	<!-- Anima Shaman Armor Recipe -->
 	<RecipeDef>
 		<defName>TSOA_Make_AnimaShamanArmor</defName>
-		<label>make anima shaman gambeson</label>
-		<jobString>Making anima shaman gambeson.</jobString>
+		<label>make anima shaman armor</label>
+		<jobString>Making anima shaman armor.</jobString>
 
 		<researchPrerequisite>TSOA_AnimaShamanArmor</researchPrerequisite>
 

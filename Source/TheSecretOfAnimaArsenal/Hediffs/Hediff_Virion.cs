@@ -63,7 +63,7 @@ public class Hediff_Virion : Hediff
 
     private bool extracting = false;
 
-    internal ThingDef virionDef;
+    internal RecipeDef virionRecipeDef;
 
     internal VirionExtension extension;
     internal VirionExtension Extension
@@ -72,7 +72,7 @@ public class Hediff_Virion : Hediff
         {
             if (extension == null)
             {
-                extension = virionDef.GetModExtension<VirionExtension>();
+                extension = virionRecipeDef.GetModExtension<VirionExtension>();
             }
             return extension;
         }
@@ -323,7 +323,7 @@ public class Hediff_Virion : Hediff
     public override void ExposeData()
     {
         base.ExposeData();
-        Scribe_Defs.Look(ref virionDef, "virionDef");
+        Scribe_Defs.Look(ref virionRecipeDef, "virionDef");
         Scribe_Values.Look(ref ticksRemainingInStage, "ticksRemainingInStage", -1);
         Scribe_Values.Look(ref curStageIndex, "curStageIndex", -1);
         Scribe_Values.Look(ref hasQuality, "hasQuality", false);
