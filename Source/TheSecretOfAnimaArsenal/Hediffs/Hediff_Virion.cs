@@ -67,6 +67,11 @@ public class Hediff_Virion : Hediff
         }
     }
 
+    public override string GetInspectString()
+    {
+        return "TSOA_VirionInspectString".Translate(Extension.producedItem.label);
+    }
+
     public override string LabelInBrackets
     {
         get
@@ -83,7 +88,8 @@ public class Hediff_Virion : Hediff
                 6 => "QualityCategory_Legendary".Translate(),
                 _ => "ERROR"
             };
-            return $"{stageLabel} {Severity.ToStringPercent()}";
+
+            return $"{Extension.producedItem.label} - {stageLabel} {Severity.ToStringPercent()}";
         }
     }
 

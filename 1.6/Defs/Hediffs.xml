@@ -85,7 +85,7 @@
 	<HediffDef>
 		<defName>TSOA_VirionHediff</defName>
 		<hediffClass>tsoa.arsenal.Hediff_Virion</hediffClass>
-		<label>gestating bioferrite virion</label>
+		<label>gestating</label>
 		<labelNoun>gestating a bioferrite virion</labelNoun>
 		<description>a bioferrite virion is gestating inside this person</description>
 		<isBad>false</isBad>
