@@ -27,18 +27,7 @@ public class Hediff_Virion : Hediff
     private int curStageIndex = -1;
     private int ticksRemainingInStage = -1;
     private bool hasQuality; // store this so I don't have to keep checking for QualityComp, saves some CPU cycles
-    private int MaxStage
-    {
-        get
-        {
-            if (hasQuality)
-            {
-                return 6;
-            }
-
-            return 0;
-        }
-    }
+    private int MaxStage => hasQuality ? 6 : -1;
 
     private int InitialGestationTicks => (int)(Extension.initialGestationDays * GenDate.TicksPerDay);
 
