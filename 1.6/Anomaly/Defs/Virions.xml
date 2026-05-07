@@ -127,6 +127,42 @@
 			</li>
 		</modExtensions>
 	</ThingDef>-->
+
+	<RecipeDef ParentName="TSOA_ImplantVirionBase">
+		<defName>TSOA_ImplantBioferriteResourceVirion</defName>
+		<label>implant virion (bioferrite resource)</label>
+		<description>Implant a virion in the target. This will gestate into a larger quantity of bioferrite.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Bioferrite</ThingDef>
+		</descriptionHyperlinks>
+		<surgerySuccessChanceFactor>10</surgerySuccessChanceFactor>
+		<uiIconThing>Shard</uiIconThing>
+		<researchPrerequisites Inherit="false">
+			<li>TSOA_VoidOne</li>
+		</researchPrerequisites>
+		<ingredients Inherit="false">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Bioferrite</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter Inherit="false">
+			<thingDefs>
+				<li>Bioferrite</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<modExtensions>
+			<li Class="tsoa.arsenal.VirionExtension">
+				<producedItem>Bioferrite</producedItem>
+				<producedCount>50</producedCount>
+				<initialGestationDays>5</initialGestationDays>
+			</li>
+		</modExtensions>
+	</RecipeDef>
 	
 	<RecipeDef ParentName="TSOA_ImplantVirionBase">
 		<defName>TSOA_ImplantVirionArm</defName>
