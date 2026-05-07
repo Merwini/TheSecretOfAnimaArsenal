@@ -87,20 +87,81 @@ public class Hediff_VirionActivity : Hediff
         }
     }
 
+    //private void DoVirionDamage()
+    //{
+    //    if (!pawn.SpawnedOrAnyParentSpawned)
+    //    {
+    //        return;
+    //    }
+
+    //    EffecterDefOf.MeatExplosionSmall.Spawn(pawn.Position, pawn.Map).Cleanup();
+    //    SoundDefOf.Execute_Cut.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
+
+    //    BodyPartRecord torso = pawn.RaceProps.body.corePart;
+    //    if (torso == null)
+    //    {
+    //        return;
+    //    }
+
+    //    List<BodyPartRecord> candidates = new List<BodyPartRecord>();
+    //    foreach (BodyPartRecord part in torso.GetDirectChildParts())
+    //    {
+    //        if (part.depth == BodyPartDepth.Inside)
+    //        {
+    //            candidates.Add(part);
+    //        }
+    //    }
+
+    //    BodyPartRecord targetPart;
+
+    //    if (candidates.Count > 0 && Rand.Bool) // 50% chance to hit torso vs a random organ
+    //    {
+    //        targetPart = candidates.RandomElement();
+    //    }
+    //    else
+    //    {
+    //        targetPart = torso;
+    //    }
+
+    //    float damageAmount = Rand.Range(4f, 10f); // organs have 15-20 hitPoints, on average fatal damage will happen if the same organ is hit 3 times, but could happen in 2
+
+    //    DamageInfo dinfo = new DamageInfo(
+    //        DamageDefOf.Cut,
+    //        damageAmount,
+    //        0f,
+    //        -1f,
+    //        instigator: null,
+    //        hitPart: targetPart
+    //    );
+
+    //    pawn.TakeDamage(dinfo);
+    //}
+
     private void DoVirionDamage()
     {
         if (!pawn.SpawnedOrAnyParentSpawned)
-        {
             return;
-        }
 
         EffecterDefOf.MeatExplosionSmall.Spawn(pawn.Position, pawn.Map).Cleanup();
         SoundDefOf.Execute_Cut.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
 
+        BodyPartRecord targetPart = ChooseTargetPart();
+        if (targetPart == null)
+            return;
+
+        float damageAmount = Rand.Range(4f, 10f);
+
+        Hediff_Injury injury = (Hediff_Injury)HediffMaker.MakeHediff(HediffDefOf.Cut, pawn, targetPart);
+        injury.Severity = damageAmount;
+        pawn.health.AddHediff(injury, targetPart);
+    }
+
+    private BodyPartRecord ChooseTargetPart()
+    {
         BodyPartRecord torso = pawn.RaceProps.body.corePart;
         if (torso == null)
         {
-            return;
+            return null;
         }
 
         List<BodyPartRecord> candidates = new List<BodyPartRecord>();
@@ -123,18 +184,7 @@ public class Hediff_VirionActivity : Hediff
             targetPart = torso;
         }
 
-        float damageAmount = Rand.Range(4f, 10f); // organs have 15-20 hitPoints, on average fatal damage will happen if the same organ is hit 3 times, but could happen in 2
-
-        DamageInfo dinfo = new DamageInfo(
-            DamageDefOf.Cut,
-            damageAmount,
-            0f,
-            -1f,
-            instigator: null,
-            hitPart: targetPart
-        );
-
-        pawn.TakeDamage(dinfo);
+        return targetPart;
     }
 
     public override IEnumerable<Gizmo> GetGizmos()
