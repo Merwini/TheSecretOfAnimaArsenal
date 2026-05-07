@@ -30,6 +30,10 @@
 	<TSOA_VirionComplete>{0} has finished gestating their Virion, and it has fatally emerged from them!</TSOA_VirionComplete>
 	<TSOA_GestatingStage>Gestating</TSOA_GestatingStage>
 
+	<TSOA_VirionAlertLabel>Virion fully gestated</TSOA_VirionAlertLabel>
+	<TSOA_VirionAlertLabelPlural>{0} virions fully gestated</TSOA_VirionAlertLabelPlural>
+	<TSOA_VirionAlertDesc>These people have fully gestated their virions:\n{0}\n\nYou should extract them.</TSOA_VirionAlertDesc>
+
 	<TSOA_VirionActiveMessage>{0}'s virion has become active, causing internal damage with its movements. Its activity will increase until it is successfully tended.</TSOA_VirionActiveMessage>
 	<TSOA_VirionTendSuccessMote>Virion pacified!</TSOA_VirionTendSuccessMote>
 	<TSOA_VirionTendSuccessMessage>{0}'s virion was medically pacified.</TSOA_VirionTendSuccessMessage>

@@ -45,6 +45,8 @@ public class Hediff_Virion : Hediff
         }
     }
 
+    public bool IsFullyGestated => curStageIndex >= MaxStage && ticksRemainingInStage <= 0;
+
     private int ticksUntilNextVirionActivity = -1;
     private bool virionActive = false;
     public float TendQualityRequirement => Extension.requiredTendQualityPerStage * (curStageIndex + 1);
@@ -69,7 +71,11 @@ public class Hediff_Virion : Hediff
 
     public override string GetInspectString()
     {
-        return "TSOA_VirionInspectString".Translate(Extension.producedItem.label);
+        if (DebugSettings.godMode)
+        {
+            return $"{ticksRemainingInStage} ticks remaining in stage";
+        }
+        return null;
     }
 
     public override string LabelInBrackets
@@ -156,7 +162,10 @@ public class Hediff_Virion : Hediff
         IntVec3 pos = pawn.PositionHeld;
 
         DoEmergingEffects(map, pos);
-        SpawnResult(map, pos, !extracting);
+
+        bool isPremature = !extracting || (curStageIndex == -1 && ticksRemainingInStage > 0);
+
+        SpawnResult(map, pos, isPremature);
         pawn.health.RemoveHediff(this);
     }
 
@@ -204,9 +213,9 @@ public class Hediff_Virion : Hediff
         SoundDefOf.Crunch.PlayOneShot(new TargetInfo(pos, map));
     }
 
-    private void SpawnResult(Map map, IntVec3 pos, bool premature)
+    private void SpawnResult(Map map, IntVec3 pos, bool isPremature)
     {
-        if (curStageIndex == -1 || premature) // maybe give item if stage is Legendary? Am I merciful?
+        if (isPremature) // maybe give item if stage is Legendary? Am I merciful?
         {
             SpawnEntity(map, pos);
         }
