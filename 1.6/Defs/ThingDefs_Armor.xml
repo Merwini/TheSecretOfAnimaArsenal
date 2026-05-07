@@ -18,7 +18,7 @@
 		
 		<statBases>
 			<MaxHitPoints>300</MaxHitPoints>
-			<WorkToMake>24000</WorkToMake>
+			<WorkToMake>28000</WorkToMake>
 			<Mass>4.0</Mass>
 			<Flammability>0.6</Flammability>
 			<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
@@ -75,7 +75,7 @@
 
 		<researchPrerequisite>TSOA_AnimaShamanArmor</researchPrerequisite>
 
-		<workAmount>24000</workAmount>
+		<workAmount>28000</workAmount>
 		<workSkill>Crafting</workSkill>
 		<skillRequirements>
 			<Crafting>7</Crafting>
@@ -282,8 +282,12 @@
 			<li>Leathery</li>
 			<li>Fabric</li>
 		</stuffCategories>
+		
 		<costStuffCount>75</costStuffCount>
-
+		<costList>
+			<TSOA_AnimaGrassResource>20</TSOA_AnimaGrassResource>
+		</costList>
+		
 		<apparel>
 			<bodyPartGroups>
 				<li>Torso</li>
@@ -421,8 +425,12 @@
 		<stuffCategories>
 			<li>Leathery</li>
 		</stuffCategories>
-		<costStuffCount>30</costStuffCount>
 
+		<costStuffCount>30</costStuffCount>
+		<costList>
+			<TSOA_AnimaGrassResource>10</TSOA_AnimaGrassResource>
+		</costList>
+		
 		<apparel>
 			<bodyPartGroups>
 				<li>UpperHead</li>
