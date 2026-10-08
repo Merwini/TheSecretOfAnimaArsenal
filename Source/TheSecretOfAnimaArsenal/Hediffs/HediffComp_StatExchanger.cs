@@ -321,7 +321,7 @@ public class HediffComp_StatExchanger : HediffComp
         {
             newCache = Props.recipientGainFlat != 0f
                 ? newCache + Props.recipientGainFlat
-                : newCache + (comp.cachedAmount * Props.recipientGainPercent);
+                : newCache + (comp.StatAdjustment * Props.recipientGainPercent);
         }
         cachedAmount = newCache;
     }
