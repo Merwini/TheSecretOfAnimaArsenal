@@ -10,13 +10,7 @@ namespace tsoa.arsenal;
 
 public class HediffCompProperties_Evolving : HediffCompProperties
 {
-    public StatDef evolvingStat;
-
-    public float lowerThreshold = 0f;
-    public float upperThreshold = 999f;
-
-    public HediffDef hediffAbove = null;
-    public HediffDef hediffBelow = null;
+    public EvolvingImplantDef evolvingImplantDef;
 
     public HediffCompProperties_Evolving()
     {

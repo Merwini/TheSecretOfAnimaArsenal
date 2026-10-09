@@ -20,38 +20,47 @@ class HediffComp_Evolving : HediffComp
         {
             Pawn pawn = parent.pawn;
 
-            // Should I check that Props.evolvingStat was defined properly?
+            EvolvingImplantDef evolvingImplantDef = Props.evolvingImplantDef;
 
-            float stat = pawn.GetStatValue(Props.evolvingStat);
+            float stat = pawn.GetStatValue(evolvingImplantDef.evolvingStat);
 
             HediffDef target = null;
 
-            if (stat > Props.upperThreshold && Props.hediffAbove != null)
+            // Iterate through thresholds until we hit one that is higher than the current stat
+            for (int i = 0; i < evolvingImplantDef.lowerThresholds.Count; i++)
             {
-                target = Props.hediffAbove;
+                if (stat >= evolvingImplantDef.lowerThresholds[i])
+                {
+                    target = evolvingImplantDef.tiers[i];
+                }
+                else
+                {
+                    break;
+                }
             }
-            else if (stat < Props.lowerThreshold && Props.hediffBelow != null)
-            {
-                target = Props.hediffBelow;
-            }
-            else
-            {
+
+            // Don't change if already has the target hediff
+            if (target == null || target == parent.def)
                 return;
-            }
 
-            // Don't re-add if already has the target hediff
-            if (pawn.health.hediffSet.HasHediff(target, parent.Part))
-                return;
+            BodyPartRecord part = parent.Part;
 
-            // Need to cache these since we remove before we add
-            if (target != null)
+            // Get injuries on the body part
+            List<Hediff_Injury> injuries = part == null ? new List<Hediff_Injury>() : pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>()
+                    .Where(injury => injury.Part == part).ToList();
+
+            parent.pawn.health.RemoveHediff(parent);
+
+            Hediff newHediff = HediffMaker.MakeHediff(target, pawn, part);
+            pawn.health.AddHediff(newHediff);
+
+            // Re-add injuries after hediff replacement
+            foreach (Hediff_Injury injury in injuries)
             {
-                BodyPartRecord part = parent.Part;
-
-                parent.pawn.health.RemoveHediff(parent);
-
-                Hediff newHediff = HediffMaker.MakeHediff(target, pawn, part);
-                pawn.health.AddHediff(newHediff);
+                if (!pawn.health.hediffSet.hediffs.Contains(injury))
+                {
+                    pawn.health.AddHediff(injury, part);
+                }
             }
         }
     }

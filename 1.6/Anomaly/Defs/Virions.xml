@@ -190,7 +190,7 @@
 		</fixedIngredientFilter>
 		<modExtensions>
 			<li Class="tsoa.arsenal.VirionExtension">
-				<producedItem>TSOA_BioferriteArm</producedItem>
+				<producedItem>TSOA_BioferriteArmThing</producedItem>
 				<initialGestationDays>10</initialGestationDays>
 			</li>
 		</modExtensions>
@@ -234,7 +234,7 @@
 		</fixedIngredientFilter>
 		<modExtensions>
 			<li Class="tsoa.arsenal.VirionExtension">
-				<producedItem>TSOA_BioferriteLeg</producedItem>
+				<producedItem>TSOA_BioferriteLegThing</producedItem>
 				<initialGestationDays>10</initialGestationDays>
 			</li>
 		</modExtensions>
@@ -278,7 +278,7 @@
 		</fixedIngredientFilter>
 		<modExtensions>
 			<li Class="tsoa.arsenal.VirionExtension">
-				<producedItem>TSOA_BioferriteEye</producedItem>
+				<producedItem>TSOA_BioferriteEyeThing</producedItem>
 				<initialGestationDays>10</initialGestationDays>
 			</li>
 		</modExtensions>
@@ -322,7 +322,7 @@
 		</fixedIngredientFilter>
 		<modExtensions>
 			<li Class="tsoa.arsenal.VirionExtension">
-				<producedItem>TSOA_BioferriteSkin</producedItem>
+				<producedItem>TSOA_BioferriteSkinThing</producedItem>
 				<initialGestationDays>10</initialGestationDays>
 			</li>
 		</modExtensions>
