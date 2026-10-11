@@ -90,7 +90,7 @@
 		<description>a bioferrite virion is gestating inside this person</description>
 		<isBad>false</isBad>
 		<tendable>false</tendable>
-		<scenarioCanAdd>true</scenarioCanAdd>
+		<scenarioCanAdd>false</scenarioCanAdd>
 		<tags>
 			<li>TSOA_Virion</li>
 		</tags>

@@ -9,50 +9,59 @@ using UnityEngine;
 using Verse.Sound;
 using LudeonTK;
 using tsoa.core;
+using Steamworks;
 
 namespace tsoa.arsenal;
 
 public class Hediff_Virion : Hediff
 {
     /* Reminder
-        Awful = 0
-        Poor = 1
-        Normal = 2
-        Good = 3
-        Excellent = 4
-        Masterwork = 5
-        Legendary = 6
+
+        Gestating = 0
+        Awful = 1
+        Poor = 2
+        Normal = 3
+        Good = 4
+        Excellent = 5
+        Masterwork = 6
+        Legendary = 7
      */
 
-    private int curStageIndex = -1;
-    private int ticksRemainingInStage = -1;
+    private int growthStageIndex;
+    public int GrowthStageIndex => growthStageIndex;
+
     private bool hasQuality; // store this so I don't have to keep checking for QualityComp, saves some CPU cycles
-    private int MaxStage => hasQuality ? 6 : -1;
-
-    private int InitialGestationTicks => (int)(Extension.initialGestationDays * GenDate.TicksPerDay);
-
-    public int TicksUntilNextStage
+    private bool hasQualitySet = false;
+    public bool HasQuality
     {
         get
         {
-            if (curStageIndex == -1) // initial gestation
-                return (int)(Extension.initialGestationDays * GenDate.TicksPerDay);
-
-            if (curStageIndex == 6) // already at legendary, no more stages
-                return int.MaxValue;
-
-            return (int)(Extension.qualityGestationDaysList[curStageIndex] * GenDate.TicksPerDay);
+            if (!hasQualitySet) // fix after reload, so I don't have to serialize
+            {
+                hasQuality = Extension.producedItem.HasComp<CompQuality>();
+                hasQualitySet = true;
+            }
+            return hasQuality;
         }
     }
+    private int MaxStage => HasQuality ? 7 : 1;
+    public bool IsFullyGestated => growthStageIndex >= MaxStage;
 
-    public bool IsFullyGestated => curStageIndex >= MaxStage && ticksRemainingInStage <= 0;
+    private int ticksUntilNextStage;
+    public int TicksUntilNextStage => ticksUntilNextStage;
+    public int TicksForCurrentStage => (int)(Extension.gestationDaysList[growthStageIndex] * GenDate.TicksPerDay);
+    public bool StageComplete => TicksUntilNextStage <= 0;
+    public bool ShouldTick => !pawn.Suspended; // I dunno if I'll ever need to handle modded reasons a pawn shouldn't have its gestation ticking
 
-    private int ticksUntilNextVirionActivity = -1;
+    private int ticksUntilNextActivity;
+    public int TicksUntilNextActivity => ticksUntilNextActivity;
     private bool virionActive = false;
-    public float TendQualityRequirement => Extension.requiredTendQualityPerStage * (curStageIndex + 1);
     public int RandomTicksUntilNextVirionActivity => (int)(Extension.virionActivityDaysRange.RandomInRange * GenDate.TicksPerDay);
+    public float TendQualityRequirement => Extension.requiredTendQualityPerStage * growthStageIndex;
 
-    private bool extracting = false;
+    public bool CanExtractNow => GrowthStageIndex >= 1;
+    private bool extracting = false; // doesn't need saving because it is set and read in the same method call
+    private bool ShouldSpawnItem => IsFullyGestated || (extracting && growthStageIndex >= 1); // has reached max stage, or is extracting medically and has finished gestation
 
     internal RecipeDef virionRecipeDef;
 
@@ -63,7 +72,7 @@ public class Hediff_Virion : Hediff
         {
             if (extension == null)
             {
-                extension = virionRecipeDef.GetModExtension<VirionExtension>();
+                extension = virionRecipeDef?.GetModExtension<VirionExtension>();
             }
             return extension;
         }
@@ -73,7 +82,7 @@ public class Hediff_Virion : Hediff
     {
         if (DebugSettings.godMode)
         {
-            return $"{ticksRemainingInStage} ticks remaining in stage";
+            return $"{TicksUntilNextStage} ticks until next stage";
         }
         return null;
     }
@@ -82,22 +91,41 @@ public class Hediff_Virion : Hediff
     {
         get
         {
-            string stageLabel = curStageIndex switch
-            {
-                -1 => "TSOA_GestatingStage".Translate(),
-                0 => "QualityCategory_Awful".Translate(),
-                1 => "QualityCategory_Poor".Translate(),
-                2 => "QualityCategory_Normal".Translate(),
-                3 => "QualityCategory_Good".Translate(),
-                4 => "QualityCategory_Excellent".Translate(),
-                5 => "QualityCategory_Masterwork".Translate(),
-                6 => "QualityCategory_Legendary".Translate(),
-                _ => "ERROR"
-            };
+            string stageLabel;
 
-            return $"{Extension.producedItem.label} - {stageLabel} {Severity.ToStringPercent()}";
+            if (HasQuality)
+            {
+                stageLabel = growthStageIndex switch
+                {
+                    0 => "TSOA_GestatingStage".Translate(),
+                    1 => "QualityCategory_Awful".Translate(),
+                    2 => "QualityCategory_Poor".Translate(),
+                    3 => "QualityCategory_Normal".Translate(),
+                    4 => "QualityCategory_Good".Translate(),
+                    5 => "QualityCategory_Excellent".Translate(),
+                    6 => "QualityCategory_Masterwork".Translate(),
+                    7 => "QualityCategory_Legendary".Translate(),
+                    _ => "ERROR"
+                };
+            }
+            else
+            {
+                stageLabel = growthStageIndex switch
+                {
+                    0 => "TSOA_GestatingStage".Translate(),
+                    1 => "",
+                    _ => "ERROR"
+                };
+            }
+
+            string progress = IsFullyGestated ? "Complete".Translate() :  (1f - (float)TicksUntilNextStage / TicksForCurrentStage).ToStringPercent();
+
+            return $"{Extension.producedItem.label} - {stageLabel} {progress}";
         }
     }
+
+    public override bool ShouldRemove => false;
+
 
     public override void PostAdd(DamageInfo? dinfo)
     {
@@ -105,45 +133,44 @@ public class Hediff_Virion : Hediff
 
         if (Extension == null)
         {
-            Log.Error("Added Hediff_Virion, but implanted Virion did not have valid extension");
+            Log.Error("Added Hediff_Virion, but implanted Virion did not have valid extension. Removing it.");
             pawn.health.RemoveHediff(this);
             return;
         }
 
-        ticksRemainingInStage = InitialGestationTicks;
-        curStageIndex = -1;
-
-        ticksUntilNextVirionActivity = RandomTicksUntilNextVirionActivity; // Pre-load an activity
-
-        hasQuality = Extension.producedItem.HasComp<CompQuality>();
+        growthStageIndex = 0;
+        SetStageEndTick(0);
+        SetNextActivityTick();
     }
 
     public override void TickInterval(int delta)
     {
         base.TickInterval(delta);
 
-        if (ticksRemainingInStage > 0)
+        if (IsFullyGestated || !ShouldTick)
+            return;
+
+        ticksUntilNextStage -= delta;
+
+        if (TicksUntilNextStage <= 0)
         {
-            ticksRemainingInStage = Math.Max(0, ticksRemainingInStage - delta);
+            growthStageIndex++;
+            if (!IsFullyGestated)
+            {
+                SetStageEndTick(TicksUntilNextStage);
+            }
+            else
+            {
+                CompleteGestation();
+            }
         }
 
-        Severity = 1f - (float)ticksRemainingInStage / TicksUntilNextStage;
-
-        if (ticksRemainingInStage <= 0 && curStageIndex < MaxStage)
-        {
-            curStageIndex++;
-            ticksRemainingInStage = TicksUntilNextStage;
-        }
 
         if (!virionActive)
         {
-            if (ticksUntilNextVirionActivity > 0)
-            {
+            ticksUntilNextActivity -= delta;
 
-                ticksUntilNextVirionActivity = Math.Max(0, ticksUntilNextVirionActivity - delta);
-            }
-
-            if (ticksUntilNextVirionActivity <= 0)
+            if (TicksUntilNextActivity <= 0)
             {
                 StartVirionActivity();
             }
@@ -155,30 +182,38 @@ public class Hediff_Virion : Hediff
         if (!pawn.SpawnedOrAnyParentSpawned)
         {
             Messages.Message("TSOA_VirionNotSpawned".Translate(pawn.Name), MessageTypeDefOf.NegativeHealthEvent);
-            return;
+            pawn.health.RemoveHediff(this);
         }
+        else
+        {
+            DoEscapeOrExtraction();
+        }
+    }
 
-        Map map = pawn.MapHeld;
-        IntVec3 pos = pawn.PositionHeld;
+    public override void PostRemoved()
+    {
+        base.PostRemoved();
 
-        DoEmergingEffects(map, pos);
-
-        bool isPremature = !extracting || (curStageIndex == -1 && ticksRemainingInStage > 0);
-
-        SpawnResult(map, pos, isPremature);
-        pawn.health.RemoveHediff(this);
+        RemoveActivityHediff();
     }
 
     public void Notify_VirionExtracted()
     {
         extracting = true;
+        DoEscapeOrExtraction();
         HealthUtility.DamageUntilDead(pawn); // maybe destroy specifically the torso instead?
+        // if the player finds a way to cheat death, so be it
     }
 
-    public void Notify_ActivityEnded()
+    // called after stage has already advanced. leftover will be a negative number, from delta ticks > 1 overshooting the end of a stage
+    private void SetStageEndTick(int leftover)
     {
-        virionActive = false;
-        ticksUntilNextVirionActivity = RandomTicksUntilNextVirionActivity;
+        ticksUntilNextStage = TicksForCurrentStage + leftover;
+    }
+
+    private void SetNextActivityTick()
+    {
+        ticksUntilNextActivity = RandomTicksUntilNextVirionActivity;
     }
 
     private void StartVirionActivity()
@@ -186,22 +221,58 @@ public class Hediff_Virion : Hediff
         Hediff_VirionActivity existingActivity = pawn.health.hediffSet.GetFirstHediffOfDef(TSOAA_DefOf.TSOA_VirionActiveHediff) as Hediff_VirionActivity;
         if (existingActivity != null)
         {
+            virionActive = true;
             Log.Error("Hediff_Virion: tried to start virion activity but one already exists on pawn " + pawn.Name);
             return;
         }
 
-        virionActive = true;
         Hediff_VirionActivity hediff = HediffMaker.MakeHediff(TSOAA_DefOf.TSOA_VirionActiveHediff, pawn) as Hediff_VirionActivity;
         hediff.tendQualityRequirement = TendQualityRequirement;
         hediff.virionDamageDaysRange = Extension.virionDamageDaysRange;
         pawn.health.AddHediff(hediff);
+
+        virionActive = true;
+
+        // TODO should be a letter instead?
         Messages.Message("TSOA_VirionActiveMessage".Translate(pawn.LabelShort), pawn, MessageTypeDefOf.NegativeHealthEvent);
+    }
+
+    public void Notify_ActivityEnded()
+    {
+        virionActive = false;
+        if (!IsFullyGestated)
+        {
+            SetNextActivityTick();
+        }
+    }
+
+    public void CompleteGestation()
+    {
+        ticksUntilNextStage = int.MaxValue;
+        ticksUntilNextActivity = int.MaxValue;
+        if (virionActive)
+        {
+            RemoveActivityHediff();
+            virionActive = false;
+        }
+    }
+
+    private void DoEscapeOrExtraction()
+    {
+        Map map = pawn.MapHeld;
+        IntVec3 pos = pawn.PositionHeld;
+
+        DoEmergingEffects(map, pos);
+
+        SpawnResult(map, pos, ShouldSpawnItem);
+
+        pawn.health.RemoveHediff(this);
     }
 
     private void DoEmergingEffects(Map map, IntVec3 pos)
     {
         EffecterDefOf.MetalhorrorEmerging.Spawn(pos, map).Cleanup();
-        CellRect cellRect = new CellRect(pos.x, pos.z, 3, 3);
+        CellRect cellRect = CellRect.CenteredOn(pos, 2);
         for (int i = 0; i < 5; i++)
         {
             IntVec3 randomCell = cellRect.RandomCell;
@@ -213,9 +284,9 @@ public class Hediff_Virion : Hediff
         SoundDefOf.Crunch.PlayOneShot(new TargetInfo(pos, map));
     }
 
-    private void SpawnResult(Map map, IntVec3 pos, bool isPremature)
+    private void SpawnResult(Map map, IntVec3 pos, bool shouldSpawnItem)
     {
-        if (isPremature) // maybe give item if stage is Legendary? Am I merciful?
+        if (!shouldSpawnItem)
         {
             SpawnEntity(map, pos);
         }
@@ -228,16 +299,16 @@ public class Hediff_Virion : Hediff
     private void SpawnItem(Map map, IntVec3 pos)
     {
         Thing thing = ThingMaker.MakeThing(Extension.producedItem);
-        SetThingQuality(thing, curStageIndex);
+        SetThingQuality(thing, growthStageIndex - 1); // stage 0 in gestating
         thing.stackCount = Extension.producedCount;
         GenPlace.TryPlaceThing(thing, pos, map, ThingPlaceMode.Near);
-        Messages.Message("TSOA_VirionComplete".Translate(pawn.Name), new LookTargets(pos, map), MessageTypeDefOf.PositiveEvent);
+        string message = extracting ? "TSOA_VirionExtracted" : "TSOA_VirionDiedComplete";
+        Messages.Message(message.Translate(pawn.Name), new LookTargets(pos, map), MessageTypeDefOf.PositiveEvent);
     }
 
     private void SpawnEntity(Map map, IntVec3 pos)
     {
         Pawn entity;
-        PawnKindDef kindDef;
 
         List<List<VirionSpawnEntry>> entitiesForVirion = Extension.entitySpawnByStage ?? VirionExtension.MetalhorrorDefaults;
 
@@ -247,17 +318,17 @@ public class Hediff_Virion : Hediff
             return;
         }
 
-        if (entitiesForVirion.Count < curStageIndex + 1)
+        if (entitiesForVirion.Count < growthStageIndex + 1)
         {
             Log.Error($"Hediff_Virion: Not enough stages in entitySpawnByStage for Virion producing {Extension.producedItem.defName}");
             return;
         }
 
-        List<VirionSpawnEntry> entitiesForStage = entitiesForVirion[curStageIndex + 1];
+        List<VirionSpawnEntry> entitiesForStage = entitiesForVirion[growthStageIndex];
 
         if (entitiesForStage.NullOrEmpty())
         {
-            Log.Error("Hediff_Virion: No spawn entries for stage " + curStageIndex + " for Virion producing " + Extension.producedItem.defName);
+            Log.Error("Hediff_Virion: No spawn entries for stage " + growthStageIndex + " for Virion producing " + Extension.producedItem.defName);
             return;
         }
 
@@ -279,7 +350,7 @@ public class Hediff_Virion : Hediff
 
     private void SetThingQuality(Thing thing, int index)
     {
-        if (!hasQuality)
+        if (!HasQuality)
             return;
 
         CompQuality comp = thing.TryGetComp<CompQuality>();
@@ -287,6 +358,16 @@ public class Hediff_Virion : Hediff
             return;
 
         comp.SetQuality((QualityCategory)Math.Clamp(index, 0, 6), null);
+    }
+
+    public void RemoveActivityHediff()
+    {
+        Hediff_VirionActivity activity = pawn.health.hediffSet.GetFirstHediffOfDef(TSOAA_DefOf.TSOA_VirionActiveHediff) as Hediff_VirionActivity;
+        if (activity != null)
+        {
+            pawn.health.RemoveHediff(activity);
+        }
+        virionActive = false;
     }
 
     public override IEnumerable<Gizmo> GetGizmos()
@@ -298,10 +379,10 @@ public class Hediff_Virion : Hediff
 
         yield return new Command_Action
         {
-            defaultLabel = "Dev: Progress virion 1 day",
+            defaultLabel = "Dev: Advanced gestation time by 1 day",
             action = () =>
             {
-                ticksRemainingInStage -= GenDate.TicksPerDay;
+                ticksUntilNextStage -= GenDate.TicksPerDay;
             }
         };
 
@@ -310,7 +391,7 @@ public class Hediff_Virion : Hediff
             defaultLabel = "Dev: Virion activity next tick",
             action = () =>
             {
-                ticksUntilNextVirionActivity = 0;
+                ticksUntilNextActivity = 1;
             }
         };
 
@@ -319,7 +400,7 @@ public class Hediff_Virion : Hediff
             defaultLabel = "Dev: Log ticks until next activity",
             action = () =>
             {
-                Log.Message("Ticks until next virion activity: " + ticksUntilNextVirionActivity);
+                Log.Message("Ticks until next virion activity: " + TicksUntilNextActivity);
             }
         };
     }
@@ -327,12 +408,15 @@ public class Hediff_Virion : Hediff
     public override void ExposeData()
     {
         base.ExposeData();
-        Scribe_Defs.Look(ref virionRecipeDef, "virionDef");
-        Scribe_Values.Look(ref ticksRemainingInStage, "ticksRemainingInStage", -1);
-        Scribe_Values.Look(ref curStageIndex, "curStageIndex", -1);
-        Scribe_Values.Look(ref hasQuality, "hasQuality", false);
+        Scribe_Defs.Look(ref virionRecipeDef, "virionRecipeDef");
+        Scribe_Values.Look(ref ticksUntilNextStage, "ticksUntilNextStage", int.MaxValue);
+        Scribe_Values.Look(ref growthStageIndex, "curStageIndex", 0);
 
-        Scribe_Values.Look(ref ticksUntilNextVirionActivity, "ticksUntilNextVirionActivity", -1);
-        Scribe_Values.Look(ref virionActive, "virionActive", false);
+        Scribe_Values.Look(ref ticksUntilNextActivity, "ticksUntilNextActivity", 0);
+        
+        if (Scribe.mode == LoadSaveMode.PostLoadInit)
+        {
+            virionActive = pawn.health.hediffSet.HasHediff(TSOAA_DefOf.TSOA_VirionActiveHediff);
+        }
     }
 }

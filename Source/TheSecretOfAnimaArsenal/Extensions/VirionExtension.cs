@@ -14,11 +14,20 @@ public class VirionExtension : DefModExtension
 
     public int producedCount = 1;
 
-    public float initialGestationDays;
-
-    public List<float> qualityGestationDaysList = new List<float>()
+    public List<float> gestationDaysList = new List<float>()
     {
-        // starts at awful
+        10, // days until awful (has quality) or finished (non-quality)
+        1, // days until poor
+        3, // days until normal
+        5, // days until good
+        7, // days until excellent
+        10, // days until masterwork
+        15, // days until legendary
+    };
+
+    public List<float> defaultGestationDaysList = new List<float>()
+    {
+        10, // days until awful (has quality) or finished (non-quality)
         1, // days until poor
         3, // days until normal
         5, // days until good
@@ -48,10 +57,11 @@ public class VirionExtension : DefModExtension
             yield return "BioferriteVirionExtension missing producedItem. Defaulting to one wooden log (this is funny to me).";
         }
 
-        if (initialGestationDays <= 0)
+        int requiredDurations = producedItem.HasComp<CompQuality>() ? 7 : 1;
+        if (gestationDaysList.NullOrEmpty() || gestationDaysList.Count < requiredDurations)
         {
-            initialGestationDays = 1;
-            yield return "BioferriteVirionExtension gestationDays must be greater than 0. Defaulting to 1.";
+            gestationDaysList = defaultGestationDaysList.ToList();
+            yield return "gestationDaysList has insufficient entries. Using defaults.";
         }
     }
 

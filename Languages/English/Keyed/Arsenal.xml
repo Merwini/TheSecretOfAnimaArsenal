@@ -27,12 +27,13 @@
 
 	<TSOA_VirionNotSpawned>{0} died outside of your map, and their Virion was wasted.</TSOA_VirionNotSpawned>
 	<TSOA_VirionIncomplete>{0} has died before their Virion finished gestating, and it has emerged as a hostile entity!</TSOA_VirionIncomplete>
-	<TSOA_VirionComplete>{0} has finished gestating their Virion, and it has fatally emerged from them!</TSOA_VirionComplete>
+	<TSOA_VirionDiedComplete>{0} has died with a fully gestated Virion, which emerged successfully from their corpse.</TSOA_VirionDiedComplete>
+	<TSOA_VirionExtracted>{0} has had their Virion successfully extracted, killing them in the process.</TSOA_VirionExtracted>
 	<TSOA_GestatingStage>Gestating</TSOA_GestatingStage>
 
-	<TSOA_VirionAlertLabel>Virion fully gestated</TSOA_VirionAlertLabel>
-	<TSOA_VirionAlertLabelPlural>{0} virions fully gestated</TSOA_VirionAlertLabelPlural>
-	<TSOA_VirionAlertDesc>These people have fully gestated their virions:\n{0}\n\nYou should extract them.</TSOA_VirionAlertDesc>
+	<TSOA_VirionAlertLabel>Virion ready to extract</TSOA_VirionAlertLabel>
+	<TSOA_VirionAlertLabelPlural>{0} virions ready to extract</TSOA_VirionAlertLabelPlural>
+	<TSOA_VirionAlertDesc>These people have gestated their virions enough to be extracted:\n{0}\n\nYou can extract them now, or wait for their quality to increase.</TSOA_VirionAlertDesc>
 
 	<TSOA_VirionActiveMessage>{0}'s virion has become active, causing internal damage with its movements. Its activity will increase until it is successfully tended.</TSOA_VirionActiveMessage>
 	<TSOA_VirionTendSuccessMote>Virion pacified!</TSOA_VirionTendSuccessMote>

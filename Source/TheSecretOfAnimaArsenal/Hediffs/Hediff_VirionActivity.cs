@@ -16,25 +16,33 @@ public class Hediff_VirionActivity : Hediff
     // Separating this into its own hediff because Hediff_Virion's Hediff entry in Health tab is already crowded enough. Just no way to also have it tell the player about Activity
 
     public const float damageTimeFactor = 0.9f; // need to balance. maybe 0.95?
+    public const float minimumTimeFactor = 0.25f;
 
     public float tendQualityRequirement; // set by Hediff_Virion before add
     public FloatRange virionDamageDaysRange; // set by Hediff_Virion before add
 
-    private int ticksUntilNextVirionDamage = -1;
+    private int ticksUntilNextDamage;
+    public int TicksUntilNextDamage => ticksUntilNextDamage;
     private float timeFactor = 1f;
 
-    public int TicksUntilNextVirionDamage
+    private Hediff_Virion originalHediff;
+    public Hediff_Virion OriginalHediff
     {
         get
         {
-            return (int)(virionDamageDaysRange.RandomInRange * GenDate.TicksPerDay * timeFactor);
+            if (originalHediff == null)
+            {
+                originalHediff = pawn.health.hediffSet.GetFirstHediffOfDef(TSOAA_DefOf.TSOA_VirionHediff) as Hediff_Virion;
+            }
+            return originalHediff;
         }
     }
+
 
     public override void PostAdd(DamageInfo? dinfo)
     {
         base.PostAdd(dinfo);
-        ticksUntilNextVirionDamage = TicksUntilNextVirionDamage;
+        SetTicksUntilNextDamage();
     }
 
     public override void PostRemoved()
@@ -48,15 +56,28 @@ public class Hediff_VirionActivity : Hediff
     {
         base.TickInterval(delta);
 
-        if (ticksUntilNextVirionDamage > 0)
+        if (OriginalHediff == null)
         {
-            ticksUntilNextVirionDamage = Math.Max(0, ticksUntilNextVirionDamage - delta);
+            Log.Error($"Pawn {pawn.Name} had Hediff_VirionActivity but no Hediff_Virion");
+            pawn.health.RemoveHediff(this);
+            return;
         }
-        if (ticksUntilNextVirionDamage <= 0)
+
+        if (!OriginalHediff.ShouldTick)
+        {
+            return;
+        }
+
+        ticksUntilNextDamage -= delta;
+
+        if (TicksUntilNextDamage <= 0)
         {
             DoVirionDamage();
-            timeFactor *= damageTimeFactor;
-            ticksUntilNextVirionDamage = TicksUntilNextVirionDamage;
+            if (!pawn.Dead)
+            {
+                timeFactor = Mathf.Clamp(timeFactor * damageTimeFactor, minimumTimeFactor, 1);
+                SetTicksUntilNextDamage();
+            }
         }
     }
 
@@ -73,17 +94,29 @@ public class Hediff_VirionActivity : Hediff
 
     public override void Tended(float quality, float maxQuality, int batchPosition = 0)
     {
+        bool success = false;
         if (quality >= tendQualityRequirement)
         {
-            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "TSOA_VirionTendSuccessMote".Translate());
             Messages.Message("TSOA_VirionTendSuccessMessage".Translate(pawn.LabelShort), pawn, MessageTypeDefOf.PositiveEvent);
-
+            success = true;
             pawn.health.RemoveHediff(this);
         }
         else
         {
-            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "TSOA_VirionTendFailureMote".Translate(quality.ToStringPercent(), tendQualityRequirement.ToStringPercent()), Color.red);
             Messages.Message("TSOA_VirionTendFailureMessage".Translate(pawn.LabelShort), pawn, MessageTypeDefOf.NegativeHealthEvent);
+            success = false;
+        }
+
+        if (pawn.Spawned)
+        {
+            if (success)
+            {
+                MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "TSOA_VirionTendSuccessMote".Translate());
+            }
+            else
+            {
+                MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "TSOA_VirionTendFailureMote".Translate(quality.ToStringPercent(), tendQualityRequirement.ToStringPercent()), Color.red);
+            }
         }
     }
 
@@ -139,11 +172,14 @@ public class Hediff_VirionActivity : Hediff
 
     private void DoVirionDamage()
     {
-        if (!pawn.SpawnedOrAnyParentSpawned)
-            return;
+        if (pawn.SpawnedOrAnyParentSpawned)
+        {
+            Map map = pawn.MapHeld;
+            IntVec3 pos = pawn.PositionHeld;
 
-        EffecterDefOf.MeatExplosionSmall.Spawn(pawn.Position, pawn.Map).Cleanup();
-        SoundDefOf.Execute_Cut.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
+            EffecterDefOf.MeatExplosionSmall.Spawn(pos, map).Cleanup();
+            SoundDefOf.Execute_Cut.PlayOneShot(new TargetInfo(pos, map));
+        }
 
         BodyPartRecord targetPart = ChooseTargetPart();
         if (targetPart == null)
@@ -154,6 +190,11 @@ public class Hediff_VirionActivity : Hediff
         Hediff_Injury injury = (Hediff_Injury)HediffMaker.MakeHediff(HediffDefOf.Cut, pawn, targetPart);
         injury.Severity = damageAmount;
         pawn.health.AddHediff(injury, targetPart);
+    }
+
+    private void SetTicksUntilNextDamage()
+    {
+        ticksUntilNextDamage = (int)(virionDamageDaysRange.RandomInRange * GenDate.TicksPerDay * timeFactor);
     }
 
     private BodyPartRecord ChooseTargetPart()
@@ -167,7 +208,7 @@ public class Hediff_VirionActivity : Hediff
         List<BodyPartRecord> candidates = new List<BodyPartRecord>();
         foreach (BodyPartRecord part in torso.GetDirectChildParts())
         {
-            if (part.depth == BodyPartDepth.Inside)
+            if (part.depth == BodyPartDepth.Inside && !pawn.health.hediffSet.PartIsMissing(part))
             {
                 candidates.Add(part);
             }
@@ -199,7 +240,7 @@ public class Hediff_VirionActivity : Hediff
             defaultLabel = "Dev: Virion damage next tick",
             action = () =>
             {
-                ticksUntilNextVirionDamage = 0;
+                ticksUntilNextDamage = 1;
             }
         };
 
@@ -208,7 +249,7 @@ public class Hediff_VirionActivity : Hediff
             defaultLabel = "Dev: Log ticks until next damage",
             action = () =>
             {
-                Log.Message("Ticks until next virion damage: " + ticksUntilNextVirionDamage);
+                Log.Message("Ticks until next virion damage: " + TicksUntilNextDamage);
             }
         };
     }
@@ -216,7 +257,7 @@ public class Hediff_VirionActivity : Hediff
     public override void ExposeData()
     {
         base.ExposeData();
-        Scribe_Values.Look(ref ticksUntilNextVirionDamage, "ticksUntilNextVirionDamage", -1);
+        Scribe_Values.Look(ref ticksUntilNextDamage, "ticksUntilNextDamage", 0);
         Scribe_Values.Look(ref timeFactor, "timeFactor", 1f);
         Scribe_Values.Look(ref tendQualityRequirement, "tendQualityRequirement", 0f);
         Scribe_Values.Look(ref virionDamageDaysRange, "virionDamageDaysRange");

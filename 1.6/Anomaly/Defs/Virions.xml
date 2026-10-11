@@ -159,7 +159,9 @@
 			<li Class="tsoa.arsenal.VirionExtension">
 				<producedItem>Bioferrite</producedItem>
 				<producedCount>50</producedCount>
-				<initialGestationDays>5</initialGestationDays>
+				<gestationDaysList>
+					<li>5</li>
+				</gestationDaysList>
 			</li>
 		</modExtensions>
 	</RecipeDef>
@@ -169,7 +171,7 @@
 		<label>implant virion (bioferrite arm)</label>
 		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite arm, killing the host in the process.</description>
 		<descriptionHyperlinks>
-			<ThingDef>TSOA_BioferriteArm</ThingDef>
+			<ThingDef>TSOA_BioferriteArmThing</ThingDef>
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
 		<uiIconThing>Shard</uiIconThing>
@@ -191,7 +193,6 @@
 		<modExtensions>
 			<li Class="tsoa.arsenal.VirionExtension">
 				<producedItem>TSOA_BioferriteArmThing</producedItem>
-				<initialGestationDays>10</initialGestationDays>
 			</li>
 		</modExtensions>
 	</RecipeDef>
@@ -213,7 +214,7 @@
 		<label>implant virion (bioferrite leg)</label>
 		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite leg, killing the host in the process.</description>
 		<descriptionHyperlinks>
-			<ThingDef>TSOA_BioferriteLeg</ThingDef>
+			<ThingDef>TSOA_BioferriteLegThing</ThingDef>
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
 		<uiIconThing>Shard</uiIconThing>
@@ -235,7 +236,6 @@
 		<modExtensions>
 			<li Class="tsoa.arsenal.VirionExtension">
 				<producedItem>TSOA_BioferriteLegThing</producedItem>
-				<initialGestationDays>10</initialGestationDays>
 			</li>
 		</modExtensions>
 	</RecipeDef>
@@ -257,7 +257,7 @@
 		<label>implant virion (bioferrite eye)</label>
 		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite eye, killing the host in the process.</description>
 		<descriptionHyperlinks>
-			<ThingDef>TSOA_BioferriteEye</ThingDef>
+			<ThingDef>TSOA_BioferriteEyeThing</ThingDef>
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
 		<uiIconThing>Shard</uiIconThing>
@@ -279,7 +279,6 @@
 		<modExtensions>
 			<li Class="tsoa.arsenal.VirionExtension">
 				<producedItem>TSOA_BioferriteEyeThing</producedItem>
-				<initialGestationDays>10</initialGestationDays>
 			</li>
 		</modExtensions>
 	</RecipeDef>
@@ -301,7 +300,7 @@
 		<label>implant virion (bioferrite skin)</label>
 		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite skin implant, killing the host in the process.</description>
 		<descriptionHyperlinks>
-			<ThingDef>TSOA_BioferriteSkin</ThingDef>
+			<ThingDef>TSOA_BioferriteSkinThing</ThingDef>
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
 		<uiIconThing>Shard</uiIconThing>
@@ -323,7 +322,6 @@
 		<modExtensions>
 			<li Class="tsoa.arsenal.VirionExtension">
 				<producedItem>TSOA_BioferriteSkinThing</producedItem>
-				<initialGestationDays>10</initialGestationDays>
 			</li>
 		</modExtensions>
 	</RecipeDef>
