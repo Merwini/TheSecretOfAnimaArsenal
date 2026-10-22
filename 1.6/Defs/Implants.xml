@@ -951,7 +951,7 @@
 		<label>install anima kidney</label>
 		<description>Install anima kidney</description>
 		<descriptionHyperlinks>
-			<ThingDef>TSOA_AnimaKiidneyThing</ThingDef>
+			<ThingDef>TSOA_AnimaKidneyThing</ThingDef>
 			<HediffDef>TSOA_AnimaKidneyThree</HediffDef>
 		</descriptionHyperlinks>
 		<jobString>Installing anima kidney.</jobString>
