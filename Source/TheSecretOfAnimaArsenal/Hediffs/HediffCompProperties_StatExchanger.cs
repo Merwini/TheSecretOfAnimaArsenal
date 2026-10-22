@@ -45,40 +45,47 @@ public class HediffCompProperties_StatExchanger : HediffCompProperties
 
     public override IEnumerable<string> ConfigErrors(HediffDef parentDef)
     {
-        if (isMaster && targetHediffs.NullOrEmpty())
-            yield return $"HediffCompProperties_StatExchanger on {parentDef}: masters must have targetHediffs";
+        if (isMaster)
+        {
+            if (targetHediffs.NullOrEmpty())
+            {
+                yield return $"HediffCompProperties_StatExchanger on {parentDef}: masters must have targetHediffs";
+            }
+            else
+            {
+                if (targetHediffs.Any(h =>
+                {
+                    var prop = h?.comps?
+                        .OfType<HediffCompProperties_StatExchanger>()
+                        .FirstOrDefault();
+                    return prop != null && prop.isMaster;
+                }))
+                {
+                    yield return $"HediffCompProperties_StatExchanger on {parentDef}: masters cannot link to other masters";
+                }
 
-        if (isMaster && targetHediffs.Any(h =>
-        {
-            var prop = h.comps
-                .OfType<HediffCompProperties_StatExchanger>()
-                .FirstOrDefault();
-            return prop != null && prop.isMaster;
-        }))
-        {
-            yield return $"HediffCompProperties_StatExchanger on {parentDef}: masters cannot link to other masters";
-        }
+                if (isDonor && targetHediffs.Any(h =>
+                {
+                    var prop = h?.comps?
+                        .OfType<HediffCompProperties_StatExchanger>()
+                        .FirstOrDefault();
+                    return prop != null && prop.isDonor;
+                }))
+                {
+                    yield return $"HediffCompProperties_StatExchanger on {parentDef}: donors cannot link to other donors";
+                }
 
-        if (isMaster && isDonor && targetHediffs.Any(h =>
-        {
-            var prop = h.comps
-                .OfType<HediffCompProperties_StatExchanger>()
-                .FirstOrDefault();
-            return prop != null && prop.isDonor;
-        }))
-        {
-            yield return $"HediffCompProperties_StatExchanger on {parentDef}: donors cannot link to other donors";
-        }
-
-        if (isMaster && !isDonor && targetHediffs.Any(h =>
-        {
-            var prop = h.comps
-                .OfType<HediffCompProperties_StatExchanger>()
-                .FirstOrDefault();
-            return prop != null && !prop.isDonor;
-        }))
-        {
-            yield return $"HediffCompProperties_StatExchanger on {parentDef}: recipients cannot link to other recipients";
+                if (!isDonor && targetHediffs.Any(h =>
+                {
+                    var prop = h?.comps?
+                        .OfType<HediffCompProperties_StatExchanger>()
+                        .FirstOrDefault();
+                    return prop != null && !prop.isDonor;
+                }))
+                {
+                    yield return $"HediffCompProperties_StatExchanger on {parentDef}: recipients cannot link to other recipients";
+                }
+            }
         }
     }
 }
