@@ -273,6 +273,8 @@ public class HediffComp_StatExchanger : HediffComp
     public void CacheDonationAmount()
     {
         float value = Props.affectedStat.defaultBaseValue;
+        float totalFactors = 1f;
+        float totalOffsets = 0;
         Pawn pawn = parent.pawn;
 
         if (pawn.def.statBases != null)
@@ -284,17 +286,19 @@ public class HediffComp_StatExchanger : HediffComp
         {
             foreach (Trait trait in pawn.story.traits.allTraits)
             {
+                if (trait.Suppressed) continue;
+
                 TraitDegreeData data = trait.CurrentData;
                 if (data == null) continue;
 
                 if (data.statOffsets != null)
                 {
-                    value += data.statOffsets.GetStatOffsetFromList(Props.affectedStat);
+                    totalOffsets += data.statOffsets.GetStatOffsetFromList(Props.affectedStat);
                 }
 
                 if (data.statFactors != null)
                 {
-                    value *= data.statFactors.GetStatFactorFromList(Props.affectedStat);
+                    totalFactors *= data.statFactors.GetStatFactorFromList(Props.affectedStat);
                 }
             }
         }
@@ -309,15 +313,17 @@ public class HediffComp_StatExchanger : HediffComp
 
                 if (def.statOffsets != null)
                 {
-                    value += def.statOffsets.GetStatOffsetFromList(Props.affectedStat);
+                    totalOffsets += def.statOffsets.GetStatOffsetFromList(Props.affectedStat);
                 }
 
                 if (def.statFactors != null)
                 {
-                    value *= def.statFactors.GetStatFactorFromList(Props.affectedStat);
+                    totalFactors *= def.statFactors.GetStatFactorFromList(Props.affectedStat);
                 }
             }
         }
+
+        value = (value + totalOffsets) * totalFactors;
 
         cachedAmount = value * Props.donorLossPercent;
     }
