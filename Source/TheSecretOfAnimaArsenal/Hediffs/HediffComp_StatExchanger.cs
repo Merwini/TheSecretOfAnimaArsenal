@@ -29,7 +29,7 @@ public class HediffComp_StatExchanger : HediffComp
     //public float Received => cachedReceived;
     public bool IsLinked => linkedComps.Count > 0;
     public bool IsMaster => Props.isMaster; // Master can be donor or recipient. Master is the one who controls the logic of linking and unlinking via gizmos.
-    public bool IsDonor => Props.statExchangerRole == StatExchangerRole.Donor; // donor vs. recipient
+    public bool IsDonor => Props.isDonor; // donor vs. recipient
     public StatDef AffectedStat => Props.affectedStat; 
 
     public HediffCompProperties_StatExchanger Props => (HediffCompProperties_StatExchanger)props;
@@ -323,7 +323,7 @@ public class HediffComp_StatExchanger : HediffComp
         {
             newCache = Props.recipientGainFlat != 0f
                 ? newCache + Props.recipientGainFlat
-                : newCache + (comp.StatAdjustment * Props.recipientGainPercent);
+                : newCache + (Math.Abs(comp.StatAdjustment) * Props.recipientGainPercent);
         }
         cachedAmount = newCache;
     }

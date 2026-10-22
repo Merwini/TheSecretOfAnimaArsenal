@@ -12,9 +12,6 @@ public class HediffCompProperties_StatExchanger : HediffCompProperties
     public bool isMaster = false;  // controls the link
     public bool isDonor = false; // loses the stat
 
-    public string role;
-    public StatExchangerRole statExchangerRole;
-
     public string linkGizmoPath;
     public string unlinkGizmoPath;
 
@@ -44,27 +41,6 @@ public class HediffCompProperties_StatExchanger : HediffCompProperties
     public HediffCompProperties_StatExchanger()
     {
         this.compClass = typeof(HediffComp_StatExchanger);
-    }
-
-    public override void ResolveReferences(HediffDef parent)
-    {
-        base.ResolveReferences(parent);
-
-        if (role != null)
-        {
-            if (role.EqualsIgnoreCase("donor"))
-            {
-                statExchangerRole = StatExchangerRole.Donor;
-            }
-            else if (role.EqualsIgnoreCase("recipient"))
-            {
-                statExchangerRole = StatExchangerRole.Recipient;
-            }
-            else
-            {
-                Log.Error("HediffCompProperties_StatExchanger role is neither Donor nor Recipient");
-            }
-        }
     }
 
     public override IEnumerable<string> ConfigErrors(HediffDef parentDef)
