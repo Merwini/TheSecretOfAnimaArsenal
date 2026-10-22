@@ -193,7 +193,7 @@ public class CompPsyShield : ThingComp
     public override void CompTick()
     {
         base.CompTick();
-        if (ticksUntilReset > 0 && PawnOwner.psychicEntropy.EntropyRelativeValue < Props.resetHeatPercent)
+        if (PawnOwner is Pawn pawn && ticksUntilReset > 0 && pawn.psychicEntropy.EntropyRelativeValue < Props.resetHeatPercent)
         {
             ticksUntilReset--;
             if (ticksUntilReset <= 0)
