@@ -261,7 +261,7 @@ public class HediffComp_StatExchanger : HediffComp
                 continue;
             }
 
-            if (comp.parent == null || comp.parent.pawn == null || comp.parent.pawn.Dead || comp.parent.pawn.Spawned == false)
+            if (comp?.parent?.pawn == null || comp.parent.pawn.Dead || !comp.parent.pawn.Spawned)
             {
                 BreakLink(comp);
                 continue;
