@@ -14,6 +14,7 @@ public class JobDriver_StatExchangeLink : JobDriver
 {
     private HediffWithComps masterHediff;
     private HediffWithComps otherHediff;
+    private int otherWaitJobId = -1;
 
     public Pawn Master => (Pawn)job.targetA.Thing;
     public Pawn Other => (Pawn)job.targetB.Thing;
@@ -62,7 +63,13 @@ public class JobDriver_StatExchangeLink : JobDriver
             PathEndMode.Touch
         );
 
-        Other.jobs.StartJob(JobMaker.MakeJob(JobDefOf.Wait, pawn), JobCondition.InterruptForced, resumeCurJobAfterwards: true);
+        // SetupToils also runs on load; keep the saved wait job instead of restarting it.
+        if (otherWaitJobId < 0 && Scribe.mode != LoadSaveMode.PostLoadInit)
+        {
+            Job otherWaitJob = JobMaker.MakeJob(JobDefOf.Wait, pawn);
+            otherWaitJobId = otherWaitJob.loadID;
+            Other.jobs.StartJob(otherWaitJob, JobCondition.InterruptForced, resumeCurJobAfterwards: true);
+        }
 
         Toil wait = Toils_General.Wait(DurationTicks);
         wait.WithProgressBarToilDelay(
@@ -117,10 +124,10 @@ public class JobDriver_StatExchangeLink : JobDriver
 
     void ReleaseOtherPawn()
     {
-        if (Other?.jobs == null)
-            return;
+        int waitJobId = otherWaitJobId;
+        otherWaitJobId = -1;
 
-        if (Other.CurJobDef == JobDefOf.Wait)
+        if (waitJobId >= 0 && Other?.jobs != null && Other.CurJob?.loadID == waitJobId)
         {
             Other.jobs.EndCurrentJob(JobCondition.Succeeded);
         }
@@ -129,6 +136,7 @@ public class JobDriver_StatExchangeLink : JobDriver
     public override void ExposeData()
     {
         base.ExposeData();
+        Scribe_Values.Look(ref otherWaitJobId, "otherWaitJobId", -1);
         Scribe_References.Look(ref masterHediff, "masterHediff");
         Scribe_References.Look(ref otherHediff, "otherHediff");
     }
