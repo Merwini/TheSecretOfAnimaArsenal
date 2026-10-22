@@ -2,9 +2,9 @@
 <loadFolders>
 	<v1.6>
 		<li>/</li>
-		<li>1.6/</li>
-		<li IfModActive="Ludeon.Rimworld.Anomaly">1.6/Anomaly</li>
-		<li IfModActive="CETeam.CombatExtended">1.6/CE</li>
-		<li IfModActiveAll="Ludeon.Rimworld.Anomaly, CETeam.CombatExtended">1.6/Anomaly/CE</li>
+		<li>1.7/</li>
+		<li IfModActive="Ludeon.Rimworld.Anomaly">1.7/Anomaly</li>
+		<li IfModActive="CETeam.CombatExtended">1.7/CE</li>
+		<li IfModActiveAll="Ludeon.Rimworld.Anomaly, CETeam.CombatExtended">1.7/Anomaly/CE</li>
 	</v1.6>
 </loadFolders>

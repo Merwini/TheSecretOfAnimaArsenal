@@ -1,16 +1,18 @@
 ﻿using RimWorld;
-using Steamworks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Lifetime;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
 using Verse.AI;
 
 namespace tsoa.arsenal;
+
+public enum StatExchangerRole
+{
+    Donor,
+    Recipient
+}
 
 public class HediffComp_StatExchanger : HediffComp
 {
@@ -27,7 +29,7 @@ public class HediffComp_StatExchanger : HediffComp
     //public float Received => cachedReceived;
     public bool IsLinked => linkedComps.Count > 0;
     public bool IsMaster => Props.isMaster; // Master can be donor or recipient. Master is the one who controls the logic of linking and unlinking via gizmos.
-    public bool IsDonor => Props.isDonor; // donor vs. recipient
+    public bool IsDonor => Props.statExchangerRole == StatExchangerRole.Donor; // donor vs. recipient
     public StatDef AffectedStat => Props.affectedStat; 
 
     public HediffCompProperties_StatExchanger Props => (HediffCompProperties_StatExchanger)props;
