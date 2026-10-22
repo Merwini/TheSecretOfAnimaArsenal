@@ -68,12 +68,28 @@
 				<count>2</count>
 			</li>
 		</ingredients>
-
 		<modExtensions>
 			<li Class="tsoa.core.PsyLinkRecipeExtension">
 				<minPsylinkLevel>3</minPsylinkLevel>
 			</li>
 		</modExtensions>
+	</RecipeDef>
+
+	<!-- Bases for crowns -->
+	<HediffDef ParentName="ImplantHediffBase" Abstract="True" Name="TSOA_StatExchangerBase">
+		<tags>
+			<li>TSOA_CrownImplant</li>
+		</tags>
+	</HediffDef>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase" Abstract="True" Name="TSOA_InstallImplantCrownBase">
+		<workerClass>Recipe_InstallImplant</workerClass>
+		<appliedOnFixedBodyParts>
+			<li>Head</li>
+		</appliedOnFixedBodyParts>
+		<incompatibleWithHediffTags>
+			<li>TSOA_CrownImplant</li>
+		</incompatibleWithHediffTags>
 	</RecipeDef>
 	
 	<!-- Anima Eye -->
@@ -1174,9 +1190,6 @@
 				<unlinkCompleteSound>PsychicShockLanceCast</unlinkCompleteSound>
 			</li>
 		</comps>
-		<tags>
-			<li>TSOA_CrownImplant</li>
-		</tags>
 	</HediffDef>
 
 	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
@@ -1198,16 +1211,12 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef ParentName="SurgeryInstallImplantBase">
+	<RecipeDef ParentName="TSOA_InstallImplantCrownBase">
 		<defName>TSOA_InstallMentorCrown</defName>
 		<label>install mentor crown implant</label>
 		<description>Install a mentor crown implant.</description>
 		<jobString>Installing mentor crown implant.</jobString>
 		<workAmount>2500</workAmount>
-		<workerClass>Recipe_InstallImplant</workerClass>
-		<appliedOnFixedBodyParts>
-			<li>Head</li>
-		</appliedOnFixedBodyParts>
 		<ingredients>
 			<li>
 				<filter>
@@ -1219,9 +1228,6 @@
 			</li>
 		</ingredients>
 		<addsHediff>TSOA_MentorCrown</addsHediff>
-		<incompatibleWithHediffTags>
-			<li>TSOA_CrownImplant</li>
-		</incompatibleWithHediffTags>
 	</RecipeDef>
 
 	<!-- Inheritor Crown -->
@@ -1236,9 +1242,6 @@
 				<affectedStat>PsychicSensitivity</affectedStat>
 			</li>
 		</comps>
-		<tags>
-			<li>TSOA_CrownImplant</li>
-		</tags>
 	</HediffDef>
 
 	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
@@ -1266,16 +1269,12 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef ParentName="SurgeryInstallImplantBase">
+	<RecipeDef ParentName="TSOA_InstallImplantCrownBase">
 		<defName>TSOA_InstallInheritorCrown</defName>
 		<label>install inheritor crown implant</label>
 		<description>Install an inheritor crown implant.</description>
 		<jobString>Installing inheritor crown implant.</jobString>
 		<workAmount>2500</workAmount>
-		<workerClass>Recipe_InstallImplant</workerClass>
-		<appliedOnFixedBodyParts>
-			<li>Head</li>
-		</appliedOnFixedBodyParts>
 		<ingredients>
 			<li>
 				<filter>
@@ -1287,9 +1286,6 @@
 			</li>
 		</ingredients>
 		<addsHediff>TSOA_InheritorCrown</addsHediff>
-		<incompatibleWithHediffTags>
-			<li>TSOA_CrownImplant</li>
-		</incompatibleWithHediffTags>
 	</RecipeDef>
 	
 </Defs>

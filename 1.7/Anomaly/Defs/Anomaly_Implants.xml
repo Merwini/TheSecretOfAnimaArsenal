@@ -975,9 +975,6 @@
 				<unlinkCompleteSound>PsychicShockLanceCast</unlinkCompleteSound>
 			</li>
 		</comps>
-		<tags>
-			<li>TSOA_CrownImplant</li>
-		</tags>
 	</HediffDef>
 
 	<ThingDef ParentName="TSOA_BioferriteBodyPartBase">
@@ -999,16 +996,12 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef ParentName="SurgeryInstallImplantBase">
+	<RecipeDef ParentName="TSOA_InstallImplantCrownBase">
 		<defName>TSOA_InstallSovereignCrown</defName>
 		<label>install sovereign crown implant</label>
 		<description>Install a sovereign crown implant.</description>
 		<jobString>Installing sovereign crown implant.</jobString>
 		<workAmount>2500</workAmount>
-		<workerClass>Recipe_InstallImplant</workerClass>
-		<appliedOnFixedBodyParts>
-			<li>Head</li>
-		</appliedOnFixedBodyParts>
 		<ingredients>
 			<li>
 				<filter>
@@ -1036,9 +1029,6 @@
 				<affectedStat>PsychicSensitivity</affectedStat>
 			</li>
 		</comps>
-		<tags>
-			<li>TSOA_CrownImplant</li>
-		</tags>
 	</HediffDef>
 	
 	<ThingDef ParentName="TSOA_BioferriteBodyPartBase">
@@ -1060,16 +1050,12 @@
 		</products>
 	</RecipeDef>
 
-	<RecipeDef ParentName="SurgeryInstallImplantBase">
+	<RecipeDef ParentName="TSOA_InstallImplantCrownBase">
 		<defName>TSOA_InstallThrallCrown</defName>
 		<label>install thrall crown implant</label>
 		<description>Install a thrall crown implant.</description>
 		<jobString>Installing thrall crown implant.</jobString>
 		<workAmount>2500</workAmount>
-		<workerClass>Recipe_InstallImplant</workerClass>
-		<appliedOnFixedBodyParts>
-			<li>Head</li>
-		</appliedOnFixedBodyParts>
 		<ingredients>
 			<li>
 				<filter>
@@ -1081,9 +1067,6 @@
 			</li>
 		</ingredients>
 		<addsHediff>TSOA_ThrallCrown</addsHediff>
-		<incompatibleWithHediffTags>
-			<li>TSOA_CrownImplant</li>
-		</incompatibleWithHediffTags>
 	</RecipeDef>
 
 </Defs>

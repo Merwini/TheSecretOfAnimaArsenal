@@ -75,12 +75,6 @@
 		</injuryProps>
 	</HediffDef>
 
-	<HediffDef ParentName="ImplantHediffBase" Abstract="True" Name="TSOA_StatExchangerBase">
-		<tags>
-			<li>TSOA_Crown</li>
-		</tags>
-	</HediffDef>
-	
 	<!-- Needs to be here so I don't have to put the DefOf in a separate assembly -->
 	<HediffDef>
 		<defName>TSOA_VirionHediff</defName>
