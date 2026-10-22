@@ -243,6 +243,13 @@ public class HediffComp_StatExchanger : HediffComp
         }
     }
 
+    public override void CompPostPostRemoved()
+    {
+        NotifyLinkBreak();
+
+        base.CompPostPostRemoved();
+    }
+
     public void ValidateLinksStillGood()
     {
         var tempList = LinkedComps;
