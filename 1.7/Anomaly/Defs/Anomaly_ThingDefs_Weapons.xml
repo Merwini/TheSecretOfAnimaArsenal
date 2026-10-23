@@ -9,6 +9,7 @@
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteKopesh</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.1, 1.1)</drawSize>
 		</graphicData>
 		<equippedAngleOffset>-15</equippedAngleOffset>
 		<techLevel>Medieval</techLevel>

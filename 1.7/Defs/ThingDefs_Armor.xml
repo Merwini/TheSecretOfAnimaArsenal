@@ -63,7 +63,9 @@
 		</tradeTags>
 		
 		<comps>
-			<li Class="tsoa.arsenal.CompProperties_PsyShield" />
+			<li Class="tsoa.arsenal.CompProperties_PsyShield">
+				<heatPerDamage>1</heatPerDamage>
+			</li>
 		</comps>
 	</ThingDef>
 
@@ -318,7 +320,7 @@
 
 		<comps>
 			<li Class="tsoa.arsenal.CompProperties_PsyShield">
-				<heatPerDamage>1</heatPerDamage>
+				<heatPerDamage>2</heatPerDamage>
 				<resetDelayTicks>180</resetDelayTicks>
 			</li>
 		</comps>
