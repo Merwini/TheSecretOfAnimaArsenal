@@ -122,7 +122,6 @@
 		<addedPartProps>
 			<solid>true</solid>
 			<betterThanNatural>true</betterThanNatural>
-			<partEfficiency>0.5</partEfficiency>
 		</addedPartProps>
 		<renderNodeProperties>
 			<li Class="PawnRenderNodeProperties_Eye">
@@ -151,6 +150,9 @@
 		<defName>TSOA_AnimaEyeOne</defName>
 		<label>anima eye (inert)</label>
 		<description>A chunk of jade carved into the shape of an eye, infused with anima tree essence and animated by the user's psychic attunement. The user's psychic connection is too weak to properly animate it, and it functions only as a poor approximation of the natural organ.</description>
+		<addedPartProps>
+			<partEfficiency>0.5</partEfficiency>
+		</addedPartProps>
 		<comps>
 			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingImplantDef>TSOA_AnimaEyeEvolving</evolvingImplantDef>
@@ -170,6 +172,9 @@
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
+		<addedPartProps>
+			<partEfficiency>0.75</partEfficiency>
+		</addedPartProps>
 		<comps>
 			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingImplantDef>TSOA_AnimaEyeEvolving</evolvingImplantDef>
@@ -184,11 +189,13 @@
 			<li>
 				<statOffsets>
 					<PawnTrapSpringChance>-0.5</PawnTrapSpringChance>
-					<GlobalLearningFactor>0.2</GlobalLearningFactor>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
+		<addedPartProps>
+			<partEfficiency>0.9</partEfficiency>
+		</addedPartProps>
 		<comps>
 			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingImplantDef>TSOA_AnimaEyeEvolving</evolvingImplantDef>
@@ -204,11 +211,13 @@
 				<statOffsets>
 					<PawnTrapSpringChance>-0.5</PawnTrapSpringChance>
 					<GlobalLearningFactor>0.2</GlobalLearningFactor>
-					<MeditationFocusGain>0.05</MeditationFocusGain>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
+		<addedPartProps>
+			<partEfficiency>1.1</partEfficiency>
+		</addedPartProps>
 		<comps>
 			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingImplantDef>TSOA_AnimaEyeEvolving</evolvingImplantDef>
@@ -224,12 +233,13 @@
 				<statOffsets>
 					<PawnTrapSpringChance>-0.25</PawnTrapSpringChance>
 					<GlobalLearningFactor>0.2</GlobalLearningFactor>
-					<MeditationFocusGain>0.05</MeditationFocusGain>
-					<MeleeDodgeChance>2</MeleeDodgeChance>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
+		<addedPartProps>
+			<partEfficiency>1.3</partEfficiency>
+		</addedPartProps>
 		<comps>
 			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
 				<evolvingImplantDef>TSOA_AnimaEyeEvolving</evolvingImplantDef>

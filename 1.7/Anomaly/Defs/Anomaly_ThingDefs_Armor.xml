@@ -151,7 +151,6 @@
 		<label>bioferrite virion armor</label>
 		<description>A suit of bioferrite armor. This armor blurs the line between organic and inorganic material, being grown from a Virion instead of crafted by hand. While naturally brittle, the bioferrite feeds on the wearer's psychic prescence, hardening itself but fraying the wearer's sanity.</description>
 		<graphicData>
-			<!-- TODO placeholder -->
 			<texPath>TSOA/Things/Apparel/BioferriteVirion/BioferriteArmor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.2, 1.2)</drawSize>
@@ -272,7 +271,6 @@
 		<label>bioferrite virion helm</label>
 		<description>A bioferrite helmet. This armor blurs the line between organic and inorganic material, being grown from a Virion instead of crafted by hand. While naturally brittle, the bioferrite feeds on the wearer's psychic prescence, hardening itself but fraying the wearer's sanity.</description>
 		<graphicData>
-			<!-- TODO placeholder -->
 			<texPath>TSOA/Things/Apparel/BioferriteVirion/BioferriteHelm</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(0.9, 0.9)</drawSize>
