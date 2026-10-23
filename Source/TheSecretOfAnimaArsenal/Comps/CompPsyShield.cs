@@ -206,7 +206,13 @@ public class CompPsyShield : ThingComp
     public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
     {
         absorbed = false;
-        if (ShieldState != ShieldState.Active || PawnOwner == null || PawnOwner.psychicEntropy == null || PawnOwner.GetPsylinkLevel() <= 0)
+        Pawn pawn = PawnOwner;
+        if (ShieldState != ShieldState.Active || 
+            pawn == null || pawn.Dead || !pawn.Spawned || pawn.Map == null || 
+            pawn.psychicEntropy == null || pawn.GetPsylinkLevel() <= 0)
+            return;
+
+        if (dinfo.Def == DamageDefOf.Deterioration || dinfo.Def.ignoreShields)
             return;
 
         float damage = dinfo.Amount;
