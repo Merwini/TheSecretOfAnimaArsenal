@@ -144,20 +144,28 @@
 		<tags>
 			<li>TSOA_AnimaEye</li>
 		</tags>
+		<comps>
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
+				<evolvingImplantDef>TSOA_AnimaEyeEvolving</evolvingImplantDef>
+			</li>
+		</comps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaEyeBase">
 		<defName>TSOA_AnimaEyeOne</defName>
 		<label>anima eye (inert)</label>
 		<description>A chunk of jade carved into the shape of an eye, infused with anima tree essence and animated by the user's psychic attunement. The user's psychic connection is too weak to properly animate it, and it functions only as a poor approximation of the natural organ.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<PawnTrapSpringChance>-0.5</PawnTrapSpringChance>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+			</li>
+		</stages>
 		<addedPartProps>
 			<partEfficiency>0.5</partEfficiency>
 		</addedPartProps>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaEyeEvolving</evolvingImplantDef>
-			</li>
-		</comps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaEyeBase">
@@ -168,6 +176,7 @@
 			<li>
 				<statOffsets>
 					<PawnTrapSpringChance>-0.5</PawnTrapSpringChance>
+					<GlobalLearningFactor>0.2</GlobalLearningFactor>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
@@ -175,11 +184,6 @@
 		<addedPartProps>
 			<partEfficiency>0.75</partEfficiency>
 		</addedPartProps>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaEyeEvolving</evolvingImplantDef>
-			</li>
-		</comps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaEyeBase">
@@ -189,6 +193,7 @@
 			<li>
 				<statOffsets>
 					<PawnTrapSpringChance>-0.5</PawnTrapSpringChance>
+					<GlobalLearningFactor>0.2</GlobalLearningFactor>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
@@ -196,11 +201,6 @@
 		<addedPartProps>
 			<partEfficiency>0.9</partEfficiency>
 		</addedPartProps>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaEyeEvolving</evolvingImplantDef>
-			</li>
-		</comps>
 	</HediffDef>
 	
 	<HediffDef ParentName="TSOA_AnimaEyeBase">
@@ -216,13 +216,8 @@
 			</li>
 		</stages>
 		<addedPartProps>
-			<partEfficiency>1.1</partEfficiency>
+			<partEfficiency>1.2</partEfficiency>
 		</addedPartProps>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaEyeEvolving</evolvingImplantDef>
-			</li>
-		</comps>
 	</HediffDef>
 	
 	<HediffDef ParentName="TSOA_AnimaEyeBase">
@@ -231,20 +226,15 @@
 		<stages>
 			<li>
 				<statOffsets>
-					<PawnTrapSpringChance>-0.25</PawnTrapSpringChance>
+					<PawnTrapSpringChance>-0.5</PawnTrapSpringChance>
 					<GlobalLearningFactor>0.2</GlobalLearningFactor>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
 		<addedPartProps>
-			<partEfficiency>1.3</partEfficiency>
+			<partEfficiency>1.4</partEfficiency>
 		</addedPartProps>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaEyeEvolving</evolvingImplantDef>
-			</li>
-		</comps>
 	</HediffDef>
 
 	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
@@ -326,22 +316,32 @@
 		<addedPartProps>
 			<solid>true</solid>
 			<betterThanNatural>true</betterThanNatural>
-			<partEfficiency>0.9</partEfficiency>
 		</addedPartProps>
 		<tags>
 			<li>TSOA_AnimaLung</li>
 		</tags>
+		<comps>
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
+				<evolvingImplantDef>TSOA_AnimaLungEvolving</evolvingImplantDef>
+			</li>
+		</comps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaLungBase">
 		<defName>TSOA_AnimaLungOne</defName>
 		<label>anima lung (inert)</label>
 		<description>A rough approximation of a lung, crafted from anima grass, bark, and jade. The user's psychic attunement is too weak to properly animate the lung, and it functions only as a poor replacement for a natural organ.</description>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaLungEvolving</evolvingImplantDef>
+		<stages>
+			<li>
+				<statOffsets>
+					<SocialImpact>0.2</SocialImpact>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
-		</comps>
+		</stages>
+		<addedPartProps>
+			<partEfficiency>0.7</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaLungBase">
@@ -351,16 +351,15 @@
 		<stages>
 			<li>
 				<statOffsets>
-					<SocialImpact>0.1</SocialImpact>
+					<SocialImpact>0.2</SocialImpact>
+					<NegotiationAbility>0.1</NegotiationAbility>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaLungEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>0.8</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaLungBase">
@@ -369,18 +368,16 @@
 		<stages>
 			<li>
 				<statOffsets>
-					<SocialImpact>0.1</SocialImpact>
+					<SocialImpact>0.2</SocialImpact>
 					<NegotiationAbility>0.1</NegotiationAbility>
 					<ConversionPower MayRequire="Ludeon.RimWorld.Ideology">0.1</ConversionPower>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaLungEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>0.9</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaLungBase">
@@ -389,18 +386,17 @@
 		<stages>
 			<li>
 				<statOffsets>
-					<SocialImpact>0.1</SocialImpact>
+					<SocialImpact>0.2</SocialImpact>
 					<NegotiationAbility>0.1</NegotiationAbility>
 					<ConversionPower MayRequire="Ludeon.RimWorld.Ideology">0.1</ConversionPower>
+					<TradePriceImprovement>0.1</TradePriceImprovement>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaLungEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>1.0</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaLungBase">
@@ -409,7 +405,7 @@
 		<stages>
 			<li>
 				<statOffsets>
-					<SocialImpact>0.1</SocialImpact>
+					<SocialImpact>0.2</SocialImpact>
 					<NegotiationAbility>0.1</NegotiationAbility>
 					<ConversionPower MayRequire="Ludeon.RimWorld.Ideology">0.1</ConversionPower>
 					<TradePriceImprovement>0.1</TradePriceImprovement>
@@ -417,11 +413,9 @@
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaLungEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>1.1</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
@@ -503,22 +497,29 @@
 		<addedPartProps>
 			<solid>true</solid>
 			<betterThanNatural>true</betterThanNatural>
-			<partEfficiency>0.9</partEfficiency>
 		</addedPartProps>
 		<tags>
 			<li>TSOA_AnimaHeart</li>
 		</tags>
+		<comps>
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
+				<evolvingImplantDef>TSOA_AnimaHeartEvolving</evolvingImplantDef>
+			</li>
+		</comps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaHeartBase">
 		<defName>TSOA_AnimaHeartOne</defName>
 		<label>anima heart (inert)</label>
 		<description>A rough approximation of a heart, crafted from anima grass, bark, and jade. The user's psychic attunement is too weak to properly animate the heart, and it functions only as a poor replacement for a natural organ.</description>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-			<evolvingImplantDef>TSOA_AnimaHeartEvolving</evolvingImplantDef>
+		<stages>
+			<li>
+				<totalBleedFactor>0.75</totalBleedFactor>
 			</li>
-		</comps>
+		</stages>
+		<addedPartProps>
+			<partEfficiency>0.7</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaHeartBase">
@@ -531,13 +532,12 @@
 					<InjuryHealingFactor>0.2</InjuryHealingFactor>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+				<totalBleedFactor>0.6</totalBleedFactor>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-			<evolvingImplantDef>TSOA_AnimaHeartEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>0.8</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaHeartBase">
@@ -548,15 +548,13 @@
 				<statOffsets>
 					<InjuryHealingFactor>0.2</InjuryHealingFactor>
 				</statOffsets>
-				<totalBleedFactor>0.75</totalBleedFactor>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+				<totalBleedFactor>0.5</totalBleedFactor>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-			<evolvingImplantDef>TSOA_AnimaHeartEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>0.9</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaHeartBase">
@@ -566,17 +564,15 @@
 			<li>
 				<statOffsets>
 					<InjuryHealingFactor>0.2</InjuryHealingFactor>
-					<ImmunityGainSpeed>0.2</ImmunityGainSpeed>
+					<LifespanFactor>1</LifespanFactor>
 				</statOffsets>
-				<totalBleedFactor>0.5</totalBleedFactor>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+				<totalBleedFactor>0.4</totalBleedFactor>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-			<evolvingImplantDef>TSOA_AnimaHeartEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>1.0</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaHeartBase">
@@ -586,18 +582,15 @@
 			<li>
 				<statOffsets>
 					<InjuryHealingFactor>0.2</InjuryHealingFactor>
-					<ImmunityGainSpeed>0.2</ImmunityGainSpeed>
-					<LifespanFactor>0.5</LifespanFactor>
+					<LifespanFactor>1</LifespanFactor>
 				</statOffsets>
-				<totalBleedFactor>0.25</totalBleedFactor>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
+				<totalBleedFactor>0.3</totalBleedFactor>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-			<evolvingImplantDef>TSOA_AnimaHeartEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>1.1</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
@@ -679,22 +672,32 @@
 		<addedPartProps>
 			<solid>true</solid>
 			<betterThanNatural>true</betterThanNatural>
-			<partEfficiency>0.9</partEfficiency>
 		</addedPartProps>
 		<tags>
 			<li>TSOA_AnimaLiver</li>
 		</tags>
+		<comps>
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
+				<evolvingImplantDef>TSOA_AnimaLiverEvolving</evolvingImplantDef>
+			</li>
+		</comps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaLiverBase">
 		<defName>TSOA_AnimaLiverOne</defName>
 		<label>anima liver (inert)</label>
 		<description>A rough approximation of a liver, crafted from anima grass, bark, and jade. The user's psychic attunement is too weak to properly animate the liver, and it functions only as a poor replacement for a natural organ.</description>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-			<evolvingImplantDef>TSOA_AnimaLiverEvolving</evolvingImplantDef>
+		<stages>
+			<li>
+				<statOffsets>
+					<ToxicEnvironmentResistance>0.1</ToxicEnvironmentResistance>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
-		</comps>
+		</stages>
+		<addedPartProps>
+			<partEfficiency>0.7</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaLiverBase">
@@ -704,16 +707,15 @@
 		<stages>
 			<li>
 				<statOffsets>
-					<RestFallRateFactor>-0.1</RestFallRateFactor>
+					<ToxicEnvironmentResistance>0.1</ToxicEnvironmentResistance>
+					<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-			<evolvingImplantDef>TSOA_AnimaLiverEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>0.8</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaLiverBase">
@@ -722,17 +724,15 @@
 		<stages>
 			<li>
 				<statOffsets>
-					<RestFallRateFactor>-0.1</RestFallRateFactor>
-					<PainShockThreshold>0.03</PainShockThreshold>
+					<ToxicEnvironmentResistance>0.1</ToxicEnvironmentResistance>
+					<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-			<evolvingImplantDef>TSOA_AnimaLiverEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>0.9</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaLiverBase">
@@ -741,18 +741,16 @@
 		<stages>
 			<li>
 				<statOffsets>
+					<ToxicEnvironmentResistance>0.1</ToxicEnvironmentResistance>
+					<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
 					<RestFallRateFactor>-0.1</RestFallRateFactor>
-					<PainShockThreshold>0.03</PainShockThreshold>
-					<PsychicEntropyMax>20</PsychicEntropyMax>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-			<evolvingImplantDef>TSOA_AnimaLiverEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>1.0</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaLiverBase">
@@ -761,19 +759,16 @@
 		<stages>
 			<li>
 				<statOffsets>
+					<ToxicEnvironmentResistance>0.1</ToxicEnvironmentResistance>
+					<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
 					<RestFallRateFactor>-0.1</RestFallRateFactor>
-					<PainShockThreshold>0.03</PainShockThreshold>
-					<PsychicEntropyMax>20</PsychicEntropyMax>
-					<ArrestSuccessChance>0.1</ArrestSuccessChance>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-			<evolvingImplantDef>TSOA_AnimaLiverEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>1.1</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
@@ -855,22 +850,32 @@
 		<addedPartProps>
 			<solid>true</solid>
 			<betterThanNatural>true</betterThanNatural>
-			<partEfficiency>0.9</partEfficiency>
 		</addedPartProps>
 		<tags>
 			<li>TSOA_AnimaKidney</li>
 		</tags>
+		<comps>
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
+				<evolvingImplantDef>TSOA_AnimaKidneyEvolving</evolvingImplantDef>
+			</li>
+		</comps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaKidneyBase">
 		<defName>TSOA_AnimaKidneyOne</defName>
 		<label>anima kidney (inert)</label>
 		<description>A rough approximation of a Kidney, crafted from anima grass, bark, and jade. The user's psychic attunement is too weak to properly animate the kidney, and it functions only as a poor replacement for a natural organ.</description>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaKidneyEvolving</evolvingImplantDef>
+		<stages>
+			<li>
+				<statOffsets>
+					<JoyFallRateFactor>-0.1</JoyFallRateFactor>
+				</statOffsets>
+				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
-		</comps>
+		</stages>
+		<addedPartProps>
+			<partEfficiency>0.7</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaKidneyBase">
@@ -881,15 +886,14 @@
 			<li>
 				<statOffsets>
 					<JoyFallRateFactor>-0.1</JoyFallRateFactor>
+					<PainShockThreshold>0.03</PainShockThreshold>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaKidneyEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>0.8</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaKidneyBase">
@@ -899,16 +903,14 @@
 			<li>
 				<statOffsets>
 					<JoyFallRateFactor>-0.1</JoyFallRateFactor>
-					<TSOA_ComfortFactor>0.1</TSOA_ComfortFactor>
+					<PainShockThreshold>0.03</PainShockThreshold>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaKidneyEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>0.9</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaKidneyBase">
@@ -918,18 +920,15 @@
 			<li>
 				<statOffsets>
 					<JoyFallRateFactor>-0.1</JoyFallRateFactor>
+					<PainShockThreshold>0.03</PainShockThreshold>
 					<TSOA_ComfortFactor>0.1</TSOA_ComfortFactor>
-					<MentalBreakThreshold>-0.02</MentalBreakThreshold>
-					<PsychicEntropyRecoveryRate>0.1</PsychicEntropyRecoveryRate>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaKidneyEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>1.0</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaKidneyBase">
@@ -939,18 +938,15 @@
 			<li>
 				<statOffsets>
 					<JoyFallRateFactor>-0.1</JoyFallRateFactor>
+					<PainShockThreshold>0.03</PainShockThreshold>
 					<TSOA_ComfortFactor>0.1</TSOA_ComfortFactor>
-					<MentalBreakThreshold>-0.02</MentalBreakThreshold>
-					<PsychicEntropyRecoveryRate>0.1</PsychicEntropyRecoveryRate>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaKidneyEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>1.1</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
@@ -1037,17 +1033,25 @@
 		<tags>
 			<li>TSOA_AnimaStomach</li>
 		</tags>
+		<comps>
+			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
+				<evolvingImplantDef>TSOA_AnimaStomachEvolving</evolvingImplantDef>
+			</li>
+		</comps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaStomachBase">
 		<defName>TSOA_AnimaStomachOne</defName>
 		<label>anima stomach (inert)</label>
 		<description>A rough approximation of a Stomach, crafted from anima grass, bark, and jade. The user's psychic attunement is too weak to properly animate the stomach, and it functions only as a poor replacement for a natural organ.</description>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaStomachEvolving</evolvingImplantDef>
+		<stages>
+			<li>
+				<hungerRateFactor>0.8</hungerRateFactor>
 			</li>
-		</comps>
+		</stages>
+		<addedPartProps>
+			<partEfficiency>0.7</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaStomachBase">
@@ -1056,17 +1060,17 @@
 		<description>A rough approximation of a stomach, crafted from anima grass, bark, and jade. The user's psychic attunement animates the stomach weakly, and it provides only a fraction of its potential.</description>
 		<stages>
 			<li>
+				<hungerRateFactor>0.8</hungerRateFactor>
 				<statOffsets>
-					<MaxNutrition>1</MaxNutrition>
+					<ComfyTemperatureMin>-4</ComfyTemperatureMin>
+					<ComfyTemperatureMax>4</ComfyTemperatureMax>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaStomachEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>0.8</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaStomachBase">
@@ -1074,18 +1078,17 @@
 		<label>anima stomach</label>
 		<stages>
 			<li>
+				<hungerRateFactor>0.8</hungerRateFactor>
 				<statOffsets>
-					<MaxNutrition>1</MaxNutrition>
-					<ToxicEnvironmentResistance>0.25</ToxicEnvironmentResistance>
+					<ComfyTemperatureMin>-4</ComfyTemperatureMin>
+					<ComfyTemperatureMax>4</ComfyTemperatureMax>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaStomachEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>0.9</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaStomachBase">
@@ -1093,19 +1096,18 @@
 		<label>anima stomach (empowered)</label>
 		<stages>
 			<li>
+				<hungerRateFactor>0.8</hungerRateFactor>
 				<statOffsets>
-					<MaxNutrition>1</MaxNutrition>
-					<ToxicEnvironmentResistance>0.25</ToxicEnvironmentResistance>
 					<ComfyTemperatureMin>-4</ComfyTemperatureMin>
+					<ComfyTemperatureMax>4</ComfyTemperatureMax>
+					<MaxNutrition>1</MaxNutrition>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaStomachEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>1.0</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<HediffDef ParentName="TSOA_AnimaStomachBase">
@@ -1113,20 +1115,18 @@
 		<label>anima stomach (ascended)</label>
 		<stages>
 			<li>
+				<hungerRateFactor>0.8</hungerRateFactor>
 				<statOffsets>
-					<MaxNutrition>1</MaxNutrition>
-					<ToxicEnvironmentResistance>0.25</ToxicEnvironmentResistance>
 					<ComfyTemperatureMin>-4</ComfyTemperatureMin>
 					<ComfyTemperatureMax>4</ComfyTemperatureMax>
+					<MaxNutrition>1</MaxNutrition>
 				</statOffsets>
 				<statOffsetEffectMultiplier>PsychicSensitivity</statOffsetEffectMultiplier>
 			</li>
 		</stages>
-		<comps>
-			<li Class="tsoa.arsenal.HediffCompProperties_Evolving">
-				<evolvingImplantDef>TSOA_AnimaStomachEvolving</evolvingImplantDef>
-			</li>
-		</comps>
+		<addedPartProps>
+			<partEfficiency>1.1</partEfficiency>
+		</addedPartProps>
 	</HediffDef>
 
 	<ThingDef ParentName="TSOA_AnimaBodyPartBase">
