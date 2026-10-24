@@ -34,7 +34,7 @@
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
-		<defName>TSOA_AnimaWeapons</defName>
+		<defName>TSOA_AcolyteWeapons</defName>
 		<label>acolyte weapons</label>
 		<description>Craft weapons made from anima tree parts and jade. These weapons vent the wielder's neural heat to deal additional psychic damage with every blow.</description>
 		<baseCost>1500</baseCost>
@@ -49,6 +49,21 @@
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
+		<defName>TSOA_ShamanWeapons</defName>
+		<label>shaman weapons</label>
+		<description>Craft weapons made from anima tree parts and jade. These weapons vent the wielder's neural heat to deal additional psychic damage with every blow.</description>
+		<baseCost>2500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>TSOA_AnimaThree</li>
+			<li>TSOA_AcolyteWeapons</li>
+		</prerequisites>
+		<tab>TSOA_ResearchTab</tab>
+		<researchViewX>5.00</researchViewX>
+		<researchViewY>4.20</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
 		<defName>TSOA_AnimaImplants</defName>
 		<label>anima organs</label>
 		<description>Craft artificial organs made from anima grass, bark, and jade. They tend to be less efficient than natural organs, but confer a variety of benefits based on the psychic sensitivity of the recipient.</description>
@@ -59,7 +74,7 @@
 		</prerequisites>
 		<tab>TSOA_ResearchTab</tab>
 		<researchViewX>5.00</researchViewX>
-		<researchViewY>4.20</researchViewY>
+		<researchViewY>4.90</researchViewY>
 	</ResearchProjectDef>
 	
 </Defs>

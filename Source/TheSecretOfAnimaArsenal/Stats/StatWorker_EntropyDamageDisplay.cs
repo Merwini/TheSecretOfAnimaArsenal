@@ -10,42 +10,53 @@ public class StatWorker_EntropyDamageDisplay : StatWorker
 {
     public override bool ShouldShowFor(StatRequest req)
     {
+        ThingDef def = null;
         if (req.HasThing)
-            return req.Thing.def.statBases.StatListContains(TSOAA_DefOf.TSOA_EntropyDamage);
+            def = req.Thing.def;
+        else if (req.Def is ThingDef)
+            def = req.Def as ThingDef;
 
-        if (req.Def is ThingDef thingDef)
-            return thingDef.statBases != null && thingDef.statBases.StatListContains(TSOAA_DefOf.TSOA_EntropyDamage);
+        if (def == null) return false;
 
-        return false;
+        EntropyDamageExtension extension = def.GetModExtension<EntropyDamageExtension>();
+
+        return extension != null;
     }
 
     public override float GetValueUnfinalized(StatRequest req, bool applyPostProcess = true)
     {
+        ThingDef def = null;
         if (req.HasThing)
-            return req.Thing.def.statBases.GetStatValueFromList(TSOAA_DefOf.TSOA_EntropyDamage, 0f);
+            def = req.Thing.def;
+        else if (req.Def is ThingDef)
+            def = req.Def as ThingDef;
 
-        if (req.Def is ThingDef thingDef)
-            return thingDef.statBases?.GetStatValueFromList(TSOAA_DefOf.TSOA_EntropyDamage, 0f) ?? 0f;
+        if (def == null) return 0f;
+
+        if (def.GetModExtension<EntropyDamageExtension>() is EntropyDamageExtension extension)
+                return extension.entropyCounted;
 
         return 0f;
     }
 
     public override string GetExplanationUnfinalized(StatRequest req, ToStringNumberSense numberSense)
     {
-        ThingDef def;
+        ThingDef def = null;
         if (req.HasThing)
             def = req.Thing.def;
-        else
+        else if (req.Def is ThingDef)
             def = req.Def as ThingDef;
 
-        float percent = def.statBases.GetStatValueFromList(TSOAA_DefOf.TSOA_EntropyDamage, 0);
-        float damage = def.tools
-            .Where(t => !t.extraMeleeDamages.NullOrEmpty())
-            .SelectMany(t => t.extraMeleeDamages)
-            .FirstOrDefault(d => d.def == TSOAA_DefOf.TSOA_EntropyExtraDamage)
-            ?.amount ?? 0f;
+        if (def == null) return "[TSOA] something has gone wrong, this should not be visible.";
 
-        return "TSOA_EntropyDamageWorkerExplanation".Translate(percent.ToStringPercent(), damage);
+        EntropyDamageExtension extension = def.GetModExtension<EntropyDamageExtension>();
+        if (extension == null)
+        {
+            Log.Error($"[TSOA] {def.defName} has stat TSOA_EntropyDamage but no EntropyDamageExtension"); // maybe ErrorOnce?
+            extension = new();
+        }
+
+        return "TSOA_EntropyDamageWorkerExplanation".Translate(extension.entropyCounted.ToStringPercent(), extension.entropySpent.ToStringPercent(), extension.damagePerEntropy);
     }
 
     public override string GetExplanationFinalizePart(StatRequest req, ToStringNumberSense numberSense, float finalVal)

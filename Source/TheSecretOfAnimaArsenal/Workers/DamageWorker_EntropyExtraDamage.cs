@@ -13,39 +13,37 @@ public class DamageWorker_EntropyExtraDamage : DamageWorker_AddInjury
 {
     public override DamageResult Apply(DamageInfo dinfo, Thing victim)
     {
-        if (!(victim is Pawn victimPawn))
-        {
-            return new DamageResult();
-        }
         Pawn pawn = dinfo.Instigator as Pawn;
 
-        float heatConsumedPercent = dinfo.Weapon?.GetStatValueAbstract(TSOAA_DefOf.TSOA_EntropyDamage) ?? 0;
-
-        if (pawn == null || victim == null || heatConsumedPercent == 0 || pawn.GetPsylinkLevel() <= 0)
+        EntropyDamageExtension extension = dinfo.Weapon?.GetModExtension<EntropyDamageExtension>();
+        
+        if (pawn == null || victim is not Pawn || extension == null || pawn.GetPsylinkLevel() <= 0)
             return new DamageResult();
 
         float originalHeat = pawn.psychicEntropy.EntropyValue;
-        float heatCost = originalHeat * heatConsumedPercent;
+        float heatCounted = originalHeat * extension.entropyCounted;
 
-        if (heatCost == 0)
-        {
+        if (heatCounted == 0)
             return new DamageResult();
-        }
 
-        float bonusDamage = heatCost * dinfo.Amount;
+        float heatSpent = originalHeat * extension.entropySpent;
+        float bonusDamage = heatCounted * extension.damagePerEntropy;
 
-        pawn.psychicEntropy.TryAddEntropy(-heatCost, null);
+        pawn.psychicEntropy.TryAddEntropy(-heatSpent, null, false);
+
+        // make sure a misconfigured damageDef doesn't create an infinite loop
+        DamageDef newDamage = extension.damageDef != TSOAA_DefOf.TSOA_EntropyExtraDamage ? extension.damageDef : TSOAA_DefOf.TSOA_EntropicDischarge;
 
         DamageInfo newDinfo = new DamageInfo(dinfo);
-        newDinfo.Def = TSOAA_DefOf.TSOA_EntropicDischarge;
+        newDinfo.Def = newDamage;
         newDinfo.SetAmount(bonusDamage);
         newDinfo.SetIgnoreArmor(true);
 
         if (DebugSettings.godMode)
         {
-            Log.Message($"[TSOA] DamageWorker_PsyExtraDamage: {pawn.LabelShort} consumed {heatCost} heat (from {originalHeat}) to deal {bonusDamage} extra {TSOAA_DefOf.TSOA_EntropicDischarge.label} damage to {victim.LabelShort} with penetration: {dinfo.ArmorPenetrationInt}");
+            Log.Message($"[TSOA] DamageWorker_PsyExtraDamage: {pawn.LabelShort} consumed {heatSpent} heat (from {originalHeat}) to deal {bonusDamage} extra {newDamage.LabelCap} damage to {victim.LabelShort} with penetration: {dinfo.ArmorPenetrationInt}");
         }
 
-        return base.Apply(newDinfo, victim);
+        return newDamage.Worker.Apply(newDinfo, victim);
     }
 }

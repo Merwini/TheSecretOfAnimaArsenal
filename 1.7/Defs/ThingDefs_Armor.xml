@@ -100,14 +100,6 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>DevilstrandCloth</li>
-					</thingDefs>
-				</filter>
-				<count>150</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
 						<li>TSOA_AnimaGrassResource</li>
 					</thingDefs>
 				</filter>
@@ -119,7 +111,15 @@
 						<li>TSOA_AnimaBark</li>
 					</thingDefs>
 				</filter>
-				<count>6</count>
+				<count>4</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TSOA_AnimaAmber</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
 			</li>
 		</ingredients>
 

@@ -20,7 +20,6 @@
 			<MaxHitPoints>200</MaxHitPoints>
 			<WorkToMake>24000</WorkToMake>
 			<Mass>1</Mass>
-			<TSOA_EntropyDamage>0.1</TSOA_EntropyDamage>
 		</statBases>
 
 		<costList>
@@ -30,7 +29,7 @@
 			<Steel>10</Steel>
 		</costList>
 		<recipeMaker>
-			<researchPrerequisite>TSOA_AnimaWeapons</researchPrerequisite>
+			<researchPrerequisite>TSOA_AcolyteWeapons</researchPrerequisite>
 			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
 			<skillRequirements>
 				<Crafting>7</Crafting>
@@ -57,7 +56,7 @@
 				<extraMeleeDamages>
 					<li>
 						<def>TSOA_EntropyExtraDamage</def>
-						<amount>2</amount>
+						<amount>1</amount>
 					</li>
 				</extraMeleeDamages>
 			</li>
@@ -72,6 +71,13 @@
 			<li>Neolithic</li>
 			<li>Melee</li>
 		</weaponClasses>
+		<modExtensions>
+			<li Class="tsoa.arsenal.EntropyDamageExtension">
+				<damageDef>TSOA_EntropicDischarge</damageDef>
+				<entropyCounted>0.1</entropyCounted>
+				<damagePerEntropy>2</damagePerEntropy>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 	<!-- Anima War Club -->
@@ -93,7 +99,6 @@
 			<MaxHitPoints>200</MaxHitPoints>
 			<WorkToMake>24000</WorkToMake>
 			<Mass>1.4</Mass>
-			<TSOA_EntropyDamage>0.1</TSOA_EntropyDamage>
 		</statBases>
 
 		<costList>
@@ -102,7 +107,7 @@
 			<Jade>15</Jade>
 		</costList>
 		<recipeMaker>
-			<researchPrerequisite>TSOA_AnimaWeapons</researchPrerequisite>
+			<researchPrerequisite>TSOA_AcolyteWeapons</researchPrerequisite>
 			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
 			<skillRequirements>
 				<Crafting>7</Crafting>
@@ -130,7 +135,7 @@
 				<extraMeleeDamages>
 					<li>
 						<def>TSOA_EntropyExtraDamage</def>
-						<amount>2</amount>
+						<amount>1</amount>
 					</li>
 				</extraMeleeDamages>
 			</li>
@@ -145,6 +150,13 @@
 			<li>Neolithic</li>
 			<li>Melee</li>
 		</weaponClasses>
+		<modExtensions>
+			<li Class="tsoa.arsenal.EntropyDamageExtension">
+				<damageDef>TSOA_EntropicDischarge</damageDef>
+				<entropyCounted>0.1</entropyCounted>
+				<damagePerEntropy>2</damagePerEntropy>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 	<!-- Anima Macuahuitl -->
@@ -166,17 +178,15 @@
 			<MaxHitPoints>220</MaxHitPoints>
 			<WorkToMake>30000</WorkToMake>
 			<Mass>2.1</Mass>
-			<TSOA_EntropyDamage>0.1</TSOA_EntropyDamage>
 		</statBases>
 
 		<costList>
 			<TSOA_AnimaGrassResource>15</TSOA_AnimaGrassResource>
 			<TSOA_AnimaBark>2</TSOA_AnimaBark>
 			<Jade>15</Jade>
-			<TSOA_AnimaSap>1</TSOA_AnimaSap>
 		</costList>
 		<recipeMaker>
-			<researchPrerequisite>TSOA_AnimaWeapons</researchPrerequisite>
+			<researchPrerequisite>TSOA_AcolyteWeapons</researchPrerequisite>
 			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
 			<skillRequirements>
 				<Crafting>9</Crafting>
@@ -204,7 +214,7 @@
 				<extraMeleeDamages>
 					<li>
 						<def>TSOA_EntropyExtraDamage</def>
-						<amount>3</amount>
+						<amount>1</amount>
 					</li>
 				</extraMeleeDamages>
 			</li>
@@ -221,6 +231,13 @@
 			<li>Neolithic</li>
 			<li>Melee</li>
 		</weaponClasses>
+		<modExtensions>
+			<li Class="tsoa.arsenal.EntropyDamageExtension">
+				<damageDef>TSOA_EntropicDischarge</damageDef>
+				<entropyCounted>0.1</entropyCounted>
+				<damagePerEntropy>3</damagePerEntropy>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 	<ThingDef ParentName="BaseWeaponNeolithic">

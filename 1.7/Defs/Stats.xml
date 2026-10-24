@@ -14,7 +14,7 @@
 	<StatDef>
 		<defName>TSOA_EntropyDamage</defName>
 		<label>entropy damage</label>
-		<description>Shows what percentage of the wielder's current neural heat is consumed to deal extra damage.</description>
+		<description>Shows what percentage of the wielder's current neural heat is counted to deal extra damage.</description>
 		<defaultBaseValue>0</defaultBaseValue>
 		<category>CapacityEffects</category>
 		<displayPriorityInCategory>6</displayPriorityInCategory>
