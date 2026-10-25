@@ -329,7 +329,7 @@
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>17</power>
+					<power>15</power>
 					<cooldownTime>2.52</cooldownTime>
 					<armorPenetrationBlunt>3.025</armorPenetrationBlunt>
 					<armorPenetrationSharp>2.28</armorPenetrationSharp>
@@ -474,10 +474,10 @@
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>28</power>
+					<power>16</power>
 					<cooldownTime>2.6</cooldownTime>
-					<armorPenetrationBlunt>8.4</armorPenetrationBlunt>
-					<armorPenetrationSharp>4.6</armorPenetrationSharp>
+					<armorPenetrationBlunt>4.4</armorPenetrationBlunt>
+					<armorPenetrationSharp>3.6</armorPenetrationSharp>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
 					<extraMeleeDamages>
 						<li>
@@ -533,7 +533,13 @@
 					<power>10</power>
 					<cooldownTime>1.12</cooldownTime>
 					<armorPenetrationBlunt>0.45</armorPenetrationBlunt>
-					<armorPenetrationSharp>0.32</armorPenetrationSharp>
+					<armorPenetrationSharp>1.32</armorPenetrationSharp>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_EntropyExtraDamage</def>
+							<amount>1</amount>
+						</li>
+					</extraMeleeDamages>
 					<linkedBodyPartsGroup>Blade</linkedBodyPartsGroup>
 				</li>
 				<li Class="CombatExtended.ToolCE">
@@ -543,8 +549,14 @@
 					</capacities>
 					<power>11</power>
 					<cooldownTime>1.2</cooldownTime>
-					<armorPenetrationBlunt>0.44</armorPenetrationBlunt>
-					<armorPenetrationSharp>0.66</armorPenetrationSharp>
+					<armorPenetrationBlunt>2.44</armorPenetrationBlunt>
+					<armorPenetrationSharp>1.66</armorPenetrationSharp>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_EntropyExtraDamage</def>
+							<amount>1</amount>
+						</li>
+					</extraMeleeDamages>
 					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
 				</li>
 			</tools>
@@ -574,8 +586,14 @@
 					</capacities>
 					<power>17</power>
 					<cooldownTime>2.1</cooldownTime>
-					<armorPenetrationBlunt>1.3</armorPenetrationBlunt>
-					<armorPenetrationSharp>0.62</armorPenetrationSharp>
+					<armorPenetrationBlunt>3.3</armorPenetrationBlunt>
+					<armorPenetrationSharp>1.62</armorPenetrationSharp>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_EntropyExtraDamage</def>
+							<amount>1</amount>
+						</li>
+					</extraMeleeDamages>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
 				</li>
 				<li Class="CombatExtended.ToolCE">
@@ -585,8 +603,14 @@
 					</capacities>
 					<power>24</power>
 					<cooldownTime>2.44</cooldownTime>
-					<armorPenetrationBlunt>0.59</armorPenetrationBlunt>
-					<armorPenetrationSharp>0.76</armorPenetrationSharp>
+					<armorPenetrationBlunt>5.59</armorPenetrationBlunt>
+					<armorPenetrationSharp>3.76</armorPenetrationSharp>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_EntropyExtraDamage</def>
+							<amount>1</amount>
+						</li>
+					</extraMeleeDamages>
 					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
 				</li>
 			</tools>
@@ -654,8 +678,14 @@
 					</capacities>
 					<power>30</power>
 					<cooldownTime>1.4</cooldownTime>
-					<armorPenetrationBlunt>2.4</armorPenetrationBlunt>
-					<armorPenetrationSharp>2.55</armorPenetrationSharp>
+					<armorPenetrationBlunt>7.4</armorPenetrationBlunt>
+					<armorPenetrationSharp>5.55</armorPenetrationSharp>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_EntropyExtraDamage</def>
+							<amount>1</amount>
+						</li>
+					</extraMeleeDamages>
 					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
 				</li>
 			</tools>
@@ -704,8 +734,14 @@
 					</capacities>
 					<power>42</power>
 					<cooldownTime>4</cooldownTime>
-					<armorPenetrationBlunt>18.8</armorPenetrationBlunt>
+					<armorPenetrationBlunt>22.8</armorPenetrationBlunt>
 					<armorPenetrationSharp>3.6</armorPenetrationSharp>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_EntropyExtraDamage</def>
+							<amount>1</amount>
+						</li>
+					</extraMeleeDamages>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
 				</li>
 			</tools>
