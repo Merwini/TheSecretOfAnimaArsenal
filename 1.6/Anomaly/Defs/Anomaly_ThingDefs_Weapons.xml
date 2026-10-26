@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Void Knight Khopesh -->
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>TSOA_VoidKhopesh</defName>
+		<label>void initiate sword</label>
+		<description>A bioferrite sword styled after an ancient khopesh. The bioferrite acts like a living organism, and feeds on the wielder's psychic prescence to grow more powerful.</description>
+		<graphicData>
+			<texPath>TSOA/Things/Weapons/BioferriteKopesh</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.1, 1.1)</drawSize>
+		</graphicData>
+		<equippedAngleOffset>-15</equippedAngleOffset>
+		<techLevel>Medieval</techLevel>
+		<relicChance>3</relicChance>
+
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToMake>24000</WorkToMake>
+			<Mass>1.8</Mass>
+			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
+		</statBases>
+
+		<costList>
+			<Bioferrite>50</Bioferrite>
+			<Gold>5</Gold>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>TSOA_VoidInitiateWeapons</researchPrerequisite>
+			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+			</recipeUsers>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+			<displayPriority>282</displayPriority>
+		</recipeMaker>
+
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>point</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>14</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>edge</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>14</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+
+		<tradeTags>
+			<li>WeaponMelee</li>
+		</tradeTags>
+		<weaponTags>
+			<li>TSOA_VoidWeapons</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>Melee</li>
+		</weaponClasses>
+	</ThingDef>
+
+	<!-- Void Knight Axe -->
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>TSOA_VoidAxe</defName>
+		<label>void initiate axe</label>
+		<description>A bioferrite axe. The bioferrite acts like a living organism, and feeds on the wielder's psychic prescence to grow more powerful.</description>
+		<graphicData>
+			<texPath>TSOA/Things/Weapons/BioferriteAxe</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.6, 1.6)</drawSize>
+		</graphicData>
+		<equippedAngleOffset>-15</equippedAngleOffset>
+		<techLevel>Medieval</techLevel>
+		<relicChance>3</relicChance>
+
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToMake>27000</WorkToMake>
+			<Mass>2.3</Mass>
+			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
+		</statBases>
+
+		<costList>
+			<Bioferrite>60</Bioferrite>
+			<Gold>10</Gold>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>TSOA_VoidInitiateWeapons</researchPrerequisite>
+			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+			</recipeUsers>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<displayPriority>283</displayPriority>
+		</recipeMaker>
+
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>edge</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>2.4</cooldownTime>
+			</li>
+		</tools>
+
+		<tradeTags>
+			<li>WeaponMelee</li>
+		</tradeTags>
+		<weaponTags>
+			<li>TSOA_VoidWeapons</li>
+		</weaponTags>
+		<generateCommonality>0.75</generateCommonality>
+		<weaponClasses>
+			<li>Melee</li>
+		</weaponClasses>
+	</ThingDef>
+
+	<!-- Void Knight Kanabo -->
+	<ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
+		<defName>TSOA_VoidKanabo</defName>
+		<label>void initiate greatclub</label>
+		<description>A bioferrite greatclub styled after a Kanabo. The bioferrite acts like a living organism, and feeds on the wielder's psychic prescence to grow more powerful.</description>
+		<graphicData>
+			<texPath>TSOA/Things/Weapons/BioferriteKanabo</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.6, 1.6)</drawSize>
+		</graphicData>
+		<equippedAngleOffset>-15</equippedAngleOffset>
+		<techLevel>Medieval</techLevel>
+		<relicChance>3</relicChance>
+		
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToMake>30000</WorkToMake>
+			<Mass>6</Mass>
+			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
+		</statBases>
+
+		<costList>
+			<Bioferrite>80</Bioferrite>
+			<Gold>10</Gold>
+			<WoodLog>10</WoodLog>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>TSOA_VoidInitiateWeapons</researchPrerequisite>
+			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+			</recipeUsers>
+			<skillRequirements>
+				<Crafting>9</Crafting>
+			</skillRequirements>
+			<displayPriority>284</displayPriority>
+		</recipeMaker>
+
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>head</label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>28</power>
+				<cooldownTime>3.1</cooldownTime>
+			</li>
+		</tools>
+
+		<tradeTags>
+			<li>WeaponMelee</li>
+		</tradeTags>
+		<weaponTags>
+			<li>TSOA_VoidWeapons</li>
+		</weaponTags>
+		<generateCommonality>0.25</generateCommonality>
+		<weaponClasses>
+			<li>Melee</li>
+		</weaponClasses>
+	</ThingDef>
+</Defs>
