@@ -4,6 +4,7 @@
 	<author>Nuff</author>
 	<packageId>tsoa.arsenal</packageId>
 	<supportedVersions>
+		<li>1.6</li>
 		<li>1.7</li>
 	</supportedVersions>
 	<description>A mod in The Secret of Anima series adding new weapons and armors. Contains weapons and armor that are empowered by the psychic strength of your colonists, armor that converts incoming damage into neural heat, weapons that turn neural heat into damage, and new ways to craft equipment.</description>
