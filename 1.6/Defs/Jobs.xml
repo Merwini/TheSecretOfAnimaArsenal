@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+	<JobDef>
+		<defName>TSOA_StatExchangeLink</defName>
+		<driverClass>tsoa.arsenal.JobDriver_StatExchangeLink</driverClass>
+		<reportString>linking psychic essence</reportString>
+		<casualInterruptible>true</casualInterruptible>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+
+	<JobDef>
+		<defName>TSOA_StatExchangeUnlink</defName>
+		<driverClass>tsoa.arsenal.JobDriver_StatExchangeUnlink</driverClass>
+		<reportString>breaking psychic link</reportString>
+		<casualInterruptible>true</casualInterruptible>
+	</JobDef>
+	
+	
+</Defs>

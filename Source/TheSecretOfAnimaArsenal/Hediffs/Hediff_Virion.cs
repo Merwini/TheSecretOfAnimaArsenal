@@ -355,7 +355,7 @@ public class Hediff_Virion : Hediff
         if (comp == null)
             return;
 
-        comp.SetQuality((QualityCategory)Math.Clamp(index, 0, 6), null);
+        comp.SetQuality((QualityCategory)Mathf.Clamp(index, 0, 6), null);
     }
 
     public void RemoveActivityHediff()
