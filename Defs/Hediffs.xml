@@ -101,4 +101,19 @@
 		<scenarioCanAdd>false</scenarioCanAdd>
 	</HediffDef>
 
+	<HediffDef>
+		<defName>TSOA_PsychicLeechHediff</defName>
+		<hediffClass>tsoa.arsenal.Hediff_PsychicLeech</hediffClass>
+		<label>psychic leeching</label>
+		<description>Placeholder description, if you see this in-game report it to the mod developer.</description>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>3600</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+				<canUseDecimalsShortForm>true</canUseDecimalsShortForm>
+			</li>
+		</comps>
+	</HediffDef>
+
 </Defs>
