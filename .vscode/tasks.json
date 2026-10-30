@@ -9,10 +9,7 @@
                 "build",
                 "${workspaceFolder}/Source/TheSecretOfAnimaArsenal/TheSecretOfAnimaArsenal.csproj",
                 "--configuration",
-                "Release",
-                "-p:Platform=AnyCPU",
-                "-p:DebugSymbols=false",
-                "-p:DebugType=none"
+                "Release"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -22,6 +19,36 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Build Release 1.6",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/Source/TheSecretOfAnimaArsenal/TheSecretOfAnimaArsenal.csproj",
+                "--configuration",
+                "Release",
+                "--framework",
+                "net48"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": "build"
+            },
+            {
+            "label": "Build Release 1.7",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/Source/TheSecretOfAnimaArsenal/TheSecretOfAnimaArsenal.csproj",
+                "--configuration",
+                "Release",
+                "--framework",
+                "net10.0"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": "build"
         }
     ]
 }
