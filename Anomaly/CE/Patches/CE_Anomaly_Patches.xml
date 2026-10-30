@@ -398,6 +398,12 @@
 					<armorPenetrationBlunt>2.425</armorPenetrationBlunt>
 					<armorPenetrationSharp>6.48</armorPenetrationSharp>
 					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_PsychicLeech</def>
+							<amount>0.1</amount>
+						</li>
+					</extraMeleeDamages>
 				</li>
 				<li Class="CombatExtended.ToolCE">
 					<label>edge</label>
@@ -409,6 +415,12 @@
 					<armorPenetrationBlunt>2.9</armorPenetrationBlunt>
 					<armorPenetrationSharp>4.03</armorPenetrationSharp>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_PsychicLeech</def>
+							<amount>0.1</amount>
+						</li>
+					</extraMeleeDamages>
 				</li>
 			</tools>
 		</value>
@@ -476,6 +488,12 @@
 					<armorPenetrationBlunt>44.4</armorPenetrationBlunt>
 					<armorPenetrationSharp>12.6</armorPenetrationSharp>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_PsychicLeech</def>
+							<amount>0.15</amount>
+						</li>
+					</extraMeleeDamages>
 				</li>
 			</tools>
 		</value>
@@ -526,6 +544,12 @@
 					<armorPenetrationBlunt>80.8</armorPenetrationBlunt>
 					<armorPenetrationSharp>1.3</armorPenetrationSharp>
 					<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_PsychicLeech</def>
+							<amount>0.2</amount>
+						</li>
+					</extraMeleeDamages>
 				</li>
 			</tools>
 		</value>
@@ -663,6 +687,12 @@
 					<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
 					<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
 					<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_PsychicLeech</def>
+							<amount>0.1</amount>
+						</li>
+					</extraMeleeDamages>
 				</li>
 			</tools>
 		</value>
@@ -684,6 +714,12 @@
 					<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
 					<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
 					<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_PsychicLeech</def>
+							<amount>0.1</amount>
+						</li>
+					</extraMeleeDamages>
 				</li>
 			</tools>
 		</value>

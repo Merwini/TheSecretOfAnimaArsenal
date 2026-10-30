@@ -8,6 +8,7 @@
 	
 	<TSOA_PsychicLeechDescription>This person is leeching psychic power from others.</TSOA_PsychicLeechDescription>
 	<TSOA_PsychicLeechVictimDescription>This person has had their psychic power leeched by another.</TSOA_PsychicLeechVictimDescription>
+	<TSOA_PsychicLeechWorkerExplanation>Psychic sensitivity leeched from target per attack: {0}</TSOA_PsychicLeechWorkerExplanation>
 
 	<TSOA_PsyScalingWorkerExplanation>This equipment scales its effectiveness based on psychic sensitivity.\nFor example, at 150% psychic sensitivity and 50% scaling:\nArmor or weapon damage is increased by 25%.\n\nScaling factor: {0}</TSOA_PsyScalingWorkerExplanation>
 	<TSOA_PsyScaling_StatPartExplanation>Psychic sensitivity: {0}\nScaling factor: {1}\nEffective multiplier: {2}</TSOA_PsyScaling_StatPartExplanation>

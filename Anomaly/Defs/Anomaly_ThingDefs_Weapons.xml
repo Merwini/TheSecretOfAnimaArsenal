@@ -4,7 +4,7 @@
 	<!-- Void Knight Khopesh -->
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>TSOA_VoidKhopesh</defName>
-		<label>void initiate sword</label>
+		<label>void knight sword</label>
 		<description>A bioferrite sword styled after an ancient khopesh. The bioferrite acts like a living organism, and feeds on the wielder's psychic prescence to grow more powerful.</description>
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteKopesh</texPath>
@@ -55,6 +55,13 @@
 				</capacities>
 				<power>14</power>
 				<cooldownTime>2</cooldownTime>
+				<armorPenetration>0.3</armorPenetration>
+				<extraMeleeDamages>
+					<li>
+						<def>TSOA_PsychicLeech</def>
+						<amount>0.1</amount>
+					</li>
+				</extraMeleeDamages>
 			</li>
 			<li>
 				<label>edge</label>
@@ -63,6 +70,13 @@
 				</capacities>
 				<power>14</power>
 				<cooldownTime>2</cooldownTime>
+				<armorPenetration>0.25</armorPenetration>
+				<extraMeleeDamages>
+					<li>
+						<def>TSOA_PsychicLeech</def>
+						<amount>0.1</amount>
+					</li>
+				</extraMeleeDamages>
 			</li>
 		</tools>
 
@@ -75,12 +89,17 @@
 		<weaponClasses>
 			<li>Melee</li>
 		</weaponClasses>
+		<modExtensions>
+			<li Class="tsoa.arsenal.PsychicLeechExtension">
+				<sensitivityOffset>0.1</sensitivityOffset>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 	<!-- Void Knight Axe -->
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>TSOA_VoidAxe</defName>
-		<label>void initiate axe</label>
+		<label>void knight axe</label>
 		<description>A bioferrite axe. The bioferrite acts like a living organism, and feeds on the wielder's psychic prescence to grow more powerful.</description>
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteAxe</texPath>
@@ -131,6 +150,13 @@
 				</capacities>
 				<power>20</power>
 				<cooldownTime>2.4</cooldownTime>
+				<armorPenetration>0.35</armorPenetration>
+				<extraMeleeDamages>
+					<li>
+						<def>TSOA_PsychicLeech</def>
+						<amount>0.15</amount>
+					</li>
+				</extraMeleeDamages>
 			</li>
 		</tools>
 
@@ -144,12 +170,17 @@
 		<weaponClasses>
 			<li>Melee</li>
 		</weaponClasses>
+		<modExtensions>
+			<li Class="tsoa.arsenal.PsychicLeechExtension">
+				<sensitivityOffset>0.15</sensitivityOffset>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 	<!-- Void Knight Kanabo -->
 	<ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
 		<defName>TSOA_VoidKanabo</defName>
-		<label>void initiate greatclub</label>
+		<label>void knight greatclub</label>
 		<description>A bioferrite greatclub styled after a Kanabo. The bioferrite acts like a living organism, and feeds on the wielder's psychic prescence to grow more powerful.</description>
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteKanabo</texPath>
@@ -202,6 +233,13 @@
 				</capacities>
 				<power>28</power>
 				<cooldownTime>3.1</cooldownTime>
+				<armorPenetration>0.45</armorPenetration>
+				<extraMeleeDamages>
+					<li>
+						<def>TSOA_PsychicLeech</def>
+						<amount>0.2</amount>
+					</li>
+				</extraMeleeDamages>
 			</li>
 		</tools>
 
@@ -215,5 +253,10 @@
 		<weaponClasses>
 			<li>Melee</li>
 		</weaponClasses>
+		<modExtensions>
+			<li Class="tsoa.arsenal.PsychicLeechExtension">
+				<sensitivityOffset>0.2</sensitivityOffset>
+			</li>
+		</modExtensions>
 	</ThingDef>
 </Defs>

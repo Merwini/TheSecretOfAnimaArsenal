@@ -15,10 +15,11 @@ public class DamageWorker_PsychicLeech : DamageWorker
     {
         Pawn instigatorPawn = dinfo.Instigator as Pawn;
         Pawn victimPawn = victim as Pawn;
+        PsychicLeechExtension extension = dinfo.Weapon?.GetModExtension<PsychicLeechExtension>();
 
-        if (instigatorPawn != null && victimPawn != null)
+        if (instigatorPawn != null && victimPawn != null && extension != null)
         {
-            float proposed = dinfo.Amount;
+            float proposed = extension.sensitivityOffset;
             if (proposed == 0)
                 return new();
 

@@ -22,4 +22,15 @@
 		<workerClass>tsoa.arsenal.StatWorker_EntropyDamageDisplay</workerClass>
 	</StatDef>
 
+	<StatDef>
+		<defName>TSOA_PsychicLeech</defName>
+		<label>psychic leech</label>
+		<description>Shows what how much psychic sensitivty the weapon will steal from the target, if that amount is available.</description>
+		<defaultBaseValue>0</defaultBaseValue>
+		<category>CapacityEffects</category>
+		<displayPriorityInCategory>6</displayPriorityInCategory>
+		<toStringStyle>PercentZero</toStringStyle>
+		<workerClass>tsoa.arsenal.StatWorker_PsychicLeechDisplay</workerClass>
+	</StatDef>
+
 </Defs>
