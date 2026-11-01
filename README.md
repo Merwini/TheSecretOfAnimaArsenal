@@ -18,7 +18,7 @@ Add a CompProperties_PsyShield to the apparel's `<comps>`
     (the rest of your def up here)
     <comps>
         <li Class="tsoa.arsenal.CompProperties_PsyShield">
-				<heatPerDamage>1</heatPerDamage>
+		<heatPerDamage>1</heatPerDamage>
                 <resetHeatPercent>0.8</resetHeatPercent>
                 <resetDelayTicks>120</resetDelayTicks>
                 <minDrawSize>1.2</minDrawSize>
@@ -53,7 +53,7 @@ Add a CompProperties_PsyShield to the apparel's `<comps>`
                         <value>0.5</value>
                     </li>
                 </qualityHeatMultipliers>
-			</li>
+	</li>
     </comps>
 </ThingDef>
 ```
