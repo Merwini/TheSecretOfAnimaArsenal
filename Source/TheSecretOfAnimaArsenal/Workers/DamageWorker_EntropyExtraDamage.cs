@@ -31,7 +31,7 @@ public class DamageWorker_EntropyExtraDamage : DamageWorker_AddInjury
         pawn.psychicEntropy.TryAddEntropy(-heatSpent, null, false);
 
         // make sure a misconfigured damageDef doesn't create an infinite loop
-        DamageDef newDamage = extension.damageDef != TSOAA_DefOf.TSOA_EntropyExtraDamage ? extension.damageDef : TSOAA_DefOf.TSOA_EntropicDischarge;
+        DamageDef newDamage = extension.damageDef.Worker is not DamageWorker_EntropyExtraDamage ? extension.damageDef : TSOAA_DefOf.TSOA_EntropicDischarge;
 
         DamageInfo newDinfo = new DamageInfo(dinfo);
         newDinfo.Def = newDamage;
