@@ -118,3 +118,24 @@ entropyCounted - What percentage of the wielder's neural heat, as a float, will 
 damagePerEntropy - How many points of damage will be applied per point of neural heat counted by entropyCounted. If not defined, defaults to 0. Example: If set to 2, and entropyCounted is counting 6 from the example above, would apply (6 x 2 = 12) points of damage on a successful attack.
 
 entropySpent - What percentage of the wielder's accumulated neural heat will be dispersed / removed on a successful attack. If not defined, defaults to 0%. Does not need to match entropyCounted, and leaving it at 0 means the weapon will do extra damage from neural heat, but not remove any neural heat. Example: If set to 0.1 (10%), and the wielder has 60 accumulated neural heat, on a successful attack the wielder will remove (60 x 0.1 = 6) neural heat, leaving 54 remaining.
+
+
+## Psy Scaling
+Applied to weapons and apparel. Gives a damage bonus to weapons, or an armor bonus to apparel, based on a percentage of the wielder/wearer's Psychic Sensitivity stat.
+
+**How to use:**
+Add a `<TSOA_PsyScaling>` node to the `<stateBases>` for the equipment.
+
+**Looks like:**
+```xml
+<ThingDef>
+    (the rest of your def up here)
+    <statBases>
+        (other stat bases)
+        <TSOA_PsyScaling>0.25</TSOA_PsyScaling>
+    </statBases>
+</ThingDef>
+```
+
+**What each node controls:**
+TSOA_PsyScaling - A percentage of the equipment user's Psychic Sensitivity that will be used when calculating the damage or armor bonuses, written as a float value. Does not scale values down if Sensitivity is below 100%. Example: If a weapon has 0.25 (25%) PsyScaling, and the wielder has 180% Psychic Sensitivity, the wielder's Sensitivity is 80% above normal, so will add (80% x 0.25 = 20%) to the weapon's damage. So a weapon that normally does 10 damage would now do 12.
