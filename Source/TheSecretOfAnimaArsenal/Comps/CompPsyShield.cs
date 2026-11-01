@@ -244,7 +244,7 @@ public class CompPsyShield : ThingComp
     {
         float mult = BaseHeatPerDamage;
 
-        if (qualityComp != null)
+        if (qualityComp != null && Props.qualityHeatMultipliers != null)
         {
             mult *= Props.qualityHeatMultipliers.TryGetValue(qualityComp.Quality, out float qualMult) ? qualMult : 1f;
         }

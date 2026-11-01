@@ -22,12 +22,12 @@ public class CompProperties_PsyShield : CompProperties
 
     public Dictionary<QualityCategory, float> qualityHeatMultipliers = new Dictionary<QualityCategory, float>
     {
-        { QualityCategory.Awful, 1f },
-        { QualityCategory.Poor, 1f },
-        { QualityCategory.Normal, 0.9f },
-        { QualityCategory.Good, 0.8f },
-        { QualityCategory.Excellent, 0.7f },
-        { QualityCategory.Masterwork, 0.6f },
+        { QualityCategory.Awful, 1.2f },
+        { QualityCategory.Poor, 1.1f },
+        { QualityCategory.Normal, 1f },
+        { QualityCategory.Good, 0.9f },
+        { QualityCategory.Excellent, 0.8f },
+        { QualityCategory.Masterwork, 0.65f },
         { QualityCategory.Legendary, 0.5f }
     };
 
