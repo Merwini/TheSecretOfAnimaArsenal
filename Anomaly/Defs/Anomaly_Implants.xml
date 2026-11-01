@@ -67,12 +67,6 @@
 				<count>1</count>
 			</li>
 		</ingredients>
-
-		<!--<modExtensions>
-			<li Class="tsoa.core.PsyLinkRecipeExtension">
-				<minPsylinkLevel>3</minPsylinkLevel>
-			</li>
-		</modExtensions>-->
 	</RecipeDef>
 	
 	<!-- Bioferrite Clawed Arm -->
@@ -229,6 +223,12 @@
 						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
 						<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
 						<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_PsychicLeech</def>
+							<amount>0.1</amount>
+						</li>
+					</extraMeleeDamages>
 					</li>
 				</tools>
 			</li>
@@ -267,6 +267,12 @@
 						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
 						<soundMeleeHit>MeleeHit_BionicSlash</soundMeleeHit>
 						<soundMeleeMiss>MeleeMiss_BionicSlash</soundMeleeMiss>
+					<extraMeleeDamages>
+						<li>
+							<def>TSOA_PsychicLeech</def>
+							<amount>0.15</amount>
+						</li>
+					</extraMeleeDamages>
 					</li>
 				</tools>
 			</li>

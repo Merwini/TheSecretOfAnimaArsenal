@@ -228,7 +228,7 @@
 			<ThingDef>TSOA_BioferriteVirionArmor</ThingDef>
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
-		<uiIconThing>Shard</uiIconThing>
+		<uiIconThing>TSOA_BioferriteVirionArmor</uiIconThing>
 
 		<researchPrerequisites>
 			<li>TSOA_BioferriteImplants</li>
@@ -341,7 +341,7 @@
 			<ThingDef>TSOA_BioferriteVirionHelm</ThingDef>
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
-		<uiIconThing>Shard</uiIconThing>
+		<uiIconThing>TSOA_BioferriteVirionHelm</uiIconThing>
 
 		<researchPrerequisites>
 			<li>TSOA_BioferriteImplants</li>

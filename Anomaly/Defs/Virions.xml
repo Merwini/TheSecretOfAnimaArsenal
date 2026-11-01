@@ -40,94 +40,6 @@
 		<uiIconThing>Shard</uiIconThing>
 	</RecipeDef>
 
-	<!--<RecipeDef ParentName="TSOA_ImplantVirionBase">
-		<defName>TSOA_ImplantVirionArmor</defName>
-		<label>implant virion (armor)</label>
-		<description>Implant a bioferrite virion in the target. This will gestate into a suit of bioferrite armor, killing the recipient in the process.</description>
-		<descriptionHyperlinks>
-			<ThingDef>TSOA_BioferriteArmor</ThingDef>
-		</descriptionHyperlinks>
-		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
-		<uiIconThing>TSOA_VirionArmor</uiIconThing>
-		<ingredients Inherit="false">
-			<li>
-				<filter>
-					<thingDefs>
-						<li>TSOA_VirionArmor</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter Inherit="false">
-			<thingDefs>
-				<li>TSOA_VirionArmor</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-	</RecipeDef>-->
-	
-	<!--<ThingDef ParentName="ResourceBase" Abstract="true" Name="TSOA_VirionBase">
-		--><!-- placeholder values --><!--
-		<graphicData>
-			<texPath>Things/Item/Resource/Shard</texPath>
-			<graphicClass>Graphic_StackCount</graphicClass>
-		</graphicData>
-		<soundInteract>Metal_Drop</soundInteract>
-		<soundDrop>Standard_Drop</soundDrop>
-		<stackLimit>1</stackLimit>
-		<healthAffectsPrice>false</healthAffectsPrice>
-		<genericMarketSellable>false</genericMarketSellable>
-		<useHitPoints>false</useHitPoints>
-		<statBases>
-			<MaxHitPoints>250</MaxHitPoints>
-			<MarketValue>400</MarketValue>
-			<Mass>0.6</Mass>
-			<Flammability>0</Flammability>
-			<DeteriorationRate>0</DeteriorationRate>
-		</statBases>
-		<intricate>true</intricate>
-		<thingCategories>
-			<li>Manufactured</li>
-		</thingCategories>
-	</ThingDef>-->
-
-	<!-- TODO add these once I have virion armor/helm textures-->
-	<!--<ThingDef ParentName="TSOA_VirionBase">
-		<defName>TSOA_VirionArmor</defName>
-		<label>bioferrite virion (armor)</label>
-		<description>A strange device made from dark archotech nanites, that blurs the lines between organic and inorganic. Implanted into a human, it will slowly consume the recipient's body to grow a piece of bioferrite equipment. If the recipient dies before the growth is complete, a hostile entity will emerge. When complete, it can be surgically removed from the host, although this still kills the host in the process. Takes 5 days for initial gestation, and the longer it is left in the host body, the higher quality the equipment will be.</description>
-		<modExtensions>
-			<li Class="tsoa.arsenal.VirionExtension">
-				<producedItem>TSOA_VoidArmor</producedItem>
-				<initialGestationDays>5</initialGestationDays>
-			</li>
-		</modExtensions>
-	</ThingDef>
-
-	<ThingDef ParentName="TSOA_VirionBase">
-		<defName>TSOA_VirionHelm</defName>
-		<label>bioferrite virion (helm)</label>
-		<description>A strange device made from dark archotech nanites, that blurs the lines between organic and inorganic. Implanted into a human, it will slowly consume the recipient's body to grow a piece of bioferrite equipment. If the recipient dies before the growth is complete, a hostile entity will emerge. When complete, it can be surgically removed from the host, although this still kills the host in the process. Takes 5 days for initial gestation, and the longer it is left in the host body, the higher quality the equipment will be.</description>
-		<modExtensions>
-			<li Class="tsoa.arsenal.VirionExtension">
-				<producedItem>TSOA_VoidHelm</producedItem>
-				<initialGestationDays>10</initialGestationDays>
-			</li>
-		</modExtensions>
-	</ThingDef>-->
-
-	<!--<ThingDef ParentName="TSOA_VirionBase">
-		<defName>TSOA_VirionArm</defName>
-		<label>bioferrite virion (arm)</label>
-		<description>A strange device made from dark archotech nanites, that blurs the lines between organic and inorganic. Implanted into a human, it will slowly consume the recipient's body to grow a piece of bioferrite equipment. If the recipient dies before the growth is complete, a hostile entity will emerge. When complete, it can be surgically removed from the host, although this still kills the host in the process. Takes 10 days for gestation to complete.</description>
-		<modExtensions>
-			<li Class="tsoa.arsenal.VirionExtension">
-				<producedItem>TSOA_BioferriteArm</producedItem>
-				<initialGestationDays>10</initialGestationDays>
-			</li>
-		</modExtensions>
-	</ThingDef>-->
-
 	<RecipeDef ParentName="TSOA_ImplantVirionBase">
 		<defName>TSOA_ImplantBioferriteResourceVirion</defName>
 		<label>implant virion (bioferrite resource)</label>
@@ -159,6 +71,43 @@
 			<li Class="tsoa.arsenal.VirionExtension">
 				<producedItem>Bioferrite</producedItem>
 				<producedCount>50</producedCount>
+				<gestationDaysList>
+					<li>3</li>
+				</gestationDaysList>
+			</li>
+		</modExtensions>
+	</RecipeDef>
+
+	<RecipeDef ParentName="TSOA_ImplantVirionBase">
+		<defName>TSOA_ImplantShardVirion</defName>
+		<label>implant virion (Shard)</label>
+		<description>Implant a virion in the target. This will gestate into a dark archotech Shard.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Shard</ThingDef>
+		</descriptionHyperlinks>
+		<surgerySuccessChanceFactor>10</surgerySuccessChanceFactor>
+		<uiIconThing>Shard</uiIconThing>
+		<researchPrerequisites Inherit="false">
+			<li>TSOA_VoidTwo</li>
+		</researchPrerequisites>
+		<ingredients Inherit="false">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Bioferrite</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter Inherit="false">
+			<thingDefs>
+				<li>Bioferrite</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<modExtensions>
+			<li Class="tsoa.arsenal.VirionExtension">
+				<producedItem>Shard</producedItem>
 				<gestationDaysList>
 					<li>5</li>
 				</gestationDaysList>
