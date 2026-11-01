@@ -9,10 +9,11 @@ To use them, just have this mod as a required item for your mod, and add the cor
 When worn by a pawn with a psylink, creates a shield that blocks incoming damage, and produces neural heat in the wearer.
 
 **How to use:**
-Add a CompProperties_PsyShield to the apparel's <comps>
+Add a CompProperties_PsyShield to the apparel's `<comps>`
 
 **Looks like:**
 
+```xml
 <ThingDef>
     (the rest of your def up here)
     <comps>
@@ -55,6 +56,7 @@ Add a CompProperties_PsyShield to the apparel's <comps>
 			</li>
     </comps>
 </ThingDef>
+```
 
 **What each node controls:**
 heatPerDamage - The baseline points of neural heat given to the wearer per point of damage blocked. This is further modified by qualityHeatMultipliers, see below. If not defined, defaults to 1. Example: if set to 3, and the shield blocks 10 damage, the wearer will accumulate 30 neural heat.
