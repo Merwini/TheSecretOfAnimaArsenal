@@ -9,7 +9,7 @@ namespace tsoa.arsenal;
 
 public class EvolvingImplantDef : Def
 {
-    public ThingDef thingDef; // optional, no error if null
+    public ThingDef thingDef; // not currently used
 
     public StatDef evolvingStat;
 

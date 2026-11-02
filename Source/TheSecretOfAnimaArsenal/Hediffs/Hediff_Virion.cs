@@ -296,7 +296,8 @@ public class Hediff_Virion : Hediff
 
     private void SpawnItem(Map map, IntVec3 pos)
     {
-        Thing thing = ThingMaker.MakeThing(Extension.producedItem);
+        ThingDef def = Extension.producedItem;
+        Thing thing = ThingMaker.MakeThing(def, def.MadeFromStuff ? Extension.productStuff : null);
         SetThingQuality(thing, growthStageIndex - 1); // stage 0 in gestating
         thing.stackCount = Extension.producedCount;
         GenPlace.TryPlaceThing(thing, pos, map, ThingPlaceMode.Near);

@@ -14,6 +14,8 @@ public class VirionExtension : DefModExtension
 
     public int producedCount = 1;
 
+    public ThingDef productStuff;
+
     public List<float> gestationDaysList = new List<float>()
     {
         10, // days until awful (has quality) or finished (non-quality)
@@ -54,7 +56,13 @@ public class VirionExtension : DefModExtension
         if (producedItem == null)
         {
             producedItem = ThingDefOf.WoodLog;
-            yield return "BioferriteVirionExtension missing producedItem. Defaulting to one wooden log (this is funny to me).";
+            yield return "BioferriteVirionExtension missing producedItem. Defaulting to one WoodLog (this is funny to me).";
+        }
+
+        if (producedItem.MadeFromStuff && productStuff?.stuffProps?.CanMake(producedItem) != true)
+        {
+            productStuff = GenStuff.DefaultStuffFor(producedItem);
+            yield return $"VirionExtension has missing or incompatible productStuff " + $"for {producedItem.defName}. Defaulting to {productStuff.defName}.";
         }
 
         int requiredDurations = producedItem.HasComp<CompQuality>() ? 7 : 1;
