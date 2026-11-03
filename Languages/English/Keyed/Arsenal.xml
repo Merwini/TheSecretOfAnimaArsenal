@@ -4,8 +4,13 @@
 	<TSOA_OutOfEntropy>Too much neural heat!</TSOA_OutOfEntropy>
 	<TSOA_NotACaster>Not a psycaster!</TSOA_NotACaster>
 	
-	<TSOA_EntropyDamageWorkerExplanation>When wielded by a psycaster, this weapon deals extra damage with every successful attack based on accumulated neural heat in the wielder.\n\nDeals extra damage based on {0} of neural heat\nReduces neural heat by {1}\nDamage per heat counted: {2}</TSOA_EntropyDamageWorkerExplanation>
-	
+	<TSOA_EntropyDamageWorkerExplanationPercent>When wielded by a psycaster, this weapon deals extra damage with every successful attack based on accumulated neural heat in the wielder.\n\nDeals extra damage based on {0} of neural heat\nReduces neural heat by {1}\nDamage per heat counted: {2}</TSOA_EntropyDamageWorkerExplanationPercent>
+	<TSOA_EntropyDamageWorkerExplanationFlat>When wielded by a psycaster, this weapon deals extra damage with every successful attack and {0} neural heat {1} the wielder.\n\nDeals {2} extra damage and {0} {3} neural heat.</TSOA_EntropyDamageWorkerExplanationFlat>
+	<TSOA_Adds>adds</TSOA_Adds>
+	<TSOA_Removes>removes</TSOA_Removes>
+	<TSOA_To>to</TSOA_To>
+	<TSOA_From>from</TSOA_From>
+
 	<TSOA_PsychicLeechDescription>This person is leeching psychic power from others.</TSOA_PsychicLeechDescription>
 	<TSOA_PsychicLeechVictimDescription>This person has had their psychic power leeched by another.</TSOA_PsychicLeechVictimDescription>
 	<TSOA_PsychicLeechWorkerExplanation>Psychic sensitivity leeched from target per attack: {0}</TSOA_PsychicLeechWorkerExplanation>

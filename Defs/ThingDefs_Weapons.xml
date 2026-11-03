@@ -79,7 +79,7 @@
 			</li>
 			<li Class="tsoa.arsenal.EntropyDamageExtension">
 				<damageDef>TSOA_EntropicDischarge</damageDef>
-				<entropyCounted>0.1</entropyCounted>
+				<entropyCountedPercent>0.1</entropyCountedPercent>
 				<damagePerEntropy>1</damagePerEntropy>
 			</li>
 		</modExtensions>
@@ -162,7 +162,7 @@
 			</li>
 			<li Class="tsoa.arsenal.EntropyDamageExtension">
 				<damageDef>TSOA_EntropicDischarge</damageDef>
-				<entropyCounted>0.1</entropyCounted>
+				<entropyCountedPercent>0.1</entropyCountedPercent>
 				<damagePerEntropy>1</damagePerEntropy>
 			</li>
 		</modExtensions>
@@ -247,7 +247,7 @@
 			</li>
 			<li Class="tsoa.arsenal.EntropyDamageExtension">
 				<damageDef>TSOA_EntropicDischarge</damageDef>
-				<entropyCounted>0.1</entropyCounted>
+				<entropyCountedPercent>0.1</entropyCountedPercent>
 				<damagePerEntropy>2</damagePerEntropy>
 			</li>
 		</modExtensions>
@@ -348,8 +348,8 @@
 			</li>
 			<li Class="tsoa.arsenal.EntropyDamageExtension">
 				<damageDef>TSOA_EntropicDischarge</damageDef>
-				<entropyCounted>0.1</entropyCounted>
-				<entropySpent>0.1</entropySpent>
+				<entropyCountedPercent>0.1</entropyCountedPercent>
+				<entropySpentPercent>0.1</entropySpentPercent>
 				<damagePerEntropy>3</damagePerEntropy>
 			</li>
 		</modExtensions>
@@ -452,8 +452,8 @@
 			</li>
 			<li Class="tsoa.arsenal.EntropyDamageExtension">
 				<damageDef>TSOA_EntropicDischarge</damageDef>
-				<entropyCounted>0.15</entropyCounted>
-				<entropySpent>0.15</entropySpent>
+				<entropyCountedPercent>0.15</entropyCountedPercent>
+				<entropySpentPercent>0.15</entropySpentPercent>
 				<damagePerEntropy>3</damagePerEntropy>
 			</li>
 		</modExtensions>
@@ -541,8 +541,8 @@
 			</li>
 			<li Class="tsoa.arsenal.EntropyDamageExtension">
 				<damageDef>TSOA_EntropicDischarge</damageDef>
-				<entropyCounted>0.15</entropyCounted>
-				<entropySpent>0.15</entropySpent>
+				<entropyCountedPercent>0.15</entropyCountedPercent>
+				<entropySpentPercent>0.15</entropySpentPercent>
 				<damagePerEntropy>3</damagePerEntropy>
 			</li>
 		</modExtensions>
@@ -629,8 +629,8 @@
 			</li>
 			<li Class="tsoa.arsenal.EntropyDamageExtension">
 				<damageDef>TSOA_EntropicDischarge</damageDef>
-				<entropyCounted>0.2</entropyCounted>
-				<entropySpent>0.2</entropySpent>
+				<entropyCountedPercent>0.2</entropyCountedPercent>
+				<entropySpentPercent>0.2</entropySpentPercent>
 				<damagePerEntropy>3</damagePerEntropy>
 			</li>
 		</modExtensions>
