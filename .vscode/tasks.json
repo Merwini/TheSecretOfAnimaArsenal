@@ -34,8 +34,8 @@
             ],
             "problemMatcher": "$msCompile",
             "group": "build"
-            },
-            {
+        },
+        {
             "label": "Build Release 1.7",
             "type": "process",
             "command": "dotnet",
@@ -47,6 +47,74 @@
                 "--framework",
                 "net10.0"
             ],
+            "problemMatcher": "$msCompile",
+            "group": "build"
+        },
+        {
+            "label": "Build CE Release 1.6",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/Source/TheSecretOfAnimaArsenal.CE/TheSecretOfAnimaArsenal.CE.csproj",
+                "--configuration",
+                "Release",
+                "--framework",
+                "net48"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$msCompile",
+            "group": "build"
+        },
+        {
+            "label": "Build CE Release 1.7",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/Source/TheSecretOfAnimaArsenal.CE/TheSecretOfAnimaArsenal.CE.csproj",
+                "--configuration",
+                "Release",
+                "--framework",
+                "net10.0"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$msCompile",
+            "group": "build"
+        },
+        {
+            "label": "Build CE Release",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/Source/TheSecretOfAnimaArsenal.CE/TheSecretOfAnimaArsenal.CE.csproj",
+                "--configuration",
+                "Release"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$msCompile",
+            "group": "build"
+        },
+        {
+            "label": "Build All Release",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/Source/TheSecretOfAnimaArsenal/TheSecretOfAnimaArsenal.slnx",
+                "--configuration",
+                "Release"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "problemMatcher": "$msCompile",
             "group": "build"
         }

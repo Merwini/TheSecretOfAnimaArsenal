@@ -21,6 +21,7 @@
 	</modDependencies>
 	<loadAfter>
 		<li>tsoa.core</li>
+		<li>CETeam.CombatExtended</li>
 		<li>Ludeon.RimWorld.Anomaly</li>
 	</loadAfter>
 </ModMetaData>
