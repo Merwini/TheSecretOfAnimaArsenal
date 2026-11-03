@@ -21,6 +21,8 @@
 			<ArmorRating_Sharp>0.9</ArmorRating_Sharp>
 			<ArmorRating_Blunt>0.7</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.6</ArmorRating_Heat>
+			<Insulation_Cold>20</Insulation_Cold>
+			<Insulation_Heat>6</Insulation_Heat>
 			<EquipDelay>15</EquipDelay>
 			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
 		</statBases>
@@ -99,6 +101,8 @@
 			<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
 			<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.4</ArmorRating_Heat>
+			<Insulation_Cold>2</Insulation_Cold>
+			<Insulation_Heat>1</Insulation_Heat>
 			<EquipDelay>1.5</EquipDelay>
 			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
 		</statBases>
@@ -165,6 +169,8 @@
 			<ArmorRating_Sharp>0.8</ArmorRating_Sharp>
 			<ArmorRating_Blunt>0.6</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.8</ArmorRating_Heat>
+			<Insulation_Cold>20</Insulation_Cold>
+			<Insulation_Heat>6</Insulation_Heat>
 			<EquipDelay>15</EquipDelay>
 			<TSOA_PsyScaling>0.8</TSOA_PsyScaling>
 		</statBases>
@@ -203,6 +209,7 @@
 			<wornGraphicPath>TSOA/Things/Apparel/BioferriteVirion/BioferriteArmor</wornGraphicPath>
 			<layers>
 				<li>Middle</li>
+				<li>Shell</li>
 			</layers>
 			<tags>
 				<li>TSOA_VoidArmor</li>
@@ -291,6 +298,8 @@
 			<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
 			<ArmorRating_Blunt>0.6</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.7</ArmorRating_Heat>
+			<Insulation_Cold>2</Insulation_Cold>
+			<Insulation_Heat>1</Insulation_Heat>
 			<EquipDelay>1.5</EquipDelay>
 			<TSOA_PsyScaling>0.8</TSOA_PsyScaling>
 		</statBases>
