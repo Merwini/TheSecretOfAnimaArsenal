@@ -16,4 +16,19 @@
 		</stages>
 	</ThoughtDef>
 
+	<ThoughtDef>
+		<defName>TSOA_VirionHost</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>TSOA_VirionHediff</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>virion host</label>
+				<description>something terrible is growing inside me</description>
+				<baseMoodEffect>-30</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
 </Defs>

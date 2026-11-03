@@ -85,6 +85,11 @@
 		<isBad>false</isBad>
 		<tendable>false</tendable>
 		<scenarioCanAdd>false</scenarioCanAdd>
+		<stages>
+			<li>
+				<minSeverity>0</minSeverity>
+			</li>
+		</stages>
 		<tags>
 			<li>TSOA_Virion</li>
 		</tags>
