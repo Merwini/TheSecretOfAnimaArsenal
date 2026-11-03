@@ -34,7 +34,7 @@ internal class Alert_VirionReady : Alert
                         continue;
                     }
 
-                    if (hediff.CanExtractNow)
+                    if (hediff.IsFullyGestated)
                     {
                         virionReadyResult.Add(item);
                     }

@@ -79,7 +79,7 @@
 		</tradeTags>
 	</ThingDef>
 
-	<!-- Void Knight Helm -->
+	<!-- Void Initiate Helm -->
 	<ThingDef ParentName="ArmorHelmetMakeableBase">
 		<defName>TSOA_VoidInitiateHelm</defName>
 		<label>void initiate helm</label>
@@ -177,7 +177,7 @@
 
 		<costList>
 			<Bioferrite>120</Bioferrite>
-			<Shard>1</Shard>
+			<Shard>2</Shard>
 		</costList>
 		<recipeMaker>
 			<researchPrerequisites>
@@ -249,7 +249,7 @@
 						<li>Shard</li>
 					</thingDefs>
 				</filter>
-				<count>1</count>
+				<count>2</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter Inherit="false">
@@ -261,6 +261,12 @@
 		<modExtensions>
 			<li Class="tsoa.arsenal.VirionExtension">
 				<producedItem>TSOA_BioferriteVirionArmor</producedItem>
+				<gestationDays>15</gestationDays>
+				<entitySpawn>
+					<kind>Metalhorror</kind>
+					<forcedLifeStageIndex>2</forcedLifeStageIndex>
+					<count>1</count>
+				</entitySpawn>
 			</li>
 		</modExtensions>
 	</RecipeDef>
@@ -374,6 +380,12 @@
 		<modExtensions>
 			<li Class="tsoa.arsenal.VirionExtension">
 				<producedItem>TSOA_BioferriteVirionHelm</producedItem>
+				<gestationDays>15</gestationDays>
+				<entitySpawn>
+					<kind>Metalhorror</kind>
+					<forcedLifeStageIndex>2</forcedLifeStageIndex>
+					<count>1</count>
+				</entitySpawn>
 			</li>
 		</modExtensions>
 	</RecipeDef>

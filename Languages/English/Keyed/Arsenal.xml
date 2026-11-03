@@ -37,8 +37,10 @@
 	<TSOA_VirionNotSpawned>{0} died outside of your map, and their Virion was wasted.</TSOA_VirionNotSpawned>
 	<TSOA_VirionIncomplete>{0} has died before their Virion finished gestating, and it has emerged as a hostile entity!</TSOA_VirionIncomplete>
 	<TSOA_VirionDiedComplete>{0} has died with a fully gestated Virion, which emerged successfully from their corpse.</TSOA_VirionDiedComplete>
-	<TSOA_VirionExtracted>{0} has had their Virion successfully extracted, killing them in the process.</TSOA_VirionExtracted>
+	<TSOA_VirionExtractedKilled>{0} has had their Virion successfully extracted, killing them in the process.</TSOA_VirionExtractedKilled>
+	<TSOA_VirionExtractedAlive>{0} has had their Virion successfully extracted.</TSOA_VirionExtractedAlive>
 	<TSOA_GestatingStage>Gestating</TSOA_GestatingStage>
+	<TSOA_CompleteStage>Complete</TSOA_CompleteStage>
 
 	<TSOA_VirionAlertLabel>Virion ready to extract</TSOA_VirionAlertLabel>
 	<TSOA_VirionAlertLabelPlural>{0} virions ready to extract</TSOA_VirionAlertLabelPlural>

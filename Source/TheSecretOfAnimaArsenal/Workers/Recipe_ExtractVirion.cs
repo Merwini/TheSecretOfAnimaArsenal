@@ -22,7 +22,7 @@ public class Recipe_ExtractVirion : Recipe_Surgery
         if (hediff == null)
             return false;
 
-        return hediff.CanExtractNow;
+        return hediff.IsFullyGestated;
     }
 
     public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
