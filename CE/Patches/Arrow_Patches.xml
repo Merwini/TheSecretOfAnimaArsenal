@@ -18,13 +18,13 @@
 		<Properties>
 			<verbClass>CombatExtended.Verb_ShootCE</verbClass>
 			<hasStandardCommand>true</hasStandardCommand>
-			<defaultProjectile>Projectile_StreamlinedArrow_Stone</defaultProjectile>
+			<defaultProjectile>TSOA_Projectile_ArrowBowArrow_Anima</defaultProjectile>
 			<warmupTime>1.2</warmupTime>
 			<range>22</range>
 			<soundCast>Bow_Recurve</soundCast>
 		</Properties>
 		<AmmoUser>
-			<ammoSet>AmmoSet_StreamlinedArrow</ammoSet>
+			<ammoSet>AmmoSet_AnimaBowArrow</ammoSet>
 			<AmmoGenPerMagOverride>5</AmmoGenPerMagOverride>
 		</AmmoUser>
 		<FireModes />
@@ -47,6 +47,25 @@
 					<armorPenetrationBlunt>0.65</armorPenetrationBlunt>
 				</li>
 			</tools>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaBow"]</xpath>
+		<value>
+			<li Class="tsoa.arsenal.EntropyDamageExtension">
+				<damageDef>TSOA_EntropicDischarge</damageDef>
+				<entropyCountedFlat>1</entropyCountedFlat>
+				<entropySpentFlat>-4</entropySpentFlat>
+				<damagePerEntropy>8</damagePerEntropy>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaBow"]/description</xpath>
+		<value>
+			<description>A bow carved from anima tree bark. When wielded by someone with a psylink, passively imparts a psychic bond on every arrow. If the arrow hits, it will deal additonal damage, at the cost of building up neural heat in the wielder.</description>
 		</value>
 	</Operation>
 	
