@@ -38,7 +38,7 @@
 		<baseCost>2000</baseCost>
 		<techLevel>Medieval</techLevel>
 		<prerequisites>
-			<li>TSOA_VoidTwo</li>
+			<li>TSOA_VoidThree</li>
 		</prerequisites>
 		<tab>TSOA_ResearchTab</tab>
 		<researchViewX>7.00</researchViewX>

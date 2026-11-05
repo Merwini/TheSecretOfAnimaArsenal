@@ -99,14 +99,14 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanArmor"]/statBases/ArmorRating_Sharp</xpath>
 		<value>
-			<ArmorRating_Sharp>4</ArmorRating_Sharp>
+			<ArmorRating_Sharp>5</ArmorRating_Sharp>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanArmor"]/statBases/ArmorRating_Blunt</xpath>
 		<value>
-			<ArmorRating_Blunt>6</ArmorRating_Blunt>
+			<ArmorRating_Blunt>8</ArmorRating_Blunt>
 		</value>
 	</Operation>
 	
@@ -132,14 +132,14 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanHeaddress"]/statBases/ArmorRating_Sharp</xpath>
 		<value>
-			<ArmorRating_Sharp>2</ArmorRating_Sharp>
+			<ArmorRating_Sharp>4</ArmorRating_Sharp>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanHeaddress"]/statBases/ArmorRating_Blunt</xpath>
 		<value>
-			<ArmorRating_Blunt>4</ArmorRating_Blunt>
+			<ArmorRating_Blunt>6</ArmorRating_Blunt>
 		</value>
 	</Operation>
 
@@ -329,7 +329,7 @@
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>15</power>
+					<power>19</power>
 					<cooldownTime>2.52</cooldownTime>
 					<armorPenetrationBlunt>3.025</armorPenetrationBlunt>
 					<armorPenetrationSharp>2.28</armorPenetrationSharp>
@@ -402,7 +402,7 @@
 					<capacities>
 						<li>Blunt</li>
 					</capacities>
-					<power>12</power>
+					<power>18</power>
 					<cooldownTime>2.01</cooldownTime>
 					<armorPenetrationBlunt>6.75</armorPenetrationBlunt>
 					<linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
@@ -474,7 +474,7 @@
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>16</power>
+					<power>32</power>
 					<cooldownTime>2.6</cooldownTime>
 					<armorPenetrationBlunt>4.4</armorPenetrationBlunt>
 					<armorPenetrationSharp>3.6</armorPenetrationSharp>
@@ -586,8 +586,8 @@
 					</capacities>
 					<power>17</power>
 					<cooldownTime>2.1</cooldownTime>
-					<armorPenetrationBlunt>3.3</armorPenetrationBlunt>
-					<armorPenetrationSharp>1.62</armorPenetrationSharp>
+					<armorPenetrationBlunt>6.3</armorPenetrationBlunt>
+					<armorPenetrationSharp>4.62</armorPenetrationSharp>
 					<extraMeleeDamages>
 						<li>
 							<def>TSOA_EntropyExtraDamage</def>
@@ -604,7 +604,7 @@
 					<power>24</power>
 					<cooldownTime>2.44</cooldownTime>
 					<armorPenetrationBlunt>5.59</armorPenetrationBlunt>
-					<armorPenetrationSharp>3.76</armorPenetrationSharp>
+					<armorPenetrationSharp>8.76</armorPenetrationSharp>
 					<extraMeleeDamages>
 						<li>
 							<def>TSOA_EntropyExtraDamage</def>
@@ -677,9 +677,9 @@
 						<li>Stab</li>
 					</capacities>
 					<power>30</power>
-					<cooldownTime>1.4</cooldownTime>
-					<armorPenetrationBlunt>7.4</armorPenetrationBlunt>
-					<armorPenetrationSharp>5.55</armorPenetrationSharp>
+					<cooldownTime>2.4</cooldownTime>
+					<armorPenetrationBlunt>6.4</armorPenetrationBlunt>
+					<armorPenetrationSharp>7.55</armorPenetrationSharp>
 					<extraMeleeDamages>
 						<li>
 							<def>TSOA_EntropyExtraDamage</def>
@@ -733,8 +733,8 @@
 						<li>Blunt</li>
 					</capacities>
 					<power>42</power>
-					<cooldownTime>4</cooldownTime>
-					<armorPenetrationBlunt>22.8</armorPenetrationBlunt>
+					<cooldownTime>3.8</cooldownTime>
+					<armorPenetrationBlunt>80.8</armorPenetrationBlunt>
 					<armorPenetrationSharp>3.6</armorPenetrationSharp>
 					<extraMeleeDamages>
 						<li>

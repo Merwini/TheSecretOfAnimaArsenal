@@ -15,7 +15,7 @@
 		<relicChance>2</relicChance>
 
 		<statBases>
-			<WorkToMake>38000</WorkToMake>
+			<WorkToMake>18000</WorkToMake>
 			<MaxHitPoints>320</MaxHitPoints>
 			<Mass>15</Mass>
 			<ArmorRating_Sharp>0.9</ArmorRating_Sharp>
@@ -34,7 +34,8 @@
 
 		<costList>
 			<Bioferrite>150</Bioferrite>
-			<Gold>50</Gold>
+			<Gold>10</Gold>
+			<Shard>1</Shard>
 		</costList>
 		<recipeMaker>
 			<researchPrerequisite>TSOA_VoidInitiateArmor</researchPrerequisite>
@@ -95,7 +96,7 @@
 		<relicChance>2</relicChance>
 
 		<statBases>
-			<WorkToMake>3200</WorkToMake>
+			<WorkToMake>12000</WorkToMake>
 			<MaxHitPoints>150</MaxHitPoints>
 			<Mass>2</Mass>
 			<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
@@ -105,11 +106,12 @@
 			<Insulation_Heat>1</Insulation_Heat>
 			<EquipDelay>1.5</EquipDelay>
 			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
+			<MarketValue>250</MarketValue>
 		</statBases>
 
 		<costList>
 			<Bioferrite>50</Bioferrite>
-			<Gold>20</Gold>
+			<Gold>5</Gold>
 		</costList>
 		<recipeMaker>
 			<researchPrerequisite>TSOA_VoidInitiateArmor</researchPrerequisite>
@@ -163,7 +165,6 @@
 		<relicChance>2</relicChance>
 
 		<statBases>
-			<WorkToMake>38000</WorkToMake>
 			<MaxHitPoints>320</MaxHitPoints>
 			<Mass>15</Mass>
 			<ArmorRating_Sharp>0.8</ArmorRating_Sharp>
@@ -173,6 +174,7 @@
 			<Insulation_Heat>6</Insulation_Heat>
 			<EquipDelay>15</EquipDelay>
 			<TSOA_PsyScaling>0.8</TSOA_PsyScaling>
+			<MarketValue>1915</MarketValue>
 		</statBases>
 
 		<equippedStatOffsets>
@@ -236,7 +238,6 @@
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
 		<uiIconThing>TSOA_BioferriteVirionArmor</uiIconThing>
-
 		<researchPrerequisites>
 			<li>TSOA_BioferriteImplants</li>
 			<li>TSOA_VoidInitiateArmor</li>
@@ -292,8 +293,7 @@
 		<relicChance>2</relicChance>
 
 		<statBases>
-			<WorkToMake>3200</WorkToMake>
-			<MaxHitPoints>150</MaxHitPoints>
+			<MaxHitPoints>200</MaxHitPoints>
 			<Mass>2</Mass>
 			<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
 			<ArmorRating_Blunt>0.6</ArmorRating_Blunt>
@@ -302,6 +302,7 @@
 			<Insulation_Heat>1</Insulation_Heat>
 			<EquipDelay>1.5</EquipDelay>
 			<TSOA_PsyScaling>0.8</TSOA_PsyScaling>
+			<MarketValue>900</MarketValue>
 		</statBases>
 
 		<equippedStatOffsets>
@@ -309,7 +310,7 @@
 		</equippedStatOffsets>
 
 		<costList>
-			<Bioferrite>60</Bioferrite>
+			<Bioferrite>70</Bioferrite>
 			<Shard>1</Shard>
 		</costList>
 		<recipeMaker>

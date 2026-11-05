@@ -228,7 +228,7 @@
 						<li>TSOA_AnimaGrassResource</li>
 					</thingDefs>
 				</filter>
-				<count>45</count>
+				<count>35</count>
 			</li>
 			<li>
 				<filter>
@@ -338,7 +338,7 @@
 
 		<researchPrerequisite>TSOA_AnimaAcolyteArmor</researchPrerequisite>
 
-		<workAmount>12000</workAmount>
+		<workAmount>16000</workAmount>
 		<workSkill>Crafting</workSkill>
 
 		<effectWorking>Tailor</effectWorking>
@@ -366,7 +366,7 @@
 						<li>Textiles</li>
 					</categories>
 				</filter>
-				<count>75</count>
+				<count>105</count>
 			</li>
 			<li>
 				<filter>
@@ -407,7 +407,7 @@
 
 		<statBases>
 			<MaxHitPoints>200</MaxHitPoints>
-			<WorkToMake>8000</WorkToMake>
+			<WorkToMake>11000</WorkToMake>
 			<Mass>1.2</Mass>
 			<Flammability>0.6</Flammability>
 			<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
@@ -432,7 +432,7 @@
 			<li>Leathery</li>
 		</stuffCategories>
 
-		<costStuffCount>30</costStuffCount>
+		<costStuffCount>45</costStuffCount>
 		<costList>
 			<TSOA_AnimaGrassResource>10</TSOA_AnimaGrassResource>
 		</costList>

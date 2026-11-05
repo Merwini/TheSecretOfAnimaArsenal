@@ -63,15 +63,11 @@
 			</li>
 		</tools>
 
-		<tradeTags>
-			<li>WeaponMelee</li>
-		</tradeTags>
 		<weaponTags>
-			<li>TSOA_AnimaWeapons</li>
+			<li>TSOA_AnimaWeaponsBasic</li>
 		</weaponTags>
 		<weaponClasses>
 			<li>Neolithic</li>
-			<li>Melee</li>
 		</weaponClasses>
 		<modExtensions>
 			<li Class="tsoa.core.PsyLinkRecipeExtension">
@@ -80,7 +76,7 @@
 			<li Class="tsoa.arsenal.EntropyDamageExtension">
 				<damageDef>TSOA_EntropicDischarge</damageDef>
 				<entropyCountedPercent>0.1</entropyCountedPercent>
-				<damagePerEntropy>1</damagePerEntropy>
+				<damagePerEntropy>2</damagePerEntropy>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -146,15 +142,14 @@
 			</li>
 		</tools>
 
-		<tradeTags>
-			<li>WeaponMelee</li>
-		</tradeTags>
+		<weaponClasses>
+			<li>Melee</li>
+		</weaponClasses>
 		<weaponTags>
-			<li>TSOA_AnimaWeapons</li>
+			<li>TSOA_AnimaWeaponsBasic</li>
 		</weaponTags>
 		<weaponClasses>
 			<li>Neolithic</li>
-			<li>Melee</li>
 		</weaponClasses>
 		<modExtensions>
 			<li Class="tsoa.core.PsyLinkRecipeExtension">
@@ -163,7 +158,7 @@
 			<li Class="tsoa.arsenal.EntropyDamageExtension">
 				<damageDef>TSOA_EntropicDischarge</damageDef>
 				<entropyCountedPercent>0.1</entropyCountedPercent>
-				<damagePerEntropy>1</damagePerEntropy>
+				<damagePerEntropy>2</damagePerEntropy>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -229,17 +224,13 @@
 			</li>
 		</tools>
 
-		<tradeTags>
-			<li>WeaponMelee</li>
-		</tradeTags>
 		<weaponTags>
-			<li>TSOA_AnimaWeapons</li>
+			<li>TSOA_AnimaWeaponsBasic</li>
 			<li>TSOA_AnimaWeaponsElite</li>
 		</weaponTags>
 		<generateCommonality>0.25</generateCommonality>
 		<weaponClasses>
 			<li>Neolithic</li>
-			<li>Melee</li>
 		</weaponClasses>
 		<modExtensions>
 			<li Class="tsoa.core.PsyLinkRecipeExtension">
@@ -331,16 +322,12 @@
 			</li>
 		</tools>
 
-		<tradeTags>
-			<li>WeaponMelee</li>
-		</tradeTags>
 		<weaponTags>
 			<li>TSOA_AnimaWeaponsElite</li>
 		</weaponTags>
 		<generateCommonality>0.125</generateCommonality>
 		<weaponClasses>
 			<li>Neolithic</li>
-			<li>Melee</li>
 		</weaponClasses>
 		<modExtensions>
 			<li Class="tsoa.core.PsyLinkRecipeExtension">
@@ -377,7 +364,7 @@
 		</statBases>
 
 		<costList>
-			<TSOA_AnimaGrassResource>5</TSOA_AnimaGrassResource>
+			<TSOA_AnimaGrassResource>10</TSOA_AnimaGrassResource>
 			<TSOA_AnimaBark>1</TSOA_AnimaBark>
 			<Jade>30</Jade>
 			<TSOA_AnimaSap>2</TSOA_AnimaSap>
@@ -397,7 +384,7 @@
 				<capacities>
 					<li>Poke</li>
 				</capacities>
-				<power>6</power>
+				<power>7</power>
 				<cooldownTime>1</cooldownTime>
 				<chanceFactor>0.15</chanceFactor>
 			</li>
@@ -408,8 +395,8 @@
 				<capacities>
 					<li>Cut</li>
 				</capacities>
-				<power>14</power>
-				<cooldownTime>2.1</cooldownTime>
+				<power>16</power>
+				<cooldownTime>1.9</cooldownTime>
         		<armorPenetration>0.3</armorPenetration>
 				<extraMeleeDamages>
 					<li>
@@ -423,8 +410,8 @@
 				<capacities>
 					<li>Stab</li>
 				</capacities>
-				<power>18</power>
-				<cooldownTime>2.4</cooldownTime>
+				<power>21</power>
+				<cooldownTime>2.1</cooldownTime>
 				<armorPenetration>0.45</armorPenetration>
 				<extraMeleeDamages>
 					<li>
@@ -435,16 +422,12 @@
 			</li>
 		</tools>
 
-		<tradeTags>
-			<li>WeaponMelee</li>
-		</tradeTags>
 		<weaponTags>
 			<li>TSOA_AnimaWeaponsElite</li>
 		</weaponTags>
 		<generateCommonality>0.1</generateCommonality>
 		<weaponClasses>
 			<li>Neolithic</li>
-			<li>Melee</li>
 		</weaponClasses>
 		<modExtensions>
 			<li Class="tsoa.core.PsyLinkRecipeExtension">
@@ -482,7 +465,7 @@
 		</statBases>
 
         <costList>
-			<TSOA_AnimaGrassResource>5</TSOA_AnimaGrassResource>
+			<TSOA_AnimaGrassResource>10</TSOA_AnimaGrassResource>
 			<TSOA_AnimaBark>3</TSOA_AnimaBark>
 			<Jade>10</Jade>
 			<TSOA_AnimaSap>1</TSOA_AnimaSap>
@@ -512,8 +495,8 @@
 				<capacities>
 					<li>Stab</li>
 				</capacities>
-				<power>16</power>
-				<cooldownTime>2.7</cooldownTime>
+				<power>22</power>
+				<cooldownTime>2.5</cooldownTime>
 				<armorPenetration>0.5</armorPenetration>
 				<extraMeleeDamages>
 					<li>
@@ -524,16 +507,12 @@
 			</li>
 		</tools>
 
-        <tradeTags>
-			<li>WeaponMelee</li>
-		</tradeTags>
 		<weaponTags>
 			<li>TSOA_AnimaWeaponsElite</li>
 		</weaponTags>
 		<generateCommonality>0.1</generateCommonality>
 		<weaponClasses>
 			<li>Neolithic</li>
-			<li>Melee</li>
 		</weaponClasses>
 		<modExtensions>
 			<li Class="tsoa.core.PsyLinkRecipeExtension">
@@ -570,7 +549,7 @@
 		</statBases>
 
 		<costList>
-			<TSOA_AnimaGrassResource>5</TSOA_AnimaGrassResource>
+			<TSOA_AnimaGrassResource>10</TSOA_AnimaGrassResource>
 			<TSOA_AnimaBark>1</TSOA_AnimaBark>
 			<Jade>75</Jade>
 			<TSOA_AnimaSap>3</TSOA_AnimaSap>
@@ -594,13 +573,12 @@
 				<cooldownTime>1</cooldownTime>
 				<chanceFactor>0.10</chanceFactor>
 			</li>
-
 			<li>
 				<label>edge</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>26</power>
+				<power>39</power>
 				<cooldownTime>4</cooldownTime>
         		<armorPenetration>0.8</armorPenetration>
 				<extraMeleeDamages>
@@ -612,16 +590,15 @@
 			</li>
 		</tools>
 
-		<tradeTags>
-			<li>WeaponMelee</li>
-		</tradeTags>
+		<weaponClasses>
+			<li>Melee</li>
+		</weaponClasses>
 		<weaponTags>
 			<li>TSOA_AnimaWeaponsElite</li>
 		</weaponTags>
 		<generateCommonality>0.1</generateCommonality>
 		<weaponClasses>
 			<li>Neolithic</li>
-			<li>Melee</li>
 		</weaponClasses>
 		<modExtensions>
 			<li Class="tsoa.core.PsyLinkRecipeExtension">

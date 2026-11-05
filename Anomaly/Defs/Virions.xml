@@ -141,7 +141,7 @@
 						<li>Bioferrite</li>
 					</thingDefs>
 				</filter>
-				<count>85</count>
+				<count>40</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter Inherit="false">
@@ -220,7 +220,7 @@
 						<li>Bioferrite</li>
 					</thingDefs>
 				</filter>
-				<count>25</count>
+				<count>10</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter Inherit="false">
@@ -259,7 +259,7 @@
 						<li>Bioferrite</li>
 					</thingDefs>
 				</filter>
-				<count>25</count>
+				<count>10</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter Inherit="false">
@@ -298,7 +298,7 @@
 						<li>Bioferrite</li>
 					</thingDefs>
 				</filter>
-				<count>50</count>
+				<count>15</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter Inherit="false">
