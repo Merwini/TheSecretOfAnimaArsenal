@@ -21,12 +21,10 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanArmor"]</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanArmor"]/equippedStatOffsets</xpath>
 		<value>
-			<equippedStatOffsets>
-				<CarryWeight>40</CarryWeight>
-				<CarryBulk>10</CarryBulk>
-			</equippedStatOffsets>
+			<CarryWeight>40</CarryWeight>
+			<CarryBulk>10</CarryBulk>
 		</value>
 	</Operation>
 
@@ -163,12 +161,10 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaAcolyteArmor"]</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaAcolyteArmor"]/equippedStatOffsets</xpath>
 		<value>
-			<equippedStatOffsets>
-				<CarryWeight>20</CarryWeight>
-				<CarryBulk>5</CarryBulk>
-			</equippedStatOffsets>
+			<CarryWeight>20</CarryWeight>
+			<CarryBulk>5</CarryBulk>
 		</value>
 	</Operation>
 
