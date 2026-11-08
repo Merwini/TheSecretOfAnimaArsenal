@@ -44,7 +44,7 @@
 
 	<TSOA_VirionAlertLabel>Virion ready to extract</TSOA_VirionAlertLabel>
 	<TSOA_VirionAlertLabelPlural>{0} virions ready to extract</TSOA_VirionAlertLabelPlural>
-	<TSOA_VirionAlertDesc>These people have gestated their virions enough to be extracted:\n{0}\n\nYou can extract them now, or wait for their quality to increase.</TSOA_VirionAlertDesc>
+	<TSOA_VirionAlertDesc>These people have completed gestating their virions:\n{0}</TSOA_VirionAlertDesc>
 
 	<TSOA_VirionActiveMessage>{0}'s virion has become active, causing internal damage with its movements. Its activity will increase until it is successfully tended.</TSOA_VirionActiveMessage>
 	<TSOA_VirionTendSuccessMote>Virion pacified!</TSOA_VirionTendSuccessMote>

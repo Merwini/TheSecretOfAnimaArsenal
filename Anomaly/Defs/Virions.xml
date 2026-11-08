@@ -30,7 +30,7 @@
 	<RecipeDef ParentName="SurgeryRemoveImplantBase">
 		<defName>TSOA_ExtractVirion</defName>
 		<label>extract virion</label>
-		<description>Extract a fully- or partially-grown virion from the target, killing them messily in the process.</description>
+		<description>Extract a fully-grown virion from the target, potentially killing them messily in the process.</description>
 		<workerClass>tsoa.arsenal.Recipe_ExtractVirion</workerClass>
 		<jobString>Extracting virion from TargetA</jobString>
 		<surgerySuccessChanceFactor>3</surgerySuccessChanceFactor>
