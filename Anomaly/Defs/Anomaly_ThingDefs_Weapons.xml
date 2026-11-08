@@ -7,8 +7,7 @@
 		<label>void initiate dagger</label>
 		<description>A bioferrite blade in the style of a kris. The bioferrite acts like a living organism, reshaping itself and growing more powerful when wielded by the psychically gifted.</description>
 		<graphicData>
-			<!-- TODO real texture -->
-			<texPath>TSOA/Things/Weapons/BioferriteKopesh</texPath>
+			<texPath>TSOA/Things/Weapons/BioferriteKris</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.1, 1.1)</drawSize>
 		</graphicData>
@@ -111,10 +110,9 @@
 		<label>void initiate greatsword</label>
 		<description>A bioferrite blade in the style of a flamberge. The bioferrite acts like a living organism, reshaping itself and growing more powerful when wielded by the psychically gifted.</description>
 		<graphicData>
-			<!-- TODO real texture -->
-			<texPath>TSOA/Things/Weapons/BioferriteAxe</texPath>
+			<texPath>TSOA/Things/Weapons/BioferriteFlamberge</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(1.6, 1.6)</drawSize>
+			<drawSize>(1.4, 1.4)</drawSize>
 		</graphicData>
 		<equippedAngleOffset>-15</equippedAngleOffset>
 		<techLevel>Medieval</techLevel>
