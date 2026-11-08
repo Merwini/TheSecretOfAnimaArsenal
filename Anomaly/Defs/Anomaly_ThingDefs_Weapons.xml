@@ -212,12 +212,11 @@
 		<label>void initiate mace</label>
 		<description>A bioferrite weapon in the style of a flanged mace. The bioferrite acts like a living organism, reshaping itself and growing more powerful when wielded by the psychically gifted.</description>
 		<graphicData>
-			<!-- TODO real texture -->
-			<texPath>TSOA/Things/Weapons/BioferriteKanabo</texPath>
+			<texPath>TSOA/Things/Weapons/BioferriteFlangedMace</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(1.6, 1.6)</drawSize>
+			<drawSize>(1.0, 1.0)</drawSize>
 		</graphicData>
-		<equippedAngleOffset>-15</equippedAngleOffset>
+		<equippedAngleOffset>-75</equippedAngleOffset>
 		<techLevel>Medieval</techLevel>
 		<relicChance>2</relicChance>
 
