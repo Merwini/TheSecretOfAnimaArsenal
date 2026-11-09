@@ -16,11 +16,9 @@
 		<label>entropic discharge</label>
 		<externalViolence>true</externalViolence>
 		<workerClass>DamageWorker_AddInjury</workerClass>
-		<deathMessage>{0} was overwhelmed by discharged psychic entropy.</deathMessage>
 		<hediff>TSOA_EntropicDischarge_Injury</hediff>
 		<hediffSkin>TSOA_EntropicDischarge_Skin</hediffSkin>
 		<hediffSolid>TSOA_EntropicDischarge_Solid</hediffSolid>
-		<externalViolence>true</externalViolence>
 		<deathMessage>{0} has died from discharged neural heat.</deathMessage>
 	</DamageDef>
 

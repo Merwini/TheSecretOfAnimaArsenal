@@ -142,13 +142,11 @@
 			</li>
 		</tools>
 
-		<weaponClasses>
-			<li>Melee</li>
-		</weaponClasses>
 		<weaponTags>
 			<li>TSOA_AnimaWeaponsBasic</li>
 		</weaponTags>
 		<weaponClasses>
+			<li>Melee</li>
 			<li>Neolithic</li>
 		</weaponClasses>
 		<modExtensions>
@@ -590,14 +588,12 @@
 			</li>
 		</tools>
 
-		<weaponClasses>
-			<li>Melee</li>
-		</weaponClasses>
 		<weaponTags>
 			<li>TSOA_AnimaWeaponsElite</li>
 		</weaponTags>
 		<generateCommonality>0.1</generateCommonality>
 		<weaponClasses>
+			<li>Melee</li>
 			<li>Neolithic</li>
 		</weaponClasses>
 		<modExtensions>
