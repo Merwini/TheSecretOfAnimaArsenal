@@ -25,7 +25,7 @@
 	<StatDef>
 		<defName>TSOA_EntropyDamageFlat</defName>
 		<label>entropy damage</label>
-		<description>Shows how much how much extra damage this weapon will deal if the wielder is able to pay the neural heat cost.</description>
+		<description>Shows how much extra damage this weapon will deal if the wielder is able to pay the neural heat cost.</description>
 		<defaultBaseValue>0</defaultBaseValue>
 		<category>CapacityEffects</category>
 		<displayPriorityInCategory>6</displayPriorityInCategory>
@@ -36,7 +36,7 @@
 	<StatDef>
 		<defName>TSOA_PsychicLeech</defName>
 		<label>psychic leech</label>
-		<description>Shows what how much psychic sensitivty the weapon will steal from the target, if that amount is available.</description>
+		<description>Shows how much psychic sensitivity the weapon will steal from the target, if that amount is available.</description>
 		<defaultBaseValue>0</defaultBaseValue>
 		<category>CapacityEffects</category>
 		<displayPriorityInCategory>6</displayPriorityInCategory>

@@ -105,7 +105,7 @@
 	<HediffDef ParentName="TSOA_BioferriteArmBase">
 		<defName>TSOA_BioferriteArmOne</defName>
 		<label>bioferrite clawed arm (inert)</label>
-		<description>A bioferrite arm ending in clawed fingers, animated by psychic attunement to its user. The user's psychic connection is too weak to even ambulate the digits, leaving the arm as little more than a hand-shaped lump of metal.</description>
+		<description>A bioferrite arm ending in clawed fingers, animated by psychic attunement to its user. The user's psychic connection is too weak to even move the fingers, leaving the arm as little more than a hand-shaped lump of metal.</description>
 		<comps>
 			<li Class="HediffCompProperties_VerbGiver">
 				<tools>
@@ -455,7 +455,7 @@
 	<HediffDef ParentName="TSOA_BioferriteLegBase">
 		<defName>TSOA_BioferriteLegFive</defName>
 		<label>bioferrite leg (ascended)</label>
-		<description>A bioerrite leg, animated by psychic attunement to its user. The user's immense psychic strength makes superhumanly fast and agile, but at the cost of consuming much more nutrition.</description>
+		<description>A bioerrite leg, animated by psychic attunement to its user. The user's immense psychic strength makes it superhumanly fast and agile, but at the cost of consuming much more nutrition.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -806,7 +806,7 @@
 	<HediffDef ParentName="TSOA_BioferriteSkinBase">
 		<defName>TSOA_BioferriteSkinTwo</defName>
 		<label>bioferrite skin graft (dampened)</label>
-		<description>A plate of bioferrite grafted into the skin, animated by psychic attunement to its user. The user's weak psychic connection limits the plate's ability to spread and offering minimal protection.</description>
+		<description>A plate of bioferrite grafted into the skin, animated by psychic attunement to its user. The user's weak psychic connection makes the metal brittle and offers minimal protection.</description>
 		<stages>
 			<li>
 				<naturalHealingFactor>0.9</naturalHealingFactor>

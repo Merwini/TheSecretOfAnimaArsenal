@@ -65,7 +65,7 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="TSOA_AnimaBow"]/description</xpath>
 		<value>
-			<description>A bow carved from anima tree bark. When wielded by someone with a psylink, passively imparts a psychic bond on every arrow. If the arrow hits, it will deal additonal damage, at the cost of building up neural heat in the wielder.</description>
+			<description>A bow carved from anima tree bark. When wielded by someone with a psylink, passively imparts a psychic bond on every arrow. If the arrow hits, it will deal additional damage, at the cost of building up neural heat in the wielder.</description>
 		</value>
 	</Operation>
 	
