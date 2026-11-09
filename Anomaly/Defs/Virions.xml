@@ -134,6 +134,9 @@
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
 		<uiIconThing>Shard</uiIconThing>
+		<researchPrerequisites Inherit="false">
+			<li>TSOA_VoidOne</li>
+		</researchPrerequisites>
 		<ingredients Inherit="false">
 			<li>
 				<filter>
@@ -173,6 +176,9 @@
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
 		<uiIconThing>Shard</uiIconThing>
+		<researchPrerequisites Inherit="false">
+			<li>TSOA_VoidOne</li>
+		</researchPrerequisites>
 		<ingredients Inherit="false">
 			<li>
 				<filter>
@@ -213,6 +219,9 @@
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
 		<uiIconThing>Shard</uiIconThing>
+		<researchPrerequisites Inherit="false">
+			<li>TSOA_VoidOne</li>
+		</researchPrerequisites>
 		<ingredients Inherit="false">
 			<li>
 				<filter>
@@ -252,6 +261,9 @@
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
 		<uiIconThing>Shard</uiIconThing>
+		<researchPrerequisites Inherit="false">
+			<li>TSOA_VoidOne</li>
+		</researchPrerequisites>
 		<ingredients Inherit="false">
 			<li>
 				<filter>
@@ -291,6 +303,9 @@
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
 		<uiIconThing>Shard</uiIconThing>
+		<researchPrerequisites Inherit="false">
+			<li>TSOA_VoidOne</li>
+		</researchPrerequisites>
 		<ingredients Inherit="false">
 			<li>
 				<filter>
