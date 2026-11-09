@@ -128,7 +128,7 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanHeaddress"]</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanHeaddress"]/equippedStatOffsets</xpath>
 		<value>
 			<AimingAccuracy>-0.1</AimingAccuracy>
 			<MeleeHitChance>-0.2</MeleeHitChance>

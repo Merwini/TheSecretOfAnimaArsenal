@@ -108,13 +108,21 @@
 		</value>
 	</Operation>
 
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateHelm"]/equippedStatOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateHelm"]</xpath>
+			<value>
+				<equippedStatOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateHelm"]</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_VoidInitiateHelm"]/equippedStatOffsets</xpath>
 		<value>
-			<equippedStatOffsets>
-				<AimingAccuracy>-0.1</AimingAccuracy>
-				<MeleeHitChance>-0.3</MeleeHitChance>
-			</equippedStatOffsets>
+			<AimingAccuracy>-0.1</AimingAccuracy>
+			<MeleeHitChance>-0.3</MeleeHitChance>
 		</value>
 	</Operation>
 
@@ -284,13 +292,21 @@
 		</value>
 	</Operation>
 
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="TSOA_BioferriteVirionHelm"]/equippedStatOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="TSOA_BioferriteVirionHelm"]</xpath>
+			<value>
+				<equippedStatOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_BioferriteVirionHelm"]</xpath>
+		<xpath>Defs/ThingDef[defName="TSOA_BioferriteVirionHelm"]/equippedStatOffsets</xpath>
 		<value>
-			<equippedStatOffsets>
-				<AimingAccuracy>-0.1</AimingAccuracy>
-				<MeleeHitChance>-0.3</MeleeHitChance>
-			</equippedStatOffsets>
+			<AimingAccuracy>-0.1</AimingAccuracy>
+			<MeleeHitChance>-0.3</MeleeHitChance>
 		</value>
 	</Operation>
 
