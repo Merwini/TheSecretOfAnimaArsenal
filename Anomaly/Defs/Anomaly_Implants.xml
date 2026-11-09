@@ -433,7 +433,7 @@
 	<HediffDef ParentName="TSOA_BioferriteLegBase">
 		<defName>TSOA_BioferriteLegFour</defName>
 		<label>bioferrite leg (empowered)</label>
-		<description>A bioerrite leg, animated by psychic attunement to its user. The user's high psychic strength makes it faster and more agile than a natural leg, but at the cost of consuming more nutrition.</description>
+		<description>A bioferrite leg, animated by psychic attunement to its user. The user's high psychic strength makes it faster and more agile than a natural leg, but at the cost of consuming more nutrition.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -455,7 +455,7 @@
 	<HediffDef ParentName="TSOA_BioferriteLegBase">
 		<defName>TSOA_BioferriteLegFive</defName>
 		<label>bioferrite leg (ascended)</label>
-		<description>A bioerrite leg, animated by psychic attunement to its user. The user's immense psychic strength makes it superhumanly fast and agile, but at the cost of consuming much more nutrition.</description>
+		<description>A bifoerrite leg, animated by psychic attunement to its user. The user's immense psychic strength makes it superhumanly fast and agile, but at the cost of consuming much more nutrition.</description>
 		<stages>
 			<li>
 				<statOffsets>
