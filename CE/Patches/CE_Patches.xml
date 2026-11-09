@@ -117,13 +117,21 @@
 		</value>
 	</Operation>
 
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanHeaddress"]/equippedStatOffsets</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanHeaddress"]</xpath>
+			<value>
+				<equippedStatOffsets />
+			</value>
+		</nomatch>
+	</Operation>
+
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="TSOA_AnimaShamanHeaddress"]</xpath>
 		<value>
-			<equippedStatOffsets>
-				<AimingAccuracy>-0.1</AimingAccuracy>
-				<MeleeHitChance>-0.2</MeleeHitChance>
-			</equippedStatOffsets>
+			<AimingAccuracy>-0.1</AimingAccuracy>
+			<MeleeHitChance>-0.2</MeleeHitChance>
 		</value>
 	</Operation>
 
@@ -248,8 +256,8 @@
 		</value>
 	</Operation>
 
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaAcolyteArmor"]/statBases</xpath>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaAcolyteArmor"]/statBases/StuffEffectMultiplierArmor</xpath>
 		<value>
 			<StuffEffectMultiplierArmor>5</StuffEffectMultiplierArmor>
 		</value>
@@ -278,8 +286,8 @@
 		</value>
 	</Operation>
 
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="TSOA_AnimaAcolyteHelmet"]/statBases</xpath>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="TSOA_AnimaAcolyteHelmet"]/statBases/StuffEffectMultiplierArmor</xpath>
 		<value>
 			<StuffEffectMultiplierArmor>5</StuffEffectMultiplierArmor>
 		</value>
