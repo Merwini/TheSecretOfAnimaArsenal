@@ -135,7 +135,7 @@
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
 		<uiIconThing>Shard</uiIconThing>
 		<researchPrerequisites Inherit="false">
-			<li>TSOA_VoidOne</li>
+			<li>TSOA_VoidTwo</li>
 		</researchPrerequisites>
 		<ingredients Inherit="false">
 			<li>
@@ -177,7 +177,7 @@
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
 		<uiIconThing>Shard</uiIconThing>
 		<researchPrerequisites Inherit="false">
-			<li>TSOA_VoidOne</li>
+			<li>TSOA_VoidTwo</li>
 		</researchPrerequisites>
 		<ingredients Inherit="false">
 			<li>
