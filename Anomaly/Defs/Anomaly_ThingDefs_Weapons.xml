@@ -4,7 +4,7 @@
 	<!-- Void Initiate Kris -->
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>TSOA_VoidKris</defName>
-		<label>void initiate dagger</label>
+		<label>void initiate kris</label>
 		<description>A bioferrite blade in the style of a kris. The bioferrite acts like a living organism, reshaping itself and growing more powerful when wielded by the psychically gifted.</description>
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteKris</texPath>
@@ -66,8 +66,8 @@
 
 	<RecipeDef ParentName="TSOA_ImplantVirionBase">
 		<defName>TSOA_ImplantVoidKris</defName>
-		<label>implant virion (void dagger)</label>
-		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite dagger, killing the host in the process.</description>
+		<label>implant virion (void kris)</label>
+		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite kris, killing the host in the process.</description>
 		<descriptionHyperlinks>
 			<ThingDef>TSOA_VoidKris</ThingDef>
 		</descriptionHyperlinks>
@@ -107,7 +107,7 @@
 	<!-- Void Initiate Flamberge -->
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>TSOA_VoidFlamberge</defName>
-		<label>void initiate greatsword</label>
+		<label>void initiate flamberge</label>
 		<description>A bioferrite blade in the style of a flamberge. The bioferrite acts like a living organism, reshaping itself and growing more powerful when wielded by the psychically gifted.</description>
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteFlamberge</texPath>
@@ -168,8 +168,8 @@
 
 	<RecipeDef ParentName="TSOA_ImplantVirionBase">
 		<defName>TSOA_ImplantVoidFlamberge</defName>
-		<label>implant virion (void greatsword)</label>
-		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite greatsword, killing the host in the process.</description>
+		<label>implant virion (void flamberge)</label>
+		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite flamberge, killing the host in the process.</description>
 		<descriptionHyperlinks>
 			<ThingDef>TSOA_VoidFlamberge</ThingDef>
 		</descriptionHyperlinks>
@@ -209,7 +209,7 @@
 	<!-- Void Initiate Flanged Mace -->
 	<ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
 		<defName>TSOA_VoidFlangedMace</defName>
-		<label>void initiate mace</label>
+		<label>void initiate flanged mace</label>
 		<description>A bioferrite weapon in the style of a flanged mace. The bioferrite acts like a living organism, reshaping itself and growing more powerful when wielded by the psychically gifted.</description>
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteFlangedMace</texPath>
@@ -266,8 +266,8 @@
 
 	<RecipeDef ParentName="TSOA_ImplantVirionBase">
 		<defName>TSOA_ImplantVoidFlangedMace</defName>
-		<label>implant virion (void mace)</label>
-		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite mace, killing the host in the process.</description>
+		<label>implant virion (void flanged mace)</label>
+		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite flanged mace, killing the host in the process.</description>
 		<descriptionHyperlinks>
 			<ThingDef>TSOA_VoidFlangedMace</ThingDef>
 		</descriptionHyperlinks>
@@ -304,10 +304,70 @@
 		</modExtensions>
 	</RecipeDef>
 
+	<!-- Void Initiate Ranseur -->
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>TSOA_VoidRanseur</defName>
+		<label>void initiate ranseur</label>
+		<description>A bioferrite weapon in the style of a ranseur. The bioferrite acts like a living organism, reshaping itself and growing more powerful when wielded by the psychically gifted.</description>
+		<graphicData>
+			<texPath>TSOA/Things/Weapons/BioferriteRanseur</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.4, 1.4)</drawSize>
+		</graphicData>
+		<equippedAngleOffset>-15</equippedAngleOffset>
+		<techLevel>Medieval</techLevel>
+		<relicChance>2</relicChance>
+
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Mass>1.9</Mass>
+			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
+            <VEF_MeleeWeaponRange MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">2.84</VEF_MeleeWeaponRange>
+		</statBases>
+
+		<costList>
+			<Bioferrite>25</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>TSOA_VoidInitiateWeapons</researchPrerequisite>
+			<recipeUsers Inherit="false">
+				<li>TSOA_AnomalyFakeBench</li>
+			</recipeUsers>
+		</recipeMaker>
+
+		<tools>
+			<li>
+				<label>shaft</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.4</cooldownTime>
+				<chanceFactor>0.25</chanceFactor>
+			</li>
+			<li>
+				<label>point</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>22</power>
+				<cooldownTime>1.9</cooldownTime>
+			</li>
+		</tools>
+
+		<weaponClasses>
+			<li>Melee</li>
+		</weaponClasses>
+		<weaponTags>
+			<li>TSOA_VoidWeaponsBasic</li>
+		</weaponTags>
+
+	</ThingDef>
+
 	<!-- Void Knight Khopesh -->
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>TSOA_VoidKhopesh</defName>
-		<label>void knight sword</label>
+		<label>void knight khopesh</label>
 		<description>A bioferrite sword styled after an ancient khopesh. The bioferrite acts like a living organism, reshaping itself and reacting to psychic potential. To its wielder, it acts as a symbiote, growing more powerful when wielded by the psychically gifted. To its victims, it is a parasite, sapping their psychic sensitivity and channeling it into its wielder with every blow.</description>
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteKopesh</texPath>
@@ -390,8 +450,8 @@
 
 	<RecipeDef ParentName="TSOA_ImplantVirionBase">
 		<defName>TSOA_ImplantVoidKhopesh</defName>
-		<label>implant virion (void sword)</label>
-		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite sword, killing the host in the process.</description>
+		<label>implant virion (void khopesh)</label>
+		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite khopesh, killing the host in the process.</description>
 		<descriptionHyperlinks>
 			<ThingDef>TSOA_VoidKhopesh</ThingDef>
 		</descriptionHyperlinks>
@@ -579,7 +639,7 @@
 	<!-- Void Knight Kanabo -->
 	<ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
 		<defName>TSOA_VoidKanabo</defName>
-		<label>void knight greatclub</label>
+		<label>void knight kanabo</label>
 		<description>A bioferrite greatclub styled after a Kanabo. The bioferrite acts like a living organism, reshaping itself and reacting to psychic potential. To its wielder, it acts as a symbiote, growing more powerful when wielded by the psychically gifted. To its victims, it is a parasite, sapping their psychic sensitivity and channeling it into its wielder with every blow.</description>
 		<graphicData>
 			<texPath>TSOA/Things/Weapons/BioferriteKanabo</texPath>
@@ -652,8 +712,8 @@
 
 	<RecipeDef ParentName="TSOA_ImplantVirionBase">
 		<defName>TSOA_ImplantVoidKanabo</defName>
-		<label>implant virion (void greatclub)</label>
-		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite greatclub, killing the host in the process.</description>
+		<label>implant virion (void kanabo)</label>
+		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite kanabo, killing the host in the process.</description>
 		<descriptionHyperlinks>
 			<ThingDef>TSOA_VoidKanabo</ThingDef>
 		</descriptionHyperlinks>
