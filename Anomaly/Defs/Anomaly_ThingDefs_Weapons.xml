@@ -18,6 +18,7 @@
 		<statBases>
 			<MaxHitPoints>150</MaxHitPoints>
 			<Mass>1</Mass>
+			<MarketValue>355</MarketValue>
 			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
 		</statBases>
 
@@ -121,6 +122,7 @@
 		<statBases>
 			<MaxHitPoints>150</MaxHitPoints>
 			<Mass>3.1</Mass>
+			<MarketValue>505</MarketValue>
 			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
 		</statBases>
 
@@ -196,7 +198,7 @@
 		<modExtensions>
 			<li Class="tsoa.arsenal.VirionExtension">
 				<producedItem>TSOA_VoidFlamberge</producedItem>
-				<gestationDays>7</gestationDays>
+				<gestationDays>9</gestationDays>
 				<entitySpawn>
 					<kind>Metalhorror</kind>
 					<forcedLifeStageIndex>1</forcedLifeStageIndex>
@@ -223,6 +225,7 @@
 		<statBases>
 			<MaxHitPoints>150</MaxHitPoints>
 			<Mass>1.9</Mass>
+			<MarketValue>405</MarketValue>
 			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
 		</statBases>
 
@@ -321,6 +324,7 @@
 		<statBases>
 			<MaxHitPoints>150</MaxHitPoints>
 			<Mass>1.9</Mass>
+			<MarketValue>480</MarketValue>
 			<TSOA_PsyScaling>0.25</TSOA_PsyScaling>
             <VEF_MeleeWeaponRange MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">2.84</VEF_MeleeWeaponRange>
 		</statBases>
@@ -350,8 +354,9 @@
 				<capacities>
 					<li>Stab</li>
 				</capacities>
-				<power>22</power>
+				<power>20</power>
 				<cooldownTime>1.9</cooldownTime>
+				<armorPenetration>0.6</armorPenetration>
 			</li>
 		</tools>
 
@@ -363,6 +368,46 @@
 		</weaponTags>
 
 	</ThingDef>
+
+	<RecipeDef ParentName="TSOA_ImplantVirionBase">
+		<defName>TSOA_ImplantVoidRanseur</defName>
+		<label>implant virion (void ranseur)</label>
+		<description>Implant a bioferrite virion in the target. This will gestate into a bioferrite ranseur, killing the host in the process.</description>
+		<descriptionHyperlinks>
+			<ThingDef>TSOA_VoidRanseur</ThingDef>
+		</descriptionHyperlinks>
+		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
+		<uiIconThing>TSOA_VoidRanseur</uiIconThing>
+		<researchPrerequisites Inherit="false">
+			<li>TSOA_VoidInitiateWeapons</li>
+		</researchPrerequisites>
+		<ingredients Inherit="false">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Bioferrite</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter Inherit="false">
+			<thingDefs>
+				<li>Bioferrite</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<modExtensions>
+			<li Class="tsoa.arsenal.VirionExtension">
+				<producedItem>TSOA_VoidRanseur</producedItem>
+				<gestationDays>8</gestationDays>
+				<entitySpawn>
+					<kind>Metalhorror</kind>
+					<forcedLifeStageIndex>1</forcedLifeStageIndex>
+					<count>1</count>
+				</entitySpawn>
+			</li>
+		</modExtensions>
+	</RecipeDef>
 
 	<!-- Void Knight Khopesh -->
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
@@ -381,7 +426,7 @@
 		<statBases>
 			<MaxHitPoints>200</MaxHitPoints>
 			<Mass>1.6</Mass>
-			<MarketValue>675</MarketValue>
+			<MarketValue>775</MarketValue>
 			<TSOA_PsyScaling>0.5</TSOA_PsyScaling>
 		</statBases>
 
@@ -524,7 +569,7 @@
 		<statBases>
 			<MaxHitPoints>200</MaxHitPoints>
 			<Mass>2.3</Mass>
-			<MarketValue>775</MarketValue>
+			<MarketValue>875</MarketValue>
 			<TSOA_PsyScaling>0.5</TSOA_PsyScaling>
 		</statBases>
 
@@ -556,7 +601,7 @@
 				</capacities>
 				<power>31</power>
 				<cooldownTime>2.4</cooldownTime>
-				<armorPenetration>0.35</armorPenetration>
+				<armorPenetration>0.5</armorPenetration>
 				<extraMeleeDamages>
 					<li>
 						<def>TSOA_PsychicLeech</def>
@@ -686,7 +731,7 @@
 				</capacities>
 				<power>39</power>
 				<cooldownTime>3.1</cooldownTime>
-				<armorPenetration>0.45</armorPenetration>
+				<armorPenetration>0.75</armorPenetration>
 				<extraMeleeDamages>
 					<li>
 						<def>TSOA_PsychicLeech</def>
