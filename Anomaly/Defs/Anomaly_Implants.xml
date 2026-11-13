@@ -963,12 +963,12 @@
 	<HediffDef ParentName="TSOA_StatExchangerBase">
 		<defName>TSOA_SovereignCrown</defName>
 		<label>sovereign crown</label>
-		<description>A band of bioferrite infused with dark archotech, fused to the skull. Allows the user to form psychic links to those implanted with Thrall Crowns, stealing their psychic power.</description>
+		<description>A band of bioferrite infused with dark archotech, fused to the skull. Allows the user to form psychic links to those implanted with Thrall Crowns, stealing their psychic power. This transfer is wasteful, however, and much of the thralls' psychic sensitivity is wasted.</description>
 		<comps>
 			<li Class="tsoa.arsenal.HediffCompProperties_StatExchanger">
 				<isMaster>true</isMaster>
 				<maxLinks>5</maxLinks>
-				<recipientGainFlat>0.10</recipientGainFlat>
+				<recipientGainFlat>0.20</recipientGainFlat>
 				<affectedStat>PsychicSensitivity</affectedStat>
 				<targetHediffs>
 					<li>TSOA_ThrallCrown</li>

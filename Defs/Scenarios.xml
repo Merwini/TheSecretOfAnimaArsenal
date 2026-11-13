@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+    <ScenPartDef>
+        <defName>TSOA_ConfigurePawnsExtra</defName>
+        <label>starting people</label>
+        <scenPartClass>tsoa.core.ScenPart_ConfigPage_ConfigureStartingPawns_Extra</scenPartClass>
+        <selectionWeight>0</selectionWeight>
+        <pageClass>tsoa.core.Page_ConfigureStartingPawns_Extra</pageClass>
+        <summaryPriority>500</summaryPriority>
+        <category>Fixed</category>
+    </ScenPartDef>
+    
     <ScenarioDef ParentName="ScenarioBase">
         <defName>TSOA_AcolyteStart</defName>
         <label>Anima Acolytes</label>
-        <description>Explorers from your old tribe discovered a distant, neglected anima tree here. Possibly left behind by a tribe that died or fled long ago. Your people volunteered to found a new tribe nearby, to protect and nurture the tree.</description>
+        <description>Explorers from your old tribe discovered a distant, neglected anima tree here. It was possibly left behind by a tribe that died or fled long ago. Your people volunteered to found a new tribe nearby, to protect and nurture the tree. Select one person to be the acolyte, and four followers. The acolyte will receive a free psylink and the Psychically Sensitive trait as the game begins.</description>
         
         <scenario>
             <summary>Five tribespeople build a new home. The Secret of Anima start, easier than normal tribal.</summary>
@@ -14,9 +24,31 @@
             <parts>
 
                 <!-- Config pages -->
-                <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
-                    <def>ConfigPage_ConfigureStartingPawns</def>
-                    <pawnCount>5</pawnCount>
+                <li Class="tsoa.core.ScenPart_ConfigPage_ConfigureStartingPawns_Extra">
+                    <def>TSOA_ConfigurePawnsExtra</def>
+                    <groups>
+                        <li>
+                            <count>1</count>
+                            <groupLabel>acolyte</groupLabel>
+                            <hediffs>
+                                <li>
+                                    <def>PsychicAmplifier</def>
+                                    <bodyPart>Brain</bodyPart>
+                                    <stage>1</stage>
+                                </li>
+                            </hediffs>
+                            <traits>
+                                <li>
+                                    <def>PsychicSensitivity</def>
+                                    <degree>1</degree>
+                                </li>
+                            </traits>
+                        </li>
+                        <li>
+                            <count>4</count>
+                            <groupLabel>followers</groupLabel>
+                        </li>
+                    </groups>
                     <pawnChoiceCount>8</pawnChoiceCount>
                 </li>
 
@@ -77,10 +109,6 @@
                     <def>StartingThing_Defined</def>
                     <thingDef>TSOA_AnimaAcolyteHelmet</thingDef>
                     <stuff>Leather_Plain</stuff>
-                </li>
-                <li Class="ScenPart_StartingThing_Defined">
-                    <def>StartingThing_Defined</def>
-                    <thingDef>PsychicAmplifier</thingDef>
                 </li>
                 <li Class="ScenPart_StartingAnimal">
                     <def>StartingAnimal</def>
