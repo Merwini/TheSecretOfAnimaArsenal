@@ -103,6 +103,58 @@
             "group": "build"
         },
         {
+            "label": "Build PNMBP Release 1.6",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/Source/TheSecretofAnimaArsenal.PNMBP/TheSecretOfAnimaArsenal.PNMBP.csproj",
+                "--configuration",
+                "Release",
+                "--framework",
+                "net48"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$msCompile",
+            "group": "build"
+        },
+        {
+            "label": "Build PNMBP Release 1.7",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/Source/TheSecretofAnimaArsenal.PNMBP/TheSecretOfAnimaArsenal.PNMBP.csproj",
+                "--configuration",
+                "Release",
+                "--framework",
+                "net10.0"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$msCompile",
+            "group": "build"
+        },
+        {
+            "label": "Build PNMBP Release",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/Source/TheSecretofAnimaArsenal.PNMBP/TheSecretOfAnimaArsenal.PNMBP.csproj",
+                "--configuration",
+                "Release"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$msCompile",
+            "group": "build"
+        },
+        {
             "label": "Build All Release",
             "type": "process",
             "command": "dotnet",
