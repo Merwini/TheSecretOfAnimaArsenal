@@ -133,7 +133,7 @@
 			<ThingDef>Apparel_PlateArmor</ThingDef>
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
-		<uiIconThing>Shard</uiIconThing>
+		<uiIconThing>Apparel_PlateArmor</uiIconThing>
 		<researchPrerequisites Inherit="false">
 			<li>TSOA_VoidTwo</li>
 		</researchPrerequisites>
@@ -175,7 +175,7 @@
 			<ThingDef>Apparel_SimpleHelmet</ThingDef>
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
-		<uiIconThing>Shard</uiIconThing>
+		<uiIconThing>Apparel_SimpleHelmet</uiIconThing>
 		<researchPrerequisites Inherit="false">
 			<li>TSOA_VoidTwo</li>
 		</researchPrerequisites>
@@ -218,7 +218,7 @@
 			<ThingDef>MeleeWeapon_Mace</ThingDef>
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
-		<uiIconThing>Shard</uiIconThing>
+		<uiIconThing>MeleeWeapon_Mace</uiIconThing>
 		<researchPrerequisites Inherit="false">
 			<li>TSOA_VoidOne</li>
 		</researchPrerequisites>
@@ -260,7 +260,7 @@
 			<ThingDef>MeleeWeapon_Gladius</ThingDef>
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
-		<uiIconThing>Shard</uiIconThing>
+		<uiIconThing>MeleeWeapon_Gladius</uiIconThing>
 		<researchPrerequisites Inherit="false">
 			<li>TSOA_VoidOne</li>
 		</researchPrerequisites>
@@ -302,7 +302,7 @@
 			<ThingDef>MeleeWeapon_LongSword</ThingDef>
 		</descriptionHyperlinks>
 		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
-		<uiIconThing>Shard</uiIconThing>
+		<uiIconThing>MeleeWeapon_LongSword</uiIconThing>
 		<researchPrerequisites Inherit="false">
 			<li>TSOA_VoidOne</li>
 		</researchPrerequisites>
